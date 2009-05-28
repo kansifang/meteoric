@@ -2,3 +2,7 @@ http://code.google.com/p/snailgame---js/source/checkout
 
 svn上的源码下载地址：
 https://snailgame---js.googlecode.com/svn/trunk/
+
+svn的帐号：gongshengnan@gmail.com
+
+密码：bx8Eu9pv8cw6 
