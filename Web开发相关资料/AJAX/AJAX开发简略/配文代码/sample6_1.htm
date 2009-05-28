@@ -1,0 +1,52 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>无标题文档</title>
+<script language="javascript">
+function loadXML(handler) {
+	var url = "employees.xml";
+	if(document.implementation&&document.implementation.createDocument) {
+		var xmldoc = document.implementation.createDocument("", "", null);
+		xmldoc.onload =  handler(xmldoc, url);
+		xmldoc.load(url);
+	}
+	else if(window.ActiveXObject) {
+		var xmldoc = new ActiveXObject("Microsoft.XMLDOM");
+		xmldoc.onreadystatechange = function() {
+			if(xmldoc.readyState == 4) handler(xmldoc, url);
+		}
+		xmldoc.load(url);
+	}
+}
+function makeTable(xmldoc, url) {
+	var table = document.createElement("table");
+	table.setAttribute("border","1");
+	table.setAttribute("width","600");
+	table.setAttribute("class","tab-content");
+	document.body.appendChild(table);
+	var caption = "Employee Data from " + url;
+	table.createCaption().appendChild(document.createTextNode(caption));
+	var header = table.createTHead();
+	var headerrow = header.insertRow(0);
+	headerrow.insertCell(0).appendChild(document.createTextNode("姓名"));
+	headerrow.insertCell(1).appendChild(document.createTextNode("职业"));
+	headerrow.insertCell(2).appendChild(document.createTextNode("工资"));
+	var employees = xmldoc.getElementsByTagName("employee");
+	for(var i=0;i<employees.length;i++) {
+		var e = employees[i];
+		var name = e.getAttribute("name");
+		var job = e.getElementsByTagName("job")[0].firstChild.data;
+		var salary = e.getElementsByTagName("salary")[0].firstChild.data;
+		var row = table.insertRow(i+1);
+		row.insertCell(0).appendChild(document.createTextNode(name));
+		row.insertCell(1).appendChild(document.createTextNode(job));
+		row.insertCell(2).appendChild(document.createTextNode(salary));
+	}
+}
+</script>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="loadXML(makeTable)">
+</body>
+</html>

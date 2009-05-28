@@ -1,0 +1,23 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>无标题文档</title>
+<script language="javascript">
+	function reverseNode(node) { // 颠倒节点node的顺序
+		var kids = node.childNodes; //获取子节点列表
+		var kidsNum = kids.length; //统计子节点总数
+		for(var i=kidsNum-1;i>=0;i--) { //逆向遍历子节点列表
+			var c = node.removeChild(kids[i]); //删除指定子节点，保存在c中
+			node.appendChild(c); //将c放在新位置上
+		}
+	}
+</script>
+</head>
+
+<body>
+<p>第一行</p>
+<p>第二行</p>
+<p>第三行</p>
+<p><input type="button" name="reverseGo" value="颠倒" onClick="reverseNode(document.body)"></p>
+</body>
+</html>

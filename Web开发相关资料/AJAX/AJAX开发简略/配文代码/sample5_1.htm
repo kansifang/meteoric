@@ -1,0 +1,38 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>无标题文档</title>
+<script language="javascript">
+function insertStr() {
+	var f = document.form1;
+	var value = f.str.value;
+	if(value!="") {
+		// 从最终的TextNode节点开始，慢慢形成<tbody>结构
+		var text = document.createTextNode(value); //新建一个TextNode节点
+		var td = document.createElement("td"); //新建一个td类型的Element节点
+		var tr = document.createElement("tr"); //新建一个tr类型的Element节点
+		var tbody = document.createElement("tbody"); //新建一个tbody类型的Element节点
+		td.appendChild(text); //将节点text加入td中
+		tr.appendChild(td); //将节点td加入tr中
+		tbody.appendChild(tr); //将节点tr加入tbody中
+		var parNode = document.getElementById("table1"); //定位到table上
+		parNode.insertBefore(tbody,parNode.firstChild); //将节点tbody插入到节点顶部
+		//parNode.appendChild(tbody); //将节点tbody加入节点尾部
+	}
+}
+</script>
+</head>
+<body>
+<form name="form1" method="post" action="">
+    <input name="str" type="text" id="str" value="">
+    <input name="insert" type="button" id="insert" value="留言" onClick="insertStr()">
+</form>
+<table width="400" border="1" cellspacing="0" cellpadding="0" id="table1">
+<tbody>
+    <tr>
+        <td height="25">网友留言列表：</td>
+    </tr>
+</tbody>
+</table>
+</body>
+</html>

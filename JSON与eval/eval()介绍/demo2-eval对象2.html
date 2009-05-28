@@ -1,0 +1,19 @@
+<script type="text/javascript">
+	var kc = "{name:'cssrain',email:'cssrain@gamail.com'},{name:'cssrain',email:'cssrain@gamail.com'}";
+	eval("cssrain="+kc);
+	alert(cssrain);
+	alert("name:"+cssrain.name);
+	alert("email:"+cssrain.email);
+
+	var kk =  eval("[kc]");
+	alert(typeof kk);
+	
+	kk = eval("["+kc+"]");
+	alert(kk.length);
+
+	kc = {name:'cssrain',email:'cssrain@gamail.com'}
+	kk = eval(kk);
+	alert(typeof kk)
+
+	
+</script>

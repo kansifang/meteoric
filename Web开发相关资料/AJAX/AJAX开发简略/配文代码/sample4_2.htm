@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>无标题文档</title>
+<script language="javascript">
+function reverseTable() {
+	var node = document.getElementsByTagName("table")[0]; //第一个表格
+	var child = node.getElementsByTagName("tr"); //取得表格内的所有行
+	var newChild = new Array(); //定义缓存数组，保存行内容
+	for(var i=0;i<child.length;i++) {
+		newChild[i] = child[i].firstChild.innerHTML; 
+	}
+	node.removeChild(node.childNodes[0]); //删除全部单元行
+	var header = node.createTHead(); //新建表格行头
+	for(var i=0;i<newChild.length;i++) {
+		var headerrow = header.insertRow(i); //插入一个单元行
+		var cell = headerrow.insertCell(0); //在单元行中插入一个单元格
+		//在单元格中创建TextNode节点
+		cell.appendChild(document.createTextNode(newChild[newChild.length-i-1]));
+	}
+}
+</script>
+</head>
+<body>
+<table width="200" border="1" cellpadding="4" cellspacing="0">
+    <tr>
+        <td height="25">第一行</td>
+    </tr>
+    <tr>
+        <td height="25">第二行</td>
+    </tr>
+    <tr>
+        <td height="25">第三行</td>
+    </tr>
+    <tr>
+        <td height="25">第四行</td>
+    </tr>
+</table>
+<br>
+<input type="button" name="reverse" value="开始颠倒" onClick="reverseTable()">
+</body>
+</html>

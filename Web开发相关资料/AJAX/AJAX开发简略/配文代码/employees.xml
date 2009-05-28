@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gb2312"?>
+<employees>
+	<employee name="J.Doe">
+		<job>Programmer</job>
+		<salary>32768</salary>
+	</employee>
+	<employee name="A.Baker">
+		<job>Sales</job>
+		<salary>70000</salary>
+	</employee>
+	<employee name="Big Cheese">
+		<job>CEO</job>
+		<salary>100000</salary>
+	</employee>
+</employees>

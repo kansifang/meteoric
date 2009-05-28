@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <HEAD>
+  <TITLE> New Document </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="ZhangYi">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <style type="text/css">
+	
+  </style>
+
+  <script type="text/javascript">
+	function showJSON() {
+		var user = {
+			"username" : "andy",
+			"age" : 20,
+			"info" : {"tel" : "123456","cellphone" : "12354871231"},
+			"address" : 
+			      [
+					{"city":"beijing","postcode":"33333"},
+					{"city":"newyork","postcode":"55566"}
+				  ]
+		};
+		var kk = eval("[user]");
+		//var kk = eval(user)
+		alert(kk)
+		/*document.write(user.username);
+		document.write("<br/>"+user.age);
+		document.write("<br/>"+user.info.cellphone);
+		document.write("<br/>"+user.address[0].city);
+		document.write("<br/>"+user.address[0].postcode);*/
+	}
+
+	showJSON();
+  </script>
+ </HEAD>
+
+ <BODY>
+    
+ </BODY>
+</HTML>
