@@ -8,5 +8,6 @@ svnµÄÕÊºÅ£ºgongshengnan@gmail.com
 ÃÜÂë£ºbx8Eu9pv8cw6 
 
 
+https://jsskep.googlecode.com/svn/trunk
 cssrainµÄsvn: cssrain
 mr4HJ4nd5Ua7 
