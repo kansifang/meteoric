@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Untitled Document</title>
+    </head>
+    <body>
+        <script>
+            var Mar = [];
+            function modN(x, N){
+                x = x >= N ? x - N : x;
+                x = x < 0 ? x + N : x;
+                return x;
+            }
+            
+            function MarN(N){
+                if (!(N % 2)) {
+                    alert("N必须是奇数！");
+                    return false;
+                }
+                var sx = (N - 1) / 2;
+                var sy = 0;
+                
+                for (var i = 0; i < N; i++) {
+                    Mar.push([]);
+                    for (var j = 0; j < N; j++) {
+                        Mar[i].push(0);
+                    }
+                }
+                for (var i = 0; i < N * N; i++) {
+                    Mar[sy][sx] = i + 1;
+                    var x = modN(sx - 1, N);
+                    var y = modN(sy - 1, N);
+                    
+                    if (Mar[y][x] != 0) 
+                        sy = modN(sy + 1, N);
+                    else {
+                        sx = modN(sx - 1, N);
+                        sy = modN(sy - 1, N);
+                    }
+                }
+            }
+            
+            function print(){
+                for (var i = 0; i < Mar.length; i++) {
+                    for (var j = 0; j < Mar[i].length; j++) {
+                        document.write(Mar[i][j] + "&nbsp;&nbsp;");
+                    }
+                    document.write("<br>");
+                }
+            }
+            
+            MarN(3);
+            print();
+        </script>
+    </body>
+</html>

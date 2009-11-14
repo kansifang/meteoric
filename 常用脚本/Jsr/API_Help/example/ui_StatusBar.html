@@ -1,0 +1,127 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html"/>
+	<title>状态栏实例 -- JSR2+</title>
+	<script type="text/javascript" src="../../common/js/core.js?lib=webui,ui_window,ui_progressBar,ui_statusBar,valid"></script>
+	<link rel="stylesheet" href="../resources/example.css" type="text/css" media="all"/>
+	<style>
+		.testPanel{background:#FFF;border:1px solid #A3BAE9;}
+		.addBar{height:22px;background-color:#E9EFF6;border-top:1px solid #FFF;border-bottom:1px solid #A3BAE9;}
+		.addBar table{width:100%;border-bottom:1px solid #FEFEFE;border-collapse:collapse;}
+	</style>
+</head>
+
+<body style="overflow:hidden;margin:0">
+<div id="bodyPanel" style="display:none">
+	<b>状态栏实例</b><hr/><br/>
+	<!-- 面板 -->
+	<div id="panel"></div>
+	<!-- 面板内容 -->
+	<div id="contentPanel">
+		<!-- 控件实例 -->
+		<fieldset id="example"><div class="gbPanel">
+			<table><tr>
+				<td width="10px" height="40px">&nbsp;</td>
+				<td width="130px"><button id="win1"></button></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<!-- 相关方法 -->
+		<fieldset id="method"><div class="gbPanel">
+			<table class="method-area1"><tr>
+				<td><button id="b1"></button></td><td><button id="b2"></button></td>
+				<td><button id="b3"></button></td><td><button id="b4"></button></td><td></td>
+			</tr></table>
+		</div></fieldset>
+	</div>
+	<!-- 面板内容结束 -->
+	<!-- 测试面板 -->
+	<div id="testPanel" class="testPanel" style="display:">
+		<div class="addBar"><table cellpadding="0" class="font"><tr>
+			<td align="right" width="52px">地址(<u>D</u>)&nbsp;</td>
+			<td><select id="addr"></select></td>
+			<td width="52px"><button id="goto"></button></td>
+		</tr></table></div>
+		<iframe id="fra" frameborder="0" src="" onload="loadFinish();"></iframe>
+		<div id="statusBar1"></div>
+	</div>
+</div>
+</body>
+
+<script>
+new UI.Panel({id:"panel", caption:"应用实例 -> 状态栏", width:520, height:265, body:"contentPanel"});
+new UI.GroupBox({id:"example", caption:"控件实例"});
+new UI.GroupBox({id:"method", caption:"相关方法"});
+
+var pro, win, open, brs, btn, cb, sta, hideItem = true;
+//测试窗口与进度条
+pro = new UI.ProgressBar({id:$B("div"), width:120});
+win = new UI.Window({caption:"状态栏测试窗口 - JSR2+ 迷你浏览器", width:630, height:380});
+//创建显示窗口按钮
+open = new UI.Button({id:"win1", caption:"显示测试窗口", width:105});
+open.bind(function(){ win.show(open.dom) });
+//创建窗口主面板
+brs = $("fra");brs.src = "";
+cb = new UI.ComboBox({id:"addr", name:"comboBox1", editable:true});
+cb.setCheck(Valid.checkURL, null, "请输入正确的URL地址。\n样例: http://www.baidu.com", null);
+btn = new UI.Button({id:"goto", caption:"转到", width:45});
+btn.bind(function() {
+	if(cb.check()) {
+		var url = cb.getValue();
+		cb.getIndexByText(url) < 0 && (cb.addItem(url, url));
+		brs.src = url;
+		pro.stop();
+		pro.start();
+		url = null;
+	}//Endif
+});
+//创建状态栏
+sta = new UI.StatusBar({id:"statusBar1"});
+sta.add("S1", {width:155, text:"JSR2-WEB前台控件测试",icon:"../resources/image/ico.gif"});
+sta.add("S2", {width:98, text:"加载进度: 0%", split:true});
+sta.add("S3", pro);
+sta.add("S4", {width:200, text:"操作提示: @A", split:true});
+sta.set("S4", {A:"请在地址栏输入URL..."});
+//设置进度条显示信息
+pro.setGuage(sta.get("S2"), "加载进度: @PER@");
+//设置窗口主面板
+win.setPanel("testPanel", function(w, h) {
+	cb.setWidth(w - 119);
+	brs.width = w - 14
+	brs.height = h - 46;
+});
+
+//相关方法按钮
+btn = new UI.Button({id:"b1", caption:"add", width:75});
+btn.bind(function() {
+	sta.add("S5",{width:60,split:true});
+	alert("添加了一个状态栏项。");
+});
+btn = new UI.Button({id:"b2", caption:"get", width:75});
+btn.bind(function() {
+	alert("状态栏的第一项文本是: " + sta.get("S1").innerHTML);
+});
+btn = new UI.Button({id:"b3", caption:"hide", width:75});
+btn.bind(function() {
+	sta.hide("S1",hideItem);
+	if(hideItem)
+		alert("状态栏的第一项被隐藏了");
+	else
+		alert("状态栏的第一项显示了");
+	hideItem = !hideItem;
+	
+});
+btn = new UI.Button({id:"b4", caption:"set", width:75});
+btn.bind(function() {
+	sta.set("S4", {A:"set方法设置了我:)"});
+});
+
+//iframe加载完成回调
+function loadFinish() {
+	pro.finish();
+}
+
+onLoad.add(function(){ $("bodyPanel").style.display = "" });
+</script>
+
+</html>

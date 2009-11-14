@@ -1,0 +1,432 @@
+<!DOPropertiesCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN""http://www.w3.org/TR/REC-html40/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+helma.Search - Helma Javascript Reference
+</TITLE>
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../stylesheet.css" TITLE="Style">
+
+
+</HEAD>
+<SCRIPT>
+function asd()
+{
+parent.document.title="helma.Search - Helma Javascript Reference";
+}
+</SCRIPT>
+<BODY BGCOLOR="white" onload="asd();">
+      
+      
+
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>helma.Search</H2>
+<PRE>Object
+   |
+   +--<b>helma.Search</b>
+</PRE>
+
+
+<HR>
+
+<DL>
+   <!-- Class definition
+   <DT>class 
+   <B>helma.Search</B>
+    -->
+
+</DL>
+   
+   <P>
+   <BR/>This class provides functionality for
+ creating a fulltext search index based on Apache Lucene.
+ <BR/><I>Defined in <a href='../overview-summary-Search.js.html'>Search.js</a></I><BR/><BR/><B>Author:</B> Robert Gaggl <robert@nomatic.org><BR/>
+   </P>
+   <HR>
+   
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+<!-- =========== END OF NAVBAR =========== -->
+<HR>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TD COLSPAN=2><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD>
+      <CODE>
+	 <B>
+	    <A HREF="#helma.Search()">helma.Search</A></B>()
+      </CODE>
+      <BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Constructs a new instance of helma.Search.
+      </TD>
+</TR>
+</TABLE>
+
+<!-- ======== END CONSTRUCTOR SUMMARY ======== -->
+
+&nbsp;
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+   
+
+<!-- =========== END FIELD SUMMARY =========== -->
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TD COLSPAN=2><FONT SIZE="+2">
+<B>Methods Summary</B></FONT></TD>
+</TR>
+
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="../helma/Search/Index.html">helma.Search.Index</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#createIndex">createIndex</A></B>(&lt;org.apache.lucene.store.Directory&gt; dir, &lt;org.apache.lucene.analysis.Analyzer&gt; analyzer)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Creates a new Lucene index in the directory passed as
+ argument, using an optional analyzer, and returns an instance
+ of helma.Search.Index.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;org.apache.lucene.store.FSDirectory</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getDirectory">getDirectory</A></B>(&lt;File|helma.File|java.io.File|String&gt; dir, &lt;Boolean&gt; create)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns an instance of org.apache.lucene.store.FSDirectory.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;org.apache.lucene.store.RAMDirectory</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getRAMDirectory">getRAMDirectory</A></B>(&lt;File|helma.File|java.io.File|String&gt; dir)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns a RAM directory object.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&lt;static&gt;&nbsp;&nbsp;{org.apache.lucene.analysis.Analyzer}</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#!s!getAnalyzer">getAnalyzer</A></B>(&lt;<a href="../String.html">String</a>&gt; key)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns a new Analyzer instance depending on the key
+ passed as argument.
+      </TD>
+   </TR>
+
+
+</TABLE>
+
+
+
+<P>
+<!-- ========== END METHOD SUMMARY =========== -->
+
+
+    <!-- ========= CONSTRUCTOR DETAIL START ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+   <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+      <TD COLSPAN=1>
+      <FONT SIZE="+2"><B>Constructor Detail</B></FONT>
+      </TD>
+   </TR>
+</TABLE>
+
+<A NAME="helma.Search()"><!-- --></A><H3>
+helma.Search</H3>
+<PRE><B>helma.Search</B>()</PRE>
+
+
+<UL>
+   Constructs a new instance of helma.Search. This merely
+ checks if the Apache Lucene library is in the application
+ classpath.
+</UL>
+
+
+
+   </UL>
+
+
+<!-- Constructor return value(s) -->
+
+   <UL>
+   <B>Returns:</B>
+     <UL>
+     A newly created instance of this prototype.   
+     </UL>
+   </UL>
+
+<!-- End constructor return value(s) -->
+
+<!-- ADDITIONAL ATTRIBUTES -->
+
+<UL>   
+<B>Author:</B> Robert Gaggl <robert@nomatic.org><BR/>
+</UL>
+
+<HR/>
+<!-- END ADDITIONAL ATTRIBUTES  -->
+
+<!-- ========= CONSTRUCTOR DETAIL END ======== -->
+
+
+<!-- ============ FIELD DETAIL START =========== -->
+
+
+<!-- ============ FIELD DETAIL END =========== -->
+
+<!-- ============ METHOD DETAIL START ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+   <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+      <TD COLSPAN=1><FONT SIZE="+2">
+         <B>Method Detail</B></FONT>
+      </TD>
+   </TR>
+</TABLE>
+
+<!-- One single method detail entry -->
+
+   <A NAME="createIndex"><!-- --></A>
+   <H3>createIndex</H3>
+   <PRE><a href="../helma/Search/Index.html">helma.Search.Index</a> <B>createIndex</B>(&lt;org.apache.lucene.store.Directory&gt; dir, &lt;org.apache.lucene.analysis.Analyzer&gt; analyzer)</PRE>
+   
+      <UL>Creates a new Lucene index in the directory passed as
+ argument, using an optional analyzer, and returns an instance
+ of helma.Search.Index. Any already existing index in this
+ directory will be preserved.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>dir</CODE> -  The directory  where the index should be stored. This can be either a  FSDirectory or a RAMDirectory instance.  
+      </UL> 
+   
+     <UL><CODE>analyzer</CODE> -  The analyzer to  use for the index. If not specified a StandardAnalyzer will be used.  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        The index instance.   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getDirectory"><!-- --></A>
+   <H3>getDirectory</H3>
+   <PRE>org.apache.lucene.store.FSDirectory <B>getDirectory</B>(&lt;File|helma.File|java.io.File|String&gt; dir, &lt;Boolean&gt; create)</PRE>
+   
+      <UL>Returns an instance of org.apache.lucene.store.FSDirectory. If
+ no index is present in the given directory, it is created on the fly.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>dir</CODE> -  The directory  where the index is located or should be created at.  
+      </UL> 
+   
+     <UL><CODE>create</CODE> -  If true the index will be created, removing  any existing index in the same directory  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        The index directory.   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getRAMDirectory"><!-- --></A>
+   <H3>getRAMDirectory</H3>
+   <PRE>org.apache.lucene.store.RAMDirectory <B>getRAMDirectory</B>(&lt;File|helma.File|java.io.File|String&gt; dir)</PRE>
+   
+      <UL>Returns a RAM directory object.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>dir</CODE> -  Optional directory  containing a Lucene index from which this RAM directory should be created.  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        A RAM directory instance.   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="!s!getAnalyzer"><!-- --></A>
+   <H3>getAnalyzer</H3>
+   <PRE>&lt;static&gt;&nbsp;{org.apache.lucene.analysis.Analyzer} <B>getAnalyzer</B>(&lt;<a href="../String.html">String</a>&gt; key)</PRE>
+   
+      <UL>Returns a new Analyzer instance depending on the key
+ passed as argument. Currently supported arguments are
+ "br" (BrazilianAnalyzer), "cn" (ChineseAnalyzer), "cz" (CzechAnalyzer),
+ "nl" (DutchAnalyzer), "fr" (FrenchAnalyzer), "de" (GermanAnalyzer),
+ "el" (GreekAnalyzer), "keyword" (KeywordAnalyzer), "ru" (RussianAnalyzer),
+ "simple" (SimpleAnalyzer), "snowball" (SnowballAnalyzer), "stop" (StopAnalyzer)
+ "whitespace" (WhitespaceAnalyzer). If no argument is given, a StandardAnalyzer
+ is returned.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>key</CODE> -  The key identifying the analyzer  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        A newly created Analyzer instance   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+
+
+<!-- ============ METHOD DETAIL END ========== -->
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+
+<!-- =========== END OF NAVBAR =========== -->
+
+<HR>
+<FONT SIZE="-1">
+
+</FONT>
+
+
+
+
+<div class="jsdoc_ctime">Documentation generated by <a href="http://jsdoc.sourceforge.net/" target="_parent">JSDoc</a> on Thu Jul 19 01:13:37 2007</div>
+
+
+</BODY>
+</HTML>

@@ -1,0 +1,97 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html"/>
+	<title>日历选择器实例 -- JSR2+</title>
+	<script type="text/javascript" src="../../common/js/core.js?lib=webui,ui_calendar,valid"></script>
+	<link rel="stylesheet" href="../resources/example.css" type="text/css" media="all"/>
+</head>
+
+<body>
+<div id="bodyPanel" style="display:none">
+	<b>日历选择器实例</b><hr/><br/>
+	<!-- 面板 -->
+	<div id="panel"></div>
+	<!-- 面板内容 -->
+	<div id="contentPanel">
+		<!-- 控件实例 -->
+		<fieldset id="example"><div class="gbPanel">
+			<table class="font"><tr>
+				<td width="120px">日历选择器:</td><td><input type="text" id="datePicker1" /></td>
+			</tr><tr>
+				<td>可编辑的日历选择器:</td><td><input type="text" id="datePicker2" /></td>
+			</tr><tr>
+				<td>自定义的日历选择器:</td><td><input type="text" id="datePicker3" /></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<!-- 相关方法 -->
+		<fieldset id="method"><div class="gbPanel">
+			<table class="method-area1"><tr>
+				<td><button id="b1"></button></td><td><button id="b2"></button></td>
+				<td><button id="b3"></button></td><td><button id="b4"></button></td>
+				<td><button id="b5"></button></td>
+			</tr><tr>
+				<td><button id="b6"></button></td><td><button id="b7"></button></td>
+				<td><button id="b8"></button></td><td></td><td></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<div class="font">注: 相关方法是针对 "日历选择器" 操作的。<br/>　&nbsp;&nbsp;check 与 setCheck 是针对可编辑日历选择器操作的。</div>
+	</div>
+	<!-- 面板内容结束 -->
+</div>
+</body>
+
+<script>
+var d1, d2, d3, btn, disabled = true;
+new UI.Panel({id:"panel", caption:"应用实例 -> 日历选择器", width:520, height:300, body:"contentPanel"});
+new UI.GroupBox({id:"example", caption:"控件实例"});
+new UI.GroupBox({id:"method", caption:"相关方法"});
+//创建日历选择器
+d1 = new UI.DatePicker({id:"datePicker1", name:"datePicker1", width:160});
+d2 = new UI.DatePicker({id:"datePicker2", name:"datePicker2", width:160, date:"2006-05-18", editable:true});
+d3 = new UI.DatePicker({id:"datePicker3", name:"datePicker3", width:160, format:"M月D日 Y年"});
+//相关方法按钮
+btn = new UI.Button({id:"b1", caption:"check", width:75});
+btn.bind(function() {
+	alert(d2.check());
+});
+btn = new UI.Button({id:"b2", caption:"disable", width:75});
+btn.bind(function() {
+	d1.disable(disabled);
+	disabled = !disabled;
+});
+btn = new UI.Button({id:"b3", caption:"focus", width:75});
+btn.bind(function() {
+	d1.focus();
+});
+btn = new UI.Button({id:"b4", caption:"getValue", width:75});
+btn.bind(function() {
+	alert("'日历选择器' 的值: " + d1.getValue());
+});
+btn = new UI.Button({id:"b5", caption:"onChange", width:75});
+btn.bind(function() {
+	d1.onChange(function() {
+		alert("'日历选择器' 的onChange事件触发了!");
+	});
+	alert("设置了 '日历选择器' 的onChange事件。");
+});
+btn = new UI.Button({id:"b6", caption:"setCheck", width:75});
+btn.bind(function() {
+	d2.setCheck(Valid.checkDate, 'Y-M-D', '请输入正确的日期格式(Y-M-D)。', null);
+	alert("请在 '可编辑的日历选择器' 中输入日期, 再点击 check 按钮。");
+});
+btn = new UI.Button({id:"b7", caption:"setValue", width:75});
+btn.bind(function() {
+	d1.setValue("2222-5-25");
+});
+btn = new UI.Button({id:"b8", caption:"setWidth", width:75});
+btn.bind(function() {
+	d1.setWidth(220);
+	alert("设置 '日历选择器' 的宽度为: 220px");
+});
+
+onLoad.add(function(){ $("bodyPanel").style.display = "" });
+</script>
+
+</html>

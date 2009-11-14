@@ -1,0 +1,48 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html"/>
+	<title>面板实例 -- JSR2+</title>
+	<script type="text/javascript" src="../../common/js/core.js?lib=webui"></script>
+	<link rel="stylesheet" href="../resources/example.css" type="text/css" media="all"/>
+</head>
+
+<body>
+<div id="bodyPanel" style="display:none">
+	<b>面板实例</b><hr/><br/>
+	<!-- 面板 -->
+	<div id="panel"></div>
+	<!-- 面板内容 -->
+	<div id="contentPanel">
+		<!-- 控件实例 -->
+		<fieldset id="example"><div class="gbPanel font" style="height:120px">
+			这就是一个面板控件。
+		</div></fieldset>
+		<br/>
+		<!-- 相关方法 -->
+		<fieldset id="method"><div class="gbPanel">
+			<table class="method-area2"><tr>
+				<td><button id="b1"></button></td><td></td><td></td><td></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+	</div>
+	<!-- 面板内容结束 -->
+</div>
+</body>
+
+<script>
+var p1, btn;
+new UI.GroupBox({id:"example", caption:"控件说明"});
+new UI.GroupBox({id:"method", caption:"相关方法"});
+//创建面板|密码框
+p1 = new UI.Panel({id:"panel", caption:"应用实例 -> 我就是面板控件", width:520, height:280, body:"contentPanel"});
+//相关方法按钮
+btn = new UI.Button({id:"b1", caption:"setCaption", width:105});
+btn.bind(function() {
+	p1.setCaption("setCaption 方法修改了我的名字...");
+});
+
+onLoad.add(function(){ $("bodyPanel").style.display = "" });
+</script>
+
+</html>

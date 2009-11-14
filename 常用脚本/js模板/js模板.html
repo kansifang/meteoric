@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+</HEAD>
+
+<BODY>
+<script type="text/javascript">
+GT = {};
+// template为 一个字符串, 返回的是编译好的一个字符串数组,该数组为 runTemplate:方法的输入参数之一.   
+GT.compileTemplate= function(template){   
+            var TEMPLATE_START="#{";   
+            var TEMPLATE_END="/}";   
+            var templateC=[];   
+            var snippets=[];   
+           var current=0;   
+            while(true){   
+                var start= template.indexOf( TEMPLATE_START ,current);   
+                var sBegin=start+2;   
+                var sEnd=template.indexOf( TEMPLATE_END ,sBegin);   
+  
+                if (sBegin>=2 && sEnd>sBegin){   
+                   templateC.push(template.substring(current,start) );   
+                    var sn=template.substring(sBegin,sEnd);   
+                    if (sn.indexOf("#")==0){   
+                        sn=eval( sn.substring(1) );   
+                    }else{   
+                        snippets.push(templateC.length);   
+                   }   
+                   templateC.push( sn );   
+               }else{   
+                   templateC.push( template.substring(current) );   
+                    break;   
+               }   
+               current=sEnd+2;   
+           }   
+           templateC.push(snippets);   
+           return templateC;   
+   };   
+  
+// templateC为编译好的字符串数组, invar为模板中要传入的变量.   
+// 如果要传入多个变量, 请使用 {},或[] .   
+GT.runTemplate= function(templateC,invar){   
+        var VAR=invar;   
+  
+        var snippets=templateC[templateC.length-1];   
+		
+        var rs=[];   
+        var sIdx=0;   
+  
+       for (var i=0;i<templateC.length-1;i++ ){   
+            if (snippets[sIdx]==i){ 
+                rs.push(  eval(templateC[i]) );   
+                sIdx++;   
+           }else {   
+                rs.push( templateC[i] )   
+            }   
+        }   
+ 
+        return rs.join("");   
+  
+    };  
+</script>
+<script type="text/javascript">
+var inTmp = 'Hello,#{ VAR.custName /}。My name is #{ [VAR.myName,VAR.custName] /}. #{ abc(VAR) /}';
+var templateC= GT.compileTemplate(inTmp);   
+  
+var inArg= {   
+   custName :  'Tom',
+   myName: 'fins',
+   type : '5'
+}   
+
+var outResult = GT.runTemplate(templateC,inArg); 
+
+function abc(_this) {
+	alert(_this.custName);
+}
+
+alert(outResult);
+</script>
+</BODY>
+</HTML>

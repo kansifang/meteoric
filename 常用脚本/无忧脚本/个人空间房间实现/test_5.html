@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <body>
+    </body>
+</html>
+<script language="javascript">
+    function $(){
+        var div = document.createElement("div");
+        div.style.border = "1px solid #ff0000";
+        div.style.position = "absolute";
+        div.style.width = "100px";
+        div.style.height = "100px";
+        div.innerHTML = "canvas";
+        return div;
+    }
+    
+    function $package(a, b){
+        a[b[0]] = b[1];
+    }
+    
+    function $class(a, b){
+        var Parent = null;
+        var Self = null;
+        if (b.constructor == Array) {
+            Parent = b[0];
+            Self = b[1];
+        }
+        else {
+            if (b.constructor == Function) {
+                Self = b;
+            }
+        }
+        function T(){
+            if (Parent) 
+                Parent.apply(this);
+            Self.apply(this);
+        }
+        if (Parent) 
+            Self.prototype = new Parent();
+        return [a, T];
+    }
+    
+    function $extend(a, b){
+        return [a, b];
+    }
+    
+    function $bind(a, b){
+        a.apply(b);
+        return b;
+    }
+    
+    function $new(o){
+        var a = new o;
+        a.init();
+        return a;
+    }
+    
+    var fox = {
+        util: {},
+        event: {},
+        ui: {}
+    };
+    $package(fox.util, $class("Object", function(){
+        this.data = "Component data!";
+        this.init = function(){
+            alert("component init!");
+            return;
+        }
+        this.setProperty = function(property, value){
+            this[property] = value;
+        }
+        this.getProperty = function(property){
+            return this[property];
+        }
+    }));
+    $package(fox.event, $class("Event", function(){
+        this.data = "Component data!";
+        this.init = function(){
+            alert("component init!");
+            return;
+        }
+        this.setProperty = function(property, value){
+            this[property] = value;
+        }
+        this.getProperty = function(property){
+            return this[property];
+        }
+        this.setData = function(value){
+            this.setProperty("data", value);
+            return;
+        }
+        this.getData = function(){
+            return this.getProperty("data");
+        }
+    }));
+    $package(fox.ui, $class("Component", function(){
+        this.data = "Component data!";
+        this.init = function(){
+            alert("component init!");
+            return;
+        }
+        this.setProperty = function(property, value){
+            this[property] = value;
+        }
+        this.getProperty = function(property){
+            return this[property];
+        }
+        this.position = function(x, y){
+            return;
+        }
+        this.size = function(w, h){
+            return;
+        }
+    }));
+    $package(fox.ui, $class("Canvas", $extend(fox.ui.Component, function(){
+        var _super = arguments.callee.prototype;
+        this.init = function(){
+            _super.init();
+            alert("Canvas init!");
+        }
+    })));
+    $package(fox.ui, $class("Panel", $extend(fox.ui.Canvas, function(){
+        var _super = arguments.callee.prototype;
+        this.init = function(){
+            _super.init();
+            alert("Panel init!");
+        }
+    })));
+    $package(fox.ui, $class("TitleWindow", $extend(fox.ui.Panel, function(){
+        var _super = arguments.callee.prototype;
+        this.init = function(){
+            _super.init();
+            alert("TitleWindow init!");
+            return;
+        }
+        this.fuck = function(){
+            alert("fuck~~~");
+            return;
+        }
+    })));
+    $package(fox.ui, $class("Tree", $extend(fox.ui.Canvas, function(){
+        var _super = arguments.callee.prototype;
+        this.init = function(){
+            _super.init();
+            alert("Tree init!");
+            return;
+        }
+        this.fuck = function(){
+            alert("fuck~~~");
+            return;
+        }
+    })));
+    var $stage = document.body;
+    var component = $new(fox.ui.Component);
+    alert("?" + component.getProperty("data"));
+    component.setProperty("data", "{name:'John',sex:'female'}");
+    alert("?" + component.getProperty("data"));
+    var canvas = $new(fox.ui.Canvas);
+    var panel = $new(fox.ui.Panel);
+    var win = $new(fox.ui.TitleWindow);
+    var win1 = $bind(fox.ui.TitleWindow, $());
+    var tree = $new(fox.ui.Tree);
+    $stage.appendChild(win1);
+    win1.fuck();
+</script>

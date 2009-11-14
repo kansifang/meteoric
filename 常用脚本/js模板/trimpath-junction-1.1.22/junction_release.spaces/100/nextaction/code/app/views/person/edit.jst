@@ -1,0 +1,13 @@
+${startFormTagLocal('person', 'update', person.id)}
+ <h2>${t('Person')}: ${linkToLocal(person.displayName(), 'person', 'show', person.id)}</h2>
+ <div class="wide">
+  <label for="person[name_last]">${t('Last Name')}:</label> ${textField('person', 'name_last')}<br/>
+  <label for="person[name_first]">${t('First Name')}:</label> ${textField('person', 'name_first')}<br/>
+  <label for="person[title]">${t('Title')}:</label> ${textField('person', 'title')}<br/>
+  <label for="person[background]">${t('Background')}:</label> ${%textArea('person', 'background', { cols: 40, rows: 10, wrap: 'off' })%}<br/>
+  <div class="submit">
+    ${submitButtonLocal("doUpdate", "&nbsp;&nbsp;OK&nbsp;&nbsp;")}
+    ${linkToLocal(t('Cancel'), 'person', 'show', person.id)}
+  </div>
+ </div>
+${endFormTag()}

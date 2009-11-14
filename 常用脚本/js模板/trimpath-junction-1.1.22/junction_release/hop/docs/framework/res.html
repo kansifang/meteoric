@@ -1,0 +1,1962 @@
+<!DOPropertiesCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN""http://www.w3.org/TR/REC-html40/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+res - Helma Javascript Reference
+</TITLE>
+<LINK REL ="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+
+
+</HEAD>
+<SCRIPT>
+function asd()
+{
+parent.document.title="res - Helma Javascript Reference";
+}
+</SCRIPT>
+<BODY BGCOLOR="white" onload="asd();">
+      
+      
+
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>res</H2>
+<PRE>Object
+   |
+   +--<b>res</b>
+</PRE>
+
+
+<HR>
+
+<DL>
+   <!-- Class definition
+   <DT>class 
+   <B>res</B>
+    -->
+
+</DL>
+   
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+<!-- =========== END OF NAVBAR =========== -->
+<HR>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<!-- ======== END CONSTRUCTOR SUMMARY ======== -->
+
+&nbsp;
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+   <A NAME="field_summary"><!-- --></A>
+      <TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+         <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+            <TD COLSPAN=2><FONT SIZE="+2">
+               <B>Properties Summary</B></FONT></TD>
+         </TR>
+
+   <!-- This is one instance field summary -->
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;Boolean</CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#cache">cache</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Specifies on a per-response base whether to allow client-side caching of the response or not.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="String.html">String</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#charset">charset</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the character encoding of the output.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="String.html">String</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#contentType">contentType</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the content type of the HTTP response.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="Object.html">Object</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#data">data</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Object providing space for custom output data.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="String.html">String</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#error">error</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Property containing an internal Helma error message.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="String.html">String</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#etag">etag</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get or set the HTTP ETag for this response.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="Object.html">Object</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#handlers">handlers</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The res.handlers object is a container in the response object used to register 
+ macro handlers for the current request/response.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="Date.html">Date</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#lastModified">lastModified</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the date the resource was retrieved by the remote client.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="String.html">String</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#message">message</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffers a string for output.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="Object.html">Object</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#meta">meta</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Object providing space for general purpose per request meta information.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="String.html">String</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#realm">realm</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sets the realm for a HTTP-authentication challenge
+ <br /><br />
+ This defines the realm for a HTTP-authentication challenge.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;HttpServletResponse</CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#servletResponse">servletResponse</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Provides direct access to the servlet response header, a
+ Java object of the class Packages.javax.servlet.http.HttpServletResponse
+ <br /><br />
+ Example:
+ <pre> res.servletResponse.setHeader( "Content-Disposition", 
+ &nbsp;&nbsp;( this.mimetype.startsWith( "image/" )?</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="Array.html">Array</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#skinpath">skinpath</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The res.skinpath can be set to an array that tells Helma where to 
+ look for skinsets for the current request/response.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="Number.html">Number</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#status">status</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Read/write property containing the response's HTTP-status code.</TD>
+   </TR>
+   
+
+   </TABLE>
+   &nbsp;
+   
+
+   
+
+<!-- =========== END FIELD SUMMARY =========== -->
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TD COLSPAN=2><FONT SIZE="+2">
+<B>Methods Summary</B></FONT></TD>
+</TR>
+
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#abort">abort</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Aborts the current transaction by throwing an Error
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#addDateHeader">addDateHeader</A></B>(&lt;<a href="String.html">String</a>&gt; name, &lt;<a href="Date.html">Date</a>&gt; value)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Proxy to res.servletResponse.addDateHeader()
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#addHeader">addHeader</A></B>(&lt;<a href="String.html">String</a>&gt; name, &lt;<a href="String.html">String</a>&gt; value)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Proxy to res.servletResponse.addHeader()
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#commit">commit</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Commits the current transaction, writing all changed objects to the database, and starts a new transaction.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#debug">debug</A></B>(&lt;<a href="String.html">String</a>&gt; text)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Append any value to the output of the current page.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#dependsOn">dependsOn</A></B>(&lt;<a href="String.html">String</a>&gt; what)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Add an item to this response's dependencies.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#digest">digest</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Digest this response's dependencies to conditionally create 
+ a HTTP not-modified response.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#encode">encode</A></B>(&lt;<a href="String.html">String</a>&gt; textToEncode)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Writes a string as smooth HTML to the output buffer.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#encodeXml">encodeXml</A></B>(&lt;<a href="String.html">String</a>&gt; textToEncode)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Writes a string to the output buffer, replacing some characters with their equivalent XML entities.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#format">format</A></B>(&lt;<a href="String.html">String</a>&gt; textToFormat)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Writes a string as smooth HTML to the output buffer.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#forward">forward</A></B>(&lt;<a href="String.html">String</a>&gt; path)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Serves a static file from the application's protectedStatic directory.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getBuffer">getBuffer</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Provides access to the contents of the current repsonse buffer.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#pop">pop</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Pops a string buffer from the response object and returns its string value.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;StringBuffer</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#popBuffer">popBuffer</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Pops the current response buffer without converting it to a string.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#push">push</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Pushes a new string buffer on the response object.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#pushBuffer">pushBuffer</A></B>(&lt;StringBuffer&gt; strBuffer)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Pushes a Java StringBuffer object on the reponse object.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#redirect">redirect</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Sends an HTTP redirect message to the client.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#reset">reset</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Resets the current output buffer.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#rollback">rollback</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Rollback the current transaction and start a new one.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#setCookie">setCookie</A></B>(&lt;<a href="String.html">String</a>&gt; key,&lt;<a href="String.html">String</a>&gt; value,&lt;<a href="Number.html">Number</a>&gt; days,&lt;<a href="String.html">String</a>&gt; path,&lt;<a href="String.html">String</a>&gt; domain)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Sets a cookie to be sent to the client machine.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#setDateHeader">setDateHeader</A></B>(&lt;<a href="String.html">String</a>&gt; name, &lt;<a href="Date.html">Date</a>&gt; value)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Proxy to res.servletResponse.setDateHeader()
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#setHeader">setHeader</A></B>(&lt;<a href="String.html">String</a>&gt; name, &lt;<a href="String.html">String</a>&gt; value)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Proxy to res.servletResponse.setHeader()
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#stop">stop</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Stops the execution of the request and sends the content of the reponse buffer.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#unsetCookie">unsetCookie</A></B>(&lt;<a href="String.html">String</a>&gt; key)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Unset a previously set HTTP cookie, causing it to be 
+ discarded by the HTTP client immediately.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#write">write</A></B>(&lt;<a href="String.html">String</a>&gt; text)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Writes a string to the output buffer.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#writeBinary">writeBinary</A></B>(&lt;Packages.java.ByteArray&gt; data)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Writes binary data to the output buffer.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#writeln">writeln</A></B>(&lt;<a href="String.html">String</a>&gt; text)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Writes a string to the output buffer, adding a linebreak.
+      </TD>
+   </TR>
+
+
+</TABLE>
+
+
+
+<P>
+<!-- ========== END METHOD SUMMARY =========== -->
+
+
+    <!-- ========= CONSTRUCTOR DETAIL START ======== -->
+
+
+<!-- Constructor return value(s) -->
+
+<!-- End constructor return value(s) -->
+
+<!-- ADDITIONAL ATTRIBUTES -->
+
+<HR/>
+<!-- END ADDITIONAL ATTRIBUTES  -->
+
+<!-- ========= CONSTRUCTOR DETAIL END ======== -->
+
+
+<!-- ============ FIELD DETAIL START =========== -->
+
+   <A NAME="field_detail"><!-- --></A>
+   <TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+      <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+         <TD COLSPAN=1><FONT SIZE="+2"><B>Properties Detail</B></FONT></TD>
+      </TR>
+   </TABLE>
+
+   
+   <A NAME="cache"><!-- --></A>
+   <H3>cache</H3>
+   <PRE>Boolean&nbsp;<B>cache</B></PRE>
+   <UL>
+   Specifies on a per-response base whether to allow client-side caching of the response or not.
+ <br /><br />
+ The default value is set to true but can be changed 
+ globally by passing caching = false to the initial 
+ Helma java call.
+ <br /><br />
+ Please refer to the section about servlet 
+ properties for more details.
+ <br /><br />
+ Example:
+ <pre> res.cache = true</pre>
+   
+   </UL>
+   <HR>
+   
+   <A NAME="charset"><!-- --></A>
+   <H3>charset</H3>
+   <PRE><a href="String.html">String</a>&nbsp;<B>charset</B></PRE>
+   <UL>
+   Sets the character encoding of the output.
+ <br /><br />
+ Sets Helma's character encoding according to the 
+ <a href=http://java.sun.com/products/jdk/1.2/docs/guide/internat/encoding.doc.html">
+ list of supported encodings</a>.
+ By default, Helma uses ISO-8859-1 (western) encoding. It is also possible to 
+ set the encoding server or application wide using the charset 
+ property in a properties file.
+ <br /><br />
+ Be careful when setting the charset of a document containing 
+ a FORM. The browser returns the user-input encoded in the 
+ same way as the document. So if you set for instance the 
+ charest to UTF-8 (and don't set it in the app.properties or 
+ server.properties) you'll get scrambled input because Helma 
+ assumes the input is encoded in the standard encoding 
+ (default is ISO-8859-1). So you have to convert the returned 
+ strings from UTF8 to ISO-8859-1 (e.g. var string = 
+ new java.lang.String(new java.lang.String((req.data.input ? 
+ req.data.input : "")).getBytes("ISO-8859-1"), "UTF-8");).
+ <br /><br />
+ Example:
+ <pre> res.charset = "UTF8";
+ res.write("&Auml; &Ouml; &Uuml; &auml; &ouml; &uuml; &szlig;");
+ // this is displayed if the brower's encoding is set to "Western"
+ &Atilde; &bdquo; &Atilde; &ndash; &Atilde; &oelig; &Atilde; &curren; &Atilde; &para; &Atilde; &frac14; &Atilde; &Yuml;</pre>
+   
+   </UL>
+   <HR>
+   
+   <A NAME="contentType"><!-- --></A>
+   <H3>contentType</H3>
+   <PRE><a href="String.html">String</a>&nbsp;<B>contentType</B></PRE>
+   <UL>
+   Sets the content type of the HTTP response.
+ <br /><br />
+ The default value is "text/html".
+ <br /><br />
+ Example:
+ <pre> res.contentType='text/plain';
+ res.contentType='application/xhtml+xml';</pre>
+   
+   </UL>
+   <HR>
+   
+   <A NAME="data"><!-- --></A>
+   <H3>data</H3>
+   <PRE><a href="Object.html">Object</a>&nbsp;<B>data</B></PRE>
+   <UL>
+   Object providing space for custom output data.
+ <br /><br />
+ This object can be used to attach any property propertyName 
+ onto it to make it available in a skin via the response macro.
+ <br /><br />
+ Example:
+ <pre> File root/main.skin:
+ &lt;html&gt;
+ &lt;head&gt;
+ &lt;title&gt;&lt;% response.title %&gt;&lt;/title&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ &lt;% response.body %&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;
+ &nbsp;
+ File root/main.hac:
+ res.data.title = "Test";
+ res.data.body = "Hello, World!";
+ root.renderSkin("main");
+ &nbsp;
+ <i>&lt;html&gt;
+ &lt;head&gt;
+ &lt;title&gt;Test&lt;/title&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+ Hello, World!
+ &lt;/body&gt;
+ &lt;/html&gt;</i></pre>
+   
+   </UL>
+   <HR>
+   
+   <A NAME="error"><!-- --></A>
+   <H3>error</H3>
+   <PRE><a href="String.html">String</a>&nbsp;<B>error</B></PRE>
+   <UL>
+   Property containing an internal Helma error message.
+ <br /><br />
+ This property contains a string describing an error if one should 
+ have occured. If no error was detected, res.error contains null.
+ <br /><br />
+ A good place for this function is a custom error page to display errors in a pretty layout.
+ <br /><br />
+ Example:
+ <pre> res.write(res.error);
+ <i>Runtime error Syntax error detected near line 1, column 24, after in string starting 
+ with: 'function main_action (arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10) {'...</i></pre>
+   
+   </UL>
+   <HR>
+   
+   <A NAME="etag"><!-- --></A>
+   <H3>etag</H3>
+   <PRE><a href="String.html">String</a>&nbsp;<B>etag</B></PRE>
+   <UL>
+   Get or set the HTTP ETag for this response.
+   
+   </UL>
+   <HR>
+   
+   <A NAME="handlers"><!-- --></A>
+   <H3>handlers</H3>
+   <PRE><a href="Object.html">Object</a>&nbsp;<B>handlers</B></PRE>
+   <UL>
+   The res.handlers object is a container in the response object used to register 
+ macro handlers for the current request/response.
+ <br /><br />
+ Adding an object to res.handlers will make its macro functions and/or 
+ properties available as macros for skins.
+ <br /><br />
+ By default, res.handlers contains the objects in the request path, registered by 
+ their prototype names. For instance, res.handlers.root will always be 
+ a reference to the app's root object.</p>
+   
+   </UL>
+   <HR>
+   
+   <A NAME="lastModified"><!-- --></A>
+   <H3>lastModified</H3>
+   <PRE><a href="Date.html">Date</a>&nbsp;<B>lastModified</B></PRE>
+   <UL>
+   Sets the date the resource was retrieved by the remote client.
+ <br /><br />
+ By setting this property the remote client is told that the 
+ served resource has been modified at the given time. You then 
+ can check if the resource has changed given that the client 
+ includes this date in future requests for this resource.
+ <br /><br />
+ Example:
+ <pre> //in this example this.modificationDate is a property storing
+ //the time of the last changes to the current object
+ res.lastModified = this.modificationDate;</pre>
+   
+   </UL>
+   <HR>
+   
+   <A NAME="message"><!-- --></A>
+   <H3>message</H3>
+   <PRE><a href="String.html">String</a>&nbsp;<B>message</B></PRE>
+   <UL>
+   Buffers a string for output.
+ <br /><br />
+ When this property is set its value can be retrieved either by 
+ res.message from within an action or a JavaScript file or by 
+ the response macro from within a skin file.
+ <br /><br />
+ Additionally, it will survive an HTTP redirect which can be necessary 
+ to display warnings or error messages to the user. The property's 
+ value will be reset to null not later than a redirected response was output.
+ <br /><br />
+ Note: Please be aware that both res.message and res.data.message corresponds 
+ to the response.message macro. However, res.message has higher priority if both 
+ values should be set.
+ <br /><br />
+ Example:
+ <pre> File main.skin:
+ &lt;% response.message %>
+ &nbsp;
+ File main.hac:
+ res.message = "Hello, World!";
+ res.data.message = "Test";
+ this.renderSkin("main");
+ &nbsp;
+ <i>Hello, World!</i></pre>
+   
+   </UL>
+   <HR>
+   
+   <A NAME="meta"><!-- --></A>
+   <H3>meta</H3>
+   <PRE><a href="Object.html">Object</a>&nbsp;<B>meta</B></PRE>
+   <UL>
+   Object providing space for general purpose per request meta information.
+ <br /><br />
+ This object can be used to attach any property propertyName onto 
+ it to make it available within the scope a request.
+ <br /><br />
+ Example:
+ <pre> Inside an onRequest handler function:
+ &nbsp;&nbsp;res.meta.permissions = this.doSomething();
+ &nbsp;
+ Inside an action such as delete.hac:
+ if(res.meta.permissions | 7)
+ &nbsp;&nbsp;this.remove();</pre>
+   
+   </UL>
+   <HR>
+   
+   <A NAME="realm"><!-- --></A>
+   <H3>realm</H3>
+   <PRE><a href="String.html">String</a>&nbsp;<B>realm</B></PRE>
+   <UL>
+   Sets the realm for a HTTP-authentication challenge
+ <br /><br />
+ This defines the realm for a HTTP-authentication challenge. 
+ The realm is the name of a protected space. A server can have 
+ several realms, but resources within one realm should share 
+ the same authorisation - a valid authorisation should be valid 
+ as well for requesting another resource within the same realm.
+ <br /><br />
+ Example:
+ <pre> res.status = 401;
+ res.realm = "Helma protected area";</pre>
+   
+   </UL>
+   <HR>
+   
+   <A NAME="servletResponse"><!-- --></A>
+   <H3>servletResponse</H3>
+   <PRE>HttpServletResponse&nbsp;<B>servletResponse</B></PRE>
+   <UL>
+   Provides direct access to the servlet response header, a
+ Java object of the class Packages.javax.servlet.http.HttpServletResponse
+ <br /><br />
+ Example:
+ <pre> res.servletResponse.setHeader( "Content-Disposition", 
+ &nbsp;&nbsp;( this.mimetype.startsWith( "image/" )? "" : "attachment;" ) +  
+ &nbsp;&nbsp;"filename=\"" + this.name + "\"" );</pre>
+   
+   </UL>
+   <HR>
+   
+   <A NAME="skinpath"><!-- --></A>
+   <H3>skinpath</H3>
+   <PRE><a href="Array.html">Array</a>&nbsp;<B>skinpath</B></PRE>
+   <UL>
+   The res.skinpath can be set to an array that tells Helma where to 
+ look for skinsets for the current request/response.
+ <br /><br />
+ The elements of the array should be either HopObjects, 
+ which will be interpreted as database-resident skinsets, or strings, 
+ which will be interpreted as directory paths leading to file based skin sets.
+ <br /><br />
+ If hobj is a HopObject element in the res.skinpath array, then a skin 
+ for prototype proto named sname is expected to reside in a string 
+ property in hobj.proto.sname.skin.
+ <br /><br />
+ If path is a string, then the same skin will be looked up in a file called path/proto/sname.skin.</p>
+   
+   </UL>
+   <HR>
+   
+   <A NAME="status"><!-- --></A>
+   <H3>status</H3>
+   <PRE><a href="Number.html">Number</a>&nbsp;<B>status</B></PRE>
+   <UL>
+   Read/write property containing the response's HTTP-status code.
+ <br /><br />
+ This property defines the status code of the HTTP response.
+ Like any HTTP-Server Helma can send the client software additional information 
+ describing the response. For a list of all codes and their meaning see RFC 2616.
+ One of the common usages is to deny access and ask for authentication by responding 
+ with status code 401. The client software usually responds by asking the user 
+ for username and password.
+ The default value is 200 which is the code for "OK".
+ <br /><br />
+ Example:
+ <pre> res.status = 401;
+ //make sure to set res.realm as well when asking for http authentication
+ res.realm = "Helma protected area";</pre>
+   
+   </UL>
+   <HR>
+   
+
+
+<!-- ============ FIELD DETAIL END =========== -->
+
+<!-- ============ METHOD DETAIL START ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+   <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+      <TD COLSPAN=1><FONT SIZE="+2">
+         <B>Method Detail</B></FONT>
+      </TD>
+   </TR>
+</TABLE>
+
+<!-- One single method detail entry -->
+
+   <A NAME="abort"><!-- --></A>
+   <H3>abort</H3>
+   <PRE>void <B>abort</B>()</PRE>
+   
+      <UL>Aborts the current transaction by throwing an Error</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#stop">stop()</a><BR/>- <a href="#rollback">rollback()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="addDateHeader"><!-- --></A>
+   <H3>addDateHeader</H3>
+   <PRE>void <B>addDateHeader</B>(&lt;<a href="String.html">String</a>&gt; name, &lt;<a href="Date.html">Date</a>&gt; value)</PRE>
+   
+      <UL>Proxy to res.servletResponse.addDateHeader()</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  as String, the header name  
+      </UL> 
+   
+     <UL><CODE>value</CODE> -  as Date, the header value  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#servletResponse">servletResponse</a><BR/>- <a href="#addHeader">addHeader()</a><BR/>- <a href="#setHeader">setHeader()</a><BR/>- <a href="#setDateHeader">setDateHeader()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="addHeader"><!-- --></A>
+   <H3>addHeader</H3>
+   <PRE>void <B>addHeader</B>(&lt;<a href="String.html">String</a>&gt; name, &lt;<a href="String.html">String</a>&gt; value)</PRE>
+   
+      <UL>Proxy to res.servletResponse.addHeader()</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  as String, the header name  
+      </UL> 
+   
+     <UL><CODE>value</CODE> -  as String, the header value  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#servletResponse">servletResponse</a><BR/>- <a href="#addDateHeader">addDateHeader()</a><BR/>- <a href="#setHeader">setHeader()</a><BR/>- <a href="#setDateHeader">setDateHeader()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="commit"><!-- --></A>
+   <H3>commit</H3>
+   <PRE>void <B>commit</B>()</PRE>
+   
+      <UL>Commits the current transaction, writing all changed objects to the database, and starts a new transaction.
+ <br /><br />
+ Usually, Helma automatically wraps each request into a 
+ database transaction. Use res.commit() if you have to 
+ modify a huge ammount of HopObjects within one request and 
+ want to partition the transaction into several smaller ones.
+ <br /><br />
+ Example:
+ <pre> for (var i in collection1)
+ &nbsp;&nbsp;collection1.get(i).counter += 1;
+ // commit changes to elements of collection1 to db
+ res.commit();
+ for (var i in collection2)
+ &nbsp;&nbsp;collection2.get(i).counter -= 1;
+ // changes to elements of collection2 are committed 
+ // automatically when the request terminates</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#rollback">rollback()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="debug"><!-- --></A>
+   <H3>debug</H3>
+   <PRE>void <B>debug</B>(&lt;<a href="String.html">String</a>&gt; text)</PRE>
+   
+      <UL>Append any value to the output of the current page. 
+ <br /><br />
+ All values written with res.debug() will appear as separate 
+ items at the bottom of the page. This assumes that the 
+ content type of the current request is text/html. Since items 
+ are simply appended to the full page, res.debug() will most likely break 
+ the well-fomedness of your page, but it is usually displayed properly.
+ <br /><br />
+ Transforms the passed argument to a string (only if necessary) and 
+ appends the result to the response debug buffer.
+ <br /><br />
+ Example:
+ <pre> var now = new Date();
+ res.debug("current time: " + now);
+ &nbsp;
+ <i>current time: Tue May 20 18:59:02 CEST 2003</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>text</CODE> -  as String    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="dependsOn"><!-- --></A>
+   <H3>dependsOn</H3>
+   <PRE>void <B>dependsOn</B>(&lt;<a href="String.html">String</a>&gt; what)</PRE>
+   
+      <UL>Add an item to this response's dependencies. 
+ <br /><br />
+ If no dependency has changed between requests, 
+ an HTTP not-modified response will be generated.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>what</CODE> -  as string, an item this response depends on    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="digest"><!-- --></A>
+   <H3>digest</H3>
+   <PRE>void <B>digest</B>()</PRE>
+   
+      <UL>Digest this response's dependencies to conditionally create 
+ a HTTP not-modified response.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="encode"><!-- --></A>
+   <H3>encode</H3>
+   <PRE>void <B>encode</B>(&lt;<a href="String.html">String</a>&gt; textToEncode)</PRE>
+   
+      <UL>Writes a string as smooth HTML to the output buffer.
+ <br /><br />
+ Encodes a string by replacing linebreaks with &lt;br /&gt; tags 
+ and diacritical characters as well as HTML tags with their 
+ equivalent HTML entities and immediately outputs it.
+ <br /><br />
+ Example:
+ <pre> res.encode("&lt;b&gt;Bananer v&auml;xer\n minsann inte p&aring; tr&auml;d.&lt;/b&gt;");
+ <i>&amp;lt;b&amp;gt;Bananer v&amp;auml;xer
+ &amp;lt;br /&amp;gt; &amp;lt;br&amp;gt; minsann inte p&amp;aring; tr&amp;auml;d.&amp;lt;/b&amp;gt;</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>textToEncode</CODE> -  as String  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#encodeXml">encodeXml()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="encodeXml"><!-- --></A>
+   <H3>encodeXml</H3>
+   <PRE>void <B>encodeXml</B>(&lt;<a href="String.html">String</a>&gt; textToEncode)</PRE>
+   
+      <UL>Writes a string to the output buffer, replacing some characters with their equivalent XML entities.
+ <br /><br />
+ This function substitutes the characters '<', '>', '&', as well as single and double quotes with 
+ their predefined XML 1.0 entities. Additionally, some characters that are illegal in 
+ XML documents are silently dropped.
+ <br /><br />
+ encodeXml() is usually used to encode text for safe inclusion in parsed character data sections 
+ of XML documents.
+ <br /><br />
+ Example:
+ <pre> res.encodeXml("&lt;title&gt;Sm&oslash;rebr&amp;oslash;d&lt;/title&gt;");
+ <i>&amp;lt;title&amp;gt;Sm&oslash;rebr&amp;amp;oslash;d&amp;lt;/title&amp;gt;</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>textToEncode</CODE> -  as String  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#encode">encode()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="format"><!-- --></A>
+   <H3>format</H3>
+   <PRE>void <B>format</B>(&lt;<a href="String.html">String</a>&gt; textToFormat)</PRE>
+   
+      <UL>Writes a string as smooth HTML to the output buffer.
+ <br /><br />
+ This function outputs a string after substituting special characters 
+ in a string with their equivalent HTML entities but keeping markup tags 
+ as is and also tries to avoid <br /> tags where ever possible (e.g. in table structures).
+ <br /><br />
+ Example:
+ <pre> res.format("&lt;table&gt;\n&lt;tr&gt;&lt;td&gt;Bananer v&auml;xer\n minsann 
+ inte p&aring; tr&auml;d.&lt;/td&gt;&lt;/tr&gt;\n&lt;/table&gt;");
+ <i>&lt;table&gt;
+ &lt;tr&gt;&lt;td&gt;Bananer v&amp;auml;xer
+ &lt;br /&gt;
+ minsann inte p&amp;aring; tr&amp;auml;d.&lt;/td&gt;&lt;/tr&gt;
+ &lt;/table&gt;</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>textToFormat</CODE> -  as String  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#encode">encode()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="forward"><!-- --></A>
+   <H3>forward</H3>
+   <PRE>void <B>forward</B>(&lt;<a href="String.html">String</a>&gt; path)</PRE>
+   
+      <UL>Serves a static file from the application's protectedStatic directory.
+ <br /><br />
+ Used to serve static files from the application's 
+ protectedStatic directory. This "protected" static 
+ directory needs to be set by defining an 
+ appname.protectedStatic property in the apps.properties 
+ file. The contents of that directory are not made 
+ directly accessible through the web, only through the 
+ use of this res.forward() method.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>path</CODE> -  as String, relative to this app's protectedStatic directory    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getBuffer"><!-- --></A>
+   <H3>getBuffer</H3>
+   <PRE><a href="String.html">String</a> <B>getBuffer</B>()</PRE>
+   
+      <UL>Provides access to the contents of the current repsonse buffer.
+ <br /><br />
+ Useful for example when parsing/modifying the response after
+ the request has been handled but before the response is returned.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        String   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- global.onResponse</UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="pop"><!-- --></A>
+   <H3>pop</H3>
+   <PRE><a href="String.html">String</a> <B>pop</B>()</PRE>
+   
+      <UL>Pops a string buffer from the response object and returns its string value.
+ <br /><br />
+ This function "pops" a string buffer from the response object. 
+ The returned string contains all output written to the response 
+ since the last call of res.push().
+ <br /><br />
+ Note that more than one string buffers can be pushed on the 
+ response object, and output always goes to the last one.
+ <br /><br />
+ Example:
+ <pre> res.push();
+ res.write("foo");
+ res.encode('.');
+ res.write("bar");
+ var str = res.pop()
+ // str is "foo.bar"</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        String   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#push">push()</a><BR/>- <a href="#pushBuffer">pushBuffer()</a><BR/>- <a href="#popBuffer">popBuffer()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="popBuffer"><!-- --></A>
+   <H3>popBuffer</H3>
+   <PRE>StringBuffer <B>popBuffer</B>()</PRE>
+   
+      <UL>Pops the current response buffer without converting it to a string.
+ <br /><br />
+ This function "pops" the current StringBuffer from the 
+ response object and returns it as a Java StringBuffer object.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        StringBuffer   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#pop">pop()</a><BR/>- <a href="#pushBuffer">pushBuffer()</a><BR/>- <a href="#push">push()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="push"><!-- --></A>
+   <H3>push</H3>
+   <PRE>void <B>push</B>()</PRE>
+   
+      <UL>Pushes a new string buffer on the response object.
+ <br /><br />
+ This function "pushes" a fresh string buffer on the response 
+ object to which all response output will be redirected 
+ until res.pop() is called to retrieve the generated string.
+ <br /><br />
+ Note that more than one string buffers can be pushed on the 
+ response object, and output always goes to the last one.
+ <br /><br />
+ Example:
+ <pre> res.push();
+ res.write("foo");
+ res.encode('.');
+ res.write("bar");
+ var str = res.pop();
+ // str is "foo.bar"</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#pop">pop()</a><BR/>- <a href="#pushBuffer">pushBuffer()</a><BR/>- <a href="#popBuffer">popBuffer()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="pushBuffer"><!-- --></A>
+   <H3>pushBuffer</H3>
+   <PRE>void <B>pushBuffer</B>(&lt;StringBuffer&gt; strBuffer)</PRE>
+   
+      <UL>Pushes a Java StringBuffer object on the reponse object.
+ <br /><br />
+ This function "pushes" the provided StringBuffer to the 
+ response object. All further writes will be redirected 
+ to this buffer.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>strBuffer</CODE> -  as StringBuffer Java object, the StringBuffer to be pushed to the reponse object  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#pop">pop()</a><BR/>- <a href="#push">push()</a><BR/>- <a href="#popBuffer">popBuffer()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="redirect"><!-- --></A>
+   <H3>redirect</H3>
+   <PRE>void <B>redirect</B>()</PRE>
+   
+      <UL>Sends an HTTP redirect message to the client.
+ <br /><br />
+ Note: JavaScript code following this command will be ignored.
+ <br /><br />
+ Example:
+ <pre> res.redirect(this.href());</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="reset"><!-- --></A>
+   <H3>reset</H3>
+   <PRE>void <B>reset</B>()</PRE>
+   
+      <UL>Resets the current output buffer.
+ <br /><br />
+ Example:
+ <pre> res.write("Test");
+ // changing my mind (e.g. an error occured)
+ res.reset();
+ res.write("Hello, World!");
+ &nbsp;
+ <i>Hello, World!</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="rollback"><!-- --></A>
+   <H3>rollback</H3>
+   <PRE>void <B>rollback</B>()</PRE>
+   
+      <UL>Rollback the current transaction and start a new one.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#commit">commit()</a><BR/>- <a href="#abort">abort()</a><BR/>- <a href="#stop">stop()</a></UL><B>Throws:</B><UL>- Exception thrown if rollback fails  </UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="setCookie"><!-- --></A>
+   <H3>setCookie</H3>
+   <PRE>void <B>setCookie</B>(&lt;<a href="String.html">String</a>&gt; key,&lt;<a href="String.html">String</a>&gt; value,&lt;<a href="Number.html">Number</a>&gt; days,&lt;<a href="String.html">String</a>&gt; path,&lt;<a href="String.html">String</a>&gt; domain)</PRE>
+   
+      <UL>Sets a cookie to be sent to the client machine.
+ <br /><br />
+ All arguments after nameString and valueString are optional.
+ <br /><br />
+ daysNumber specifies the number of days until the cookie expires.
+ If set to 0, the cookie will be deleted immediately.
+ If the argument is not specified or set to a negative value, the cookie 
+ will be discarded is at the end of the browser session.
+ <br /><br />
+ pathString specifies the path on which to set the cookie (defaults to /)
+ <br /><br />
+ domainString specifies the domain on which to set the cookie (defaults to unset)
+ <br /><br />
+ Example:
+ <pre> res.setCookie("username", "michi");
+ res.setCookie("password", "strenggeheim", 10, "/mypath", ".mydomain.org");</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>key</CODE> -  as String  
+      </UL> 
+   
+     <UL><CODE>value</CODE> -  as String  
+      </UL> 
+   
+     <UL><CODE>days</CODE> -  as Number  
+      </UL> 
+   
+     <UL><CODE>path</CODE> -  as String  
+      </UL> 
+   
+     <UL><CODE>domain</CODE> -  as String    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="setDateHeader"><!-- --></A>
+   <H3>setDateHeader</H3>
+   <PRE>void <B>setDateHeader</B>(&lt;<a href="String.html">String</a>&gt; name, &lt;<a href="Date.html">Date</a>&gt; value)</PRE>
+   
+      <UL>Proxy to res.servletResponse.setDateHeader()</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  as String, the header name  
+      </UL> 
+   
+     <UL><CODE>value</CODE> -  as Date, the header value  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#servletResponse">servletResponse</a><BR/>- <a href="#addHeader">addHeader()</a><BR/>- <a href="#addDateHeader">addDateHeader()</a><BR/>- <a href="#setHeader">setHeader()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="setHeader"><!-- --></A>
+   <H3>setHeader</H3>
+   <PRE>void <B>setHeader</B>(&lt;<a href="String.html">String</a>&gt; name, &lt;<a href="String.html">String</a>&gt; value)</PRE>
+   
+      <UL>Proxy to res.servletResponse.setHeader()</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  as String, the header name  
+      </UL> 
+   
+     <UL><CODE>value</CODE> -  as String, the header value  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#servletResponse">servletResponse</a><BR/>- <a href="#addHeader">addHeader()</a><BR/>- <a href="#addDateHeader">addDateHeader()</a><BR/>- <a href="#setDateHeader">setDateHeader()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="stop"><!-- --></A>
+   <H3>stop</H3>
+   <PRE>void <B>stop</B>()</PRE>
+   
+      <UL>Stops the execution of the request and sends the content of the reponse buffer.
+ <br /><br />
+ Note that this method is intended for use in the context of an 
+ onRequest handler and not for use inside of actions, which would 
+ likely lead to bad coding practices.
+ <br /><br />
+ Example:
+ <pre>function onRequest() {
+ &nbsp;&nbsp;if (fooIsCached()) {
+ &nbsp;&nbsp;&nbsp;&nbsp;res.write(fooFromCache());
+ &nbsp;&nbsp;&nbsp;&nbsp;res.stop();
+ &nbsp;&nbsp;}
+ }</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#abort">abort()</a><BR/>- <a href="#rollback">rollback()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="unsetCookie"><!-- --></A>
+   <H3>unsetCookie</H3>
+   <PRE>void <B>unsetCookie</B>(&lt;<a href="String.html">String</a>&gt; key)</PRE>
+   
+      <UL>Unset a previously set HTTP cookie, causing it to be 
+ discarded by the HTTP client immediately.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>key</CODE> -  as String, the name of the cookie to be discarded    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="write"><!-- --></A>
+   <H3>write</H3>
+   <PRE>void <B>write</B>(&lt;<a href="String.html">String</a>&gt; text)</PRE>
+   
+      <UL>Writes a string to the output buffer.
+ <br /><br />
+ Transforms the passed argument to a string (only if necessary) 
+ and appends the result to the response string buffer. Throws an error 
+ if no argument or an undefined argument is passed.
+ <br /><br />
+ Example:
+ <pre> var now = new Date();
+ res.write("current time: " + now);
+ &nbsp;
+ <i>current time: Thu Feb 15 23:34:29 GMT+01:00 2001</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>text</CODE> -  as String    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="writeBinary"><!-- --></A>
+   <H3>writeBinary</H3>
+   <PRE>void <B>writeBinary</B>(&lt;Packages.java.ByteArray&gt; data)</PRE>
+   
+      <UL>Writes binary data to the output buffer.
+ <br /><br />
+ This function takes one argument, which must be a 
+ Java byte array. Useful when handling binary data 
+ retrieved via http file upload.
+ <br /><br />
+ Example:
+ <pre> var upload = req.data.fileUpload;
+ res.writeBinary(upload.getContent());</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>data</CODE> -  as Packages.java.ByteArray    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="writeln"><!-- --></A>
+   <H3>writeln</H3>
+   <PRE>void <B>writeln</B>(&lt;<a href="String.html">String</a>&gt; text)</PRE>
+   
+      <UL>Writes a string to the output buffer, adding a linebreak.
+ <br /><br />
+ Transforms the passed argument to a string 
+ (only if necessary) and appends the result together 
+ with a trailing linebreak to the response string 
+ buffer. Throws an error if no argument or an undefined 
+ argument is passed.
+ <br /><br />
+ Example:
+ <pre> var now = new Date();
+ res.writeln("current time:");
+ res.writeln(now);
+ &nbsp;
+ <i>current time:<br />
+ Thu Feb 15 23:34:29 GMT+01:00 2001</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>text</CODE> -  as String    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+
+
+<!-- ============ METHOD DETAIL END ========== -->
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+
+<!-- =========== END OF NAVBAR =========== -->
+
+<HR>
+<FONT SIZE="-1">
+
+</FONT>
+
+
+
+
+<div class="jsdoc_ctime">Documentation generated by <a href="http://jsdoc.sourceforge.net/" target="_parent">JSDoc</a> on Thu Jul 19 01:13:37 2007</div>
+
+
+</BODY>
+</HTML>

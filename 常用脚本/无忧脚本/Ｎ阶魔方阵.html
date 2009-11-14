@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Untitled Document</title>
+    </head>
+    <body>
+        <script language="JavaScript">
+            function MagicSquare(n){
+                if (isNaN(n) || n < 2 || n % 2 == 0 || n == null) 
+                    /*
+                 return "Error! 你输入的"+n+"必须是"+'数字'.fontcolor('red')+"且大于"+'1'.fontcolor('red')+"的"+'奇数'.fontcolor('red');
+                 */
+                    n = 3;
+                for (var i = 0; i < n; i++) {
+                    num = []
+                    for (var j = 0; j < n; j++) 
+                        num[j] = []
+                }
+                i = 0;
+                j = Math.floor(n / 2);
+                num[i][j] = 1;
+                for (var k = 2; k <= n * n; k++) {
+                    if (num[i][j] % n == 0) {
+                        if (i >= n - 1) 
+                            i = 0;
+                        else 
+                            i++;
+                    }
+                    else {
+                        if (j >= n - 1) 
+                            j = 0;
+                        else 
+                            j++;
+                        if (i <= 0) 
+                            i = n - 1;
+                        else 
+                            i--;
+                    }
+                    num[i][j] = k;
+                }
+                return num;
+            }
+            
+            n = Math.floor(Math.random() * 15) * 2 + 3
+            k = MagicSquare(n);
+            document.write(k.length + "阶魔方阵：");
+            document.write("<table border='1' bordercolor='red' cellspacing='0' cellpadding='1'>");
+            for (var i = 0; i < k.length; i++) {
+                document.write("<tr>");
+                for (var j = 0; j < k.length; j++) {
+                    document.write("<td align='center' width='30' height='30'>" + k[i][j] + "</td>");
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        </script>
+    </body>
+</html>

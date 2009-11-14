@@ -1,0 +1,12 @@
+
+TemplateEngine=function(opt_template,opt_writer){this.template=opt_template||"";this.writer=opt_writer;if(opt_template){this.parse();}}
+TemplateEngine.prototype.template=null;TemplateEngine.prototype.writer=null;TemplateEngine.prototype.expression=null;TemplateEngine.prototype.parse=function(opt_template){var expr=new TemplateEngine.TextWriter;var i=0,j;var s=String(opt_template||this.template);while(i<s.length){j=s.indexOf("<%",i);if(j==-1){this._addWrite(expr,s.substr(i));break;}else{this._addWrite(expr,s.substring(i,j));i=j;}
+j=s.indexOf("%>",i);if(j==-1){throw"Missing '%>' at end of template";}
+this._addCode(expr,s.substring(i+2,j));i=j+2;}
+this.expression=expr.toString();};TemplateEngine.prototype.evaluate=function(opt_writer,opt_data){var out=opt_writer||this.writer||new TemplateEngine.TextWriter;if(!("write"in out)){throw"Writer does not have an write method";}
+if(!("writeln"in out)){throw"Writer does not have an writeln method";}
+if(opt_data){if(typeof opt_data=="string"){opt_data=eval("("+opt_data+")");}
+with(opt_data){eval(this.expression);}}else{eval(this.expression);}
+return out.toString();};TemplateEngine.parse=function(template,writer,opt_data){var jst=new TemplateEngine;jst.parse(template);return jst.evaluate(writer,opt_data);};TemplateEngine.prototype._addWrite=function(exprWriter,text){if(text.length==0){return;}
+exprWriter.write("out.write(\""+text.replace(/\\|\"|\n|\r/g,function(s){switch(s){case"\\":return"\\\\";case"\"":return"\\\"";case"\n":return"\\n";case"\r":return"\\r";}})+"\");");};TemplateEngine.prototype._addCode=function(exprWriter,text){if(text.charAt(0)=="="){exprWriter.write("out.write("+text.substr(1)+");");}else if(text.charAt("0")=="-"&&text.charAt(1)=="-"){if(text.charAt(text.length-1)!="-"||text.charAt(text.length-2)!="-"){throw"Incorrect template comment";}}else{exprWriter.write(text);}};TemplateEngine.TextWriter=function(){this._text="";this._sb=[];}
+TemplateEngine.TextWriter.prototype.write=function(s){this._sb.push(s);};TemplateEngine.TextWriter.prototype.writeln=function(s){this._sb.push(s+"\n");};TemplateEngine.TextWriter.prototype.toString=function(){this._text=this._sb.join("");this._sb=[];return this._text;};

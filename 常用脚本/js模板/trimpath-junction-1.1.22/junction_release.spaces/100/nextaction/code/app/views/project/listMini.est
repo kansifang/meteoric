@@ -1,0 +1,14 @@
+<div class="projectListMini listMini">
+<h2><%= linkToLocal(t('Your Projects'), 'project', 'index') %>:</h2>
+
+<% for (var i = 0; i < res.activeProjects.length; i++) { %>
+  &nbsp;
+  <% if (res.activeProjects[i].namePrefix == '') { %>
+      <b><%= projectLink(res, activeProjects[i]) %></b>
+  <% } else { %>
+      <%= res.activeProjects[i].namePrefix %>
+      <%= projectLink(res, activeProjects[i]) %>
+  <% } %>
+  <br/>
+<% } %>
+</div>

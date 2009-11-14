@@ -1,0 +1,1356 @@
+/*定义界面主体包括（字体、边距、滚动条样式）*/
+body { 
+    font-family: "arial", "helvetica", "sans-serif", "宋体"; 
+	font-size: 9pt; 
+    margin: 0px;
+	scrollbar-face-color:#efefe7;
+    scrollbar-highlight-color:#ffffff;
+    scrollbar-3dlight-color:#a5a5a5;
+    scrollbar-darkshadow-color:#a5a5a5;
+    scrollbar-shadow-color:#d6d6ce;
+    scrollbar-arrow-color:#003184;
+    scrollbar-track-color:#deded6;
+	}
+  /*注释：定义图片引用*/
+  img
+  {
+    border:none;
+    margin:0px;
+    padding:0px;
+  }
+
+img.popupButton {
+	vertical-align: text-bottom;
+	cursor:pointer;
+}
+input.msg{
+	dyn-alt:expression(
+		onmouseover == null?(onmouseover = function()
+		{
+			if(this.value != "" && self["__msg__Span"] == null && typeof(Element) != "undefined" && Element.getPosition != null)
+			{
+				var pos = Element.getPosition(this);
+				var oDiv = document.createElement("div");
+				oDiv.id = "__msg__Span"
+				oDiv.style.border = "solid 1px #CCABBA";
+				oDiv.style.position = "absolute";
+				oDiv.style.padding = "3 3 3 3";
+				oDiv.style.backgroundColor = "#EAFFFF";
+				oDiv.style.width = "220px";
+				if(event.x + 220 > self.window.document.body.clientWidth)
+					oDiv.style.left = self.window.document.body.clientWidth - 220;
+				else oDiv.style.left = event.x;
+				oDiv.style.top = pos.y + this.clientHeight;
+				oDiv.innerHTML = this.value;
+				document.body.appendChild(oDiv);
+			}
+		}):true,onmouseout == null?(onmouseout = function()
+		{
+			if(self["__msg__Span"] != null) document.body.removeChild(self["__msg__Span"]);	
+		}):true,onmousemove == null?(onmousemove = function()
+		{
+			if(self["__msg__Span"] != null) 
+			if(event.x + 220 > self.window.document.body.clientWidth)
+					self["__msg__Span"].style.left = self.window.document.body.clientWidth - 220;
+			else self["__msg__Span"].style.left = event.x;
+		}):true
+	);
+}
+table.main{
+	width:98%;
+	height:585px;
+	margin-top: 0px;
+	margin-left: 8px;
+	border-right: #94a5b5 1px solid; 
+	border-top: #94a5b5 0px solid; 
+	border-left: #94a5b5 1px solid; 
+	border-bottom: #94a5b5 1px solid;
+}
+/*字体样式·全局，建议用于div、span，不要用于font和table*/
+/*加大字体*/
+.bigtext { 
+    font-family: "arial", "helvetica", "sans-serif",""; 
+	font-size: 14px; 
+	line-height: 150%; 
+	color: #ffffff;
+	font-weight: bold;
+	 }
+/*加粗字体*/ 
+.boldtext {
+	font-family: "arial", "helvetica", "sans-serif", "";
+	font-size: 12px;
+	line-height: 150%;
+	color: #ffffff;
+	font-weight: bold;
+	 }
+/*灰体，注意尽量不要用它来表示“非激活”状态，因为浏览器会为disable状态自动导入默认的样式*/
+.boldtextgray {
+	font-family: "arial", "helvetica", "sans-serif", "";
+	font-size: 12px;
+	line-height: 150%;
+	color: #838383;
+	font-weight: bold;
+	 }
+/*红色字体，用来标识必填项*/
+.boldtextred {
+	font-family: "arial", "helvetica", "sans-serif", "";
+	font-size: 12px;
+	line-height: 150%;
+	color: #9a0000;
+	font-weight: bold;
+	 }
+	 
+	 /*红色字体，用来标识必填项*/
+.boldtextblack {
+	font-family: "arial", "helvetica", "sans-serif", "";
+	font-size: 12px;
+	line-height: 150%;
+	color: black;
+	font-weight: bold;
+	 }
+
+span.main_panel_with_trees
+{
+	width:585px;
+	height:100%;
+	margin-left:3px;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+span.main_panel_without_trees
+{
+	width:780px;
+	height:100%;
+	margin-left:3px;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+/*对页面上的可编辑框或区域应用此样式*/
+div.editform
+	{
+		margin-top:10px;
+		border:1px solid #94a5b5;
+		padding:10 10 10 10;
+		padding-top: 0;
+		display:none;
+	}
+/*对页面上的绘图区域应用此样式*/
+div.canvas
+{
+	position:"relative";
+	background-color:"#CFCFCF";
+	border: solid 1px #b4b4b4;
+}
+/*默认的form样式，取消了间隔和缩进*/
+form {
+		margin: 0 0 0 0;
+		padding: 0 0 0 0; 
+	}
+
+/***组合样式，用来展示页面上的select框***/
+span.combobox {
+	font: 9pt "宋体";
+	background-color: #ffffff;
+	height: 16px;
+	border-bottom: #b4b4b4 1px double; 
+    border-left: #b4b4b4 1px double; 
+	border-right: #b4b4b4 1px double; 
+	border-top: #b4b4b4 1px double;
+	overflow:hidden;
+}
+
+select.noborder {
+	width: 157px;
+	font: 9pt "宋体";
+	height: 20px;
+	margin:-2 -2 -2 -2;
+}
+/*************************************/
+
+/*表格缺省样式*/
+table { 
+    font-family: "arial", "helvetica", "sans-serif",""; 
+	font-size: 9pt; 
+	line-height: 150%; 
+	color: #000000;
+	 }
+/*表格样式，可编辑列表...*/
+table.listtable {
+	width:100%;
+	margin-top:20px;
+	font:9pt 宋体;
+	background-color:#aca7ac;
+}
+/*左边树型菜单表格距离*/
+.table1
+	{
+	margin: 9 0 0 6;
+	}
+	
+/*还没用到*/
+.table2
+	{
+	margin: 3px;
+	}	
+	
+/*首页表格与表格之间的距离*/
+.table3
+	{
+	margin: 7px 0 0 0;
+	}
+	
+/**组合样式：页签界面外框*/	
+.table4
+	{
+	margin-top: 9px;
+	margin-left: 8px;
+	}
+ 
+.table5
+	{
+	margin-top: 0px;
+	margin-left: 8px;
+	
+	}
+
+/*默认单元格样式——禁止换行
+td{
+	nw:expression(this.nowrap=true);
+}*/
+
+
+.td1
+	{
+	padding-top: 14px;
+	padding-left: 14px;
+	padding-right: 14px;
+	padding-bottom: 14px;
+	}
+/*弹出编辑窗口，控制边距*/
+.td2
+	{
+	padding: 10px;
+	}
+/*弹出编辑窗口，提示信息栏边距*/
+.td3
+	{
+	padding-top: 0px;
+	padding-left: 24px;
+	padding-right: 24px;
+	padding-bottom: 0px;
+	}
+.td4
+	{
+	padding-top: 14px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	}
+/*单元格内容样式：新增hhyun060720*/	
+.td5
+	{
+	padding: 6 4 10 4;
+	}
+
+/*单元格内容样式*/
+td.note{
+	padding-left:6px;
+	padding-top: 3;
+	padding-bottom: 1;
+}
+
+/*表格中的复选框样式*/
+td.checkbox{
+	width:35px;
+	text-align:center;
+	padding-top: 3;
+	padding-bottom: 1;
+}
+
+/*表格标题行样式*/
+tr.tablehead{
+	text-align:center;
+	height:22px;
+	background-color:#c1d4e3;
+}
+/*表格标题列样式*/
+td.title{
+	background-image:url(/resource/images/tab_title_bg.gif);
+}
+/*内容行样式1*/
+tr.content0{
+	background-color: #f6f6f6;
+	height: 14px;
+}
+
+
+tr.titrow
+     {
+	font-family: "";
+	font-size: 9px;
+	color: #ffffff;
+	height: 24px;
+     } 
+tr.note1
+		{
+	background-color: #ebf2f9;
+	height: 22px;
+	color: #000000;
+		}
+.td {
+	 border-bottom: #a5b1c1 1px double; 
+     border-left: #a5b1c1 0px double; 
+	 border-right: #a5b1c1 0px double; 
+	 border-top: #a5b1c1 0px double;
+}
+
+/*页签体边框、边距控制*/
+.bigtableborder
+	{
+	margin-top: 0px;
+	margin-left: 8px;
+	border-right: #94a5b5 1px solid; 
+	border-top: #94a5b5 0px solid; 
+	border-left: #94a5b5 1px solid; 
+	border-bottom: #94a5b5 1px solid;
+	}
+/*还没用到
+.table5
+	{
+	margin-top: 0px;
+	margin-left: 8px;
+	}*/
+
+
+/*组织架构边框控制*/
+.tableborder1
+	{
+	border: #7fa0bf 1px solid; 
+	}
+	
+/*选择边框控制*/
+.tableborder2
+	{
+	border: #808080 1px solid; 
+	}
+
+/***组合样式：信息分类字体、脚线样式*/
+.bartext {
+	font-family: "arial", "helvetica", "sans-serif", "";
+	font-size: 12px;
+	line-height: 150%;
+	color: #5f6050;
+	font-weight: bold;
+	 }
+.trborder1
+	{
+	border-right: #838574 0px solid; 
+	border-top: #838574 0px solid; 
+	border-left: #838574 0px solid; 
+	border-bottom: #838574 1px solid;
+	}
+/*****************************************/
+
+/**组合样式：列表表格内线边框*/
+.trborder2
+	{
+	padding:1px 2px 1px 2px;
+	border-right: #a4a6a4 1px solid; 
+	border-top: #a4a6a4 0px solid; 
+	border-left: #a4a6a4 0px solid; 
+	border-bottom: #a4a6a4 1px solid;
+	}
+
+.trborder3
+	{
+	padding:1px 2px 1px 2px;
+	border-right: #a4a6a4 0px solid; 
+	border-top: #a4a6a4 0px solid; 
+	border-left: #a4a6a4 0px solid; 
+	border-bottom: #a4a6a4 1px solid;
+	}
+/*************************************************/
+
+/**组合样式：动作下拉菜单*/
+.traction
+	{
+	padding: 1px;
+	border-right: #526d8c 1px solid; 
+	border-top: #526d8c 0px solid; 
+	border-left: #526d8c 1px solid; 
+	border-bottom: #526d8c 1px solid
+	}
+
+.traction2
+	{
+	border-right: #526d8c 0px solid; 
+	border-top: #526d8c 0px solid; 
+	border-left: #526d8c 0px solid; 
+	border-bottom: #526d8c 1px solid
+	}
+
+.traction3
+	{
+	border-right: #526d8c 1px solid; 
+	border-top: #526d8c 1px solid; 
+	border-left: #526d8c 1px solid; 
+	border-bottom: #526d8c 0px solid
+	}
+/***********************************************/
+
+/*定义输入框类型：不可编辑状态*/
+.textbox
+    {
+     background-color:ffffff; 
+	 border-bottom: #b4b4b4 1px double; 
+     border-left: #b4b4b4 1px double; 
+	 border-right: #b4b4b4 1px double; 
+	 border-top: #b4b4b4 1px double;
+
+	 color: expression(this.readonly==true?"#808080":"#000000");
+	 }
+
+input.checkbox{
+	width:12px;
+	height:12px;
+}
+
+input.textbox
+	{
+		/*font: 9pt "宋体";*/
+		background-color: #ffffff;
+		width:156px;
+		height: 20px;
+		vertical-align:middle;
+		text-align:middle;
+		border-bottom: #b4b4b4 1px double; 
+		border-left: #b4b4b4 1px double; 
+		border-right: #b4b4b4 1px double; 
+		border-top: #b4b4b4 1px double;
+		color: expression(this.readonly==true?"#808080":"#000000");
+	}
+
+input.button
+	{
+		font-family: 宋体;
+		font-size: 9pt;
+		/*background-image : url(/resource/images/left_menu_bg_blue.gif);*/
+		background-color:#e7edf4;
+		height:20px;
+		border : solid 1px #86a8ce;
+		width:34px;
+		text-align : center;
+		padding-top : 3px;
+		color: #000000;
+		cursor: pointer;
+	}
+
+/*数量输入框：只能输入0~9数字*/
+/*如果包括+-://if(TextBoxElement.getCursorPosition(this)==0 && (ch=="+"||ch=="-")
+								|| !isNaN(parseInt(ch)))*/
+input.quantity
+	{
+	 ime-mode:disabled;
+     background-color:ffffff; 
+	 border-bottom: #b4b4b4 1px double; 
+     border-left: #b4b4b4 1px double; 
+	 border-right: #b4b4b4 1px double; 
+	 border-top: #b4b4b4 1px double;
+	 color:expression(this.readonly==true?"#808080":"#000000");
+	 text-align:right;
+	 keydown:expression(
+							onkeypress==null?
+							(onkeypress=function()
+							{
+								var ch = String.fromCharCode(event.keyCode);
+								var pos = TextBoxElement.getCursorPosition(this);
+
+								var testVal = this.value.substring(0, pos) + ch + this.value.substring(pos);
+
+								if(/^([-])?(0|[1-9][0-9]*)?$/.test(testVal))
+								{
+									return true;
+								}
+								/*if(!isNaN(parseInt(ch)))
+								{
+									return true;
+								}*/
+								return false;
+							}):true
+					   );
+	}
+	input.quantity_boxBULUE
+	{
+	 ime-mode:disabled;
+      width:156px;
+	 border-bottom: #7b9ebc 1px double; 
+     border-left: #7b9ebc 1px double; 
+	 border-right: #7b9ebc 1px double; 
+	 border-top: #7b9ebc 1px double;
+	 color: expression(this.readonly==true?"#808080":"#000000");
+	 text-align:right;
+	 keydown:expression(
+							onkeypress==null?
+							(onkeypress=function()
+							{
+								var ch = String.fromCharCode(event.keyCode);
+								
+								if(!isNaN(parseInt(ch)))
+								{
+									return true;
+								}
+								return false;
+							}):true
+					   );
+	}
+
+	/*数量输入框：可以输入负数*/
+/*如果包括+-://if(TextBoxElement.getCursorPosition(this)==0 && (ch=="+"||ch=="-")
+								|| !isNaN(parseInt(ch)))*/
+input.negativeQuantity
+	{
+	 ime-mode:disabled;
+     background-color:ffffff; 
+	 border-bottom: #b4b4b4 1px double; 
+     border-left: #b4b4b4 1px double; 
+	 border-right: #b4b4b4 1px double; 
+	 border-top: #b4b4b4 1px double;
+	 color:expression(this.readonly==true?"#808080":"#000000");
+	 text-align:right;
+	 keydown:expression(
+							onkeypress==null?
+							(onkeypress=function()
+							{
+								var ch = String.fromCharCode(event.keyCode);
+								var pos = TextBoxElement.getCursorPosition(this);
+
+								var testVal = this.value.substring(0, pos) + ch + this.value.substring(pos);
+
+								if(/^([+-])?(0|[1-9][0-9]*)?$/.test(testVal))
+								{
+									return true;
+								}
+								return false;
+							}):true
+							
+					   );
+	}
+	/*小数输入框*/
+input.point_boxBULUE
+	{
+	 ime-mode:disabled;
+      width:156px;
+	 border-bottom: #7b9ebc 1px double; 
+     border-left: #7b9ebc 1px double; 
+	 border-right: #7b9ebc 1px double; 
+	 border-top: #7b9ebc 1px double;
+	 color: expression(this.readonly==true?"#808080":"#000000");
+	 text-align:right;
+	 keydown:expression(
+							onkeypress==null?
+							(onkeypress=function()
+							{
+								var ch = String.fromCharCode(event.keyCode);
+								var pos = TextBoxElement.getCursorPosition(this);
+
+								var testVal = this.value.substring(0, pos) + ch + this.value.substring(pos);
+
+								if(/^([+-])?(0|[1-9][0-9]*)([.][0-9]{0,2})?$/.test(testVal))
+								{
+									return true;
+								}
+								return false;
+							}):true,
+							onchange==null?
+							(onchange=function()
+							{
+								if(parseFloat(this.value).toFixed(2) >= 0 )
+									this.value= parseFloat(this.value).toFixed(2);
+								else
+									this.value= 0;
+							}):true
+					   );
+	}
+/*金额输入框*/
+input.money
+	{
+	 ime-mode:disabled;
+     background-color:ffffff; 
+	 border-bottom: #b4b4b4 1px double; 
+     border-left: #b4b4b4 1px double; 
+	 border-right: #b4b4b4 1px double; 
+	 border-top: #b4b4b4 1px double;
+	 color:expression(this.readonly==true?"#808080":"#000000");
+	 text-align:right;
+	 keydown:expression(
+							onkeypress==null?
+							(onkeypress=function()
+							{
+								var ch = String.fromCharCode(event.keyCode);
+								var pos = TextBoxElement.getCursorPosition(this);
+
+								var testVal = this.value.substring(0, pos) + ch + this.value.substring(pos);
+								if(/^([+-])?(0|[1-9,][0-9]*)(\.[0-9]{0,2})?$/.test(testVal))
+								{
+									return true;
+								}
+								return false;
+							}):true,
+							onchange==null?
+							(onchange=function()
+							{
+								this.value = parseFloat(this.value).toFixed(2);
+							}):true
+					   );
+	}
+
+/*金额输入框*/
+input.dotmoney
+	{
+	 ime-mode:disabled;
+     background-color:ffffff; 
+	 border-bottom: #b4b4b4 1px double; 
+     border-left: #b4b4b4 1px double; 
+	 border-right: #b4b4b4 1px double; 
+	 border-top: #b4b4b4 1px double;
+	 color:expression(this.readonly==true?"#808080":"#000000");
+	 text-align:right;
+	 keydown:expression(
+							onkeypress==null?
+							(onkeypress=function()
+							{
+								var ch = String.fromCharCode(event.keyCode);
+								var pos = TextBoxElement.getCursorPosition(this);
+
+								var testVal = this.value.substring(0, pos) + ch + this.value.substring(pos);
+
+								if(ch != "," && /^([+-])?(0|[1-9]([,]?[0-9])*)(\.[0-9]{0,2})?$/.test(testVal))
+								{
+									return true;
+								}
+								return false;
+							}):true
+					   );
+	}
+	input.moneyLine_noexpr
+	{
+	 ime-mode:disabled;
+     background-color:f6f6f6; 
+	 border-bottom: #b4b4b4 1px double; 
+     border-left: #b4b4b4 0px double; 
+	 border-right: #b4b4b4 0px double; 
+	 border-top: #b4b4b4 0px double;
+	 text-align:right;
+	 width:156px;
+	}
+	input.moneyLine
+	{
+	 ime-mode:disabled;
+     background-color:f6f6f6; 
+	 border-bottom: #b4b4b4 1px double; 
+     border-left: #b4b4b4 0px double; 
+	 border-right: #b4b4b4 0px double; 
+	 border-top: #b4b4b4 0px double;
+	 text-align:right;
+	 width:156px;
+	 keydown:expression(
+							onkeypress==null?
+							(onkeypress=function()
+							{
+								var ch = String.fromCharCode(event.keyCode);
+								var pos = TextBoxElement.getCursorPosition(this);
+
+								var testVal = this.value.substring(0, pos) + ch + this.value.substring(pos);
+
+								if(/^([+-])?(0|[1-9][0-9]*)(\.[0-9]{0,2})?$/.test(testVal))
+								{
+									return true;
+								}
+								return false;
+							}):true,
+							onchange==null?
+							(onchange=function()
+							{
+								this.value = parseFloat(this.value).toFixed(2);
+							}):true
+					   );
+	}
+/***************************************/
+.textboxgray
+     {
+     background-color: ; 
+	 border-bottom: #b4b6b4 1px double; 
+     border-left: #b4b6b4 1px double; 
+	 border-right: #b4b6b4 1px double; 
+	 border-top: #b4b6b4 1px double;
+}
+
+.textboxgray2
+     {
+     background-color:#ECECEC; 
+	 border-bottom: #b4b6b4 1px double; 
+     border-left: #b4b6b4 1px double; 
+	 border-right: #b4b6b4 1px double; 
+	 border-top: #b4b6b4 1px double;
+}
+
+/*定义输入框类型：线*/
+.textboxline 
+    {
+     width:156px;
+	 background-color:f6f6f6; 
+	 border-bottom: #b4b4b4 1px double; 
+     border-left: #b4b4b4 0px double; 
+	 border-right: #b4b4b4 0px double; 
+	 border-top: #b4b4b4 0px double;
+} 
+
+.textboxline_1
+    {
+     width:100%;
+     background-color:#FFFBFF; 
+	 border-bottom: #b4b4b4 1px double; 
+     border-left: #b4b4b4 0px double; 
+	 border-right: #b4b4b4 0px double; 
+	 border-top: #b4b4b4 0px double;
+	 }
+	 
+.textboxline_2
+    {
+     width:156px;
+     background-color:#ECECEC; 
+	 border-bottom: #b4b4b4 1px double; 
+     border-left: #b4b4b4 0px double; 
+	 border-right: #b4b4b4 0px double; 
+	 border-top: #b4b4b4 0px double;
+	 }
+/*定义输入框类型：没有边框*/
+.textboxline_w 
+    {
+     
+	 background-color:f6f6f6; 
+	 border-bottom: #b4b4b4 0px double; 
+     border-left: #b4b4b4 0px double; 
+	 border-right: #b4b4b4 0px double; 
+	 border-top: #b4b4b4 0px double;
+	 text-align:center;
+} 
+
+/*定义输入框类型：可编辑*/
+.textboxbulue 
+     {
+	 width:156px;
+	 border-bottom: #7b9ebc 1px double; 
+     border-left: #7b9ebc 1px double; 
+	 border-right: #7b9ebc 1px double; 
+	 border-top: #7b9ebc 1px double;
+	 color: expression(this.readonly==true?"#808080":"#000000");
+     }
+/*新定义输入框类型：可编辑*/ 
+.textboxblue 
+     {
+	 width:156px;
+	 border-bottom: #7b9ebc 1px double; 
+     border-left: #7b9ebc 1px double; 
+	 border-right: #7b9ebc 1px double; 
+	 border-top: #7b9ebc 1px double;
+	 color: expression(this.readonly==true?"#808080":"#000000");
+     }
+	 
+	 /*定义输入框类型：不可编辑,边框灰色*/
+.textboxReadOnly 
+     {
+	 width:156px;
+	 border-bottom: #b4b4b4 1px double; 
+     border-left: #b4b4b4 1px double; 
+	 border-right: #b4b4b4 1px double; 
+	 border-top: #b4b4b4 1px double;
+
+     }
+.textboxdate 
+     {
+	 width:130px;
+	 border-bottom: #7b9ebc 1px double; 
+     border-left: #7b9ebc 1px double; 
+	 border-right: #7b9ebc 1px double; 
+	 border-top: #7b9ebc 1px double;
+	 color: expression(this.readonly==true?"#808080":"#000000");
+     }
+.textareabulue 
+     {
+	 border-bottom: #7b9ebc 1px double; 
+     border-left: #7b9ebc 1px double; 
+	 border-right: #7b9ebc 1px double; 
+	 border-top: #7b9ebc 1px double;
+	 color: expression(this.readonly==true?"#808080":"#000000");
+     }
+     
+/*定义可回车带出输入框类型*/
+.textboxquick 
+{
+	width: 156px;
+	border: #7b9ebc 1px double;
+	background-image: url(/resource/images/quick.gif);
+	background-position: center right;
+	background-repeat: no-repeat;	 
+}
+/*inputbox end */
+
+.linkbutton
+ {
+	padding-left: 4px;
+	padding-right: 4px;
+	font-size:9pt;
+	text-align:center;
+	width:32px;
+	height:20px;
+	cursor:pointer;
+	status:expression(
+						onmouseover == null?
+							(onmouseover = function()
+							{
+						
+								this.style.border = "solid 1px #596893";
+								
+								this.style.backgroundColor="#D4D5D9";
+								this.style.paddingLeft=3;
+								this.style.paddingRight=3;
+
+							}):true,
+						onmouseout == null?
+							(onmouseout = function()
+							{
+								this.style.border = "0px";
+								this.style.backgroundColor="";
+								this.style.paddingLeft=4;
+								this.style.paddingRight=4;
+
+							}):true
+					)
+}
+.linkbutton_active
+ {
+	border-bottom: #596893 1px solid;
+	border-left: #596893 1px solid;
+	border-right: #596893 1px solid;
+	border-top: #596893 1px solid;
+	padding-left: 1px;
+	padding-right: 1px;
+	font-size:9pt;
+	text-align:center;
+	height:20px;
+	background-color: #D4D5D9;
+}
+
+.linkbuttonBig
+ {
+	padding-left: 4px;
+	padding-right: 4px;
+	font-size:9pt;
+	text-align:center;
+	width:65px;
+	height:20px;
+	cursor:pointer;
+	status:expression(
+						onmouseover == null?
+							(onmouseover = function()
+							{
+						
+								this.style.border = "solid 1px #596893";
+								
+								this.style.backgroundColor="#D4D5D9";
+								this.style.paddingLeft=3;
+								this.style.paddingRight=3;
+
+							}):true,
+						onmouseout == null?
+							(onmouseout = function()
+							{
+								this.style.border = "0px";
+								this.style.backgroundColor="";
+								this.style.paddingLeft=4;
+								this.style.paddingRight=4;
+
+							}):true
+					)
+}
+.linkbuttonBig_active
+ {
+	border-bottom: #596893 1px solid;
+	border-left: #596893 1px solid;
+	border-right: #596893 1px solid;
+	border-top: #596893 1px solid;
+	padding-left: 1px;
+	padding-right: 1px;
+	font-size:9pt;
+	text-align:center;
+	height:20px;
+	background-color: #D4D5D9;
+}
+/*定义输入框类型：限于预付单*/
+.textboxborder
+    {
+	width:100%;
+	 border:  0px double;
+	 }
+
+/**按钮组合样式**/
+/*初始状态 */
+.bbutton3
+    {
+	border-bottom: #596CA5 1px solid;
+	border-left: #8596CA 1px solid;
+	border-right: #596CA5 1px double;
+	border-top: #8596CA 1px solid;
+	padding-left: 6px;
+	padding-right: 6px;
+	font-size:9pt;
+	text-align:center;
+	vertical-align:top;
+	height:19px;
+	cursor:pointer;
+	background-image: url(/resource/images/button_fill_up.gif);
+	status:expression(
+						onmouseover == null?
+							(onmouseover = function()
+							{
+								this.style.borderRight=this.style.borderBottom = "solid 1px #CE6B00";
+								this.style.borderLeft=this.style.borderTop = "solid 1px #FFB56B";
+								this.style.backgroundImage="url(/resource/images/button_fill_up.gif)";
+							}):true,
+						onmouseout == null?
+							(onmouseout = function()
+							{
+								if(this.gotFocus)
+								{
+									this.style.borderLeft=this.style.borderTop = "solid 1px #5198dd";
+									this.style.borderRight = this.style.borderBottom = "solid 1px #003074";
+								}
+								else
+								{
+									this.style.borderRight=this.style.borderBottom = "solid 1px #596CA5";
+									this.style.borderLeft=this.style.borderTop = "solid 1px #8596CA";
+								}
+								this.style.backgroundImage="url(/resource/images/button_fill_up.gif)";
+							}):true,
+						onfocus == null?
+							(onfocus = function()
+							{
+								this.gotFocus = true;
+								this.style.borderLeft=this.style.borderTop = "solid 1px #5198dd";
+								this.style.borderRight = this.style.borderBottom = "solid 1px #003074";
+							}):true,
+						onblur == null?
+							(onblur = function()
+							{
+								this.gotFocus = false;
+								this.style.borderRight=this.style.borderBottom = "solid 1px #596CA5";
+								this.style.borderLeft=this.style.borderTop = "solid 1px #8596CA";
+							}):true,
+						onmousedown == null?
+							(onmousedown = function()
+							{
+								this.style.borderRight=this.style.borderBottom = "solid 1px #CE6B00";
+								this.style.borderLeft=this.style.borderTop = "solid 1px #FFB56B";
+								this.style.backgroundImage="url(/resource/images/button_fill_down.gif)";								
+							}):true,
+						onmouseup == null?
+							(onmouseup = function()
+							{
+								this.style.borderRight=this.style.borderBottom = "solid 1px #CE6B00";
+								this.style.borderLeft=this.style.borderTop = "solid 1px #FFB56B";
+								this.style.backgroundImage="url(/resource/images/button_fill_up.gif)";
+							}):true,
+						this.setDisable?
+							(disabled?(this.className="buttonforbid"):false,this.setDisable=true):true
+					);
+    } 
+/*滑过状态*/
+.bbutton3_up
+    {
+	border-bottom: #CE6B00 1px solid;
+	border-left: #FFB56B 1px solid;
+	border-right: #CE6B00 1px double;
+	border-top: #FFB56B 1px solid;
+	padding-left: 6px;
+	padding-right: 6px;
+	font-size:9pt;
+	text-align:center;
+	vertical-align:top;
+	font-size:9pt;
+	height:19px;
+	cursor:pointer;
+	background-image: url(/resource/images/button_fill_up.gif);
+    } 
+/*点击状态 */
+.bbutton3_down
+    {
+	border-bottom: #CE6B00 1px solid;
+	border-left: #FFB56B 1px solid;
+	border-right: #CE6B00 1px double;
+	border-top: #FFB56B 1px solid;
+	font-size:9pt;
+	text-align:center;
+	vertical-align:top;
+	font-size:9pt;
+	height:19px;
+	background-image: url(/resource/images/button_fill_down.gif);
+    }
+/*按钮禁用状态 */ 
+.buttonforbid
+    {
+	border-bottom: #909090 1px solid;
+	border-left: #B5B5B5 1px solid;
+	border-right: #909090 1px double;
+	border-top: #B5B5B5 1px solid;
+	font-size:9pt;
+	text-align:center;
+	vertical-align:top;
+	font-size:9pt;
+	height:19px;
+	padding-left: 6px;
+	padding-right: 6px;
+	background-image: url(/resource/images/button_forbid.gif);
+    }		
+/* button end */
+    
+.navpoint {font-size: 9pt; cursor: hand; color: #003366; font-family: webdings}
+
+.white{
+	color:#ffffff;
+}
+/*普通文字链接样式*/
+a.:link { font-family: "arial", "helvetica", "sans-serif","";  font-size: 9pt; color: #ff0000; text-decoration: none} 
+a.:visited { font-family: "arial", "helvetica", "sans-serif","";  font-size: 9pt; color: #ff0000; text-decoration: none} 
+a.:hover { font-family: "arial", "helvetica", "sans-serif","";  font-size: 9pt; color: #ff0000; text-decoration: underline} 
+a.:active { font-family: "arial", "helvetica", "sans-serif","";  font-size: 9pt; color: #000000; text-decoration: none}
+/*文字链接为白色*/
+a.white:link { font-size: 9pt; color: #ffffff; text-decoration: none} 
+a.white:visited { font-size: 9pt; color: #ffffff; text-decoration: none} 
+a.white:hover { font-size: 9pt; color: #eeeeee; text-decoration: underline} 
+a.white:active { font-size: 9pt; color: #000000; text-decoration: none}
+/*文字链接为黑色*/
+a.black:link { font-size: 9pt; color: #000000; text-decoration: none} 
+a.black:visited { font-size: 9pt; color: #000000; text-decoration: none} 
+a.black:hover { font-size: 9pt; color: #000000; text-decoration: underline} 
+a.black:active { font-size: 9pt; color: #000000; text-decoration: none}
+/*工具栏链接为文字带背景：新增hhyun060720*/
+a.background:link { font-size: 9pt; color: #ffffff; text-decoration: none} 
+a.background:visited { font-size: 9pt; color: #ffffff; text-decoration: none} 
+a.background:hover { font-size: 9pt; color: #000000; text-decoration: none; background-color: #A4CAE3; PADDING-BOTTOM: 2px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; PADDING-TOP: 2px; border:#115285 1px solid} 
+a.background:active { font-size: 9pt; color: #000000; text-decoration: none; background-color: #A4CAE3; PADDING-BOTTOM: 2px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; PADDING-TOP: 2px; border:#115285 1px solid} 
+
+a.button:link { font-size: 9pt; color: #000000; text-decoration: none} 
+a.button:visited { font-size: 9pt; color: #000000; text-decoration: none} 
+a.button:hover { font-size: 9pt; color: #000000; text-decoration: none} 
+a.button:active { font-size: 9pt; color: #000000; text-decoration: none}
+
+.menutable {
+	background-repeat = 'no-repeat';
+	background-image = 'url(/resource/images/menuitem_bg.gif)';
+}
+.menutd2 {background:#D4D5D9;border:solid #526d8c 1px;border-left:solid #526d8c 0px;}
+
+.item_action{
+	padding-left:24px;
+	padding-top:3px;
+	padding-bottom:3px;
+	cursor:pointer;
+	status:expression(
+						onmouseover==null?(onmouseover = function()
+						{
+							this.style.color='#ffffff';
+							this.style.backgroundColor='#3377cc';
+						}):true,
+						onmouseout==null?(onmouseout = function()
+						{
+							this.style.color='#000000';
+							this.style.backgroundColor='';
+						}):true
+					);
+}
+
+.menu_actions{
+	border:solid 1px #758397;
+	width:135px;
+	position:absolute;
+	display:none;
+	background:url(../images/action_bg.gif);padding-top:3px;padding-bottom:3px;
+}
+
+.barbtn_action{
+	cursor:pointer;
+	status:expression(
+						onmouseover==null?(onmouseover = function()
+						{
+							this.style.color='#ffffff';
+							this.style.backgroundColor='#3377cc';
+						}):true,
+						onmouseout==null?(onmouseout = function()
+						{
+							this.style.color='#000000';
+							this.style.backgroundColor='';
+						}):true
+					);
+}
+.barbtn {
+	cursor:pointer;
+	status:expression(
+						onmouseover == null?
+							(onmouseover = function()
+							{
+								this.style.color='#ffffff';
+								this.style.backgroundColor='#3377cc';
+							}):true,
+						onmouseout == null?
+							(onmouseout = function()
+							{
+								this.style.color='#000000';
+								this.style.backgroundColor='';
+							}):true,
+						onclick == null?
+							(onclick = function()
+							{
+								var getpos = function(element)
+								{
+									var offsetLeft = 0;
+									var offsetTop = 0;
+									var absoluteLeft = 0;
+									var absoluteTop = 0;
+
+									var width = element.clientWidth;
+									var height = element.clientHeight;
+
+									while(element)
+									{
+										offsetLeft += element.offsetLeft;
+										offsetTop += element.offsetTop;
+										
+										absoluteLeft += element.offsetLeft;
+										absoluteTop += element.offsetTop;
+
+										offsetLeft += element.clientLeft;
+										offsetTop += element.clientTop;
+
+										offsetLeft -= element.scrollLeft;
+										offsetTop -= element.scrollTop;
+
+										element = element.offsetParent;
+									}
+
+									return {x:offsetLeft, y:offsetTop, absX : absoluteLeft, absY : absoluteTop,
+										left:offsetLeft, top:offsetTop, right:offsetLeft + width, bottom:offsetTop+height
+									};
+								}
+								if(this.actions)
+								{
+									var actions = document.getElementById(this.actions);
+									var pos = getpos(this);
+									if(actions)
+									{
+										actions.style.display = 
+											(actions.style.display != "block" ? "block" : "none");
+										actions.onblur = function(){this.style.display = "none"};
+										var left = pos.left;
+										if(pos.left + actions.clientWidth > document.body.clientWidth)
+											left = pos.right - actions.clientWidth;
+										actions.style.left = left + "px";
+										actions.style.top = pos.bottom + "px";
+										if(actions.style.display == "block")
+										{
+											actions.focus();
+										}
+									}
+								}
+							}):true
+					);
+}
+.bbutton2 {
+            BORDER-TOP: #82829E 1px solid; 
+			BORDER-RIGHT: #82829E 1px solid; 
+			BORDER-BOTTOM: #82829E 1px solid;
+			BORDER-LEFT: #82829E 1px solid;
+			background-color: #ECECF4;
+			PADDING-RIGHT: 3px; 
+			PADDING-LEFT: 3px; 
+			FONT-SIZE: 12px;
+			height:20px; 
+			FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, 
+            StartColorStr=#ffffff, EndColorStr=#CDCCDF); 
+			status:expression(
+					onmouseover == null ? (onmouseover = function()
+					{
+						this.className='btn_mouseover';
+					}):true,
+					onmousedown == null ? (onmousedown = function()
+					{
+						this.className='btn_mousedown';
+					}):true,
+					onmouseup == null ? (onmouseup = function()
+					{
+						this.className='btn_mouseup';
+					}):true,
+					onmouseout == null ? (onmouseout = function()
+					{
+						this.className='bbutton2';
+					}):true
+			);
+			CURSOR: hand; 
+			COLOR: black           
+            } 
+.btn_mouseover {
+			BORDER-TOP: #003074 1px solid; 
+			BORDER-RIGHT: #003074 1px solid; 
+			BORDER-BOTTOM: #003074 1px solid;
+			BORDER-LEFT: #003074 1px solid;
+			background-color: #62A0E0;
+			PADDING-RIGHT: 3px; 
+			PADDING-LEFT: 3px; 
+			FONT-SIZE: 12px; 
+			height:20px; 
+			FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, 
+            StartColorStr=#D0DEE7, EndColorStr=#F7F9FC); 
+			status:expression(
+					onmouseover == null ? (onmouseover = function()
+					{
+						this.className='btn_mouseover';
+					}):true,
+					onmousedown == null ? (onmousedown = function()
+					{
+						this.className='btn_mousedown';
+					}):true,
+					onmouseup == null ? (onmouseup = function()
+					{
+						this.className='btn_mouseup';
+					}):true,
+					onmouseout == null ? (onmouseout = function()
+					{
+						this.className='btn';
+					}):true
+			);
+			CURSOR: hand; 
+			COLOR: black; 
+            }
+.btn_mousedown
+            {
+            BORDER-TOP: #FFC73C 1px solid; 
+			BORDER-RIGHT: #FFC73C 1px solid; 
+			BORDER-BOTTOM: #FFC73C 1px solid;
+			BORDER-LEFT: #FFC73C 1px solid; 
+			PADDING-RIGHT: 3px; 
+			PADDING-LEFT: 3px; 
+			FONT-SIZE: 12px;
+			height:20px;  
+			status:expression(
+					onmouseover == null ? (onmouseover = function()
+					{
+						this.className='btn_mouseover';
+					}):true,
+					onmousedown == null ? (onmousedown = function()
+					{
+						this.className='btn_mousedown';
+					}):true,
+					onmouseup == null ? (onmouseup = function()
+					{
+						this.className='btn_mouseup';
+					}):true,
+					onmouseout == null ? (onmouseout = function()
+					{
+						this.className='btn';
+					}):true
+			);
+			FILTER: 
+            progid:DXImageTransform.Microsoft.Gradient(GradientType=0, 
+            StartColorStr=#ECEBE6, EndColorStr=#ffffff); 
+			CURSOR: hand; 
+			COLOR: black            
+            } 
+.btn {
+            BORDER-TOP: #82829E 1px solid; 
+			BORDER-RIGHT: #82829E 1px solid; 
+			BORDER-BOTTOM: #82829E 1px solid;
+			BORDER-LEFT: #82829E 1px solid;
+			background-color: #ECECF4;
+			PADDING-RIGHT: 3px; 
+			PADDING-LEFT: 3px; 
+			FONT-SIZE: 12px;
+			height:20px; 
+			FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, 
+            StartColorStr=#ffffff, EndColorStr=#CDCCDF); 
+			CURSOR: hand; 
+			COLOR: black           
+            } 
+.btn_mouseup {
+            BORDER-TOP: #82829E 1px solid; 
+			BORDER-RIGHT: #82829E 1px solid; 
+			BORDER-BOTTOM: #82829E 1px solid;
+			BORDER-LEFT: #82829E 1px solid; 
+			background-color: #ECECF4;
+			PADDING-RIGHT: 3px; 
+			PADDING-LEFT: 3px; 
+			FONT-SIZE: 12px;
+			height:20px; 
+			status:expression(
+					onmouseover == null ? (onmouseover = function()
+					{
+						this.className='btn_mouseover';
+					}):true,
+					onmousedown == null ? (onmousedown = function()
+					{
+						this.className='btn_mousedown';
+					}):true,
+					onmouseup == null ? (onmouseup = function()
+					{
+						this.className='btn_mouseup';
+					}):true,
+					onmouseout == null ? (onmouseout = function()
+					{
+						this.className='btn';
+					}):true
+			);
+			FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, 
+            StartColorStr=#ffffff, EndColorStr=#CDCCDF); 
+			CURSOR: hand; 
+			COLOR: black;			         
+            } 
+            
+.btn2_up{
+	 BORDER-TOP: #82829E 0px solid; 
+	 BORDER-RIGHT: #82829E 0px solid; 
+	 BORDER-BOTTOM: #82829E 0px solid;
+	 BORDER-LEFT: #82829E 0px solid;
+	height:30px; 
+	font-size: 10pt;
+	font-weight: bold;
+	color: #666666;
+	width:120px;
+	background-image: url(/resource/images/but_bz.gif);
+	CURSOR: pointer; 
+	text-align:center;
+	} 
+	
+.btn2_down{
+	 BORDER-TOP: #82829E 0px solid; 
+	 BORDER-RIGHT: #82829E 0px solid; 
+	 BORDER-BOTTOM: #82829E 0px solid;
+	 BORDER-LEFT: #82829E 0px solid;
+	height:30px; 
+	font-size: 10pt;
+	font-weight: bold;
+	color: #666666;
+	width:120px;
+	background-image: url(/resource/images/but_bz_bg.gif);
+	CURSOR: pointer; 
+	text-align:center;
+} 
+	
+.allchecked{
+    BORDER-TOP: #82829E 1px solid; 
+	BORDER-RIGHT: #82829E 1px solid; 
+	BORDER-BOTTOM: #82829E 1px solid;
+	BORDER-LEFT: #82829E 1px solid;
+	cursor: pointer;
+	width:30px;
+	text-align:center;
+	text-valign:center;
+}

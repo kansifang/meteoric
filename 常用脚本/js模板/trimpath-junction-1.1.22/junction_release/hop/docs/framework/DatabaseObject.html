@@ -1,0 +1,346 @@
+<!DOPropertiesCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN""http://www.w3.org/TR/REC-html40/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+DatabaseObject - Helma Javascript Reference
+</TITLE>
+<LINK REL ="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+
+
+</HEAD>
+<SCRIPT>
+function asd()
+{
+parent.document.title="DatabaseObject - Helma Javascript Reference";
+}
+</SCRIPT>
+<BODY BGCOLOR="white" onload="asd();">
+      
+      
+
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>DatabaseObject</H2>
+<PRE>Object
+   |
+   +--<b>DatabaseObject</b>
+</PRE>
+
+
+<HR>
+
+<DL>
+   <!-- Class definition
+   <DT>class 
+   <B>DatabaseObject</B>
+    -->
+
+</DL>
+   
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+<!-- =========== END OF NAVBAR =========== -->
+<HR>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<!-- ======== END CONSTRUCTOR SUMMARY ======== -->
+
+&nbsp;
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+   
+
+<!-- =========== END FIELD SUMMARY =========== -->
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TD COLSPAN=2><FONT SIZE="+2">
+<B>Methods Summary</B></FONT></TD>
+</TR>
+
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Number.html">Number</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#executeCommand">executeCommand</A></B>(&lt;<a href="String.html">String</a>&gt; sqlString)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Used to implement INSERT, UPDATE, ddl statements and other 
+ non value returning statements.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="DatabaseObject/RowSet.html">DatabaseObject.RowSet</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#executeRetrieval">executeRetrieval</A></B>(&lt;<a href="String.html">String</a>&gt; sqlString)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Used to implement SELECT and other value returning statements.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Object.html">Object</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getLastError">getLastError</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Return the last error which occured when connecting or 
+ executing a statement, undefined if none.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getMetaData">getMetaData</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Return the meta data attached to the connection.
+      </TD>
+   </TR>
+
+
+</TABLE>
+
+
+
+<P>
+<!-- ========== END METHOD SUMMARY =========== -->
+
+
+    <!-- ========= CONSTRUCTOR DETAIL START ======== -->
+
+
+<!-- Constructor return value(s) -->
+
+<!-- End constructor return value(s) -->
+
+<!-- ADDITIONAL ATTRIBUTES -->
+
+<HR/>
+<!-- END ADDITIONAL ATTRIBUTES  -->
+
+<!-- ========= CONSTRUCTOR DETAIL END ======== -->
+
+
+<!-- ============ FIELD DETAIL START =========== -->
+
+
+<!-- ============ FIELD DETAIL END =========== -->
+
+<!-- ============ METHOD DETAIL START ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+   <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+      <TD COLSPAN=1><FONT SIZE="+2">
+         <B>Method Detail</B></FONT>
+      </TD>
+   </TR>
+</TABLE>
+
+<!-- One single method detail entry -->
+
+   <A NAME="executeCommand"><!-- --></A>
+   <H3>executeCommand</H3>
+   <PRE><a href="Number.html">Number</a> <B>executeCommand</B>(&lt;<a href="String.html">String</a>&gt; sqlString)</PRE>
+   
+      <UL>Used to implement INSERT, UPDATE, ddl statements and other 
+ non value returning statements. 
+ <br /><br />
+ Returns the number of rows impacted if the request is successful. 
+ Returns false otherwise. If false was returned, getLastError may be 
+ called on the database object to get the error information. Note 
+ that an error is generated (rather than returning a status) if the 
+ connection was not successful.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>sqlString</CODE> -  as String  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Number of rows impacted if successful or false if error.   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="executeRetrieval"><!-- --></A>
+   <H3>executeRetrieval</H3>
+   <PRE><a href="DatabaseObject/RowSet.html">DatabaseObject.RowSet</a> <B>executeRetrieval</B>(&lt;<a href="String.html">String</a>&gt; sqlString)</PRE>
+   
+      <UL>Used to implement SELECT and other value returning statements. 
+ <br /><br />
+ Return a RowSet object implementing the RowsetAccess protocol 
+ if the request is successful. Returns false otherwise. Additional 
+ arguments are ignored, and data is always returned as a RowsetAccess. 
+ The cursor is positioned before the fist row. If false was returned, 
+ getLastError may be called on the database object to get the error 
+ information. Note that an error is generated (rather than returning a status) 
+ if the connection was not successful.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>sqlString</CODE> -  as String  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        DatabaseObject.RowSet with the resulting rowset, or false in case of error   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getLastError"><!-- --></A>
+   <H3>getLastError</H3>
+   <PRE><a href="Object.html">Object</a> <B>getLastError</B>()</PRE>
+   
+      <UL>Return the last error which occured when connecting or 
+ executing a statement, undefined if none.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        undefined if none 
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getMetaData"><!-- --></A>
+   <H3>getMetaData</H3>
+   <PRE>void <B>getMetaData</B>()</PRE>
+   
+      <UL>Return the meta data attached to the connection.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+
+
+<!-- ============ METHOD DETAIL END ========== -->
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+
+<!-- =========== END OF NAVBAR =========== -->
+
+<HR>
+<FONT SIZE="-1">
+
+</FONT>
+
+
+
+
+<div class="jsdoc_ctime">Documentation generated by <a href="http://jsdoc.sourceforge.net/" target="_parent">JSDoc</a> on Thu Jul 19 01:13:37 2007</div>
+
+
+</BODY>
+</HTML>

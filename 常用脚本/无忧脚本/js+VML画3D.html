@@ -1,0 +1,133 @@
+﻿<html xmlns:v="urn:schemas-microsoft-com:vml">
+<STYLE>
+v\:* { Behavior: url(#default#VML) }
+body{margin:0px}
+</STYLE>
+<BODY>
+<table width="100%" height=500 border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td style="border:1px solid #000" align=center>
+		<v:group id=group style="WIDTH:700px;POSITION:relative;HEIGHT:500px" coordsize="600,400">
+			<span id=box></span><span id=ren></span>
+		</v:group>
+	</td>
+  </tr>
+</table>
+<div align=center>请使用↑键　↓键</div>
+</BODY>
+</HTML>
+<script>
+var q=40;
+var r=(q*Math.PI)/180
+var v=new Array()
+var l=new Array()
+v[0]="0,400,0"
+v[1]="100,350,15"
+v[2]="200,400,0"
+v[3]="0,400,300"
+v[4]="100,350,285"
+v[5]="200,400,300"
+v[6]="30,400,30"
+v[7]="30,450,30"
+v[8]="170,450,30"
+v[9]="170,400,30"
+v[10]="30,400,270"
+v[11]="30,450,270"
+v[12]="170,450,270"
+v[13]="170,400,270"
+v[14]="170,410,210"
+v[15]="170,450,210"
+v[16]="170,410,230"
+v[17]="170,450,230"
+v[18]="170,400,100"
+v[19]="170,430,100"
+v[20]="170,400,130"
+v[21]="170,430,130"
+v[22]="170,415,100"
+v[23]="170,415,130"
+v[24]="170,400,115"
+v[25]="170,430,115"
+v[26]="400,410,0"
+v[27]="400,415,0"
+v[28]="400,430,0"
+v[29]="390,420,5"
+v[30]="410,420,0"
+v[31]="390,450,5"
+v[32]="410,450,0"
+l[0]=Array(0,1)
+l[1]=Array(1,2)
+l[2]=Array(2,0)
+l[3]=Array(3,4)
+l[4]=Array(4,5)
+l[5]=Array(5,3)
+l[6]=Array(0,3)
+l[7]=Array(1,4)
+l[8]=Array(2,5)
+l[9]=Array(6,7)
+l[10]=Array(7,8)
+l[11]=Array(8,9)
+l[12]=Array(10,11)
+l[13]=Array(11,12)
+l[14]=Array(12,13)
+l[15]=Array(7,11)
+l[16]=Array(8,12)
+l[17]=Array(14,15)
+l[18]=Array(14,16)
+l[19]=Array(16,17)
+l[20]=Array(18,19)
+l[21]=Array(18,20)
+l[22]=Array(19,21)
+l[23]=Array(20,21)
+l[24]=Array(22,23)
+l[25]=Array(24,25)
+var lr=new Array()
+lr[0]=Array(26,28)
+lr[1]=Array(27,29)
+lr[2]=Array(27,30)
+lr[3]=Array(28,31)
+lr[4]=Array(28,32)
+function $(obj){return document.getElementById(obj)}
+function getxy(s){
+	var t=s.split(",")
+	var a=new Array()
+	a[0]=t[0]-0+t[2]*Math.cos(r)
+	a[1]=t[1]-t[2]*Math.sin(r)
+	return a.join()
+}
+function setline(){
+	var str=""
+	for(var i=0;i<l.length;i++){
+		str+="<v:line from =\""+getxy(v[l[i][0]])+"\" to = \""+getxy(v[l[i][1]])+"\" strokeColor=\"Gray\"/>"
+	}
+	$("box").innerHTML=str
+}
+function set_jd(s){
+	q=s
+	r=(q*3.1415926)/180
+	setline()
+	set_ren()
+}
+function set_ren(){
+	var str=""
+	for(var i=0;i<lr.length;i++){
+		str+="<v:line from =\""+getxy(v[lr[i][0]])+"\" to = \""+getxy(v[lr[i][1]])+"\">"
+		if(i==0)
+			str+="<v:stroke StartArrow=\"Oval\"/>"
+		str+="</v:line>"
+	}
+	$("ren").innerHTML=str
+}
+document.onkeydown=function(){
+	if(event.keyCode==38){
+		q+=5
+		set_jd(q)
+	}
+	if(event.keyCode==40){
+		q-=5
+		set_jd(q)
+	}
+
+}
+setline()
+set_ren()
+</script>

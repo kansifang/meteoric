@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>异步innnerHTML</title>
+	</head>
+	<body>
+		<div id="test_a">
+			xxxx我看这里能话些什么
+		</div>
+		<script type="text/javascript">
+			function asyncInnerHTML(HTML,callback) {
+				var temp = document.createElement('div'),
+					frag = document.createDocumentFragment();
+				
+				temp.innerHTML = HTML;
+				(function(){
+					if(temp.firstChild){
+						frag.appendChild(temp.firstChild);
+						setTimeout(arguments.callee, 0);
+					} else {
+						callback(frag);
+					}
+				})();
+			}
+			
+			var htmlStr = '<div style="background-color:rd;width:100px;height:100px;">新加的内容</div>';
+			asyncInnerHTML(htmlStr, function(fragment){	
+				// You can treat 'fragment' as a regular node.
+				document.getElementById("test_a").appendChild(fragment);
+//				document.body.appendChild(fragment);
+//				debugger;
+			});
+			
+			
+/*		
+GD.asyncInnerHTML = function(HTML,callback,_timer) {
+	var temp = GD.isElement(HTML)? HTML : document.createElement('div'),
+		frag = document.createDocumentFragment();
+	
+	if(GD.isString(HTML)) {
+		temp.innerHTML = HTML;
+	}
+	
+	(function(){
+		if(temp.firstChild){
+			frag.appendChild(temp.firstChild);
+			setTimeout(arguments.callee, _timer || 0);
+		} else {
+			callback(frag);
+		}
+	})();	
+}*/
+		</script>
+	</body>
+</html>

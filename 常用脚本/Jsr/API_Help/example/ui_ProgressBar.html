@@ -1,0 +1,101 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html"/>
+	<title>进度条实例 -- JSR2+</title>
+	<script type="text/javascript" src="../../common/js/core.js?lib=webui,ui_progressBar"></script>
+	<link rel="stylesheet" href="../resources/example.css" type="text/css" media="all"/>
+</head>
+
+<body>
+<div id="bodyPanel" style="display:none">
+	<b>进度条实例</b><hr/><br/>
+	<!-- 面板 -->
+	<div id="panel"></div>
+	<!-- 面板内容 -->
+	<div id="contentPanel">
+		<!-- 控件实例 -->
+		<fieldset id="example"><div class="gbPanel">
+			<table class="font"><tr>
+				<td width="50px">进度条1:</td><td><div id="progressBar1"></div></td>
+			</tr><tr>
+				<td></td><td valign="top">
+					<div id="p-msg" closs="font" style="width:380px;height:16px"></div></td>
+			</tr><tr>
+				<td height="30px">进度条2:</td><td><div id="progressBar2"></div></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<!-- 相关方法 -->
+		<fieldset id="method"><div class="gbPanel">
+			<table class="method-area1"><tr>
+				<td><button id="b1"></button></td><td><button id="b2"></button></td>
+				<td><button id="b3"></button></td><td><button id="b4"></button></td>
+				<td><button id="b5"></button></td>
+			</tr><tr>
+				<td><button id="b6"></button></td><td></td><td></td><td></td><td></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<div class="font">注: 相关方法是针对 "进度条1" 操作的。</div>
+	</div>
+	<!-- 面板内容结束 -->
+</div>
+</body>
+
+<script>
+var p1, p2, btn, runID = 0, run = false;
+new UI.Panel({id:"panel", caption:"应用实例 -> 进度条", width:520, height:285, body:"contentPanel"});
+new UI.GroupBox({id:"example", caption:"控件实例"});
+new UI.GroupBox({id:"method", caption:"相关方法"});
+//创建进度条|密码框
+p1 = new UI.ProgressBar({id:"progressBar1", width:380});
+p2 = new UI.ProgressBar({id:"progressBar2", width:380, per:"58%", style:1});
+
+//相关方法按钮
+btn = new UI.Button({id:"b1", caption:"finish", width:75});
+btn.bind(function() {
+	if(run) {
+		p1.finish();
+		run = false;
+		window.clearTimeout(runID);
+	}else alert("请在先点start按钮, 再使用 finish 按钮。");
+});
+btn = new UI.Button({id:"b2", caption:"setGuage", width:75});
+btn.bind(function() {
+	p1.setGuage("p-msg", "Status: @PER@ completed...");
+	alert("设置了 '进度条1' 的进度显示参数, 点击 start 按钮看效果。");
+});
+btn = new UI.Button({id:"b3", caption:"setPER", width:75});
+btn.bind(function() {
+	p1.setPER(0.72);
+	alert("设置 '进度条1' 的进度显示为: 72%");
+});
+btn = new UI.Button({id:"b4", caption:"setWidth", width:75});
+btn.bind(function() {
+	p1.setWidth(260);
+	alert("设置 '进度条1' 的宽度为: 260px");
+});
+btn = new UI.Button({id:"b5", caption:"start", width:75});
+btn.bind(function() {
+	if(run) return;
+	p1.start();
+	run = true;
+	runID = (function() {
+		p1.finish();
+		run = false;
+		alert("'进度条1' 执行完成！");
+	}).defer(15000);
+});
+btn = new UI.Button({id:"b6", caption:"stop", width:75});
+btn.bind(function() {
+	if(run) {
+		p1.stop();
+		run = false;
+		window.clearTimeout(runID);
+	}else alert("请在先点start按钮, 再使用 stop 按钮。");
+});
+
+onLoad.add(function(){ $("bodyPanel").style.display = "" });
+</script>
+
+</html>

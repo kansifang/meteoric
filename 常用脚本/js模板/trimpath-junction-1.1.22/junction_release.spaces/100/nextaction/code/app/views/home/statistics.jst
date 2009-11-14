@@ -1,0 +1,40 @@
+{macro statsTable(title, data, color)}
+  <h3>${title}</h3>
+  <table class="hoverable">
+      <tr style="text-decoration: underline;">
+         <td width="150" nowrap>${t('Context')}</td>
+         <td>${t('Actions')}</td>
+         <td></td>
+      </tr>
+      {var total = 0}
+      {for context in data}
+        <tr><td nowrap="nowrap">
+                {if context.context_id}
+                  {var contextInfo = Context.findActive(context.context_id)}
+                  ${linkToLocal(h(context.contextName), 'context', 'show', context.context_id, modelToolTip(contextInfo, 'context', res))}
+                {else}
+                  ${t('(no context)')}
+                {/if}
+                </td>
+            <td align="center">${context.actionCount} ${total += parseInt(context.actionCount) |eat}</td>
+            <td><table width="${context.actionCount * 10}"
+                       style="color:${color};background-color:${color}"
+                       border="0">
+                       <tr><td style="font-size:8px;">.</td></tr>
+                </table>
+            </td>
+        </tr>
+      {/for}
+      <tr>
+      <tr><td><b>${t('total')}</b></td>
+          <td  align="center" style="border-top: 1px dotted black;"><b>${total}</b></td></tr>
+  </table>
+{/macro}
+
+<div>
+  <h2>${t('Statistics')}</h2>
+  ${statsTable(t('Remaining Actions'), totalsRemaining, "red")}
+  <br/>
+  <br/>
+  ${statsTable(t('Completed Actions'), totalsCompleted, "green")}
+</div>

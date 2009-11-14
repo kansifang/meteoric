@@ -1,0 +1,120 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html"/>
+	<title>滑动面板实例 -- JSR2+</title>
+	<script type="text/javascript" src="../../common/js/core.js?lib=webui,ui_window,ui_sliderPanel"></script>
+	<link rel="stylesheet" href="../resources/example.css" type="text/css" media="all"/>
+	<style>
+		.panel-cs{background:#FFF;border:1px solid #A3BAE9;}
+		.panel-fun{background:#F3F7FD;width:100%;height:100%}
+	</style>
+</head>
+
+<body style="overflow:hidden;margin:0">
+<div id="bodyPanel" style="display:none">
+	<b>滑动面板实例</b><hr/><br/>
+	<!-- 面板 -->
+	<div id="panel"></div>
+	<!-- 面板内容 -->
+	<div id="contentPanel">
+		<!-- 控件实例 -->
+		<fieldset id="example"><div class="gbPanel">
+			<table class="font"><tr>
+				<td width="10px" height="40px">&nbsp;</td>
+				<td width="160px"><button id="win1"></button></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<!-- 相关方法 -->
+		<fieldset id="method"><div class="gbPanel">
+			<table class="method-area1"><tr>
+				<td><button id="b1"></button></td><td><button id="b2"></button></td>
+				<td><button id="b3"></button></td><td><button id="b4"></button></td>
+				<td><button id="b5"></button></td>
+			</tr><tr>
+				<td><button id="b6"></button></td><td></td><td></td><td></td><td></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+	</div>
+	<!-- 面板内容结束 -->
+	<!-- 测试面板 -->
+	<div id="testPanel" class="panel-cs" style="display:none">
+		<div id="sliderPanel1"></div>
+	</div>
+	<!-- 面板 -->
+	<div id="funPanel" class="panel-fun font" style="display:none">我是功能面板！！！</div>
+</div>
+</body>
+
+<script>
+var sp, win, open, btn;
+new UI.Panel({id:"panel", caption:"应用实例 -> 滑动面板", width:520, height:260, body:"contentPanel"});
+new UI.GroupBox({id:"example", caption:"控件实例"});
+new UI.GroupBox({id:"method", caption:"相关方法"});
+//创建滑动面板
+sp = new UI.SliderPanel({id:"sliderPanel1", groups:[
+	{text:"滑动面板一", icon:"../resources/image/ico1.gif"},
+	{text:"滑动面板二", icon:"../resources/image/ico.gif" },
+	{text:"滑动面板三", icon:"../resources/image/ico3.gif"},
+	{text:"滑动面板四", icon:"../resources/image/ico4.gif"}
+]});
+sp.addItems(0, [
+	{text:"功能项目1", icon:"../resources/image/ico1-1.gif", action:spAction},
+	{text:"功能项目2", icon:"../resources/image/ico1-2.gif", action:spAction},
+	{text:"功能项目3", icon:"../resources/image/ico1-3.gif", action:spAction},
+	{text:"功能项目4", icon:"../resources/image/ico1-4.gif"},
+	{text:"功能项目5", icon:"../resources/image/ico1-5.gif"},
+	{text:"功能项目6", icon:"../resources/image/ico1-6.gif"}
+]);
+sp.addItems(1, [
+	{text:"功能项目11", icon:"../resources/image/ico2-1.gif", action:spAction},
+	{text:"功能项目22", icon:"../resources/image/ico2-2.gif", action:spAction},
+	{text:"功能项目33", icon:"../resources/image/ico2-3.gif"}
+]);
+function spAction(text) {
+	alert("您选择的是: " + text);
+}
+//测试窗口
+win = new UI.Window({caption:"滑动面板测试", width:180, height:380});
+//创建显示窗口的按钮
+open = new UI.Button({id:"win1", caption:"显示测试窗口", width:105});
+open.bind(function(){ win.show(open.dom) });
+//设置窗口主面板
+win.setPanel("testPanel", function(w, h) {
+	sp.setSize(w - 14, h - 2);
+});
+//相关方法按钮
+btn = new UI.Button({id:"b1", caption:"addGroup", width:75});
+btn.bind(function() {
+	sp.addGroup({text:"我是新来的"});
+});
+btn = new UI.Button({id:"b2", caption:"addItems", width:75});
+btn.bind(function() {
+	sp.addItems(2, [{text:"新功能子项", action:spAction}]);
+	alert("向滑动面板三里添加了 '新功能子项'");
+});
+btn = new UI.Button({id:"b3", caption:"addPanel", width:75});
+btn.bind(function() {
+	sp.addPanel(3, "funPanel");
+	alert("向滑动面板四里添加了 '功能面板'");
+});
+btn = new UI.Button({id:"b4", caption:"removeAll", width:75});
+btn.bind(function() {
+	sp.removeAll();
+});
+btn = new UI.Button({id:"b5", caption:"select", width:75});
+btn.bind(function() {
+	sp.select(1);
+	alert("您选择了滑动面板二！");
+});
+btn = new UI.Button({id:"b6", caption:"setSize", width:75});
+btn.bind(function() {
+	sp.setSize(100, 200);
+	alert("'滑动面板' 的尺寸大小被设置为:\n100×200 (单位: px)。");
+});
+
+onLoad.add(function(){ $("bodyPanel").style.display = "" });
+</script>
+
+</html>

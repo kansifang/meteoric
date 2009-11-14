@@ -1,0 +1,23 @@
+{if actions.length > 1}
+  <div style="float:right; padding-top:4px;">
+    <a
+       href="#" 
+       onclick="toggleDisplay('bulkMods'); {minify}
+                for (var i = 0, rows = document.getElementById('actions').rows; i < rows.length; i++)
+                    toggleDisplay(rows[i].cells[0]);
+                return false;{/minify}" class="txtLinkUnLn">
+       ${t('bulk changes')}</a>
+    &nbsp;&nbsp;
+  </div>
+{/if}
+
+<h2>${actions.length} ${t('Remaining Action')}${ actions.length != 1 ? t('s') : '' }</h2>
+
+${render('action/indexBody')}
+
+{if actions.length <= 0}
+  {if zeroActionRecords()}
+    <p>${t('An Action is a task or to-do item')}.</p>
+  {/if}
+  <p>${t('Please use the "Add a new Action" entry area on the right to add an Action')}.</p>
+{/if}

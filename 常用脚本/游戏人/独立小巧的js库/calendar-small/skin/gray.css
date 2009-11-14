@@ -1,0 +1,86 @@
+﻿/*
+ *@Generator -> LiHuiGang - Email:lhg133@126.com - QQ:463214570
+ *@Copyright (c) 2009 LiHuiGang Compostion - Blog:http://www.cnblogs.com/lhgstudio
+ */
+
+#container
+{
+    border: 2px solid #b2b2b2;
+	width: 154px;
+	padding: 5px;
+	font: 11px Verdana, Arial, sans-serif;
+	background-color: #fff;
+	background-image: url(g_h_bg.gif);
+	background-repeat: repeat-x;
+}
+
+#calendar{ cursor: default; }
+#calendar caption{ height: 30px; }
+#calendar caption span{ position: relative; top:10px; }
+
+#calendar thead
+{
+	color: #000;
+	text-align: center;
+	height: 22px;
+	font: 14px 幼圆,Tahoma,Arial,sans-serif;
+	font-weight: bold;
+	vertical-align: top;
+}
+
+#calendar tbody td
+{
+    width: 22px;
+	height: 22px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#calendar .tdday
+{
+    background-image: url(g_t_bg.gif);
+    background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+#calendar #py, #calendar #pm, #calendar #ny, #calendar #nm
+{
+    position: absolute;
+	width: 9px;
+	height: 10px;
+	top: 17px;
+	cursor: pointer;
+	background-image: url(g_a_bg.gif);
+	background-repeat: no-repeat;
+}
+
+#calendar #py
+{
+    left: 10px;
+	background-position: 0 -10px;
+ }
+ 
+#calendar #pm
+{
+	left: 22px;
+	background-position: 0 -30px;
+}
+
+#calendar #ny
+{
+    right: 10px;
+	background-position: 0 0;
+}
+
+#calendar #nm
+{
+    right: 22px;
+	background-position: 0 -20px;
+}
+
+.over, .tday
+{
+    background-image: url(g_t_bg.gif);
+    background-repeat: no-repeat;
+	background-position: 0 -22px;
+}

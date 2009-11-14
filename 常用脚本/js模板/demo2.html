@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<title>Tempo.js DEMO</title>
+<link href="tempo.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="tempo.js"></script>
+<script type="text/javascript" src="jquery-1.3.js"></script>
+</head>    
+<body>
+
+<h1>Tempo.js DEMO:</h1>
+
+<h2>模板:</h2>
+<textarea style="width:100%; height:150px;" >
+  <div class="tempo" id="tempo_id"> <!--模板容器-->
+      <div><span>{title}</span><span>{author}</span></div> <!--模板内容-->
+  </div>
+</textarea>  
+
+  <div class="tempo" id="tempo_id">
+      <div><span>{title}</span><span>{author}</span></div>
+  </div>
+  
+
+
+<!------Tempo.set()--------------------------------------->
+<input type="button" onclick="click_a()" value="Tempo.set(): 一个数据" /><br />
+
+<!------Tempo.setArray()--------------------------------------->
+<input type="button" onclick="click_b()" value="Tempo.setArray(): 一组数据" /><br />
+
+<!------Tempo.setArray()+ Ajax--------------------------------------->
+<input type="button" onclick="click_c()" value="Tempo.setArray(): Ajax加载一组JSON数据" /><br />
+
+
+<h2>HTML结果:</h2>
+<div id="container" style="border:1px solid gray; height:150px;">
+
+</div>
+
+<h2>HTML源码:</h2>
+<textarea id="source" style="width:100%; height:150px;">
+</textarea>  
+  
+  
+
+
+
+<script type="text/javascript">
+function click_a(){
+  var data = {'title':'this is a title!','author':'Jim'};    
+      
+  var tempo = new Tempo('tempo_id');
+  document.getElementById('container').innerHTML = tempo.set(data);
+  document.getElementById('source').value = document.getElementById('container').innerHTML;
+};  
+</script>
+
+
+<script type="text/javascript">
+function click_b(){
+  var arr = [
+      {'title':'this is a title!','author':'Jim'},
+      {'title':'Hello world!','author':'Dean'},
+      {'title':'Tempo.js is GREAT!','author':'Rufus'}
+  ];    
+      
+  var tempo = new Tempo('tempo_id');
+  document.getElementById('container').innerHTML = tempo.setArray(arr).join('\n');
+  document.getElementById('source').value = document.getElementById('container').innerHTML;
+};  
+</script>
+
+
+<script type="text/javascript">
+function click_c(){
+  $.getJSON('json.html',function(json){alert(json);
+    var tempo = new Tempo('tempo_id');
+    document.getElementById('container').innerHTML = tempo.setArray(json).join('\n');
+    document.getElementById('source').value = document.getElementById('container').innerHTML;
+  });
+};  
+</script>
+
+
+
+
+</body>
+</html>

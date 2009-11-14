@@ -1,0 +1,137 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html"/>
+	<title>多选框组实例 -- JSR2+</title>
+	<script type="text/javascript" src="../../common/js/core.js?lib=webui"></script>
+	<link rel="stylesheet" href="../resources/example.css" type="text/css" media="all"/>
+</head>
+
+<body>
+<div id="bodyPanel" style="display:none">
+	<b>多选框组实例</b><hr/><br/>
+	<!-- 面板 -->
+	<div id="panel"></div>
+	<!-- 面板内容 -->
+	<div id="contentPanel">
+		<!-- 控件实例 -->
+		<fieldset id="example"><div class="gbPanel">
+			<table width="463px" height="160px" class="font"><tr>
+				<td valign="top" id="checkBoxGroup1"></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<!-- 相关方法 -->
+		<fieldset id="method"><div class="gbPanel">
+			<table class="method-area1"><tr>
+				<td><button id="b1"></button></td><td><button id="b2"></button></td>
+				<td><button id="b3"></button></td><td><button id="b4"></button></td>
+				<td><button id="b5"></button></td>
+			</tr><tr>
+				<td><button id="b6"></button></td><td><button id="b7"></button></td>
+				<td><button id="b8"></button></td><td><button id="b9"></button></td><td></td>
+			</tr></table>
+			<table style="width:463px;margin-left:10px;"><tr>
+				<td width="33%"><button id="b10"></button></td><td width="33%"><button id="b11"></button></td>
+				<td width="33%"><button id="b12"></button></td>
+			</tr><tr>
+				<td><button id="b13"></button></td><td><button id="b14"></button></td><td></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<div class="font">注: 相关方法是针对 "控件实例" 操作的。</div>
+	</div>
+	<!-- 面板内容结束 -->
+</div>
+</body>
+
+<script>
+var c1, btn, disabled = true, flowLayout = true, selectAll = true;
+new UI.Panel({id:"panel", caption:"应用实例 -> 多选框组", width:520, height:422, body:"contentPanel"});
+new UI.GroupBox({id:"example", caption:"控件实例"});
+new UI.GroupBox({id:"method", caption:"相关方法"});
+//创建多选框组
+var newItemValue = 0, checkMembers = [
+	{text:"ABCDEFG", value:"cm-1"},		{text:"JSR WEB前台控件", value:"cm-2", checked:true},
+	{text:"测试功能项1", value:"cm-3"},	{text:"测试功能项2", value:"cm-4", checked:true},
+	{text:"测试功能项3", value:"cm-5"},	{text:"内容超出文本宽度的测试功能项", value:"cm-6"}
+];
+c1 = new UI.CheckBoxGroup("checkBoxGroup1", "checkBoxGroup1", 110, checkMembers);
+//相关方法按钮
+btn = new UI.Button({id:"b1", caption:"add", width:75});
+btn.bind(function() {newItemValue
+	c1.add({text:"新加入成员", value:"新项-" + (newItemValue++), checked:true});
+});
+btn = new UI.Button({id:"b2", caption:"count", width:75});
+btn.bind(function() {
+	alert("控件实例中的 '多选框组' 共有: " + c1.count() + "个 选项。");
+});
+btn = new UI.Button({id:"b3", caption:"disable", width:75});
+btn.bind(function() {
+	c1.disable(disabled);
+	disabled = !disabled;
+});
+btn = new UI.Button({id:"b4", caption:"flowLayout", width:75});
+btn.bind(function() {
+	c1.flowLayout(flowLayout);
+	flowLayout = !flowLayout;
+});
+btn = new UI.Button({id:"b5", caption:"getValues", width:75});
+btn.bind(function() {
+	alert("'多选框组' 的选择的值集合: " + c1.getValues());
+});
+btn = new UI.Button({id:"b6", caption:"onChange", width:75});
+btn.bind(function() {
+	c1.onChange(function() {
+		this.isChecked() && alert("你选择的是：" + this.text);
+	});
+	alert("点击 '多选框组' 的选项, 看效果。");
+});
+btn = new UI.Button({id:"b7", caption:"reset", width:75});
+btn.bind(function() {
+	c1.reset();
+});
+btn = new UI.Button({id:"b8", caption:"removeAll", width:75});
+btn.bind(function() {
+	c1.removeAll();
+});
+btn = new UI.Button({id:"b9", caption:"selectAll", width:75});
+btn.bind(function() {
+	c1.selectAll(selectAll);
+	selectAll = !selectAll;
+});
+btn = new UI.Button({id:"b10", caption:"getMemberByIndex", width:130});
+btn.bind(function() {
+	var tmp = c1.getMemberByIndex(4);
+	tmp && (tmp = tmp.text);
+	alert("'多选框组' 的第 5 选项的文本是: \n" + tmp);
+	tmp = null;
+});
+btn = new UI.Button({id:"b11", caption:"getMemberByText", width:130});
+btn.bind(function() {
+	var tmp = c1.getMemberByText("测试功能项1");
+	tmp = tmp ? (tmp = tmp.dom.index + 1) : -1;
+	alert("'测试功能项1' 是控件的第 " + tmp + " 个选项。");
+	tmp = null;
+});
+btn = new UI.Button({id:"b12", caption:"getMemberByValue", width:130});
+btn.bind(function() {
+	var tmp = c1.getMemberByValue("cm-4");
+	tmp = tmp ? (tmp = tmp.dom.index + 1) : -1;
+	alert("值 'cm-4' 所对应的选项是控件的第 " + tmp + " 个选项。");
+});
+btn = new UI.Button({id:"b13", caption:"getSelectedMembers", width:130});
+btn.bind(function() {
+	var tmpText = "你当前选择的项是: ", tmp = c1.getSelectedMembers();
+	tmp.each(function(cb){ tmpText += cb.text + "," });
+	alert(tmpText);
+});
+btn = new UI.Button({id:"b14", caption:"selectByValues", width:130});
+btn.bind(function() {
+	c1.selectByValues(['cm-1', 'cm-2', 'cm-6']);
+	alert("设置了 '多选框组' 中, 值为: cm-1, cm-2, cm-6 的选项为选中状态。");
+});
+
+onLoad.add(function(){ $("bodyPanel").style.display = "" });
+</script>
+
+</html>

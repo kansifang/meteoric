@@ -1,0 +1,707 @@
+<!DOPropertiesCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN""http://www.w3.org/TR/REC-html40/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+Mail - Helma Javascript Reference
+</TITLE>
+<LINK REL ="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+
+
+</HEAD>
+<SCRIPT>
+function asd()
+{
+parent.document.title="Mail - Helma Javascript Reference";
+}
+</SCRIPT>
+<BODY BGCOLOR="white" onload="asd();">
+      
+      
+
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>Mail</H2>
+<PRE>Object
+   |
+   +--<b>Mail</b>
+</PRE>
+
+
+<HR>
+
+<DL>
+   <!-- Class definition
+   <DT>class 
+   <B>Mail</B>
+    -->
+
+</DL>
+   
+   <P>
+   <B>Deprecated</B> <I>use {link helma.Mail} instead    </I><BR/><BR/><I>Defined in <a href='overview-summary-Mail.js.html'>Mail.js</a></I><BR/><BR/>
+   </P>
+   <HR>
+   
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+<!-- =========== END OF NAVBAR =========== -->
+<HR>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TD COLSPAN=2><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD>
+      <CODE>
+	 <B>
+	    <A HREF="#Mail()">Mail</A></B>()
+      </CODE>
+      <BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Helma's built-in mail client enables you to send e-mail via SMTP.
+      </TD>
+</TR>
+</TABLE>
+
+<!-- ======== END CONSTRUCTOR SUMMARY ======== -->
+
+&nbsp;
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+   
+
+<!-- =========== END FIELD SUMMARY =========== -->
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TD COLSPAN=2><FONT SIZE="+2">
+<B>Methods Summary</B></FONT></TD>
+</TR>
+
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#addBCC">addBCC</A></B>(&lt;<a href="String.html">String</a>&gt; emailString, &lt;<a href="String.html">String</a>&gt; nameString)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Adds a recipient to the list of addresses to get a "blind carbon copy" of an e-mail message.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#addCC">addCC</A></B>(&lt;<a href="String.html">String</a>&gt; emailString, &lt;<a href="String.html">String</a>&gt; nameString)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Adds an address to the list of carbon copy recipients.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#addPart">addPart</A></B>(fileOrMimeObject, &lt;<a href="String.html">String</a>&gt; nameString)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Adds an attachment to an e-mail message.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#addTo">addTo</A></B>(&lt;<a href="String.html">String</a>&gt; emailString, &lt;<a href="String.html">String</a>&gt; nameString)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Adds a recipient to the address list of an e-mail message.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#send">send</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Sends an e-mail message.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#setFrom">setFrom</A></B>(&lt;<a href="String.html">String</a>&gt; emailString, &lt;<a href="String.html">String</a>&gt; nameString)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Sets the sender of an e-mail message.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#setSubject">setSubject</A></B>(&lt;<a href="String.html">String</a>&gt; subject)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Sets the subject of an e-mail message.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#setTo">setTo</A></B>(&lt;<a href="String.html">String</a>&gt; emailString, &lt;<a href="String.html">String</a>&gt; nameString)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Sets the recipient of an e-mail message.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&lt;static&gt;&nbsp;&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#!s!addText">addText</A></B>(&lt;<a href="String.html">String</a>&gt; text)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Appends a string to the body text of an e-mail message.
+      </TD>
+   </TR>
+
+
+</TABLE>
+
+
+
+<P>
+<!-- ========== END METHOD SUMMARY =========== -->
+
+
+    <!-- ========= CONSTRUCTOR DETAIL START ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+   <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+      <TD COLSPAN=1>
+      <FONT SIZE="+2"><B>Constructor Detail</B></FONT>
+      </TD>
+   </TR>
+</TABLE>
+
+<A NAME="Mail()"><!-- --></A><H3>
+Mail</H3>
+<PRE><B>Mail</B>()</PRE>
+
+
+<UL>
+   Helma's built-in mail client enables you to send e-mail via SMTP.
+ <br /><br />
+ A mail client object is created by using the Mail() constructor.
+ The mail object then can be manipulated and sent using the 
+ methods listed below.
+ <br /><br />
+ You'll need the JavaMail library installed for this to work. 
+ Also, don't forget to set your mail server via the smtp 
+ property in the app.properties or server.properties file.
+ <br /><br />
+ Note: Make sure that the SMTP server itself is well-configured, 
+ so that it accepts e-mails coming from your server and does 
+ not deny relaying. Best and fastest configuration is of course 
+ if you run your own SMTP server (e.g. postfix) which might be 
+ a bit tricky to set up, however.</p>
+</UL>
+
+
+
+   </UL>
+
+
+<!-- Constructor return value(s) -->
+
+<!-- End constructor return value(s) -->
+
+<!-- ADDITIONAL ATTRIBUTES -->
+
+<UL>   
+<B>Deprecated</B> <I>use {link helma.Mail} instead    </I><BR/><BR/>
+</UL>
+
+<HR/>
+<!-- END ADDITIONAL ATTRIBUTES  -->
+
+<!-- ========= CONSTRUCTOR DETAIL END ======== -->
+
+
+<!-- ============ FIELD DETAIL START =========== -->
+
+
+<!-- ============ FIELD DETAIL END =========== -->
+
+<!-- ============ METHOD DETAIL START ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+   <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+      <TD COLSPAN=1><FONT SIZE="+2">
+         <B>Method Detail</B></FONT>
+      </TD>
+   </TR>
+</TABLE>
+
+<!-- One single method detail entry -->
+
+   <A NAME="addBCC"><!-- --></A>
+   <H3>addBCC</H3>
+   <PRE>void <B>addBCC</B>(&lt;<a href="String.html">String</a>&gt; emailString, &lt;<a href="String.html">String</a>&gt; nameString)</PRE>
+   
+      <UL>Adds a recipient to the list of addresses to get a "blind carbon copy" of an e-mail message.
+ <br /><br />
+ The emailString argument specifies the receipient's e-mail address. 
+ The optional nameString argument specifies the name of the recipient.
+ <br /><br />
+ Example:
+ <pre> var mail = new Mail();
+ mail.addBCC("hop&#64;helma.at");
+ mail.addBCC("tobi&#64;helma.at", "Tobi Schaefer");</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>emailString</CODE> -  as String, receipients email address  
+      </UL> 
+   
+     <UL><CODE>nameString</CODE> -  as String, optional receipients name    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="addCC"><!-- --></A>
+   <H3>addCC</H3>
+   <PRE>void <B>addCC</B>(&lt;<a href="String.html">String</a>&gt; emailString, &lt;<a href="String.html">String</a>&gt; nameString)</PRE>
+   
+      <UL>Adds an address to the list of carbon copy recipients.
+ <br /><br />
+ The emailString argument specifies the receipient's e-mail address. 
+ The optional nameString argument specifies the name of the recipient.
+ <br /><br />
+ Example:
+ <pre> var mail = new Mail();
+ mail.addCC("hop&#64;helma.at");
+ mail.addCC("tobi&#64;helma.at", "Tobi Schaefer");</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>emailString</CODE> -  as String, receipients email address  
+      </UL> 
+   
+     <UL><CODE>nameString</CODE> -  as String, optional receipients name    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="addPart"><!-- --></A>
+   <H3>addPart</H3>
+   <PRE>void <B>addPart</B>(fileOrMimeObject, &lt;<a href="String.html">String</a>&gt; nameString)</PRE>
+   
+      <UL>Adds an attachment to an e-mail message.
+ <br /><br />
+ The attachment needs to be either a MIME Object or a java.io.file object.
+ <br /><br />
+ Use the getURL() function to retrieve a MIME object or wrap a 
+ java.io.File object around a file of the local file system.
+ <br /><br />
+ Example:
+ <pre> var file1 = getURL("http://localhost:8080/static/image.gif");
+ var file2 = getURL("file:////home/snoopy/woodstock.jpg");
+ var file3 = new java.io.File("/home/snoopy/woodstock.jpg");
+ var mail = new Mail();
+ mail.addPart(file1);
+ mail.addPart(file2);
+ mail.addPart(file3);
+ &nbsp;
+ mail.setFrom("snoopy&#64;doghouse.com");
+ mail.setTo("woodstock&#64;birdcage.com");
+ mail.setSubject("Look at this!");
+ mail.addText("I took a photograph from you. Neat, isn't it? -Snoop");
+ mail.send();</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>nameString</CODE> -  as String, optional name of the attachment  
+      </UL> 
+   
+     <UL><CODE>File</CODE> -  or Mime object to attach to the email  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- global.getUrl<BR/>- mimePart<BR/>- java.io.File</UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="addTo"><!-- --></A>
+   <H3>addTo</H3>
+   <PRE>void <B>addTo</B>(&lt;<a href="String.html">String</a>&gt; emailString, &lt;<a href="String.html">String</a>&gt; nameString)</PRE>
+   
+      <UL>Adds a recipient to the address list of an e-mail message.
+ <br /><br />
+ The emailString argument specifies the receipient's e-mail address. 
+ The optional nameString argument specifies the name of the recipient.
+ <br /><br />
+ Example:
+ <pre> var mail = new Mail();
+ mail.setTo("hop&#64;helma.at");
+ mail.addTo("hopdoc&#64;helma.at");
+ mail.addTo("tobi&#64;helma.at", "Tobi Schaefer");</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>emailString</CODE> -  as String, receipients email address  
+      </UL> 
+   
+     <UL><CODE>nameString</CODE> -  as String, optional receipients name  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- setTo</UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="send"><!-- --></A>
+   <H3>send</H3>
+   <PRE>void <B>send</B>()</PRE>
+   
+      <UL>Sends an e-mail message.
+ <br /><br />
+ This function sends the message created with the Mail 
+ object using the SMTP server as specified in either 
+ the app.properties or the server.properties file.
+ <br /><br />
+ Example:
+ <pre> var mail = new Mail();
+ mail.setTo("watching&#64;michi.tv", "michi");
+ mail.addCC("franzi&#64;home.at", "franzi");
+ mail.addBCC("monie&#64;home.at");
+ mail.setFrom("chef&#64;frischfleisch.at", "Hannes");
+ mail.setSubject("Registration Conformation");
+ mail.addText("Thanks for your Registration...");
+ mail.send();</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="setFrom"><!-- --></A>
+   <H3>setFrom</H3>
+   <PRE>void <B>setFrom</B>(&lt;<a href="String.html">String</a>&gt; emailString, &lt;<a href="String.html">String</a>&gt; nameString)</PRE>
+   
+      <UL>Sets the sender of an e-mail message.
+ <br /><br />
+ The emailString argument specifies the receipient's 
+ e-mail address. The optional nameString argument 
+ specifies the name of the recipient.
+ <br /><br />
+ Example:
+ <pre> var mail = new Mail();
+ mail.setFrom("tobi&#64;helma.at", "Tobi Schaefer");</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>emailString</CODE> -  as String, sender email address  
+      </UL> 
+   
+     <UL><CODE>nameString</CODE> -  as String, optional sender name    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="setSubject"><!-- --></A>
+   <H3>setSubject</H3>
+   <PRE>void <B>setSubject</B>(&lt;<a href="String.html">String</a>&gt; subject)</PRE>
+   
+      <UL>Sets the subject of an e-mail message.
+ <br /><br />
+ Example:
+ <pre> var mail = new Mail();
+ mail.setSubject("Hello, World!");</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>subject</CODE> -  as String, the email subject    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="setTo"><!-- --></A>
+   <H3>setTo</H3>
+   <PRE>void <B>setTo</B>(&lt;<a href="String.html">String</a>&gt; emailString, &lt;<a href="String.html">String</a>&gt; nameString)</PRE>
+   
+      <UL>Sets the recipient of an e-mail message.
+ &nbsp;
+ The emailString argument specifies the receipient's 
+ e-mail address. The optional nameString argument 
+ specifies the name of the recipient.
+ <br /><br />
+ Example:
+ <pre> var mail = new Mail();
+ mail.setTo("hop&#64;helma.at");</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>emailString</CODE> -  as String, receipients email address  
+      </UL> 
+   
+     <UL><CODE>nameString</CODE> -  as String, optional receipients name  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#addTo">addTo()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="!s!addText"><!-- --></A>
+   <H3>addText</H3>
+   <PRE>&lt;static&gt;&nbsp;void <B>addText</B>(&lt;<a href="String.html">String</a>&gt; text)</PRE>
+   
+      <UL>Appends a string to the body text of an e-mail message.
+ <br /><br />
+ Example:
+ <pre> var mail = new Mail();
+ mail.addText("Hello, World!");</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>text</CODE> -  as String, to be appended to the message body    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+
+
+<!-- ============ METHOD DETAIL END ========== -->
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+
+<!-- =========== END OF NAVBAR =========== -->
+
+<HR>
+<FONT SIZE="-1">
+
+</FONT>
+
+
+
+
+<div class="jsdoc_ctime">Documentation generated by <a href="http://jsdoc.sourceforge.net/" target="_parent">JSDoc</a> on Thu Jul 19 01:13:37 2007</div>
+
+
+</BODY>
+</HTML>

@@ -1,0 +1,68 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html"/>
+	<title>按钮实例 -- JSR2+</title>
+	<script type="text/javascript" src="../../common/js/core.js?lib=webui"></script>
+	<link rel="stylesheet" href="../resources/example.css" type="text/css" media="all"/>
+</head>
+
+<body>
+<div id="bodyPanel" style="display:none">
+	<b>按钮实例</b><hr/><br/>
+	<!-- 面板 -->
+	<div id="panel"></div>
+	<!-- 面板内容 -->
+	<div id="contentPanel">
+		<!-- 控件实例 -->
+		<fieldset id="example"><div class="gbPanel">
+			<table class="font"><tr>
+				<td width="120px" height="40px"><button id="button1"></button></td>
+				<td><button id="button2"></button></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<!-- 相关方法 -->
+		<fieldset id="method"><div class="gbPanel">
+			<table class="method-area2"><tr>
+				<td><button id="b1"></button></td><td><button id="b2"></button></td>
+				<td><button id="b3"></button></td><td><button id="b4"></button></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<div class="font">注: 相关方法是针对 "测试按钮1" 操作的。</div>
+	</div>
+	<!-- 面板内容结束 -->
+</div>
+</body>
+
+<script>
+var b1, b2, btn, disabled = true;
+new UI.Panel({id:"panel", caption:"应用实例 -> 按钮", width:520, height:280, body:"contentPanel"});
+new UI.GroupBox({id:"example", caption:"控件实例"});
+new UI.GroupBox({id:"method", caption:"相关方法"});
+//创建按钮
+b1 = new UI.Button({id:"button1", caption:"测试按钮", width:85});
+b2 = new UI.Button({id:"button2", caption:"测试按钮2", width:85, title:"这是一个测试按钮"});
+//相关方法按钮
+btn = new UI.Button({id:"b1", caption:"bind", width:105});
+btn.bind(function() {
+	b1.bind(function(){ alert("你单击了 '测试按钮1' 。") });
+});
+btn = new UI.Button({id:"b2", caption:"disable", width:105});
+btn.bind(function() {
+	b1.disable(disabled);
+	disabled = !disabled;
+});
+btn = new UI.Button({id:"b3", caption:"focus", width:105});
+btn.bind(function() {
+	b1.focus();
+});
+btn = new UI.Button({id:"b4", caption:"setCaption", width:105});
+btn.bind(function() {
+	b1.setCaption('改名字了:)', '我是测试按钮');
+});
+
+onLoad.add(function(){ $("bodyPanel").style.display = "" });
+</script>
+
+</html>

@@ -1,0 +1,49 @@
+<style>
+/*
+	.dragArea{
+		background-color:blue;
+		filter:alpha(opacity=50);
+		-moz-opacity:0.5;
+	}
+*/
+	.dragBox{
+		border:solid 1px lightblue;
+	}
+	body{
+		margin:0px;
+	}
+</style>
+<body>
+<div style="top:0px;left:0px;width:100px;height:100px;position:absolute;background:black;" onselectstart="return false;" 
+onmousedown="mousedown.apply(this,arguments);">
+</div>
+</body>
+<script type="text/javascript" src="./drag.js"></script>
+<script type="text/javascript">
+function mousedown()
+{
+	var e=arguments[0]||event;
+	var me=this;
+	var dy=e.clientY-parseInt(me.style.top);
+	var dx=e.clientX-parseInt(me.style.left);
+	var dragbox=document.createElement("div");
+	dragbox.className="dragbox";
+	dragbox.style.width=me.style.width;
+	dragbox.style.height=me.style.height;
+	dragbox.style.position="absolute";
+	document.body.appendChild(dragbox);
+	startdrag(
+		document.body,
+		function(e){
+			e=e||event;
+			dragbox.style.top=e.clientY-dy;
+			dragbox.style.left=e.clientX-dx;
+		},
+		function(e){
+			document.body.removeChild(dragbox);
+			me.style.top=e.clientY-dy;
+			me.style.left=e.clientX-dx;
+		}
+	);
+}
+</script>

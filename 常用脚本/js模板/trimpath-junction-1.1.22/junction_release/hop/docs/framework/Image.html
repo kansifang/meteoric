@@ -1,0 +1,1068 @@
+<!DOPropertiesCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN""http://www.w3.org/TR/REC-html40/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+Image - Helma Javascript Reference
+</TITLE>
+<LINK REL ="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+
+
+</HEAD>
+<SCRIPT>
+function asd()
+{
+parent.document.title="Image - Helma Javascript Reference";
+}
+</SCRIPT>
+<BODY BGCOLOR="white" onload="asd();">
+      
+      
+
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>Image</H2>
+<PRE>Object
+   |
+   +--<b>Image</b>
+</PRE>
+
+
+<HR>
+
+<DL>
+   <!-- Class definition
+   <DT>class 
+   <B>Image</B>
+    -->
+
+</DL>
+   
+   <P>
+   <I>Defined in <a href='overview-summary-Image.js.html'>Image.js</a></I><BR/><BR/>
+   </P>
+   <HR>
+   
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+<!-- =========== END OF NAVBAR =========== -->
+<HR>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TD COLSPAN=2><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD>
+      <CODE>
+	 <B>
+	    <A HREF="#Image()">Image</A></B>(&lt;<a href="String.html">String</a>&gt; img)
+      </CODE>
+      <BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Helma's built-in image object allows you to read, manipulate, and save images.
+      </TD>
+</TR>
+</TABLE>
+
+<!-- ======== END CONSTRUCTOR SUMMARY ======== -->
+
+&nbsp;
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+   
+
+<!-- =========== END FIELD SUMMARY =========== -->
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TD COLSPAN=2><FONT SIZE="+2">
+<B>Methods Summary</B></FONT></TD>
+</TR>
+
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#crop">crop</A></B>(&lt;<a href="Number.html">Number</a>&gt; x, &lt;<a href="Number.html">Number</a>&gt; y, &lt;<a href="Number.html">Number</a>&gt; width, &lt;<a href="Number.html">Number</a>&gt; height)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Cuts out (crops) a rectanglular area of an image.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#dispose">dispose</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Disposes an Image object that is no longer needed.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#drawLine">drawLine</A></B>(&lt;<a href="Number.html">Number</a>&gt; xStart, &lt;<a href="Number.html">Number</a>&gt; yStart, &lt;<a href="Number.html">Number</a>&gt; xEnd, &lt;<a href="Number.html">Number</a>&gt; yEnd)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Draws a line onto an image.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#drawRect">drawRect</A></B>(&lt;<a href="Number.html">Number</a>&gt; x, &lt;<a href="Number.html">Number</a>&gt; y, &lt;<a href="Number.html">Number</a>&gt; width, &lt;<a href="Number.html">Number</a>&gt; height)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Draws a rectangle onto an image.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#fillRect">fillRect</A></B>(&lt;<a href="Number.html">Number</a>&gt; x, &lt;<a href="Number.html">Number</a>&gt; y, &lt;<a href="Number.html">Number</a>&gt; width, &lt;<a href="Number.html">Number</a>&gt; height)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Draws a filled rectangle onto an image.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Number.html">Number</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getHeight">getHeight</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns the height of an image measured in pixels.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;ImageInfo</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getInfo">getInfo</A></B>(&lt;<a href="String.html">String</a>&gt; pathOfImage)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns an ImageInfo object for an image.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;awt.image</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getSource">getSource</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Retrieves a Java-compatible image object from a Helma image object.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Number.html">Number</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getWidth">getWidth</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns the width of an image measured in pixels.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#reduceColors">reduceColors</A></B>(&lt;<a href="Number.html">Number</a>&gt; colorDepth)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Reduces the number of available colors (color depth) in an image.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#resize">resize</A></B>(&lt;Integer&gt; width, heigth)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Sets the height and width of an image to new values.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#setColor">setColor</A></B>(&lt;<a href="Number.html">Number</a>&gt; red, &lt;<a href="Number.html">Number</a>&gt; green, &lt;<a href="Number.html">Number</a>&gt; blue)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Sets the color for current drawing actions.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#setFont">setFont</A></B>(&lt;<a href="String.html">String</a>&gt; name, &lt;<a href="Number.html">Number</a>&gt; style, &lt;<a href="Number.html">Number</a>&gt; size)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Determines the typeface font to be used in current drawing actions.
+      </TD>
+   </TR>
+
+
+</TABLE>
+
+
+
+<P>
+<!-- ========== END METHOD SUMMARY =========== -->
+
+
+    <!-- ========= CONSTRUCTOR DETAIL START ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+   <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+      <TD COLSPAN=1>
+      <FONT SIZE="+2"><B>Constructor Detail</B></FONT>
+      </TD>
+   </TR>
+</TABLE>
+
+<A NAME="Image()"><!-- --></A><H3>
+Image</H3>
+<PRE><B>Image</B>(&lt;<a href="String.html">String</a>&gt; img)</PRE>
+
+
+<UL>
+   Helma's built-in image object allows you to read, manipulate, and save images.
+ <br /><br />
+ An image object is created using the Image() constructor.
+ <br /><br />
+ Example:
+ <pre> var img = new Image("http://helma.org/image.gif");</pre>
+</UL>
+
+
+
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>img</CODE> -  as String of a URL, or a java.io.InputStream object  
+     </UL>
+   
+   
+   </UL>
+
+
+<!-- Constructor return value(s) -->
+
+<!-- End constructor return value(s) -->
+
+<!-- ADDITIONAL ATTRIBUTES -->
+
+<HR/>
+<!-- END ADDITIONAL ATTRIBUTES  -->
+
+<!-- ========= CONSTRUCTOR DETAIL END ======== -->
+
+
+<!-- ============ FIELD DETAIL START =========== -->
+
+
+<!-- ============ FIELD DETAIL END =========== -->
+
+<!-- ============ METHOD DETAIL START ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+   <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+      <TD COLSPAN=1><FONT SIZE="+2">
+         <B>Method Detail</B></FONT>
+      </TD>
+   </TR>
+</TABLE>
+
+<!-- One single method detail entry -->
+
+   <A NAME="crop"><!-- --></A>
+   <H3>crop</H3>
+   <PRE>void <B>crop</B>(&lt;<a href="Number.html">Number</a>&gt; x, &lt;<a href="Number.html">Number</a>&gt; y, &lt;<a href="Number.html">Number</a>&gt; width, &lt;<a href="Number.html">Number</a>&gt; height)</PRE>
+   
+      <UL>Cuts out (crops) a rectanglular area of an image.
+ <br /><br />
+ The dimensions of the area are calculated from the 
+ xNumber- and yNumber-offsets (ie. from the top left 
+ corner of the image as upper left reference point) 
+ to xNumber + widthNumber and yNumber + heightNumber 
+ as lower right reference point.
+ <br /><br />
+ Example:
+ <pre> var img = new Image("http://helma.org/images/original.gif");
+ res.write('&lt:img src="/images/original.gif" /&gt;');
+ &nbsp;
+ <img src="http://helma.org/static/images/helma/hopcropanim.gif" />
+ &nbsp;
+ img.crop(58, 9, 48, 21);
+ img.saveAs("/www/images/processed.gif");
+ res.write('&lt;img src="/images/processed.gif" /&gt;');
+ &nbsp;
+ <img src="http://helma.org/static/images/helma/crop.gif" /></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>x</CODE> -  as Number, offset from the top left corner of the image  
+      </UL> 
+   
+     <UL><CODE>y</CODE> -  as Number, offset from the lower right corner of image  
+      </UL> 
+   
+     <UL><CODE>width</CODE> -  as Number, the width of the image  
+      </UL> 
+   
+     <UL><CODE>height</CODE> -  as Number, the height of the image    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="dispose"><!-- --></A>
+   <H3>dispose</H3>
+   <PRE>void <B>dispose</B>()</PRE>
+   
+      <UL>Disposes an Image object that is no longer needed. 
+ <br /><br />
+ If an instance of java.awt.Graphics has been allocated 
+ for the Image, the dispose() method is called on it to 
+ free its resources.
+ <br /><br />
+ Example:
+ <pre> var img = new Image("http://helma.org/images/original.jpg");
+ // do something useful or funny with the image
+ img.dispose();</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="drawLine"><!-- --></A>
+   <H3>drawLine</H3>
+   <PRE>void <B>drawLine</B>(&lt;<a href="Number.html">Number</a>&gt; xStart, &lt;<a href="Number.html">Number</a>&gt; yStart, &lt;<a href="Number.html">Number</a>&gt; xEnd, &lt;<a href="Number.html">Number</a>&gt; yEnd)</PRE>
+   
+      <UL>Draws a line onto an image.
+ <br /><br />
+ The line starts at the reference point defined by the offsets
+ x1Number and y1Number from the top left corner of the image 
+ and ends at the reference point defined by the offsets x2Number
+ and y2Number.
+ <br /><br />
+ Example:
+ <pre> var img = new Image("http://helma.org/images/original.gif");
+ res.write('&lt;img src="/images/original.gif" /&gt;');
+ &nbsp;
+ <img src="http://helma.org/static/images/helma/helmalogo.gif" />
+ &nbsp;
+ img.setColor(204, 0, 0);
+ img.drawLine(58, 26, 100, 26);
+ img.saveAs("/www/images/processed.gif");
+ res.write('&lt;img src="/images/processed.gif" /&gt;');
+ &nbsp;
+ <img src="http://helma.org/static/images/helma/drawline.gif" /></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>xStart</CODE> -  as Number, horizontal reference point from top left corner of the image  
+      </UL> 
+   
+     <UL><CODE>yStart</CODE> -  as Number, vertical reference point from top left corner of the image  
+      </UL> 
+   
+     <UL><CODE>xEnd</CODE> -  as Number, horizontal reference point where the line ends in the image  
+      </UL> 
+   
+     <UL><CODE>yEnd</CODE> -  as Number, vertical reference point where the line ends in the image    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="drawRect"><!-- --></A>
+   <H3>drawRect</H3>
+   <PRE>void <B>drawRect</B>(&lt;<a href="Number.html">Number</a>&gt; x, &lt;<a href="Number.html">Number</a>&gt; y, &lt;<a href="Number.html">Number</a>&gt; width, &lt;<a href="Number.html">Number</a>&gt; height)</PRE>
+   
+      <UL>Draws a rectangle onto an image.
+ <br /><br />
+ The rectangle's dimensions are calculated from the 
+ xNumber- and yNumber-offset (ie. from the top left 
+ corner of the image as upper left reference point) 
+ to xNumber + widthNumber and yNumber + heightNumber 
+ as lower right reference point.
+ <br /><br />
+ Example:
+ <pre> var img = new Image("http://helma.org/images/originalgif");
+ res.write('&lt;img src="/images/original.gif" /&gt;');
+ &nbsp;
+ <img src="http://helma.org/static/images/helma/helmalogo.gif" />
+ &nbsp;
+ img.setColor(204, 0, 0);
+ img.drawRect(57, 8, 46, 20);
+ img.saveAs("/www/images/processed.gif");
+ res.write('&lt;img src="/images/processed.gif" /&gt;');
+ &nbsp;
+ <img src="http://helma.org/static/images/helma/drawrect.gif" /></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>x</CODE> -  as Number, as upper left reference point.   
+      </UL> 
+   
+     <UL><CODE>y</CODE> -  as Number, as the lower right reference point upperleft  
+      </UL> 
+   
+     <UL><CODE>width</CODE> -  as Number, width of the crop  
+      </UL> 
+   
+     <UL><CODE>height</CODE> -  as Number, height of the crop    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="fillRect"><!-- --></A>
+   <H3>fillRect</H3>
+   <PRE>void <B>fillRect</B>(&lt;<a href="Number.html">Number</a>&gt; x, &lt;<a href="Number.html">Number</a>&gt; y, &lt;<a href="Number.html">Number</a>&gt; width, &lt;<a href="Number.html">Number</a>&gt; height)</PRE>
+   
+      <UL>Draws a filled rectangle onto an image.
+ <br /><br />
+ The rectangle's dimensions are calculated from the 
+ xNumber- and yNumber-offset (ie. from the top left 
+ corner of the image as upper left reference point) 
+ to xNumber + widthNumber and yNumber + heightNumber 
+ as lower right reference point.
+ <br /><br />
+ Example:
+ <pre> var img = new Image("http://helma.org/images/original.gif");
+ res.write('&lt;img src="/images/original.gif" /&gt;');
+ &nbsp;
+ <img src="http://helma.org/static/images/helma/helmalogo.gif" />
+ &nbsp;
+ img.setColor(204, 0, 0);
+ img.fillRect(58, 27, 43, 29);
+ img.saveAs("/www/images/processed.gif");
+ res.write('&lt;img src="/images/processed.gif" /&gt;');
+ &nbsp;
+ </pre><img src="http://helma.org/static/images/helma/fillrect.gif" /></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>x</CODE> -  as Number, from the top left corner of the image.  
+      </UL> 
+   
+     <UL><CODE>y</CODE> -  as Number, from the lower reference point.  
+      </UL> 
+   
+     <UL><CODE>width</CODE> -  as Number, width of the rectangle  
+      </UL> 
+   
+     <UL><CODE>height</CODE> -  as Number, height of the rectangle    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getHeight"><!-- --></A>
+   <H3>getHeight</H3>
+   <PRE><a href="Number.html">Number</a> <B>getHeight</B>()</PRE>
+   
+      <UL>Returns the height of an image measured in pixels.
+ <br /><br />
+ Example:
+ <pre> var img = new Image("http://helma.org/images/hop.gif");
+ res.write('&lt;img src="/images/hop.gif" /&gt;');
+ &nbsp;
+ <img src="http://helma.org/static/images/helma/helmalogo.gif" />
+ &nbsp;
+ var height = img.getHeight();
+ res.write(height);
+ <i>35</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Number   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getInfo"><!-- --></A>
+   <H3>getInfo</H3>
+   <PRE>ImageInfo <B>getInfo</B>(&lt;<a href="String.html">String</a>&gt; pathOfImage)</PRE>
+   
+      <UL>Returns an ImageInfo object for an image.
+ <br /><br />
+ This function allows to retrieve image properties 
+ such as width, height and MIME type without the need 
+ to fully decode the image.
+ <br /><br />
+ Example:
+ &nbsp;
+ <pre> var info = Image.getInfo("http://helma.org/images/hop.gif");
+ if (info) {
+ &nbsp;&nbsp;res.writeln('width: ' + info.width);
+ &nbsp;&nbsp;res.writeln('height: ' + info.height);
+ }
+ &nbsp;
+ <i>width: 174
+ height: 35</i>
+ <br /><br />
+ Note that in contrast to the other Image function, this is called on the 
+ constructor rather than on a decoded Image object. This is because the 
+ purpose of this function is to avoid the expensive image decoding 
+ process if we're just interested in some of the image's properties.
+ <br /><br />
+ The function returns an instance of Marco Schmidt's ImageInfo object 
+ if the image could be read, or null if the image couldn't be read. 
+ See the ImageInfo API documentation for the full set of methods. 
+ (Remember that you can getters as properties in Rhino as shown in the example above.)</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>pathOfImage</CODE> -  as String, it can be a path, url, byteArray or inputstream.  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        ImageInfo   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getSource"><!-- --></A>
+   <H3>getSource</H3>
+   <PRE>awt.image <B>getSource</B>()</PRE>
+   
+      <UL>Retrieves a Java-compatible image object from a Helma image object.
+ <br /><br />
+ To use some of the image filters provided by the JIMI Java image 
+ processing package com.sun.jimi.core.filters, a specific Java 
+ class of image objects is needed.
+ <br /><br />
+ Helma wraps the sun.awt.image objects into a custom class. 
+ To use Helma image objects with JIMI's filters these have to be 
+ "unwrapped" using the getSource() function.
+ <br /><br />
+ <b>The following filter functions have been successfully applied the way as described in the examples below:</b>
+ <pre> &nbsp;&nbsp;* Rotate(degreeNumber)
+ &nbsp;&nbsp;* Gray()
+ &nbsp;&nbsp;* Flip(typeNumber)
+ &nbsp;&nbsp;* Oil(intensityNumber)
+ &nbsp;&nbsp;* Invert()
+ &nbsp;&nbsp;* Smooth(intensityNumber)
+ &nbsp;&nbsp;* Shear(degreeNumber)
+ &nbsp;&nbsp;* Edges()
+ &nbsp;&nbsp;* Shrink(multiplyNumber)
+ &nbsp;&nbsp;* Enlarge(divisionNumber)</pre>
+ <br /><br />
+ Please take into account that the quality might suffer depending on the type 
+ and amount of filters applied to the image.</p> 
+ <br /><br />
+ Example:
+ <pre> var img = new Image("http://helma.org/static/original.jpg");
+ var filters = Packages.com.sun.jimi.core.filters;
+ var rotator = new filters.Rotate(45);
+ var processed = new Image(img, rotator);
+ processed.saveAs("/path/to/static/processed.jpg");
+ res.write('&lt;img src="/static/processed.jpg" /&gt;');
+ &nbsp;
+ <img src="http://helma.org/static/images/helma/rotated45.jpg" />
+ &nbsp;
+ var oil = new filters.Oil(img.getSource(), 3);
+ var processed = new Image(img, oil);
+ processed.saveAs("/path/to/static/processed.jpg");
+ res.write('&lt;img src="/static/processed.jpg" /&gt;');
+ &nbsp;
+ <img src="http://helma.org/static/images/helma/oilfiltered.jpg" /></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Packages.com.sun.awt.image   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- Packages.com.sun.awt.image</UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getWidth"><!-- --></A>
+   <H3>getWidth</H3>
+   <PRE><a href="Number.html">Number</a> <B>getWidth</B>()</PRE>
+   
+      <UL>Returns the width of an image measured in pixels.
+ <br /><br />
+ Example:
+ <pre> var img = new Image("http://helma.org/images/hop.gif");
+ res.write('&lt;img src="/images/hop.gif" /&gt;');
+ &nbsp;
+ <img src="http://helma.org/static/images/helma/helmalogo.gif" />
+ &nbsp;
+ var width = img.getWidth();
+ res.write(width);
+ <i>174</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Number   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="reduceColors"><!-- --></A>
+   <H3>reduceColors</H3>
+   <PRE>void <B>reduceColors</B>(&lt;<a href="Number.html">Number</a>&gt; colorDepth)</PRE>
+   
+      <UL>Reduces the number of available colors (color depth) in an image.
+ <br /><br />
+ Note: GIF images need a color depth of 256 colors maximum. Use this function with caution, generally.
+ <br /><br />
+ Example:
+ <pre> var img = new Image("http://helma.org/images/original.jpg");
+ res.write('&lt;img src="/images/original.jpg" /&gt;');
+ &nbsp;
+ <img src="http://helma.org/static/images/helma/hawatosch.jpg" />
+ &nbsp;
+ img.reduceColors(8);
+ img.saveAs("/www/images/processed.jpg");
+ res.write('&lt;img src="/images/processed.jpg" /&gt;');</pre>
+ <img src="http://helma.org/static/images/helma/reducedcolors.jpg" /></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>colorDepth</CODE> -  as Number, value of color depth in an image.    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="resize"><!-- --></A>
+   <H3>resize</H3>
+   <PRE>void <B>resize</B>(&lt;Integer&gt; width, heigth)</PRE>
+   
+      <UL>Sets the height and width of an image to new values.
+ <br /><br />
+ The widthNumber and heightNumber arguments need to be integers, 
+ so be careful to round the new values eventually.
+ <br /><br />
+ In case of a GIF image always reduce the image to 256 colors after resizing 
+ by using the reduceColors() function.
+ <br /><br />
+ Example:
+ <pre> var img = new Image("http://helma.org/images/original.jpg");
+ res.write('&ltimg src="/images/original.jpg" /&gt;');
+ &nbsp;
+ <img src="http://helma.org/static/images/helma/hawatosch.jpg" />
+ &nbsp;
+ var factor = 0.66;
+ var wd = Math.round(img.getWidth() * factor);
+ var ht = Math.round(img.getHeight() * factor);
+ img.resize(wd, ht);
+ img.saveAs("/www/images/processed.jpg");
+ &nbsp;
+ <i>res.write('&lt;img src="/images/processed.jpg" /&gt;');</i></pre>
+ <img src="http://helma.org/static/images/helma/hawatosch.jpg" /></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>width</CODE> -  as Number, new width of the image.  
+      </UL> 
+   
+     <UL><CODE>height</CODE> -  as Number, new height of the image.    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="setColor"><!-- --></A>
+   <H3>setColor</H3>
+   <PRE>void <B>setColor</B>(&lt;<a href="Number.html">Number</a>&gt; red, &lt;<a href="Number.html">Number</a>&gt; green, &lt;<a href="Number.html">Number</a>&gt; blue)</PRE>
+   
+      <UL>Sets the color for current drawing actions.
+ <br /><br />
+ The colorNumber argument is represented by a 24-bit integer (0-16777215), 
+ the redNumber, greenNumber and blueNumber arguments build an RGB 
+ tuple with each element ranging from 0 to 255.
+ <br /><br />
+ Example:
+ <pre> var img = new Image("http://helma.org/images/original.jpg");
+ res.write('&lt;img src="/images/original.jpg" /&gt;');
+ &nbsp;
+ <img src="http://helma.org/static/images/helma/hawatosch.jpg" />
+ &nbsp;
+ img.setColor(16777215);
+ img.fillRect(80, 50, 30, 30);
+ img.setColor(255, 255, 0);
+ img.fillRect(65, 15, 30, 30);
+ img.saveAs("/www/images/processed.jpg");
+ res.write('&lt;img src="/images/processed.jpg" /&gt;');
+ &nbsp;
+ <img src="http://helma.org/static/images/helma/setcolor.jpg" /></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>red</CODE> -  as Number, RGB value ranging from 0 to 255 or if it the only parameter then it can be a 24 bit Integer  
+      </UL> 
+   
+     <UL><CODE>green</CODE> -  as Number, RGB value ranging from 0 to 255  
+      </UL> 
+   
+     <UL><CODE>blue</CODE> -  as Number, RGB value ranging from 0 to 255.    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="setFont"><!-- --></A>
+   <H3>setFont</H3>
+   <PRE>void <B>setFont</B>(&lt;<a href="String.html">String</a>&gt; name, &lt;<a href="Number.html">Number</a>&gt; style, &lt;<a href="Number.html">Number</a>&gt; size)</PRE>
+   
+      <UL>Determines the typeface font to be used in current drawing actions.
+ <br /><br />
+ Using this function sets the font to be used in subsequent calls of the drawString() function.
+ <br /><br />
+ The nameString argument specifies the font face as string (e.g. "sansserif", "dialog").
+ <br /><br />
+ The integer styleNumber sets the font to normal (0), bold (1), italic (2) or bold and italic (3).
+ <br /><br />
+ The sizeNumber, an integer as well, refers to the font size in pixels.
+ <br /><br />
+ Please take a look at the description about adding fonts to the Java runtime 
+ for a detailed look onto Java's font mechanics.
+ <br /><br />
+ Example:
+ <pre> var img = new Image("http://helma.org/images/original.jpg");
+ res.write('&lt;img src="/images/original.jpg" /&gt;');
+ &nbsp;
+ <img src="http://helma.org/static/images/helma/hawatosch.jpg" />
+ &nbsp;
+ img.setColor(255, 255, 255);
+ img.setFont("serif", 0, 12);
+ img.drawString("I shot the serif.", 50, 15);
+ img.setFont("sansserif", 1, 14);
+ img.drawString("But I didn't shoot", 10, 100);
+ img.setFont("monospaced", 2, 16);
+ img.drawString("the monotype.", 15, 115);
+ img.saveAs("/www/images/processed.png");
+ res.write('&lt;img src="/images/processed.png" /&gt;');</pre>
+ <img src="http://helma.org/static/images/helma/setfont.jpg" /></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  as String, specifies the font face (e.g. "sansserif").  
+      </UL> 
+   
+     <UL><CODE>style</CODE> -  as Number, the styleNumber normal (0), bold (1), italic (2) or bold and italic (3).  
+      </UL> 
+   
+     <UL><CODE>size</CODE> -  as Number, refers to font size in pixels    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+
+
+<!-- ============ METHOD DETAIL END ========== -->
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+
+<!-- =========== END OF NAVBAR =========== -->
+
+<HR>
+<FONT SIZE="-1">
+
+</FONT>
+
+
+
+
+<div class="jsdoc_ctime">Documentation generated by <a href="http://jsdoc.sourceforge.net/" target="_parent">JSDoc</a> on Thu Jul 19 01:13:37 2007</div>
+
+
+</BODY>
+</HTML>

@@ -1,0 +1,3 @@
+This is just a fake, empty directory for hop, so that we can have 
+hop serve up static resources from the corresponding subdirectory 
+from ee RAILS_ROOT /public/[subdir]...

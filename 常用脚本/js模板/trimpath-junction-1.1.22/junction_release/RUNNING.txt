@@ -1,0 +1,82 @@
+Junction web-MVC framework and server, 1.1.22
+
+Requirements:
+ - Server software
+   - Java 1.5+
+ - Browser software
+   - Firefox 2+
+   - IE 6+, 7+
+   - Safari (limited support: as Goggle Gears for Safari 
+             is currently unsupported/unreleased)
+
+Database:
+ - For the server-side RDBMS, only Sqlite is currently 
+   supported (2007/07/07).  Junction already includes 
+   all necessary embedded Sqlite 3 drivers/libraries.
+
+Running the Junction server:
+ - Make sure you have Java installed already
+
+ - For Windows, run...
+   
+   hop\start.bat
+
+ - For Linux/Unix/OSX, run...
+
+   hop/start.sh
+
+ - Otherwise, try...
+
+   cd hop
+   java -jar launcher.jar -w 8080
+
+Accessing the sample application:
+ Open up a web browser, and...
+
+ - First, run the application in the Junction web application server...
+
+   http://localhost:8080/engines/100/apps/nextaction
+
+   By accessing that URL, the server-side database will be
+   automatically created for the nextaction sample application.
+
+ - Next, to have the application executed within your 
+   web browser, synchronized with the server-side database...
+
+   http://localhost:8080/engines/100/apps/nextaction;start
+
+Directory structure:
+ - [junction_release]/        - Junction system code and files.
+     docs/                    - Junction framework docs for developers.
+     hop/                     - Helma Object Publisher (hop), 
+                                with sqlite driver added.
+     hop.apps/                - Junction server-side, coded as a hop app.
+     public/                  - Static web directory.
+     script/                  - Command-line scripts and tools.
+
+ - [junction_release].spaces/ - User data and applications live here, where 
+                                each subdirectory represents a team space.
+     100/                     - A sample team space.
+       __users__/             - Info about users who can use team space 100.
+       nextaction/            - A sample application in team space 100.
+         code/                - Next Action static code and resources.
+           app/               - Next Action model-view-controller code.
+           db/                - Next Action schema migration code.
+           public/            - Next Action static web resources.
+         db.sqlite3           - RDBMS for Next Action application in 
+                                team space 100, created automatically 
+                                at runtime.
+       nextwiki/              - As an example, another app in team space 100.
+         ...
+     101/                     - As an example, another team space.
+       ...
+
+  The directory structure is designed to be able to upgrade
+  the Junction system code and files easily in-place without 
+  any accidental overwriting of user team space files.
+
+  If you rename the [junction_release] directory, but be sure 
+  to rename the sibling directory of [junction_release].spaces 
+  to also have the same file root name.  For example, 
+  'go_junction' and 'go_junction.spaces'.
+

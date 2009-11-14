@@ -1,0 +1,67 @@
+<div class="newInstanceMini">
+    <% var action = res.action = null; %>
+    <%= startFormTagLocal('action', 'create', null, { id: 'quickAddAction' }) %>
+      <table border="0" cellpadding="0" cellspacing="0">
+        <tr><td colspan="2" align="center">
+          <h2><%= t('Add a new Action') %>:</h2>
+        </td></tr>
+        <tr>
+          <td><label><%= t('Name') %>:</label></td>
+          <td><%= textField('action', 'name', { size: 20 }) %></td>
+        </tr>
+        <tr>
+          <td nowrap><label><%= t('Active at') %>:</label></td>
+          <td><%= hiddenField('action', 'active_at', { valueFilter: localDateString }) %>
+              <%= dateFillSelect('action[active_at]') %></td>
+        </tr>
+        <tr>
+          <td nowrap><label><%= t('Due at') %>:</label></td>
+          <td><%= textField('action', 'due_at', { valueFilter: localDateString }) %></td>
+        </tr>
+        <tr>
+          <td><label><%= t('Color') %>:</label></td>
+          <td><%= select('action', 'color', tChoices(colorChoices)) %></td>
+        </tr>
+        
+        <% var cchoices = Context.parentChoices();
+           if (cchoices.length > 1) { %>
+              <tr>
+                <td><label><%= t('Context') %>:</label></td>
+                <td><%= select('action', 'context_id', cchoices) %></td>
+               </tr>
+        <% } %>
+        <% var pchoices = Project.parentChoices();
+           if (pchoices.length > 1) { %>
+              <tr>
+                <td><label><%= t('Project') %>:</label></td>
+                <td><%= select('action', 'project_id', pchoices) %></td>
+               </tr>
+        <% } %>
+        <tr>
+          <td colspan="2" align="center">
+            <%= submitButtonLocal("doCreate", t("Add Action"), {
+                style: 'margin-top: .5em; width: 16em;'
+            }) %></td>
+        </tr>
+      </table>
+        <br/>
+
+        <%= linkTo(t('detailed entry'), 'action', 'newInstance', null, { 'class':'txtLinkUnLn', onclick: "return TrimPath.junctionClient.get('action', 'newInstance', null, TrimPath.junctionClient.formToReq(document.getElementById('quickAddAction')))" }) %> 
+         | 
+        <%= linkToLocal(t('bulk entry'), 'action', 'newInstanceBulk', null, {'class':'txtLinkUnLn'}) %>
+        <br/>
+
+        <% if (req.objId == null) { %>
+          <input type="hidden" 
+                 name="from" 
+                 value="<%= req.controllerName %>,<%= req.actionName %>"/>
+        <% } %>
+    <%= endFormTag() %>
+</div>
+
+<script>
+$(document).ready(function() {
+    document.getElementById('action[name]').focus();
+    makePopUpCal('action[due_at]');
+});
+</script>

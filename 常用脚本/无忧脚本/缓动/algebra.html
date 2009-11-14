@@ -1,0 +1,42 @@
+<script src="functional.js"></script>
+<script src="algebra.js"></script>
+<script src="easemove.js"></script>
+
+
+<div style="background:silver;border:solid 1px #999999;width:100px;height:50px;position:relative" onclick="change.call(this)">
+</div>
+<script>
+function change()
+{
+	var me=this;
+	var begin=new Date();
+
+	function f(t){
+		return 50+t/2;
+	}
+	f=EaseMove(1000,50,550);
+	for(var i=0;i<=1000;i+=100)
+	{
+		var o=document.createElement("div");
+		o.style.position="absolute";
+		o.style.height="1px";
+		o.style.overflow="hidden";
+		o.style.width="100px";
+		o.style.background="red";
+		o.style.top=Math.floor(f(i))+"px";
+		me.appendChild(o);
+	}
+
+	var timeHandle=setInterval(function(){
+		var t=new Date()-begin;//alert([t,f(t)])
+		me.style.height=Math.floor(f(t))+"px";
+	},10);
+
+	setTimeout(function(){
+		clearTimeout(timeHandle);
+		me.style.height=Math.floor(f(1000))+"px";
+	},1000);	
+
+	change=Function.prototype;
+}
+</script>

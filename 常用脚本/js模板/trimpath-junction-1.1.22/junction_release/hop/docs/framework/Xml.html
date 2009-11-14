@@ -1,0 +1,552 @@
+<!DOPropertiesCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN""http://www.w3.org/TR/REC-html40/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+Xml - Helma Javascript Reference
+</TITLE>
+<LINK REL ="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+
+
+</HEAD>
+<SCRIPT>
+function asd()
+{
+parent.document.title="Xml - Helma Javascript Reference";
+}
+</SCRIPT>
+<BODY BGCOLOR="white" onload="asd();">
+      
+      
+
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>Xml</H2>
+<PRE>Object
+   |
+   +--<b>Xml</b>
+</PRE>
+
+
+<HR>
+
+<DL>
+   <!-- Class definition
+   <DT>class 
+   <B>Xml</B>
+    -->
+
+</DL>
+   
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+<!-- =========== END OF NAVBAR =========== -->
+<HR>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<!-- ======== END CONSTRUCTOR SUMMARY ======== -->
+
+&nbsp;
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+   
+
+<!-- =========== END FIELD SUMMARY =========== -->
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TD COLSPAN=2><FONT SIZE="+2">
+<B>Methods Summary</B></FONT></TD>
+</TR>
+
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="HopObject.html">HopObject</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#get">get</A></B>(&lt;<a href="String.html">String</a>&gt; urlString)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Retrieves an XML document from a given URL and transforms it into a HopObject.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="HopObject.html">HopObject</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getFromString">getFromString</A></B>(&lt;<a href="String.html">String</a>&gt; xmlString)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Parses the string argument as XML and transforms it into a HopObject.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="HopObject.html">HopObject</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#read">read</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Reads an XML tree from file and transforms it into a HopObject.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="HopObject.html">HopObject</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#readFromString">readFromString</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Reads an XML tree from a string and transforms it into a HopObject.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#write">write</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Dumps a HopObject as XML tree to a file.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#writeToString">writeToString</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Stores a HopObject as XML tree in a string.
+      </TD>
+   </TR>
+
+
+</TABLE>
+
+
+
+<P>
+<!-- ========== END METHOD SUMMARY =========== -->
+
+
+    <!-- ========= CONSTRUCTOR DETAIL START ======== -->
+
+
+<!-- Constructor return value(s) -->
+
+<!-- End constructor return value(s) -->
+
+<!-- ADDITIONAL ATTRIBUTES -->
+
+<HR/>
+<!-- END ADDITIONAL ATTRIBUTES  -->
+
+<!-- ========= CONSTRUCTOR DETAIL END ======== -->
+
+
+<!-- ============ FIELD DETAIL START =========== -->
+
+
+<!-- ============ FIELD DETAIL END =========== -->
+
+<!-- ============ METHOD DETAIL START ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+   <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+      <TD COLSPAN=1><FONT SIZE="+2">
+         <B>Method Detail</B></FONT>
+      </TD>
+   </TR>
+</TABLE>
+
+<!-- One single method detail entry -->
+
+   <A NAME="get"><!-- --></A>
+   <H3>get</H3>
+   <PRE><a href="HopObject.html">HopObject</a> <B>get</B>(&lt;<a href="String.html">String</a>&gt; urlString)</PRE>
+   
+      <UL>Retrieves an XML document from a given URL and transforms it into a HopObject.
+ <br /><br />
+ Syntax:
+ <pre> Xml.get(urlString)
+ Xml.get(urlString, filenameString)</pre>
+ <br /><br />
+ The optional argument filenameString refers to a file containing 
+ a set of transformation rules how the XML data should be turned 
+ into a HopObject. Please take a look at the RFC for details.
+ <br /><br />
+ Example:
+ <pre> var obj = Xml.get("http://localhost:8080/antville/rss10");
+ for (var i in obj)
+ &nbsp;&nbsp;res.writeln(i + ": " + obj[i]);
+ &nbsp;
+ <i>xmlns_sy: http://purl.org/rss/1.0/modules/syndication/
+ xmlns_dc: http://purl.org/dc/elements/1.1/
+ item: HopObject item
+ channel: HopObject channel
+ xmlns: http://purl.org/rss/1.0/
+ xmlns_rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>urlString</CODE> -  as String, containing the URL to fetch the XML from  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        HopObject   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getFromString"><!-- --></A>
+   <H3>getFromString</H3>
+   <PRE><a href="HopObject.html">HopObject</a> <B>getFromString</B>(&lt;<a href="String.html">String</a>&gt; xmlString)</PRE>
+   
+      <UL>Parses the string argument as XML and transforms it into a HopObject.
+ <br /><br />
+ Syntax:
+ <pre> Xml.getFromString(xmlString)
+ Xml.getFromString(xmlString, filenameString)</pre>
+ <br /><br />
+ The optional argument filenameString refers to a file containing a 
+ set of transformation rules how the XML data should be turned into 
+ a HopObject. Please take a look at the RFC for details.
+ <br /><br />
+ Example:
+ <pre> var obj = Xml.getFromString("&lt;a&gt;hello &lt;b&gt;world&lt;/b&gt;&lt;/a&gt;");
+ for (var i in obj)
+ &nbsp;&nbsp;res.writeln(i + ": " + obj[i]);
+ &nbsp;
+ <i>b: HopObject b
+ text: hello</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>xmlString</CODE> -  as String in XML format  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        HopObject   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="read"><!-- --></A>
+   <H3>read</H3>
+   <PRE><a href="HopObject.html">HopObject</a> <B>read</B>()</PRE>
+   
+      <UL>Reads an XML tree from file and transforms it into a HopObject.
+ <br /><br />
+ Syntax:
+ <pre> Xml.read(filenameString)
+ Xml.read(filenameString, HopObject)</pre>
+ <br /><br />
+ If an optional HopObject is specified, the HopObject 
+ derived from the XML tree will be added to it.
+ <br /><br />
+ Example:
+ <pre> var obj = Xml.read("/tmp/dump.xml");
+ res.write(obj);
+ <i>HopObject message</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>String</CODE> -   
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        HopObject   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="readFromString"><!-- --></A>
+   <H3>readFromString</H3>
+   <PRE><a href="HopObject.html">HopObject</a> <B>readFromString</B>()</PRE>
+   
+      <UL>Reads an XML tree from a string and transforms it into a HopObject.
+ <br /><br />
+ Syntax:
+ <pre> Xml.readFromString(String)
+ Xml.readFromString(String, HopObject)</pre>
+ <br /><br />
+ If an optional HopObject is specified, the HopObject 
+ derived from the XML tree will be added to it.
+ <br /><br />
+ Example:
+ <pre> var f = new File("/tmp/dump.xml");
+ var obj = Xml.readFromString(f.readAll());
+ res.write(obj);
+ HopObject message</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>String</CODE> -   
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        HopObject   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="write"><!-- --></A>
+   <H3>write</H3>
+   <PRE>void <B>write</B>()</PRE>
+   
+      <UL>Dumps a HopObject as XML tree to a file.
+ <br /><br />
+ Syntax:
+ <pre> Xml.write(HopObject, filenameString)</pre>
+ <br /><br />
+ Example:
+ <pre> var obj = new message();
+ obj.title = "The Message";
+ obj.text = "Don't push me 'cause I'm close to the edge.";
+ root.add(obj);
+ Xml.write(obj, "/tmp/dump.xml");
+ &nbsp;
+ File /tmp/dump.xml: 
+ &nbsp;
+ &lt;?xml version="1.0"?&gt;
+ &lt;!-- printed by helma object publisher     --&gt;
+ &lt;!-- created Fri Jul 12 17:25:24 CEST 2002 --&gt;
+ &lt;xmlroot xmlns:hop="http://www.helma.org/docs/
+ guide/features/database"&gt;
+ &nbsp;&nbsp;&lt;hopobject id="8" name="message" prototype="message" 
+ created="1026487524440" lastModified="1026487524440"&gt;
+ &nbsp;&nbsp;&lt;hop:parent idref="0" prototyperef="root"/&gt;
+ &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;The Message&lt;/title&gt;
+ &nbsp;&nbsp;&nbsp;&nbsp;&lt;text&gt;Don't push me 'cause I'm close 
+ to the edge.&lt;/text&gt;
+ &nbsp;&nbsp;&lt;/hopobject&gt;
+ &lt;/xmlroot&gt;&lt;</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>HopObject</CODE> -  and file name as string    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="writeToString"><!-- --></A>
+   <H3>writeToString</H3>
+   <PRE><a href="String.html">String</a> <B>writeToString</B>()</PRE>
+   
+      <UL>Stores a HopObject as XML tree in a string.
+ <br /><br />
+ Syntax:
+ <pre> Xml.writeToString(HopObject)</pre>
+ <br /><br />
+ Example:
+ <pre> var str = Xml.writeToString(this.get(0));
+ res.write(str);
+ &nbsp;
+ &lt;?xml version="1.0"?&gt;
+ &lt;!-- printed by helma object publisher     --&gt;
+ &lt;!-- created Fri Jul 12 17:25:24 CEST 2002 --&gt;
+ &lt;xmlroot xmlns:hop="http://www.helma.org/docs/
+ guide/features/database"&gt;
+ &nbsp;&nbsp;&lt;hopobject id="8" name="message" prototype="message" 
+ created="1026487524440" lastModified="1026487524440"&gt;
+ &nbsp;&nbsp;&lt;hop:parent idref="0" prototyperef="root"/&gt;
+ &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;The Message&lt;/title&gt;
+ &nbsp;&nbsp;&nbsp;&nbsp;&lt;text&gt;Don't push me 'cause I'm close 
+ to the edge.&lt;/text&gt;
+ &nbsp;&nbsp;&lt;/hopobject&gt;
+ &lt;/xmlroot&gt;</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>HopObject</CODE> -   
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        String in XML encoded   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+
+
+<!-- ============ METHOD DETAIL END ========== -->
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+
+<!-- =========== END OF NAVBAR =========== -->
+
+<HR>
+<FONT SIZE="-1">
+
+</FONT>
+
+
+
+
+<div class="jsdoc_ctime">Documentation generated by <a href="http://jsdoc.sourceforge.net/" target="_parent">JSDoc</a> on Thu Jul 19 01:13:37 2007</div>
+
+
+</BODY>
+</HTML>

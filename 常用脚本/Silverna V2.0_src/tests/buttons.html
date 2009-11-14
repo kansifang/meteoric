@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:silverna="http://silverna.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Buttons</title>
+	<script src="../silverna-packs.js"></script>
+	<script src="../widgets/button.js"></script>
+	<script>
+	function test()
+	{
+		var btn1 = core.web.widgets.Widget.setup("btn1");
+
+		btn1.disable();
+		var t = 5;
+		btn1.setText(t);
+
+		var timer = setInterval(
+			function(){
+					t--; btn1.setText(t);if(!t){clearInterval(timer); btn1.setText("确定");btn1.enable();}
+				}, 1000);
+	}
+	</script>
+</head>
+<body onload="test()">
+	<widget id="btn1" type="core.web.widgets.ButtonWidget" text="确定" onclick="alert(this.getAttribute('text'))"/>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<div id="aboutPop" class="aboutPop" {if projects.length > 0}style="display:none;"{/if}>
+
+{if projects.length > 0}
+  <div style="float:right;">
+    &nbsp;&nbsp;&nbsp;
+    <a id="aboutClose"
+       href="#"
+       onclick="$('#aboutOpen').show();$('#aboutPop').hide();return false;" class="confirm">
+       close</a>
+    &nbsp;&nbsp;&nbsp;
+  </div>
+{/if}
+
+<h3>What's a Project?</h3>
+<p>
+To help keep your Actions organized, 
+you can group them into <b>Projects</b>.
+
+<p>
+Example Projects might be: 
+conference presentation, remodel kitchen, launch website
+
+</div>

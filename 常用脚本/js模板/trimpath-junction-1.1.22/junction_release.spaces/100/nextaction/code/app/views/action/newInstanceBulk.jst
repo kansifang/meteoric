@@ -1,0 +1,44 @@
+${startFormTagLocal('action', 'createBulk')}
+ <div class="wide">
+  <h2>${t('Bulk entry of Actions')}</h2>
+  <label for="names" class="required">${t('Actions')}:</label> 
+    <textarea name="names" id="names" cols="50" rows="8"></textarea><br class="clear"/>
+    <span class="btw">${t('Enter or paste one Action per line')}</span><br class="clear"/>
+  <br/>
+  {var choices = Context.parentChoices()}
+  {if choices.length > 1}
+    <label for="action[context_id]">${t('Context')}:</label> ${select('action', 'context_id', choices)}<br class="clear"/>
+  {/if}
+  {var choices = Project.parentChoices()}
+  {if choices.length > 1}
+    <label for="action[project_id]">${t('Project')}:</label> ${select('action', 'project_id', choices)}<br class="clear"/>
+  {/if}
+{if (TrimPath.junction.env.type == 'server')}
+  {var choices = Party.choices(null, res)}
+  {if choices.length > 2}
+    <label for="action[contact]">${t('Contact')}:</label> ${select('action', 'contact', choices)}<br class="clear"/>
+  {/if}
+{/if}
+
+  <label for="action[color]">${t('Color')}:</label> ${select('action', 'color', tChoices(colorChoices))}<br class="clear"/>
+  <label for="action[active_at]">${t('Active at')}:</label> ${%textField('action', 'active_at')%} ${dateFillSelect('action[active_at]')}<br class="clear"/>
+    ${sampleDate()}
+  <label for="action[due_at]">${t('Due at')}:</label> ${%textField('action', 'due_at')%} ${dateFillSelect('action[due_at]')}<br class="clear"/>
+    ${sampleDate()}
+  <br/>
+  <div class="submit">
+    ${submitButtonLocal("doCreateBulk", t('Create Actions'))}
+    ${%linkToLocal(t('Cancel'), 'action', 'index', null, {'class':'text_link'})%}
+  </div>
+ </div>
+${endFormTag()}
+
+<script>
+$(document).ready(function() {
+    document.getElementById('names').focus();
+});
+
+$(document).ready(function() {
+    makePopUpCal('action[active_at]', 'action[due_at]');
+});
+</script>

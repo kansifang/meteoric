@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title> New Document </title>
+<meta name="Generator" content="EditPlus">
+<meta name="Author" content="">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<style>
+	.des{	
+		width:600px;
+		height:200px;
+		background:#EDF1F8;	
+		border: 2px solid #849BCA;
+	}
+</style>
+</head>
+
+<body>
+<script type="text/javascript">
+	function makedot(x,y){  //画点函数  
+	  document.write("<div style='height:1px;position:absolute;left:"+x+"px;top:"+y+"px;width:1px;background:red;overflow:hidden'></div>");
+	}
+
+	/**  
+	  函数功能：根据两点坐标画直线。  
+	  函数思路：根据两点的坐标计算机斜率，然后根据第一个点坐标及斜率计算直线上所有点然后画线。垂直线特殊处理  
+	*/  
+	function line(x1,y1,x2,y2){  
+	  var slope=(y2-y1)/(x2-x1);  //斜率  
+	  var diff=x2-x1;  
+	  if(x1<x2){  
+		for(var i=0;i<diff;i++){  
+		  makedot(x1+i,y1+slope*i);  
+		}  
+	  }else if(x1>x2){  
+		for(var i=0;i>diff;i--){  
+		  makedot(x1+i,y1+slope*i);  
+		}  
+	  }else{  //画垂直线  
+		var temp=y2-y1;  
+		if(temp>0){  
+		  for(var i=0;i<temp;i++){  
+			makedot(x1,y1+i);  
+		  }  
+		}else{  
+		  for(var i=0;i>temp;i--){  
+			makedot(x1,y1+i);  
+		  }  
+		}  
+	  }  
+	}
+
+	/**  
+	  函数功能：根据给定的圆心和半径画圆  
+	  函数思路：根据半径及圆心坐标利用数学方法计算从0°到360°的每点的坐标，并画出来。  
+	*/  
+	function circle(x,y,r){  //(x,y)圆心，r半径  
+	  var dotx,doty,radio;  
+	  var Pi=Math.PI;  
+	  makedot(x,y);  
+	  for(var i=0;i<360;i+=0.5){  
+		radio=i*Pi/180;  
+		dotx=r*Math.cos(radio)+x;  
+		doty=r*Math.sin(radio)+y  
+		makedot(dotx,doty);  
+	  }  
+	}
+	
+	//圆点定为(300,300);
+	line(300,0,300,800);//Y轴
+	line(0,300,800,300);//X轴
+	line(300,300,400,200);//点线
+
+	//这条直线的长度 2*a^2 = 100  很特殊的等边直角三角形
+	var r;
+	r = Math.sqrt(2*Math.pow(100,2));
+	circle(300,300,r);
+	circle(400,200,r);
+
+	//求要得到的点 根据月影所说分别顺时针和逆时针旋转60度思路
+	
+
+	//第一种，顺时针  
+	var x_1 = r*Math.cos((45+60)/180*Math.PI);
+	var y_1 = r*Math.sin((45+60)/180*Math.PI);
+	line(300,300,x_1+300,300-y_1);
+	line(x_1+300,300-y_1,400,200);
+
+	document.write("第一个点的坐标：<br/>"+"x="+x_1+"<br/>y="+y_1);
+
+	//第二种 逆时针
+	var x_2 = r*Math.cos((45-60)/180*Math.PI);
+	var y_2 = r*Math.sin((45-60)/180*Math.PI);
+	line(300,300,x_2+300,300-y_2);
+	line(x_2+300,300-y_2,400,200);
+
+	document.write("<br/><br/>第二个点的坐标：<br/>"+"x="+x_2+"<br/>y="+y_2);
+
+	document.write("<br/><br/>等腰三角形的边长为："+r);
+</script>
+
+<div style="margin-top:300px;" class="des">
+<p>验证了月影的：<br/>
+向量 [100, 100]沿坐标原点分别顺时针和逆时针旋转60度即：<br/>
+[100*sqrt(2)*cos((45+60)/180*pi), 100*sqrt(2)*sin((45+60)/180*pi)]<br/>
+[100*sqrt(2)*cos((45-60)/180*pi), 100*sqrt(2)*sin((45-60)/180*pi)]</p>
+
+<p>
+	我是学生  提到的：<br/>
+	分别以 点(0,0) ,点(100,100) 为圆心,以 (0,0)(100,100) 为半径,做圆, 两圆会有两个交点,这两个交点就是所求的点.
+</p>
+</div>
+</body>
+</html>

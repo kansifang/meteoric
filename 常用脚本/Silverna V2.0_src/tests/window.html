@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:silverna="http://silverna.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Window</title>
+	<script src="../silverna-packs.js"></script>
+	<script src="../widgets/window.js"></script>
+	<script>
+	function test()
+	{
+		var w1 = core.web.widgets.Widget.setup("win1");
+		var w2 = core.web.widgets.Widget.setup("win2");
+
+		w1.onload = function()
+		{
+			//alert(1);
+		}
+	}
+	</script>
+</head>
+<body onload="test()" style="width:800px;height:600px;padding:0 0 0 0;">
+	<silverna:widget id="win1" type="core.web.widgets.WindowWidget" width="400" height="200" top="100px" left="100px"
+		caption="示例窗体A" buttons="max|close"
+		contentType="text/html" text="Hello World!"
+	></silverna:widget>
+	<silverna:widget id="win2" type="core.web.widgets.WindowWidget" width="400" height="200" top="200px" left="200px"
+		caption="示例窗体B" buttons="max|min|close"
+		contentType="container" target="t1"
+	></silverna:widget>
+	<div id="t1"><button>OK</button></div>
+</body>
+</html>

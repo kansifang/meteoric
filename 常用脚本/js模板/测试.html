@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<script type="text/javascript" src="jquery-1.3.js"></script>
+</HEAD>
+
+<BODY>
+<script type="text/javascript">
+	 var _tmplCache = {}
+　　　　　　　 this.parseTemplate = function(str, data) {
+　　　　　　　　　　　 var err = "";
+　　　　　　　　　　　 try {
+　　　　　　　　　　　　　　　 var func = _tmplCache[str];
+　　　　　　　　　　　　　　　 if (!func) {
+　　　　　　　　　　　　　　　　　　　 var strFunc =
+　　　　　　　　　　　 "var p=[],print=function(){p.push.apply(p,arguments);};" +
+　　　　　　　　　　　　　　　　　　　　　　　 "with(obj){p.push('" +
+　　　　　　　　　　　 str.replace(/[rtn]/g, " ")
+　　　　　　　　　　　　　　 .replace(/'(?=[^#]*#>)/g, "t")
+　　　　　　　　　　　　　　 .split("'").join("\'")
+　　　　　　　　　　　　　　 .split("t").join("'")
+　　　　　　　　　　　　　　 .replace(/<#=(.+?)#>/g, "',$1,'")
+　　　　　　　　　　　　　　 .split("<#").join("');")
+　　　　　　　　　　　　　　 .split("#>").join("p.push('")
+　　　　　　　　　　　　　　 + "');}return p.join('');";
+　　　　　　　　　　　　　　　　　　　 func = new Function("obj", strFunc);
+　　　　　　　　　　　　　　　　　　　 _tmplCache[str] = func;
+　　　　　　　　　　　　　　　 }
+　　　　　　　　　　　　　　　 return func(data);
+　　　　　　　　　　　 } catch (e) { err = e.message; }
+　　　　　　　　　　　 return "< # ERROR: " + err.htmlEncode() + " # >";
+　　　　　　　 }
+
+
+
+</script>
+<div id="ItemTemplate">
+　<table border="2px" >
+	　<# for(var i=0;i<Customers.length;i++){ #>
+	<tr>
+	<td><#= Customers[i].name #></td>
+	<td><#= Customers[i].address.street #></td>
+	<td><#=Customers[i].address.city#></td>
+	</tr>
+	<# } #>
+	</table>
+</div>
+<div id="content"></div>
+<script type="text/javascript">
+	content.innerHTML = parseTemplate($("#ItemTemplate").html(), { Customers: [
+　　　　　　　　　 { name: "张三", address: { street: "朝阳路", city: "北京"} },
+　　　　　　　　 { name: "张三子", address: { street: "玄武路", city: "北京"} },
+　　　　　　　　 { name: "李四", address: { street: "莫干山路", city: "杭州"} },
+　　　　　　　　　 { name: "李四子", address: { street: "武陵门路", city: "杭州"} }]
+　 
+　　　　　 }
+　 
+　　　　　 
+ 
+);
+
+</script>
+</BODY>
+</HTML>

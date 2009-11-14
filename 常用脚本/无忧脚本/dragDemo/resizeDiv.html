@@ -1,0 +1,38 @@
+<style>
+/*
+	.dragArea{
+		background-color:blue;
+		filter:alpha(opacity=50);
+		-moz-opacity:0.5;
+	}
+*/
+	body{
+		margin:0px;
+	}
+</style>
+<body>
+<div style="top:0px;left:0px;width:100px;height:100px;position:absolute;background:black;" onselectstart="return false;" 
+onmousedown="mousedown.apply(this,arguments);">
+</div>
+</body>
+<script type="text/javascript" src="./drag.js"></script>
+<script type="text/javascript">
+function mousedown()
+{
+	var e=arguments[0]||event;
+	var me=this;
+	var dy=e.clientY-parseInt(me.style.top)-parseInt(me.style.height);
+	var dx=e.clientX-parseInt(me.style.left)-parseInt(me.style.width);
+
+	startdrag( 
+		document.body,
+		function(e){
+			e=e||event;
+			me.style.height=e.clientY-dy;
+			me.style.width=e.clientX-dx;
+		},
+		function(e){
+		}
+	);
+}
+</script>

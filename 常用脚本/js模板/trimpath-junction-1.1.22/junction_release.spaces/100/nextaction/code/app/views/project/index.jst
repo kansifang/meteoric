@@ -1,0 +1,54 @@
+<div>
+  <h2>${projects.length} ${t('Remaining Projects')}</h2>
+  <p style="margin: 7px;">
+    {if projects.length > 0}
+      <div style="float:right;">
+          &nbsp;&nbsp;&nbsp;
+          <a id="aboutOpen"
+             href="#"
+             onclick="$('#aboutOpen').hide();$('#aboutPop').show();return false;" class="text_link">
+             ${t('help')}</a>
+          &nbsp;&nbsp;&nbsp;
+      </div>
+    {/if}
+
+    ${%linkToLocal(t('Create a new Project'), 'project', 'newInstance', null, { 'class': 'button' })%}
+  </p>
+
+  ${render('project/about')}
+
+  {if projects.length > 0}
+    <div style="margin-top:5px;">
+      <table class="hoverable sortable" id="projects">
+        <tr><td>${t('Project')}</td>
+            <td></td>
+            <td nowrap="nowrap">${t('Due at')}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            </tr>
+      {for project in projects}
+        <tr>
+          {if project.namePrefix == ''}
+              <td nowrap width="200" class="topLevel">
+                ${projectLink(res, project)}
+          {else}
+              <td nowrap width="200" class="subLevel">
+                ${project.namePrefix}
+                ${projectLink(res, project)}
+          {/if}
+            </td>
+            <td>&nbsp;&nbsp;</td>
+            <td>${localDateString(project.due_at)}</td>
+            <td>&nbsp;&nbsp;</td>
+            <td>${linkToLocal(t('edit'), 'project', 'edit', project.id)}</td>
+            <td>&nbsp;&nbsp;</td>
+            <td>${%linkToLocal(t('delete'), 'project', 'destroy', project.id, { method: 'post', confirm: destroyConfirm(project) })%}</td>
+            </tr>
+      {/for}
+      </table>
+    </div>
+  {/if}
+</div>
+

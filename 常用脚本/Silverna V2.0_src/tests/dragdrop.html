@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:silverna="http://silverna.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Drag & Drop</title>
+	<script src="../silverna-packs.js"></script>
+	<script src="../widgets/dragdrop.js"></script>
+	<script>
+	var widget = null;
+	function test()
+	{
+		widget = core.web.widgets.Widget.setup("p1");
+	}
+	function save()
+	{
+		alert("将下面的XML文本保存到数据库\n"+widget.firstAdorner()._face.outerHTML);
+	}
+	</script>
+</head>
+<body onload="test()" style="height:100%;width:100%;">
+<silverna:widget id="p1" type="core.web.widgets.DragDropWidget">
+	<silverna:container target="c2">
+		<silverna:refer target="b1"></silverna:refer>
+		<silverna:refer target="b2"></silverna:refer>
+		<silverna:refer target="b3"></silverna:refer>
+		<silverna:refer target="b4"></silverna:refer>
+		<silverna:refer target="b5"></silverna:refer>
+		<silverna:refer target="b6"></silverna:refer>
+		<silverna:refer target="a6"></silverna:refer>
+	</silverna:container>
+	<silverna:container target="c1">
+		<silverna:refer target="a1"></silverna:refer>
+		<silverna:refer target="a2"></silverna:refer>
+		<silverna:refer target="a3"></silverna:refer>
+		<silverna:refer target="a4"></silverna:refer>
+		<silverna:refer target="a5"></silverna:refer>
+	</silverna:container>
+</silverna:widget>
+<br/><br/>
+<button onclick="save()">保存方案</button>
+<button onclick="alert(document.getElementById('p1').innerHTML);">Show HTML</button>
+<div id="c2" style="display:none;margin-left:-700px;width:50px;background-color:#C0C0C0;float:right">
+<div id="b1" style="border:solid 1px #3377cc;width:50px;">b1</div>
+<div id="b2" style="border:solid 1px #3377cc;width:50px;">b2</div>
+<div id="b3" style="border:solid 1px #3377cc;width:50px;">b3</div>
+<div id="b4" style="border:solid 1px #3377cc;width:50px;">b4</div>
+<div id="b5" style="border:solid 1px #3377cc;width:50px;">b5</div>
+<div id="b6" style="border:solid 1px #3377cc;width:50px;">b6</div>
+</div>
+<div id="c1" style="display:none;margin-left:0px;width:50px">
+<div id="a1" style="border:solid 1px #3377cc;width:50px;">a1</div>
+<div id="a2" style="border:solid 1px #3377cc;width:50px;">a2</div>
+<div id="a3" style="border:solid 1px #3377cc;width:50px;">a3</div>
+<div id="a4" style="border:solid 1px #3377cc;width:50px;">a4</div>
+<div id="a5" style="border:solid 1px #3377cc;width:50px;">a5</div>
+<div id="a6" style="border:solid 1px #3377cc;width:50px;">a6</div>
+</div>
+</body>
+</html>

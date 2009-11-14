@@ -1,0 +1,370 @@
+﻿http://bbs.chinaunix.net/viewthread.php?tid=735901
+
+[模板 转载]JavaScript Template JST模板引擎----Trimpath 
+
+转载网址：　http://bbs.javascript.com.cn/simple/index.php?t1022.html
+
+官方网址：http://trimpath.com/project/wiki/JavaScriptTemplates
+
+Trimpath JavaScript 是个轻量级的，基于JavaScript的，跨浏览器，采用APL/GPL开放源代码协议的，可以让你轻松进行基于模板编程方式的纯JS引擎。
+
+它有如下的特点：
+1、采用标准的JavaScript编写，支持跨浏览器
+2、模板语法类似于：FreeMarker，Velocity,Smarty
+3、采用简易的语言来描述大段的字串以及Dom/DHTML操作
+4、可以很方便的解析XML文件格式的数据到指定模板。
+
+采 用该引擎，可以让它来完全处理View方面的事情，服务端Module直接输出Data就可以。让你的MVC模式连成一体，而且由于View由浏览器来处 理，大大减少了服务器的负担，用来构建Ajax技术的网络信息系统应用是一个非常好的选择。下面将通过翻译该站的文章来给大家介绍这个JST引擎的使用。
+
+网站地址：
+
+  http://trimpath.com/project/wiki/JavaScriptTemplates
+
+如果大家等不及看我翻译或者不满意翻译质量，请看上面网站的英文原文。
+
+快速演示：
+
+[Copy to clipboard] [ - ]CODE:
+  <html>
+    <head>
+      <script language="javascript" src="trimpath/template.js"></script>
+    </head>
+<body>
+  <div id="outputDiv">
+  </div>
+  <script language="javascript">
+    var data = {
+        products : [ { name: "mac", desc: "computer",     
+                       price: 1000, quantity: 100, alert:null },
+                     { name: "ipod", desc: "music player",
+                       price:  200, quantity: 200, alert:"on sale now!" },
+                     { name: "cinema display", desc: "screen",      
+                       price:  800, quantity: 300, alert:"best deal!" } ],
+        customer : { first: "John", last: "Public", level: "gold" }
+    };
+  </script>
+<textarea id="cart_jst" style="display:none;">
+    Hello ${customer.first} ${customer.last}.<br/>
+    Your shopping cart has ${products.length} item(s):
+    <table>
+     <tr><td>Name</td><td>Description</td>
+         <td>Price</td><td>Quantity & Alert</td></tr>
+     {for p in products}
+         <tr><td>${p.name|capitalize}</td><td>${p.desc}</td>
+             <td>$${p.price}</td><td>${p.quantity} : ${p.alert|default:""|capitalize}</td>
+             </tr>
+     {forelse}
+         <tr><td colspan="4">No products in your cart.</tr>
+     {/for}
+    </table>
+    {if customer.level == "gold"}
+      We love you!  Please check out our Gold Customer specials!
+    {else}
+      Become a Gold Customer by buying more stuff here.
+    {/if}
+  </textarea>
+  <script language="javascript">
+    // The one line processing call...
+    var result = TrimPath.processDOMTemplate("cart_jst", data);
+    // Voila!  That's it -- the result variable now holds
+    // the output of our first rendered JST.
+
+    // Alternatively, you may also explicitly parse the template...
+    var myTemplateObj = TrimPath.parseDOMTemplate("cart_jst");
+
+    // Now, calls to myTemplateObj.process() won't have parsing costs...
+    var result  = myTemplateObj.process(data);
+
+    // Setting an innerHTML with the result is a common last step...
+    document.getElementById("outputDiv").innerHTML = result;
+    // You might also do a document.write() or something similar...
+  </script>
+</body>
+</html>
+实际效果：
+
+
+
+
+
+JST十分钟简介
+
+JST API
+JST Markup Syntax
+JST Standard Modifiers
+JST Downloads
+JST Community Wiki
+JST Browser Compatibility
+JST Online Demo
+
+1、API
+首先到下载页面下载 template.js
+然后在你的JSP/ASP/PHP等文件中引用
+
+[Copy to clipboard] [ - ]CODE:
+<script language="javascript" src="trimpath/template.js"></script>
+当你引用了template.js文件之后，脚本将创建一个名叫“trimpath"的物件给你使用。
+
+TrimPath Object
+这个物件是一个全局的单一变量，也是所有trimpath组件的访问入口，除了它自身，我们尝试建立一个清晰的命名空间给您使用。
+
+下面是 Trimpath 定义的方法：
+
+[Copy to clipboard] [ - ]CODE:
+TrimPath.parseDOMTemplate ( elementId, optionalDocument )
+得到页面中ID为elementId的Dom组件的InnerHTML，并将其解析成一个模板，这个方法返回一个templateObject对象（下面将详细描述），解析出错时将抛出一个异常，下面是这个方法的参数：
+  elementId               DOM组件，其innerhtml将用来做模板
+  optionalDocument     一个可选参数，在使用iframe，frameset或者默认多文档时会有用
+通常用来做模板的DOM元素是一个隐藏的<textarea>，如下面的例子
+
+[Copy to clipboard] [ - ]CODE:
+<textarea id="elementId" style="display:none;"> template body </textarea>
+TrimPath.processDOMTemplate ( elementId, contextObject, optionalFlags, optionalDocument )
+一 个辅助函数，里面调用了TrimPath.parseDOMTemplate() 和 then the process() 方法以获得templateObject。输出的是templateObject.process() 中返回的对象。解析出错时将抛出一个错误。下面是这个方法的参数：
+
+elementId         包含模板内容的DOM元素ID
+contextObject     参考templateObject.process()
+optionalFlags       参考templateObject.process()
+optionalDocument 参考TrimPath.parseDOMTemplate
+
+TrimPath.parseTemplate ( templateContentStr, optionalTemplateName )
+解析模板方法，将一个字符串做为模板解析并返回一个templateObject
+参数表：
+
+templateContentStr   符合JST语法的字符串，例如: "Hello ${firstName} ${lastName}"
+optionalTemplateName 一个可选的字符串用来指定模板名称，辅助查错。
+
+The templateObject
+TrimPath.parseTemplate() 和 TrimPath.parseDOMTemplate()的成功运行将产生一个 templateObject 它只有一个主方法
+
+templateObject.process ( contextObject, optionalFlags )
+
+这个方法将模板和数据结合在一起，可以重复调用，如果没有重新解析，templateObjects的缓存和重用将获得最好的系统性能。这个函数的返回值是一个经过“渲染”过的模板的字符串。
+
+
+参数contextObject 必须是一个对象，并将成为模板的一个访问域，比如一个模板是：${a}，那么contextObject.a必须是可以访问到的。同样${a.b.c}, contextObject.a.b.c也是可以访问到的。
+注 意：contextObject 可以是javascript中的任意对象，包含字符串, 数字, 日期, 对象和函数。所以${groupCalender(new Date())} 可以这样来调用contextObject.groupCalender(new Date())。当然，你必须自己编程实现groupCalender() 这个函数。
+
+参数optionalFlags 可以是空值，也可以是一个下面列表描述的对象：
+throwExceptions 默认是false,当true的时候，process() 方法将重新抛出异常，当false的时候，任何异常将停止解析模板，并在方法返回值包含一个出错信息。
+keepWhitespace 默认是falsel，当值为true时，模板的空白将保留。当为false时，空白（换行、空格、TAB）将被截取。
+
+String.prototype.process() 方法
+
+String.prototype.process ( contextObject, optionalFlags )
+做为一个便捷的方式为string对象加入一个process（）的方法，让它来执行解析模板的动作。参数跟process()一样。
+
+[Copy to clipboard] [ - ]CODE:
+  var result = "hello ${firstName}".process(data)
+  // ...is equivalent to...
+  var result = TrimPath.parseTemplate("hello ${firstName}").process(data);
+添加自定义标识符
+
+如果要采用自定义标识符，你必须把他们放在_MODIFERS 这个对象中，这些标识符集将被添加到contextObject 对象中，然后最终传给process()解析。每一个自定义标识符必须是一个函数并且至少有一个字符串参数输入和一个字符串输出。
+例子：
+
+[Copy to clipboard] [ - ]CODE:
+  var myModifiers = {
+  hello : function(str, greeting) {
+    if (greeting == null)
+      greeting = "Hello";
+    return greeting + ", " + str;
+  },
+  zeroSuffix : function(str, totalLength) {
+    return (str + "000000000000000").substring(0, totalLength);
+  }
+};
+var myData = {
+  firstName : "John",
+  getCurrentPoints : function() { /* Do something here... */ return 12; }
+}
+
+myData._MODIFIERS = myModifiers;
+
+"${firstName}".process(myData) == "John"
+"${firstName|hello}".process(myData) == "Hello, John"
+"${firstName|hello:"Buenos Dias"}".process(myData) == "Buenos Dias, John"
+"${firstName|hello:"Buenos Dias"|capitalize}".process(myData) == "BUENOS DIAS, JOHN"
+
+"${getCurrentPoints()}".process(myData) == "12"
+"${getCurrentPoints()|zeroSuffix:4}".process(myData) == "1200"
+JST 的语法和语句
+
+语法
+
+[Copy to clipboard] [ - ]CODE:
+${expr}
+${expr|modifier}
+${expr|modifier1|modifier2|...|modifierN}
+${expr|modifier1:argExpr1_1}
+${expr|modifier1:argExpr1_1,argExpr1_2,...,argExpr1_N}
+${expr|modifier1:argExpr1_1,argExpr1_2|...|modifierN:argExprN_1,argExprN_2,...,argExprN_M}
+表达式可以是除了“}”之外的任何合法的javascript字符串
+标识符看起来像这种结构：modifierName[:argExpr1[,argExpr2[,argExprN]]]
+
+一个带参数的表达式例子
+
+[Copy to clipboard] [ - ]CODE:
+${customer.firstName}
+${customer.firstName|capitalize}
+${customer.firstName|default:"no name"|capitalize}
+${article.getCreationDate()|default:new Date()|toCalenderControl:"YYYY.MM.DD",true,"Creation Date"}
+${(lastQuarter.calcRevenue() - fixedCosts) / 1000000}
+一个表达式也可以像下面一样通过添加“％”字符来标识，这个可以避免在你的表达式中出现“}”时出错的情况。
+
+比如：
+
+[Copy to clipboard] [ - ]CODE:
+Visit our ${% emitLink('Solutions and Products',
+                { color: 'red', blink: false }) %} page.
+
+The extra spaces are actually not necessary, like...
+${%customer.firstName%}
+${%customer.firstName|capitalize%}
+语句
+JST语句就像是javascript语句一样，也有if/else/for/function这些句子
+
+分支控制语句
+
+[Copy to clipboard] [ - ]CODE:
+{if testExpr}
+  {elseif testExpr}
+  {else}
+{/if}
+上述testExpr 是一个合法的javascript判定式
+
+例子
+
+[Copy to clipboard] [ - ]CODE:
+{if customer != null && customer.balance > 1000}
+  We love you!
+{/if}
+
+{if user.karma > 100}
+    Welcome to the Black Sun.
+{elseif user.isHero}
+    Sir, yes sir! Welcome!
+    {if user.lastName == "Yen"}
+      Fancy some apple pie, sir?
+    {/if}
+{/if}
+
+<a href="/login{if returnURL != null && returnURL != 'main'}?goto=${returnURL}{/if}">Login</a>
+*JST引擎还包含一个辅助函数defined(str)，这个可以测试一个变量是否已经被定义。
+
+比如这段代码判断管理员发送了消息给你
+
+[Copy to clipboard] [ - ]CODE:
+{if defined('adminMessage')}
+  System Administrator Important NOTICE: ${adminMessage}
+{/if}
+循环语句
+
+[Copy to clipboard] [ - ]CODE:
+{for varName in listExpr}
+{/for}
+
+{for varName in listExpr}
+  ...main body of the loop...
+{forelse}
+  ...body when listExpr is null or listExpr.length is 0...
+
+{/for}
+*varName 必须是一个javascript的合法变量名
+*listExpr 可以是一个数组，对象或者为空，而且只能被赋值一次
+例子
+
+[Copy to clipboard] [ - ]CODE:
+Two variables are bound in the main body of the loop:
+  __LIST__varName - holds the result of evaluating listExpr.
+  varName_index   - this is the key or counter used during iteration.
+
+Examples:
+{for x in customer.getRecentOrders()}
+  ${x_index} : ${x.orderNumber} <br/>
+{forelse}
+  You have no recent orders.
+{/for}
+
+Converted pseudo-code for the above...
+var __LIST__x = customer.getRecentOrders();
+if (__LIST__x != null && __LIST__x.length > 0) {
+  for (var x_index in __LIST__x) {
+    var x = __LIST__x[x_index];
+    ${x_index} : {$x.orderNumber} <br/>
+  }
+} else {
+  You have no recent orders.
+}
+定义变量
+
+{var varName}
+{var varName = varInitExpr}
+*varName必须是一个合法的javascript变量名
+*varInitExpr必须是一个没有包含"}"的字符串
+
+例子：
+
+[Copy to clipboard] [ - ]CODE:
+{var temp = crypto.generateRandomPrime(4096)}
+Your prime is ${temp}.
+宏定义
+  {macro macroName(arg1, arg2, ...argN)}
+  ...body of the macro...
+{/macro}
+
+*宏类似于一个javascript函数，不同点在于宏的主体是另外一个包含了诸如控制语句、循环语句的JST模板
+
+*宏的名称必须是一个合法javascript变量名
+*宏的返回值是一个字符创
+*使用宏可以采用这种语法 ：${macroName()}
+一个使用宏的例子
+
+[Copy to clipboard] [ - ]CODE:
+{macro htmlList(list, optionalListType)}
+  {var listType = optionalListType != null ? optionalListType : "ul"}
+  <${listType}>
+    {for item in list}  
+    <li>${item}</li>
+    {/for}
+  </${listType}>
+{/macro}
+
+Using the macro...
+${htmlList([ 1, 2, 3])}
+${htmlList([ "Purple State", "Blue State", "Red State" ], "ol")}
+{var saved = htmlList([ 100, 200, 300 ])}
+${saved} and ${saved}
+运行上述语句将出现
+
+QUOTE:
+*1
+*2
+*3
+这样的列表。只需将数据列表赋值给htmlList这个宏，就会帮你把数据通过<li>方式列出来，聪明的你很快就会把它改成<option><td>等应用了。
+
+从宏的访问域来说，默认情况下它是每个模板私有的，但是如果你想定义
+一个宏库的话，那么也许你需要在process()之前先定义可以导出宏：contextObject['exported'] ={};
+下面是例子：
+
+[Copy to clipboard] [ - ]CODE:
+  {macro userName(user)}
+  {if user.aliasName != null && user.aliasName.length > 0}
+    ${user.aliasName}
+  {else}
+    ${user.login}
+  {/if}
+{/macro}
+${exported.userName = userName |eat}
+另外，你也可以设置 contextObject['exported'] = contextObject;它也可以正常的工作。
+
+CDATA 文本区段
+[code]
+{cdata}
+  ...text emitted without JST processing...
+{/cdata}
+
+{cdata EOF}
+  ...text emitted without JST processing...
+EOF
+未完待续，请查看原英文内容。。。

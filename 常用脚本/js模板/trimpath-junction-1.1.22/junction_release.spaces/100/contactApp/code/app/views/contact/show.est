@@ -1,0 +1,27 @@
+<h1>Contact <%= contact.id %></h1>
+
+  <label>First Name:</label>
+  <%= contact.first_name %>
+    <br/>
+
+  <label>Last Name:</label>
+  <%= contact.last_name %>
+    <br/>
+
+  <label>Address:</label>
+  <%= contact.address %>
+    <br/>
+
+  <label>Phone:</label>
+  <%= contact.phone %>
+    <br/>
+
+  <%= linkToLocal('Edit', 'contact', 'edit', contact.id) %>
+  or
+  <%= linkToLocal('Remove', 'contact', 'destroy', contact.id, { confirm: true }) %>
+
+<br/>
+<br/>
+
+  Back to the <%= linkToLocal('Contacts List', 'contact', 'index') %>
+

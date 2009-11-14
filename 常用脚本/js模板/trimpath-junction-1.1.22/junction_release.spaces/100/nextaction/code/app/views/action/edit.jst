@@ -1,0 +1,50 @@
+${startFormTagLocal('action', 'update', action.id)}
+<h2>${t('Action')}: ${%linkToLocal(h(action.name), 'action', 'show', action.id, { style: colorStyle(action)})%}</h2>
+ <div class="wide">
+  <label for="action[name]" class="required">${t('Name')}:</label> ${%textField('action', 'name', { size: 30 })%} 
+    ${errorMessagesOn('action', 'name')}<br class="clear"/>
+  <label for="action[notes]">${t('Notes')}:</label> ${%textArea('action', 'notes', { cols: 40, rows: 10, wrap: 'off' })%}<br class="clear"/>
+
+  {var choices = Context.parentChoices()}
+  {if choices.length > 1}
+    <label for="action[context_id]">${t('Context')}:</label> ${select('action', 'context_id', choices)}<br class="clear"/>
+  {/if}
+  {var choices = Project.parentChoices()}
+  {if choices.length > 1}
+    <label for="action[project_id]">${t('Project')}:</label> ${select('action', 'project_id', choices)}<br class="clear"/>
+  {/if}
+  {var choices = Party.choices(null, res)}
+  {if (TrimPath.junction.env.type == 'server')}
+    {if choices.length > 2}
+      {var contact = action.contactVal()}
+      <label for="action[contact]">${t('Contact')}:</label> ${select('action', 'contact', choices)}<br class="clear"/>
+    {/if}
+  {/if}
+  <label for="action[color]">${t('Color')}:</label> ${select('action', 'color', tChoices(colorChoices))}<br class="clear"/>
+  <label for="action[active_at]">${t('Active at')}:</label> ${%textField('action', 'active_at', { valueFilter: localDateString })%}&nbsp;${dateFillSelect('action[active_at]')}<br class="clear"/>
+    ${sampleDate()}
+  <label for="action[due_at]">${t('Due at')}:</label> ${%textField('action', 'due_at', { valueFilter: localDateString })%}&nbsp;${dateFillSelect('action[due_at]')}<br class="clear"/>
+    ${sampleDate()}
+  <label for="action[completed_at]">${t('Completed at')}:</label> ${%textField('action', 'completed_at', { valueFilter: localDateString })%}
+    <a href="#" class="button"
+      onclick="{minify}
+        document.getElementById('action[completed_at]').value = TrimPath.junctionUtil.toLocalDateString(new Date());
+        return false;
+        {/minify}">
+      ${t('Today')}
+    </a>
+    <br class="clear"/>
+    ${sampleDate()}
+  <label for="action[repeat]">${t('Repeat')}:</label> ${render('action/repeat')}<br class="clear"/>
+  <div class="submit">
+   ${submitButtonLocal("doUpdate", "&nbsp;&nbsp;OK&nbsp;&nbsp;")}
+   ${%linkToLocal(t('Cancel'), 'action', 'show', action.id, {'class':'text_link'})%}
+  </div>
+ </div>
+${endFormTag()}
+
+<script>
+$(document).ready(function() {
+    makePopUpCal('action[active_at]', 'action[due_at]', 'action[completed_at]');
+});
+</script>

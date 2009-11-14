@@ -1,0 +1,880 @@
+<!DOPropertiesCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN""http://www.w3.org/TR/REC-html40/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+req - Helma Javascript Reference
+</TITLE>
+<LINK REL ="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+
+
+</HEAD>
+<SCRIPT>
+function asd()
+{
+parent.document.title="req - Helma Javascript Reference";
+}
+</SCRIPT>
+<BODY BGCOLOR="white" onload="asd();">
+      
+      
+
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>req</H2>
+<PRE>Object
+   |
+   +--<b>req</b>
+</PRE>
+
+
+<HR>
+
+<DL>
+   <!-- Class definition
+   <DT>class 
+   <B>req</B>
+    -->
+
+</DL>
+   
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+<!-- =========== END OF NAVBAR =========== -->
+<HR>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<!-- ======== END CONSTRUCTOR SUMMARY ======== -->
+
+&nbsp;
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+   <A NAME="field_summary"><!-- --></A>
+      <TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+         <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+            <TD COLSPAN=2><FONT SIZE="+2">
+               <B>Properties Summary</B></FONT></TD>
+         </TR>
+
+   <!-- This is one instance field summary -->
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="String.html">String</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#action">action</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contains the name of the requested action
+ <br /><br />
+ The name without the suffix '_action' is provided.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="Object.html">Object</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#cookies">cookies</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contains the cookie request parameters.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="Object.html">Object</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#data">data</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Object containing any request parameters (GET, POST, Cookies, etc) and HTTP environmental variables.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="String.html">String</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#method">method</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the HTTP method (in uppercase letters) of the current request.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="Object.html">Object</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#params">params</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contains any GET and POST request parameters.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="String.html">String</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#password">password</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns the decrypted basic authentication password.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="String.html">String</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#path">path</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contains the path of the current request, relative to the application's mountpoint.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="Object.html">Object</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#postParams">postParams</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contains any post request parameters.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="Object.html">Object</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#queryParams">queryParams</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contains any GET request style query string parameters.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="Number.html">Number</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#runtime">runtime</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The running time of the current request in milliseconds 
+ <br /><br />
+ Provides the amount of time that has elapsed since the 
+ start of the processing of the current request, measured 
+ in milliseconds (integer).</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="String.html">String</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#username">username</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contains the decrypted basic authentication username.</TD>
+   </TR>
+   
+
+   </TABLE>
+   &nbsp;
+   
+
+   
+
+<!-- =========== END FIELD SUMMARY =========== -->
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TD COLSPAN=2><FONT SIZE="+2">
+<B>Methods Summary</B></FONT></TD>
+</TR>
+
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#get">get</A></B>(&lt;<a href="String.html">String</a>&gt; name)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 An alternative method of accessing properties 
+ otherwise made available through the req.data object.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Object.html">Object</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getDateHeader">getDateHeader</A></B>(&lt;<a href="String.html">String</a>&gt; name)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns the specified header value as a Date object
+ <br /><br />
+ Proxy to HttpServletRequest.getDateHeader(), fails 
+ silently by returning -1.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Object.html">Object</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getHeader">getHeader</A></B>(&lt;<a href="String.html">String</a>&gt; name)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns the specified header value, or null
+ <br /><br />
+ If there are several headers by that name, the first header 
+ value is returned.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Object.html">Object</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getHeaders">getHeaders</A></B>(&lt;<a href="String.html">String</a>&gt; name)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns an Array of all header values by the specified name
+ <br /><br />
+ Proxy to HttpServletRequest.getHeaders(), returns header 
+ values as string array.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Object.html">Object</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getIntHeader">getIntHeader</A></B>(&lt;<a href="String.html">String</a>&gt; name)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns the specified header value as a Number
+ <br /><br />
+ Proxy to HttpServletRequest.getIntHeader(), fails 
+ silently by returning -1.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;HttpServletRequest</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getServletRequest">getServletRequest</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Provides access to the HttpServletRequest object
+ <br /><br />
+ Returns an instance of the Java HttpServletRequest 
+ Class corresponding to the current request, which allows 
+ full access to the methods of that class.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;Boolean</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#isGet">isGet</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns true if the current request is a HTTP GET request, false otherwise.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;Boolean</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#isPost">isPost</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns true if the current request is a HTTP POST request, false otherwise.
+      </TD>
+   </TR>
+
+
+</TABLE>
+
+
+
+<P>
+<!-- ========== END METHOD SUMMARY =========== -->
+
+
+    <!-- ========= CONSTRUCTOR DETAIL START ======== -->
+
+
+<!-- Constructor return value(s) -->
+
+<!-- End constructor return value(s) -->
+
+<!-- ADDITIONAL ATTRIBUTES -->
+
+<HR/>
+<!-- END ADDITIONAL ATTRIBUTES  -->
+
+<!-- ========= CONSTRUCTOR DETAIL END ======== -->
+
+
+<!-- ============ FIELD DETAIL START =========== -->
+
+   <A NAME="field_detail"><!-- --></A>
+   <TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+      <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+         <TD COLSPAN=1><FONT SIZE="+2"><B>Properties Detail</B></FONT></TD>
+      </TR>
+   </TABLE>
+
+   
+   <A NAME="action"><!-- --></A>
+   <H3>action</H3>
+   <PRE><a href="String.html">String</a>&nbsp;<B>action</B></PRE>
+   <UL>
+   Contains the name of the requested action
+ <br /><br />
+ The name without the suffix '_action' is provided. 
+ This property is read-only.
+ <br /><br />
+ Example:
+ <pre> res.write(req.action);
+ <i>edit</i></pre>
+   
+   </UL>
+   <HR>
+   
+   <A NAME="cookies"><!-- --></A>
+   <H3>cookies</H3>
+   <PRE><a href="Object.html">Object</a>&nbsp;<B>cookies</B></PRE>
+   <UL>
+   Contains the cookie request parameters.
+   
+   </UL>
+   <HR>
+   
+   <A NAME="data"><!-- --></A>
+   <H3>data</H3>
+   <PRE><a href="Object.html">Object</a>&nbsp;<B>data</B></PRE>
+   <UL>
+   Object containing any request parameters (GET, POST, Cookies, etc) and HTTP environmental variables.
+ <br /><br />
+ This object contains all passed request parameters as 
+ named properties, no matter whether these have been submitted 
+ as URL-parameters, as part of a HTTP POST request, or as 
+ cookie values.
+ <br /><br />
+ When more than one value is submitted for the same 
+ parameter name, req.data.paramname contains just a 
+ single (the first) value. That is why all parameters are 
+ additionally also provided with their values inside an 
+ array, through properites called req.data.paramname_array 
+ (the same parameter name, with an _array suffix attached). 
+ <br /><br />
+ Parameters can be grouped into objects using a "objectid[partid]"
+ syntax in the parameter name. For example, a parameter name of 
+ "foo[bar]" will result in a req.data.foo object being created. 
+ The actual parameter value will be available at req.data.foo.bar. 
+ This feature can be used recursively, meaning that a parameter 
+ named "foo[bar][dong]" will result in req.data.foo.bar.dong.
+ <br /><br />
+ Uploaded files are available in req.data as a MimePart object.
+ <br /><br />
+ Additionally Helma sets the following HTTP environment 
+ variables if they are available:
+ <br /><br />
+ <dl>
+ <dt>authorization</dt>
+ <dd>Equivalent to the variable 'authorization' sent in 
+ the request header.</dd>
+ <dt>http_browser</dt>
+ <dd>Name and version of the client browser. Equivalent 
+ to the variable 'User-Agent' sent in the request header.</dd>
+ <dt>http_host</dt>
+ <dd>Host name to which that request was sent to. 
+ Equivalent to the variable 'Host' sent in the request header.</dd>
+ <dt>http_language</dt>
+ <dd>Equivalent to the variable 'Accept-Language' sent 
+ in the request header.</dd>
+ <dt>http_language</dt>
+ <dd>Equivalent to the variable 'Accept-Language' sent 
+ in the request header.</dd>
+ <dt>http_remotehost</dt>
+ <dd>IP-Address of the client machine. Equivalent to a 
+ getRemoteAddr() call on the servletRequest.</dd>
+ <dt>http_referer</dt>
+ <dd>URL of the page the user came from. Equivalent to the 
+ variable 'Referer' sent in the request header.</dd>
+ <dt>http_get_remainder</dt>
+ <dd>Provides access to any bytes remaining after GET 
+ parameter parsing.</dd>
+ <dt>http_post_remainder</dt>
+ <dd>Provides access to any bytes remaining after POST 
+ parameter parsing.</dd>
+ </dl>
+ <br /><br />
+ All properties of req.data are read- and write-able.
+   
+   </UL>
+   <HR>
+   
+   <A NAME="method"><!-- --></A>
+   <H3>method</H3>
+   <PRE><a href="String.html">String</a>&nbsp;<B>method</B></PRE>
+   <UL>
+   Returns the HTTP method (in uppercase letters) of the current request.
+ <br /><br />
+ Usually 'GET' or 'POST'. For non-web-requests this 
+ function will return one of the following: 'XMLRPC', 
+ 'EXTERNAL' or 'INTERNAL'.
+   
+   </UL>
+   <HR>
+   
+   <A NAME="params"><!-- --></A>
+   <H3>params</H3>
+   <PRE><a href="Object.html">Object</a>&nbsp;<B>params</B></PRE>
+   <UL>
+   Contains any GET and POST request parameters.
+ <br /><br />
+ Combined properties of req.postParams and req.queryParams
+   
+   </UL>
+   <HR>
+   
+   <A NAME="password"><!-- --></A>
+   <H3>password</H3>
+   <PRE><a href="String.html">String</a>&nbsp;<B>password</B></PRE>
+   <UL>
+   Returns the decrypted basic authentication password.
+ <br /><br />
+ Only for requests that contain user credentials sent with 
+ '<a href="http://en.wikipedia.org/wiki/Basic_authentication_scheme">
+ basic authentication scheme</a>' method, typically as a result 
+ of a previously returned 401 HTTP response.
+   
+   </UL>
+   <HR>
+   
+   <A NAME="path"><!-- --></A>
+   <H3>path</H3>
+   <PRE><a href="String.html">String</a>&nbsp;<B>path</B></PRE>
+   <UL>
+   Contains the path of the current request, relative to the application's mountpoint.
+ <br /><br />
+ Starts without a preceding slash. This property is read-only.
+   
+   </UL>
+   <HR>
+   
+   <A NAME="postParams"><!-- --></A>
+   <H3>postParams</H3>
+   <PRE><a href="Object.html">Object</a>&nbsp;<B>postParams</B></PRE>
+   <UL>
+   Contains any post request parameters.
+   
+   </UL>
+   <HR>
+   
+   <A NAME="queryParams"><!-- --></A>
+   <H3>queryParams</H3>
+   <PRE><a href="Object.html">Object</a>&nbsp;<B>queryParams</B></PRE>
+   <UL>
+   Contains any GET request style query string parameters.
+   
+   </UL>
+   <HR>
+   
+   <A NAME="runtime"><!-- --></A>
+   <H3>runtime</H3>
+   <PRE><a href="Number.html">Number</a>&nbsp;<B>runtime</B></PRE>
+   <UL>
+   The running time of the current request in milliseconds 
+ <br /><br />
+ Provides the amount of time that has elapsed since the 
+ start of the processing of the current request, measured 
+ in milliseconds (integer).
+   
+   </UL>
+   <HR>
+   
+   <A NAME="username"><!-- --></A>
+   <H3>username</H3>
+   <PRE><a href="String.html">String</a>&nbsp;<B>username</B></PRE>
+   <UL>
+   Contains the decrypted basic authentication username.
+ <br /><br />
+ Only for requests that contain user credentials sent with 
+ '<a href="http://en.wikipedia.org/wiki/Basic_authentication_scheme">
+ basic authentication scheme</a>' method, typically as a result 
+ of a previously returned 401 HTTP response.
+ <br /><br />
+ See also: <a href="#getPassword">getPassword</a>
+   
+   </UL>
+   <HR>
+   
+
+
+<!-- ============ FIELD DETAIL END =========== -->
+
+<!-- ============ METHOD DETAIL START ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+   <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+      <TD COLSPAN=1><FONT SIZE="+2">
+         <B>Method Detail</B></FONT>
+      </TD>
+   </TR>
+</TABLE>
+
+<!-- One single method detail entry -->
+
+   <A NAME="get"><!-- --></A>
+   <H3>get</H3>
+   <PRE>void <B>get</B>(&lt;<a href="String.html">String</a>&gt; name)</PRE>
+   
+      <UL>An alternative method of accessing properties 
+ otherwise made available through the req.data object.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  as String, the request data property to read  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#data">data</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getDateHeader"><!-- --></A>
+   <H3>getDateHeader</H3>
+   <PRE><a href="Object.html">Object</a> <B>getDateHeader</B>(&lt;<a href="String.html">String</a>&gt; name)</PRE>
+   
+      <UL>Returns the specified header value as a Date object
+ <br /><br />
+ Proxy to HttpServletRequest.getDateHeader(), fails 
+ silently by returning -1.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  as String,  the header name  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Date the date in milliseconds, or -1 
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getHeader"><!-- --></A>
+   <H3>getHeader</H3>
+   <PRE><a href="Object.html">Object</a> <B>getHeader</B>(&lt;<a href="String.html">String</a>&gt; name)</PRE>
+   
+      <UL>Returns the specified header value, or null
+ <br /><br />
+ If there are several headers by that name, the first header 
+ value is returned. Proxy to HttpServletRequest.getHeader().</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  as String, the header name  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        String the header value, or null   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#getHeaders">getHeaders()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getHeaders"><!-- --></A>
+   <H3>getHeaders</H3>
+   <PRE><a href="Object.html">Object</a> <B>getHeaders</B>(&lt;<a href="String.html">String</a>&gt; name)</PRE>
+   
+      <UL>Returns an Array of all header values by the specified name
+ <br /><br />
+ Proxy to HttpServletRequest.getHeaders(), returns header 
+ values as string array.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  as String, the header name  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Array of Strings containing the header values   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#getHeader">getHeader()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getIntHeader"><!-- --></A>
+   <H3>getIntHeader</H3>
+   <PRE><a href="Object.html">Object</a> <B>getIntHeader</B>(&lt;<a href="String.html">String</a>&gt; name)</PRE>
+   
+      <UL>Returns the specified header value as a Number
+ <br /><br />
+ Proxy to HttpServletRequest.getIntHeader(), fails 
+ silently by returning -1.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  as String, the header name  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Number the header parsed as integer or -1 
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getServletRequest"><!-- --></A>
+   <H3>getServletRequest</H3>
+   <PRE>HttpServletRequest <B>getServletRequest</B>()</PRE>
+   
+      <UL>Provides access to the HttpServletRequest object
+ <br /><br />
+ Returns an instance of the Java HttpServletRequest 
+ Class corresponding to the current request, which allows 
+ full access to the methods of that class.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Packages.javax.servlet.http.HttpServletRequest object of the current request   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- Packages.javax.servlet.http.HttpServletRequest</UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="isGet"><!-- --></A>
+   <H3>isGet</H3>
+   <PRE>Boolean <B>isGet</B>()</PRE>
+   
+      <UL>Returns true if the current request is a HTTP GET request, false otherwise.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Boolean   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#isPost">isPost()</a><BR/>- <a href="#method">method</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="isPost"><!-- --></A>
+   <H3>isPost</H3>
+   <PRE>Boolean <B>isPost</B>()</PRE>
+   
+      <UL>Returns true if the current request is a HTTP POST request, false otherwise.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Boolean   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#isGet">isGet()</a><BR/>- <a href="#method">method</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+
+
+<!-- ============ METHOD DETAIL END ========== -->
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+
+<!-- =========== END OF NAVBAR =========== -->
+
+<HR>
+<FONT SIZE="-1">
+
+</FONT>
+
+
+
+
+<div class="jsdoc_ctime">Documentation generated by <a href="http://jsdoc.sourceforge.net/" target="_parent">JSDoc</a> on Thu Jul 19 01:13:37 2007</div>
+
+
+</BODY>
+</HTML>

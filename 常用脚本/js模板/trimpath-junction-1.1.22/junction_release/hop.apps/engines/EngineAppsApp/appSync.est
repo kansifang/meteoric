@@ -1,0 +1,105 @@
+<script language="javascript">
+TrimPath.junctionDbMigrate = {
+<% for (var p = codePaths('db/migrate', /\.js$/),
+            i = 0; i < p.length; i++) { %>
+  '<%= p[i] %>' : <%= codeRead(p[i]) %>
+  ,
+<% } %>
+  done: null
+}
+
+var reqStart = null;
+
+<% if ((params['controllerName'] && params['controllerName'] != 'home') ||
+       (params['actionName']     && params['actionName'] != 'start')) { %>
+    // TODO: REVISIT: We might sometimes instead need to 
+    // display the result redirect controller/action/objId 
+    // after the server processed the request.
+    //
+    reqStart = {
+        controllerName: '<%= params['controllerName'] %>', 
+        actionName: '<%= params['actionName'] %>'
+        <% if (params['objId']) { %>, 
+          objId: '<%= params['objId'] %>'
+        <% } %>
+    };
+<% } else { %>
+    var hashStart = window.location.hash;
+    if (hashStart != null &&
+        hashStart.length > 1) {
+        hashStart = hashStart.substring(1).split('/');
+        reqStart = {
+            controllerName: hashStart[0], 
+            actionName: hashStart[1] || 'index',
+            objId : hashStart[2]
+        };
+    } else {
+        reqStart = {
+            controllerName: 'home', 
+            actionName: 'start'
+        };
+    }
+<% } %>
+
+TrimPath.junction.env.<%= appInitMethod || 'appInit' %>({
+    spaceKey : '<%= spaceKey %>', 
+    userKey : '<%= userKey %>', 
+    appKey : '<%= appKey %>', 
+    appVersion : '<%= appVersion %>',
+    conversationId : '<%= conversationId %>'
+}, reqStart);
+</script>
+
+<div id="junction_app_yard">
+<div id="junction_app_js_yard">
+<% for (var p = codePaths('app', /\.js$/),
+            i = 0; i < p.length; i++) { %>
+  <script language="javascript" id="<%= p[i] %>"><%= codeRead(p[i]) %></script>
+<% } %>
+</div>
+
+<div id="junction_app_jst_yard">
+<% for (var p = codePaths('app', /\.jst$/),
+            i = 0; i < p.length; i++) { %>
+<pre id="<%= p[i] %>"><%= codeRead(p[i]).replace(/</g, '&lt;').replace(/>/g, '&gt;') %></pre>
+<br/>
+<% } %>
+</div>
+
+<div id="junction_app_est_yard">
+<% for (var p = codePaths('app', /\.est$/),
+            i = 0; i < p.length; i++) { %>
+<pre id="<%= p[i] %>"><%= codeRead(p[i]).replace(/</g, '&lt;').replace(/>/g, '&gt;') %></pre>
+<br/>
+<% } %>
+</div>
+</div>
+
+<div id="junction_public_yard">
+<div id="junction_public_stylesheets_yard">
+<% for (var p = codePaths('public/stylesheets', /\.css$/),
+            i = 0; i < p.length; i++) { %>
+<pre id="<%= p[i] %>"><%= codeRead(p[i]).replace(/</g, '&lt;').replace(/>/g, '&gt;') %></pre>
+<br/>
+<% } %>
+</div>
+
+<div id="junction_public_javascripts_yard">
+<% for (var p = codePaths('public/javascripts', /\.js$/),
+            i = 0; i < p.length; i++) { %>
+<pre id="<%= p[i] %>"><%= codeRead(p[i]).replace(/</g, '&lt;').replace(/>/g, '&gt;') %></pre>
+<br/>
+<% } %>
+</div>
+</div>
+
+<div id="junction_translations_js_yard">
+<script>
+if (typeof(TRANSLATIONS) == 'undefined')
+    TRANSLATIONS = {}
+</script>
+<% for (var p = codePaths('translations', /\.js$/),
+            i = 0; i < p.length; i++) { %>
+  <script language="javascript" id="<%= p[i] %>"><%= codeRead(p[i]) %></script>
+<% } %>
+</div>

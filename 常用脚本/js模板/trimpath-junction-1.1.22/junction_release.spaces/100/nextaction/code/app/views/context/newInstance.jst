@@ -1,0 +1,17 @@
+${startFormTagLocal('context', 'create')}
+ <h2>${t('Create a new Context')}</h2>
+ <div class="wide">
+  <label for="context[name]" class="required">${t('Name')}:</label> ${textField('context', 'name')}
+    ${errorMessagesOn('context', 'name')}<br/>
+  <label for="context[notes]">${t('Notes')}:</label> ${%textArea('context', 'notes', { cols: 40, rows: 10, wrap: 'off' })%}<br/>
+  {var choices = Context.parentChoices()}
+  {if choices.length > 1}
+    <label for="context[parent_context_id]">${t('Parent Context')}:</label> ${select('context', 'parent_context_id', choices)}<br/>
+  {/if}
+  <label for="context[color]">${t('Color')}:</label> ${select('context', 'color', tChoices(colorChoices))}<br/>
+  <div class="submit">
+    ${submitButtonLocal("doCreate", "&nbsp;&nbsp;OK&nbsp;&nbsp;")}
+    ${%linkToLocal(t('Cancel'), 'context', 'index', null, {'class':'text_link'})%}
+  </div>
+ </div>
+${endFormTag()}

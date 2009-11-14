@@ -1,0 +1,176 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html"/>
+	<title>内建窗口实例 -- JSR2+</title>
+	<script type="text/javascript" src="../../common/js/core.js?lib=webui,ui_window"></script>
+	<link rel="stylesheet" href="../resources/example.css" type="text/css" media="all"/>
+	<style>
+		.panel-cs{background:#FFF;border:1px solid #A3BAE9;}
+		.div-side{overflow:auto;}
+	</style>
+</head>
+
+<body style="overflow:hidden;margin:0">
+<div id="bodyPanel" style="display:none">
+	<b>内建窗口实例</b><hr/><br/>
+	<!-- 面板 -->
+	<div id="panel"></div>
+	<!-- 面板内容 -->
+	<div id="contentPanel">
+		<!-- 控件实例 -->
+		<fieldset id="example"><div class="gbPanel">
+			<table class="font"><tr>
+				<td width="10px" height="40px">&nbsp;</td>
+				<td width="130px"><button id="win1"></button></td>
+				<td width="130px"><button id="win2"></button></td>
+				<td><button id="win3"></button></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<!-- 相关方法 -->
+		<fieldset id="method"><div class="gbPanel">
+			<table class="method-area1"><tr>
+				<td><button id="b1"></button></td><td><button id="b2"></button></td>
+				<td><button id="b3"></button></td><td><button id="b4"></button></td>
+				<td><button id="b5"></button></td>
+			</tr><tr>
+				<td><button id="b6"></button></td><td><button id="b7"></button></td>
+				<td><button id="b8"></button></td><td><button id="b9"></button></td>
+				<td><button id="b10"></button></td>
+			</tr><tr>
+				<td><button id="b11"></button></td><td><button id="b12"></button></td>
+				<td><button id="b13"></button></td><td></td><td></td>
+			</tr></table>
+			<table class="method-area2"><tr>
+				<td><button id="b14"></button></td><td><button id="b15"></button></td>
+				<td></td><td></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<div class="font">
+			注: 相关方法是针对 "内建窗口1" 操作的。<br/>　&nbsp;&nbsp;内建窗口会占用浏览器较多的资源, 请勿创建太多的窗体。<br/>　&nbsp;&nbsp;当 WEB 页面相对较复杂时, 请将窗口的动画效果关闭。
+		</div>
+	</div>
+	<!-- 面板内容结束 -->
+	<!-- 测试面板1 -->
+	<div id="ceshi1" class="panel-cs font" style="display:none">
+		<div id="cs-left" class="div-side" style="width:160px;">
+			这是测试面板1!!<br/><br/><br/>测试内容<br/><br/>测试内容<br/><br/><br/>测试内容<br/>测试内容<br/><br/>测试内容<br/><br/>测试内容
+		</div>
+	</div>
+	<!-- 测试面板2 -->
+	<div id="ceshi2" class="panel-cs font" style="display:none">
+		<div id="cs-top" class="div-side" style="color:#FF0000">
+			这是测试面板2!!<br/><br/><br/>
+			<div style="width:400px">测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容</div>
+			<br/><br/>测试内容<br/><br/><br/>测试内容<br/>测试内容<br/><br/>测试内容<br/><br/>测试内容
+		</div>
+	</div>
+</div>
+</body>
+
+<script>
+var btn1, btn2, btn3, w1, w2, btn, cs1, cs2, hideIcon = true, flash=false;
+new UI.Panel({id:"panel", caption:"应用实例 -> 内建窗口", width:520, height:335, body:"contentPanel"});
+new UI.GroupBox({id:"example", caption:"控件实例"});
+new UI.GroupBox({id:"method", caption:"相关方法"});
+//创建内建窗口
+w1 = new UI.Window({caption:"测试窗口1", width:280, height:200});
+w2 = new UI.Window({caption:"测试窗口2", width:360, height:250});
+//创建显示内建窗口按钮
+btn1 = new UI.Button({id:"win1", caption:"显示-测试窗口1", width:105, title:"从当前按钮打开窗体"});
+btn1.bind(function(){ w1.show(btn1.dom) });
+btn2 = new UI.Button({id:"win2", caption:"显示-测试窗口1", width:105, title:"从页面中间打开窗体"});
+btn2.bind(function(){ w1.show() });
+btn3 = new UI.Button({id:"win3", caption:"显示-测试窗口2", width:105});
+btn3.bind(function(){ w2.show() });
+//相关方法按钮
+btn = new UI.Button({id:"b1", caption:"center", width:75});
+btn.bind(function() {
+	w1.center();
+});
+btn = new UI.Button({id:"b2", caption:"clearPanel", width:75});
+btn.bind(function() {
+	w1.clearPanel();
+});
+btn = new UI.Button({id:"b3", caption:"focus", width:75});
+btn.bind(function() {
+	w1.focus();
+});
+btn = new UI.Button({id:"b4", caption:"getPanel", width:75});
+btn.bind(function() {
+	var tmp = w1.getPanel();
+	if(tmp)
+		alert("你当前的主面板ID为: " + w1.getPanel().id);
+	else
+		alert("'测试窗口1' 无主面板。");
+});
+btn = new UI.Button({id:"b5", caption:"hide", width:75});
+btn.bind(function() {
+	w1.hide();
+});
+btn = new UI.Button({id:"b6", caption:"hideIcon", width:75});
+btn.bind(function() {
+	w1.hideIcon(hideIcon);
+	hideIcon = !hideIcon;
+});
+btn = new UI.Button({id:"b7", caption:"onClose", width:75});
+btn.bind(function() {
+	w1.onClose(function(){ alert("'测试窗口1' 的 onClose 事件触发了。") });
+	alert("设置了 '内建窗口1' 关闭事件回调。");
+});
+btn = new UI.Button({id:"b8", caption:"onOpen", width:75});
+btn.bind(function() {
+	w1.onOpen(function(){ alert("'测试窗口1' 的 onOpen 事件触发了。") });
+	alert("设置了 '内建窗口1' 打开事件回调。");
+});
+btn = new UI.Button({id:"b9", caption:"show", width:75});
+btn.bind(function() {
+	w1.show();
+});
+btn = new UI.Button({id:"b10", caption:"setCaption", width:75});
+btn.bind(function() {
+	w1.setCaption("测试窗口1 - setCaption设置了我");
+});
+btn = new UI.Button({id:"b11", caption:"setIcon", width:75});
+btn.bind(function() {
+	w1.setIcon("../resources/image/ico.gif");
+});
+btn = new UI.Button({id:"b12", caption:"setPanel", width:75});
+btn.bind(function() {
+	w1.setPanel("ceshi1", function(w, h) {
+		cs1.style.height = h - (isIE ? 2 : 4);
+	});
+});
+btn = new UI.Button({id:"b13", caption:"setSize", width:75});
+btn.bind(function() {
+	w1.setSize(380, 150);
+	alert("'内建窗口1' 尺寸大小被设置为:\n380×120 (单位: px)。");
+});
+btn = new UI.Button({id:"b14", caption:"是否有动感效果", width:105});
+btn.bind(function() {
+	w1.flash = flash;
+	flash = !flash;
+});
+btn = new UI.Button({id:"b15", caption:"切换主面板", width:105});
+btn.bind(function() {
+	w1.setPanel("ceshi2", function(w, h) {
+		var tmp = isIE ? 2 : 4;
+		$("ceshi2").style.height = h - tmp;
+		cs2.style.height = h - tmp;
+		cs2.style.width = w - 14;
+	});
+});
+//测试面板
+cs1 = $("cs-left");
+cs2 = $("cs-top");
+//测试窗口2
+var ta = new UI.TextArea({id:$B("textarea"), name:"textarea1", value:"这是测试窗口2。"});
+w2.setPanel(ta.dom, function(w, h) {
+	ta.setSize(w - 12, h - 1);
+});
+
+onLoad.add(function(){ $("bodyPanel").style.display = "" });
+</script>
+
+</html>

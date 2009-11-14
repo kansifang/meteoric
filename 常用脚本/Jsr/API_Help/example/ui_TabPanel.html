@@ -1,0 +1,145 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html"/>
+	<title>选项卡实例 -- JSR2+</title>
+	<script type="text/javascript" src="../../common/js/core.js?lib=webui,ui_tabPanel,ui_calendar,valid"></script>
+	<link rel="stylesheet" href="../resources/example.css" type="text/css" media="all"/>
+</head>
+
+<body>
+<div id="bodyPanel" style="display:none">
+	<b>选项卡实例</b><hr/><br/>
+	<!-- 选项卡 -->
+	<div id="panel"></div>
+	<!-- 选项卡内容 -->
+	<div id="contentPanel">
+		<!-- 控件实例 -->
+		<fieldset id="example"><div style="padding:10px">
+			<div id="tabPanel1"></div>
+		</div></fieldset>
+		<br/>
+		<!-- 相关方法 -->
+		<fieldset id="method"><div class="gbPanel">
+			<table class="method-area1"><tr>
+				<td><button id="b1"></button></td><td><button id="b2"></button></td>
+				<td><button id="b3"></button></td><td><button id="b4"></button></td>
+				<td><button id="b5"></button></td>
+			</tr><tr>
+				<td><button id="b6"></button></td><td><button id="b7"></button></td>
+				<td><button id="b8"></button></td><td></td><td></td>
+			</tr></table>
+			<table class="method-area2"><tr>
+				<td><button id="b9"></button></td><td></td><td></td><td></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+	</div>
+	<!-- 选项卡内容结束 -->
+	<!-- 选项卡面板1 -->
+	<div id="t-panel1" style="padding:8px">
+		<table class="font">
+			<tr><td width="70px">First Name:</td><td><input type="text" id="text1" /></td></tr>
+			<tr><td>Last Name:</td><td><input type="text" id="text2" /></td></tr>
+			<tr><td>Company:</td><td><input type="text" id="text3" /></td></tr>
+			<tr><td>Date:</td><td><input type="text" id="datePicker1" /></td></tr>
+			<tr><td>Email:</td><td><input type="text" id="text4" /></td></tr>
+		</table>
+	</div>
+	<!-- 选项卡面板2 -->
+	<div id="t-panel2" style="padding:8px">
+		<table class="font">
+			<tr><td width="70px">Home:</td><td><input type="text" id="text5" /></td></tr>
+			<tr><td>Business:</td><td><input type="text" id="text6" /></td></tr>
+			<tr><td>Mobile:</td><td><input type="text" id="text7" /></td></tr>
+			<tr><td>Fax:</td><td><input type="text" id="text8" /></td></tr>
+		</table>
+	</div>
+</div>
+</body>
+
+<script>
+var tp, btn, tmp, tabCount = 1, dsb = true, mode = false,
+tColor = ["0000FF", "FF0000", "E2E505", "008000"];
+new UI.Panel({id:"panel", caption:"应用实例 -> 选项卡", width:520, height:440, body:"contentPanel"});
+new UI.GroupBox({id:"example", caption:"控件实例"});
+new UI.GroupBox({id:"method", caption:"相关方法"});
+
+/**选项卡面板1*/
+new UI.TextField({id:"text1", name:"text1", length:30, width:180, value:"Gu"});
+new UI.TextField({id:"text2", name:"text2", length:30, width:180, value:"Gao"});
+new UI.TextField({id:"text3", name:"text3", length:99, width:180, value:"SGDSOFT"});
+new UI.DatePicker({id:"datePicker1", name:"datePicker1", width:180});
+tmp = new UI.TextField({id:"text4", name:"text4", length:60, width:180, value:"vastby@163.com"});
+tmp.setCheck(Valid.checkEmail, null, "请输入正确的E-mail信箱。", null);
+
+/**选项卡面板2*/
+new UI.TextField({id:"text5", name:"text5", length:30, width:180, value:"(888) 555-1212"});
+new UI.TextField({id:"text6", name:"text6", length:30, width:180});
+new UI.TextField({id:"text7", name:"text7", length:30, width:180});
+new UI.TextField({id:"text8", name:"text8", length:30, width:180});
+
+//创建选项卡
+tp = new UI.TabPanel({id:"tabPanel1", width:460, height:220, iframe:true, tabs:[
+	{ caption:"Personal Details", width:130, panel:"t-panel1" },
+	{ caption:"Phone Numbers", width:140, panel:"t-panel2", icon:"../resources/image/ico.gif", closed:true },
+	{ caption:"百度首页", width:100, url:"http://www.baidu.com", icon:"../resources/image/ico2-1.gif", closed:true }
+]});
+
+//相关方法按钮
+btn = new UI.Button({id:"b1", caption:"addTab", width:75});
+btn.bind(function() {
+	(tmp = $B("div")).className = "font";
+	tmp.style.padding = "6px";
+	tmp.style.color = tColor[tabCount % 4];
+	tmp.innerHTML = "这是 'Tab标签项" + tabCount + "' 的面板...";
+	tp.addTab({caption:"Tab标签项" + tabCount, panel:tmp, closed:true});
+	tabCount++;
+	tmp = null;
+});
+btn = new UI.Button({id:"b2", caption:"disable", width:75});
+btn.bind(function() {
+	tp.disable(1, dsb);
+	alert("设置了 'Phone Numbers' 标签为: " + (dsb ? "不可用" : "可用"));
+	dsb = !dsb;
+});
+btn = new UI.Button({id:"b3", caption:"onChange", width:75});
+btn.bind(function() {
+	tp.onChange(function(ctn) {
+		alert("'选项卡' 的onChange事件触发了!\n你选择是的 [ " + ctn + " ] 标签..");
+	});
+});
+btn = new UI.Button({id:"b4", caption:"removeAll", width:75});
+btn.bind(function() {
+	tp.removeAll();
+});
+btn = new UI.Button({id:"b5", caption:"removeTab", width:75});
+btn.bind(function() {
+	tp.removeTab(1);
+	alert("您删除了第二个Tab标签项！");
+});
+btn = new UI.Button({id:"b6", caption:"select", width:75});
+btn.bind(function() {
+	tp.select(1);
+	alert("您选择了第二个Tab标签项！");
+});
+btn = new UI.Button({id:"b7", caption:"setMode", width:75});
+btn.bind(function() {
+	tp.setMode(mode ? "TOP" : "BTM");
+	alert("您设置了控件标签栏为: " + (mode ? "TOP" : "BTM") + "。");
+	mode = !mode;
+});
+btn = new UI.Button({id:"b8", caption:"setSize", width:75});
+btn.bind(function() {
+	tp.setSize(380, 190);
+	alert("'选项卡' 的尺寸大小被设置为:\n380×190(单位: px)。");
+});
+btn = new UI.Button({id:"b9", caption:"getSelectedTab", width:105});
+btn.bind(function() {
+	tmp = tp.getSelectedTab();
+	alert("你当前选择的标签项属性如下:\n标题文本 ---  " + tmp.caption + "\n索引号    ---  " + tmp.index);
+});
+
+onLoad.add(function(){ $("bodyPanel").style.display = "" });
+</script>
+
+</html>

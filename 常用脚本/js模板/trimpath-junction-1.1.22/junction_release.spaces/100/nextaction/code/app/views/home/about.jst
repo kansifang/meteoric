@@ -1,0 +1,179 @@
+<div>
+<h2>About Next Action</h2>
+Next Action, Personal Edition, Version ${NEXT_ACTION_VERSION}
+{if isDemoMode()}
+  -- running in demo mode
+{/if}
+<p>
+
+Next Action is a <a href="http://trimpath.com/project/wiki/GettingThingsDone">Getting 
+Things Done</a> todo-list tracking tool.  It's a personal database for your projects
+and action items.
+
+<h3>Features:</h3>
+<ul>
+<li>Fast and snappy.</li>
+<li>Easy to use.</li>
+<li>Open source.</li>
+<li>Works even if your network connection is offline, slow, or has hiccups.</li>
+</ul>
+
+<h3>Getting started:</h3>
+{if isDemoMode()}
+  You're running Next Action right now in <b>demo mode</b>.<p>
+
+  The demo mode means that <b><i>any data you create will be deleted</i></b> 
+  when you close your web browser.  To get out of demo mode,
+  please <a href="http://gears.google.com/">install and enable Google Gears</a>
+  right now and to get the full benefit 
+  of Next Action, Personal Edition.
+{else}
+  Congratulations, you're already running a fully 
+  enabled version of Next Action, Personal Edition right now.<p>
+
+  To start from a clean database and delete all the existing data, click here: 
+  <p>
+
+  &nbsp;&nbsp; ${%linkToLocal('Delete All Records!', 'home', 'deleteAllRecords', null, { method: 'post', confirm: 'This operation is irreversible.  Are you sure you want to clear the entire database?', 'class': 'button' })%}
+  <p>
+
+  In this Personal Edition of Next Action, any data you create
+  is stored locally on your computer.  That is, your records are
+  not sent out over the network, but are instead kept
+  in a fast Google Gears database on your computer.<p>
+
+  Be sure to <b>setup a bookmark</b> to this page (or perhaps, more usefully,
+  to the ${linkToLocal('Dashboard', 'home', 'dashboard')} page) so
+  you can get back to Next Action conveniently.
+{/if}
+
+<h3>Software required:</h3>
+Supported web browsers : Firefox 2.0+, IE 7+.<p>
+
+<a href="http://gears.google.com/">Google Gears</a> : 
+{if isDemoMode()}
+  you'll need to <a href="http://gears.google.com/">install Google Gears</a>
+  in order to use Next Action for more than just its 
+  feature-limited demo mode.
+{else}
+  the Google Gears software is already installed on this computer
+  and web browser.  When you tell your friends about Next Action,
+  they'll need to install Google Gears on their own computers
+  before they can use Next Action for themselves.
+{/if}
+<p>
+
+<h3>Using Next Action:</h3>
+Click around the links along the top to get a feel for the application.  The links above include...
+
+<ul>
+<li>
+The ${linkToLocal('Dashboard', 'home', 'dashboard')} 
+link gives you a concise overview of your active Actions.
+</li>
+<li>
+The ${linkToLocal('Calendar', 'action', 'calender')} 
+link shows your Actions in a Calendar display, based on when they're due.
+</li>
+<li>
+The ${linkToLocal('Actions', 'action', 'index')} 
+link lists all of your remaining Actions in more detail.
+</li>
+<li>
+The ${linkToLocal('Contexts', 'context', 'index')} 
+link lets you organize your Actions into different work areas.
+</li>
+<li>
+The ${linkToLocal('Projects', 'project', 'index')} 
+link lets you organize and group related Actions into larger Projects.
+</li>
+<li>
+The ${linkToLocal('Completed', 'action', 'completed')} 
+link lists all of your completed Actions -- how 
+productive have you been?
+</li>
+<li>
+The ${linkToLocal('Statistics', 'home', 'statistics')} 
+link shows you an overview report of what's left to
+do and of where you've been.
+</li>
+</ul>
+
+<h3>To enter Actions:</h3>
+Please use the 'Add a new Action' box on the right-hand-side of 
+the page to record your own Actions.  The right-hand-side data
+entry box always appears so you can quickly capture
+those to-do ideas before you forget them.
+<p>
+
+You can also use the ${linkToLocal('detailed entry', 'action', 'newInstance')} 
+link, also found on the right-hand-side of the page, to 
+enter in lots of Action details.<p>
+
+If you want to record a bunch of Actions in one fell
+swoop, use the ${linkToLocal('bulk entry', 'action', 'newInstance')} 
+link to enter in many Actions fast.  The 'bulk entry' link also 
+appears on the right-hand-side of the page.
+
+<h3>Action fields:</h3>
+Each Action has the following fields, some optional, 
+some of which you'll only see on the 'detailed entry' 
+or Action edit screens...
+
+  <dl style="padding-left: 1em;">
+    <dt>Name</dt>
+      <dd>Requried.  An Action's name is best when kept short, like 'buy milk at costco', or 'upgrade iPhone plan'.</dd>
+    <dt>Notes</dt>
+      <dd>Optional, for recording more information or notes about an Action.</dd>
+    <dt>Color</dt>
+      <dd>Optional, because some Actions just need to look <font color="red">red</font>.</dd>
+    <dt>Active at</dt>
+      <dd>Optional.  Sometimes you just don't want to worry about 
+          an Action until later, such as 'two weeks later'.  
+          When you specify an 'Active at' date,
+          you're telling the program to not show the Action on your 
+          Dashboard until the 'Active at' date has occurred.  
+          To make this filtering work, 
+          you also have to make a filtering choice in the "show actions for" 
+          dropdown box, which you'll find at the bottom of the Dashboard page.</dd>
+    <dt>Due at</dt>
+      <dd>Optional.  This field lets you record a deadline date for an Action.  But when you 
+          update new date or drag action in calendar, its date should be the same today date or late one.</dd>
+    <dt>Completed at</dt>
+      <dd>Whenever you mark an Action as done or complete, 
+          the program will remember the date of completion in this field.  
+          After an Action is completed, it is only listed on the 
+          ${linkToLocal('Completed', 'action', 'completed')} page.
+    <dt>Repeat</dt>
+      <dd>Optional.  The Repeat field lets you specify a repeating or 
+          recurring Action, such as buying a birthday card 
+          every year for someone.  The Repeat feature kicks in whenever
+          you complete an Action.  If a just-completed Action has Repeat
+          information on it, the program will automatically create
+          a brand new Action that's a clone of the completed Action,
+          with the right dates automatically filled in.</dd>
+  </dl>
+
+You can also associate an Action with a Project.  For example,
+the 'hire Luxe Limos' Action can be associated with a 'Wedding' Project.
+
+You can also associate an Action with a Context.  For example,
+the 'research Wii prices' Action can be associated with 
+a 'Computer & Phone' Context.
+
+You can always edit your Actions later, too, to change any
+of these fields and associations at any time.<p>
+
+<h3>Backups:</h3>
+To make backups of your local database files, please copy the 
+relevant database files as described by the 
+<a href="http://code.google.com/apis/gears/api_database.html#directories">
+Google Gears database file locations</a> documentation.
+
+<h3>Learn More:</h3>
+Check back at the Next Action 
+<a href="http://trimpath.com/project/wiki/NextAction">intro page</a> 
+and the <a href="http://trimpath.com/blog">TrimPath blog</a> every 
+once in awhile.<p>
+
+</div>

@@ -1,0 +1,22 @@
+Frameworks={
+"Peppy":{
+ file:"peppy.js",
+ fun:"$" 
+},
+"Sizzle":{
+ file:"sizzle.js",
+ fun:"Sizzle"
+},
+"jSelector":{
+ file:"jSelector.js",
+ fun:"$"
+},
+"base2":{
+ file:"base2.js",
+ fun:"$"
+},
+"Karin":{
+ file:"Karin.js",
+ fun:"select"
+}
+}

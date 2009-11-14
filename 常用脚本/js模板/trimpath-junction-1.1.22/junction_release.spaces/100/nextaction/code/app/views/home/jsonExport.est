@@ -1,0 +1,13 @@
+<h3><%= t('JSON Export') %></h3>
+
+<%= t('You can copy and paste the following JSON data, such as for backups...') %>
+<br/>
+<br/>
+
+<textarea name="jsonExport" cols="60" rows="10" wrap="off">
+<%= json %>
+</textarea>
+
+<br/>
+<br/>
+<%= t('As they say, Backup Early, Backup Often!') %>

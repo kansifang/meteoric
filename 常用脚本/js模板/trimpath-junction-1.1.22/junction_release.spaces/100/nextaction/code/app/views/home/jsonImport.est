@@ -1,0 +1,17 @@
+<h3><%= t('JSON Import') %></h3>
+
+<%= startFormTagLocal('home', 'jsonImport') %>
+
+<%= t('Please paste JSON data here (which you probably got from a previous JSON export)...') %>
+<br/>
+<br/>
+
+<textarea name="jsonImport" cols="60" rows="10" wrap="off"></textarea>
+
+<br/>
+<br/>
+
+<%= submitButtonLocal("doJsonImport", t('Import JSON')) %>
+<%= linkToLocal(t('Cancel'), 'home', 'settings') %>
+
+<%= endFormTag() %>

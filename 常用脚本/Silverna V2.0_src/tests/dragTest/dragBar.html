@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:silverna="http://silverna.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>DragTest</title>
+	<script src="silverna-packs.js"></script>
+	<script>
+	function test()
+	{
+		var bav = new core.web.widgets.adorners.behaviors.DragBehavior();
+		bav.addPanel($$("test"));
+		bav.addKnobs($$("bar"));
+		bav.active();
+	}
+	</script>
+</head>
+<body onload="test()" style="border:solid 1px black;width:500px;height:500px;">
+<div id ="test" style="border: solid 1px #3377cc; width:100px; height:100px;background:#3377CC">
+<div id = "bar" style="background-color:gray;cursor:move;">movebar</div>
+<div style="height:100%;">abc</div></div>
+</body>
+</html>

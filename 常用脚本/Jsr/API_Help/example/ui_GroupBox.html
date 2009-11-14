@@ -1,0 +1,55 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html"/>
+	<title>盒子控件实例 -- JSR2+</title>
+	<script type="text/javascript" src="../../common/js/core.js?lib=webui"></script>
+	<link rel="stylesheet" href="../resources/example.css" type="text/css" media="all"/>
+</head>
+
+<body>
+<div id="bodyPanel" style="display:none">
+	<b>盒子控件实例</b><hr/><br/>
+	<!-- 面板 -->
+	<div id="panel"></div>
+	<!-- 面板内容 -->
+	<div id="contentPanel">
+		<!-- 控件实例 -->
+		<fieldset id="example"><div class="gbPanel font" style="height:100px">
+			这是一个盒子控件，又称 "组框控件"。
+		</div></fieldset>
+		<br/>
+		<!-- 相关方法 -->
+		<fieldset id="method"><div class="gbPanel">
+			<table class="method-area1"><tr>
+				<td><button id="b1"></button></td><td><button id="b2"></button></td>
+				<td></td><td></td><td></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<div class="font">注: 相关方法是针对 "盒子控件1" 操作的。</div>
+	</div>
+	<!-- 面板内容结束 -->
+</div>
+</body>
+
+<script>
+var g1, btn, expanded;
+new UI.Panel({id:"panel", caption:"应用实例 -> 盒子控件", width:520, height:310, body:"contentPanel"});
+new UI.GroupBox({id:"method", caption:"相关方法"});
+//创建盒子控件
+g1 = new UI.GroupBox({id:"example", caption:"控件实例"});
+//相关方法按钮
+btn = new UI.Button({id:"b1", caption:"expand", width:75});
+btn.bind(function() {
+	g1.expand(expanded);
+	expanded = !expanded;
+});
+btn = new UI.Button({id:"b2", caption:"setCaption", width:75});
+btn.bind(function() {
+	g1.setCaption("我是一个组框");
+});
+
+onLoad.add(function(){ $("bodyPanel").style.display = "" });
+</script>
+
+</html>

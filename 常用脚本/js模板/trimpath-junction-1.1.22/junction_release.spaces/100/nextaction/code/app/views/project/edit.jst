@@ -1,0 +1,35 @@
+${startFormTagLocal('project', 'update', project.id)}
+ <h2>${t('Project')}: ${%linkToLocal(h(project.name), 'project', 'show', project.id, { style:colorStyle(project)})%}</h2>
+ <div class="wide">
+  <label for="project[name]" class="required">${t('Name')}:</label> ${%textField('project', 'name', {'style':colorStyle(project)})%}
+    ${errorMessagesOn('project', 'name')}<br/>
+  <label for="project[notes]">${t('Notes')}:</label> ${%textArea('project', 'notes', { cols: 40, rows: 10, wrap: 'off' })%}<br/>
+  <label for="project[color]">${t('Color')}:</label> ${select('project', 'color', tChoices(colorChoices))}<br class="clear"/>
+  {var validChoices = Project.parentChoices(project.id)}
+  {if validChoices.length >= 2}
+    <label for="project[parent_project_id]">${t('Parent Project')}:</label> ${select('project', 'parent_project_id', validChoices)}<br/>
+  {/if}
+  <label for="project[due_at]">${t('Due at')}:</label> ${%textField('project', 'due_at', { valueFilter: localDateString })%}<br/>
+    ${sampleDate()}
+  <label for="project[completed_at]">${t('Completed at')}:</label> ${%textField('project', 'completed_at', { valueFilter: localDateString })%}
+    <a href="#" class="button"
+      onclick="{minify}
+        document.getElementById('project[completed_at]').value = TrimPath.junctionUtil.toLocalDateString(new Date());
+        return false;
+        {/minify}">
+      ${t('Today')}
+    </a>
+    <br/>
+    ${sampleDate()}
+  <div class="submit">
+    ${submitButtonLocal("doUpdate", "&nbsp;&nbsp;OK&nbsp;&nbsp;")}
+    ${%linkToLocal(t('Cancel'), 'project', 'show', project.id, {'class':'text_link'})%}
+  </div>
+ </div>
+${endFormTag()}
+
+<script>
+$(document).ready(function() {
+    makePopUpCal('project[due_at]', 'project[completed_at]');
+});
+</script>

@@ -1,0 +1,84 @@
+<div class="form">
+ <h2>${t('Action')}: <span style="${colorStyle(action)}">${h(action.name)}</span></h2>
+ <table>
+  <tr valign="top">
+    <td class="label required">${t('Name')}:&nbsp;
+    </td>
+    <td style="${colorStyle(action)}">${h(action.name)}
+    </td>
+  </tr>
+  <tr valign="top">
+    <td class="label">${t('Notes')}:&nbsp;
+    </td>
+    <td><pre>${h(action.notes || '')}</pre>
+    </td>
+  </tr>
+  <tr>
+    <td class="label">${t('Context')}:&nbsp;
+    </td>
+    <td>{if action.context_id}
+           {var context = action.getContext()}
+           ${linkToLocal(h(context.name), 'context', 'show', action.context_id, modelToolTip(context, 'context'))}
+        {/if}
+    </td>
+  </tr>
+  <tr>
+    <td class="label">${t('Project')}:&nbsp;
+    </td>
+    <td>{if action.project_id}
+           {var project = action.getProject()}
+           ${linkToLocal(h(project.name), 'project', 'show', action.project_id,modelToolTip(project, 'project'))}
+        {/if}
+    </td>
+  </tr>
+  {if (TrimPath.junction.env.type == 'server')}
+  <tr>
+    <td class="label">${t('Contact')}:&nbsp;
+    </td>
+    <td>{var contact = action.contactVal()}
+        {if contact}
+            {var party = action.getContact()}
+            {if party}
+              ${linkToLocal(h(party.displayName()), party.type, 'show', action.contact_id)}
+            {/if}
+        {/if}
+    </td>
+  </tr>
+  {/if}
+  <tr>
+    <td class="label">${t('Active at')}:&nbsp;
+    </td>
+    <td>${localDateString(action.active_at)}
+    </td>
+  </tr>
+  <tr>
+    <td class="label">${t('Due at')}:&nbsp;
+    </td>
+    <td>${localDateString(action.due_at)}
+    </td>
+  </tr>
+  <tr>
+    <td class="label">${t('Completed at')}:&nbsp;
+    </td>
+    <td>${localDateString(action.completed_at)}
+    </td>
+  </tr>
+  <tr>
+    <td class="label">${t('Repeat')}:&nbsp;
+    </td>
+    <td>${action.repeatSummary()}
+    </td>
+  </tr>
+  <tr>
+    <td>
+    </td>
+    <td class="buttons">
+      ${%linkToLocal(t('Edit'), 'action', 'edit', action.id, { 'class': 'button' })%} 
+      {if action.completed_at == null}
+        ${%linkToLocal(t('Mark As Completed'), 'action', 'toggleComplete', action.id, { method: 'post', 'class': 'button' })%}
+      {/if}
+      ${%linkToLocal(t('Delete'), 'action', 'destroy', action.id, { method: 'post', confirm: t('Are you sure?'), 'class': 'button' })%}
+    </td>
+  </tr>
+ </table>
+</div>

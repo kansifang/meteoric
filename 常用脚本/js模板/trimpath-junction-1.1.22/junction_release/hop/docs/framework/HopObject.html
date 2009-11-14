@@ -1,0 +1,2336 @@
+<!DOPropertiesCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN""http://www.w3.org/TR/REC-html40/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+HopObject - Helma Javascript Reference
+</TITLE>
+<LINK REL ="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+
+
+</HEAD>
+<SCRIPT>
+function asd()
+{
+parent.document.title="HopObject - Helma Javascript Reference";
+}
+</SCRIPT>
+<BODY BGCOLOR="white" onload="asd();">
+      
+      
+
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>HopObject</H2>
+<PRE>Object
+   |
+   +--<b>HopObject</b>
+</PRE>
+
+
+<HR>
+
+<DL>
+   <!-- Class definition
+   <DT>class 
+   <B>HopObject</B>
+    -->
+
+</DL>
+   
+   <P>
+   <I>Defined in <a href='overview-summary-HopObject.js.html'>HopObject.js</a></I><BR/><BR/><B>See:</B><UL>- Packages.helma.scripting.rhino.HopObject</UL>
+   </P>
+   <HR>
+   
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+<!-- =========== END OF NAVBAR =========== -->
+<HR>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TD COLSPAN=2><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD>
+      <CODE>
+	 <B>
+	    <A HREF="#HopObject()">HopObject</A></B>()
+      </CODE>
+      <BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Constructor for HopObject objects, providing the 
+ building blocks of the Helma framework.
+      </TD>
+</TR>
+</TABLE>
+
+<!-- ======== END CONSTRUCTOR SUMMARY ======== -->
+
+&nbsp;
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+   <A NAME="field_summary"><!-- --></A>
+      <TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+         <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+            <TD COLSPAN=2><FONT SIZE="+2">
+               <B>Properties Summary</B></FONT></TD>
+         </TR>
+
+   <!-- This is one instance field summary -->
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="Number.html">Number</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#_id">_id</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The unique id of the HopObject.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="HopObject.html">HopObject</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#_parent">_parent</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The parent collection containing this HopObject.</TD>
+   </TR>
+   
+
+   </TABLE>
+   &nbsp;
+   
+
+   
+
+<!-- =========== END FIELD SUMMARY =========== -->
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TD COLSPAN=2><FONT SIZE="+2">
+<B>Methods Summary</B></FONT></TD>
+</TR>
+
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;Boolean</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#add">add</A></B>(&lt;<a href="HopObject.html">HopObject</a>&gt; subnode)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Attaches a HopObject as an additional subnode.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;Boolean</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#addAt">addAt</A></B>(&lt;<a href="Number.html">Number</a>&gt; position,&lt;<a href="HopObject.html">HopObject</a>&gt; subnode)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Attaches an additional subnode at the given index.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Object.html">Object</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#cache">cache</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Cache object providing space for arbitrary run-time data.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#clearCache">clearCache</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Clears this HopObject's cache property.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Number.html">Number</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#contains">contains</A></B>(&lt;<a href="HopObject.html">HopObject</a>&gt; obj)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Determines if a HopObject contains a certain subnode.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Number.html">Number</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#count">count</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Get the number of subnodes attached to this HopObject.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#forEach">forEach</A></B>(&lt;Function&gt; callback)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Iterates over each child node of the HopObject.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="HopObject.html">HopObject</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#get">get</A></B>(&lt;<a href="String.html">String</a>&gt; id)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Retrieves a property or a subnode of a HopObject.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="HopObject.html">HopObject</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getById">getById</A></B>(&lt;<a href="Number.html">Number</a>&gt; id,&lt;<a href="String.html">String</a>&gt; proto)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Retrieves the specified HopObject.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="HopObject.html">HopObject</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getChildElement">getChildElement</A></B>(&lt;<a href="String.html">String</a>&gt; name)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Optional handler to override the default URL path resolution.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Array.html">Array</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getOrderedView">getOrderedView</A></B>(&lt;<a href="String.html">String</a>&gt; name)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns a collection including all subnodes of a 
+ HopObject ordered according to the properties 
+ listed in the string passed as argument.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;helma.framework.repository.Resource</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getResource">getResource</A></B>(&lt;<a href="String.html">String</a>&gt; resourceName)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns a helma.framework.repository.Resource object 
+ defined for the prototype.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Array.html">Array</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getResources">getResources</A></B>(&lt;<a href="String.html">String</a>&gt; resourceName)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns an Array of helma.framework.repository.Resource 
+ objects defined for the prototype.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#href">href</A></B>(&lt;<a href="String.html">String</a>&gt; action)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns the absoulte URL path of a HopObject relative 
+ to the application's root.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#href_macro">href_macro</A></B>(param, action)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 macro returns the url for any hopobject
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#id_macro">id_macro</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 macro returns the id of a HopObject
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Number.html">Number</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#indexOf">indexOf</A></B>(&lt;<a href="HopObject.html">HopObject</a>&gt; obj)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Determines if a HopObject contains a certain subnode.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#invalidate">invalidate</A></B>(childId)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Marks a HopObject as invalid so that it is fetched 
+ again from the database.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Array.html">Array</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#list">list</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns an array including all subnodes of a HopObject.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#loop_macro">loop_macro</A></B>(param, collection)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 generic macro that loops over the childobjects
+ and renders a specified skin for each of them
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#onInit">onInit</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 If a HopObject prototype defines a function named onInit(), 
+ it will be called on each HopObject that is fetched from 
+ embedded or relational database.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#onPersist">onPersist</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 If a HopObject prototype defines a function named onPersist(), 
+ it will be called on each HopObject immediately before it is 
+ stored to embedded or relational database.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#onRequest">onRequest</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 If defined, the onRequest() function is called on the 
+ object specified by the request path just before the 
+ action is invoked.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#onUnhandledMacro">onUnhandledMacro</A></B>(&lt;<a href="String.html">String</a>&gt; name)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 If a HopObject prototype defines a function named 
+ onUnhandledMacro(), it will be called when a macro is rendered 
+ on the HopObject that can't be mapped to a macro function or 
+ property of the HopObject.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#persist">persist</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Stores a transient HopObject and all HopObjects 
+ reachable from it to database.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#prefetchChildren">prefetchChildren</A></B>(&lt;<a href="Number.html">Number</a>&gt; startIndex, &lt;<a href="Number.html">Number</a>&gt; length)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Manually retrieving a particular set of subnodes.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#remove">remove</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Deletes a HopObject from the database.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#removeChild">removeChild</A></B>(&lt;<a href="HopObject.html">HopObject</a>&gt; child)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Notifies a parent object that a child object has been removed.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#renderSkin">renderSkin</A></B>(&lt;<a href="String.html">String</a>&gt; skin, &lt;<a href="Object.html">Object</a>&gt; params)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Renders a skin of a HopObject and writes the result 
+ to the output buffer.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#renderSkinAsString">renderSkinAsString</A></B>(&lt;<a href="String.html">String</a>&gt; skin, &lt;<a href="Object.html">Object</a>&gt; params)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Renders a skin of a HopObject and returns the result as string.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#setParent">setParent</A></B>(&lt;<a href="HopObject.html">HopObject</a>&gt; subnode)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Assigns a HopObject as parent to a subnode.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Number.html">Number</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#size">size</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Get the number of subnodes attached to this HopObject.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#size_macro">size_macro</A></B>(&lt;<a href="Object.html">Object</a>&gt; param, &lt;<a href="String.html">String</a>&gt; name)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Render the number of child nodes of the HopObject.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#skin_macro">skin_macro</A></B>(param, name)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 macro rendering a skin or displaying
+ its source (param.as == "source")
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#switch_macro">switch_macro</A></B>(param)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 this macro renders a text depending on
+ the value of a given property
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#update">update</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Refetches updateable Subnode-Collections from the database.
+      </TD>
+   </TR>
+
+
+</TABLE>
+
+
+
+<P>
+<!-- ========== END METHOD SUMMARY =========== -->
+
+
+    <!-- ========= CONSTRUCTOR DETAIL START ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+   <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+      <TD COLSPAN=1>
+      <FONT SIZE="+2"><B>Constructor Detail</B></FONT>
+      </TD>
+   </TR>
+</TABLE>
+
+<A NAME="HopObject()"><!-- --></A><H3>
+HopObject</H3>
+<PRE><B>HopObject</B>()</PRE>
+
+
+<UL>
+   Constructor for HopObject objects, providing the 
+ building blocks of the Helma framework.
+ <br /><br />
+ Extends the standard JavaScript object with 
+ Helma-specific properties and functions. The HopObject is
+ the basic building block of a Helma application. The 
+ website root object as well as custom types defined by 
+ the application inherit from the HopObject prototype.
+ <br /><br />
+ HopObjects can be given special Helma specific 
+ properties, such as "collections" that can be configured 
+ to map to relational databases, and will make such data 
+ available when rendering "skins".
+ <br /><br />
+ HopObjects can be in transient state or are persistently 
+ mapped on a database. HopObjects that are directly or 
+ indirectly attached to the application's root object are 
+ automatically persisted using the built-in XML database, if 
+ they are not otherwise mapped to a relational database. 
+ see JavaDocs for helma.scripting.rhino.HopObject
+</UL>
+
+
+
+   </UL>
+
+
+<!-- Constructor return value(s) -->
+
+<!-- End constructor return value(s) -->
+
+<!-- ADDITIONAL ATTRIBUTES -->
+
+<UL>   
+<B>See:</B><UL>- Packages.helma.scripting.rhino.HopObject</UL>
+</UL>
+
+<HR/>
+<!-- END ADDITIONAL ATTRIBUTES  -->
+
+<!-- ========= CONSTRUCTOR DETAIL END ======== -->
+
+
+<!-- ============ FIELD DETAIL START =========== -->
+
+   <A NAME="field_detail"><!-- --></A>
+   <TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+      <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+         <TD COLSPAN=1><FONT SIZE="+2"><B>Properties Detail</B></FONT></TD>
+      </TR>
+   </TABLE>
+
+   
+   <A NAME="_id"><!-- --></A>
+   <H3>_id</H3>
+   <PRE><a href="Number.html">Number</a>&nbsp;<B>_id</B></PRE>
+   <UL>
+   The unique id of the HopObject.
+ This property is read-only
+   
+   </UL>
+   <HR>
+   
+   <A NAME="_parent"><!-- --></A>
+   <H3>_parent</H3>
+   <PRE><a href="HopObject.html">HopObject</a>&nbsp;<B>_parent</B></PRE>
+   <UL>
+   The parent collection containing this HopObject.
+   
+   </UL>
+   <HR>
+   
+
+
+<!-- ============ FIELD DETAIL END =========== -->
+
+<!-- ============ METHOD DETAIL START ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+   <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+      <TD COLSPAN=1><FONT SIZE="+2">
+         <B>Method Detail</B></FONT>
+      </TD>
+   </TR>
+</TABLE>
+
+<!-- One single method detail entry -->
+
+   <A NAME="add"><!-- --></A>
+   <H3>add</H3>
+   <PRE>Boolean <B>add</B>(&lt;<a href="HopObject.html">HopObject</a>&gt; subnode)</PRE>
+   
+      <UL>Attaches a HopObject as an additional subnode.
+ &nbsp;
+ Adds a HopObject as new subnode to another HopObject.
+ The new subnode is added after the last subnode already 
+ contained in the parent HopObject.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>subnode</CODE> -  as HopObject to add to this node.  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Boolean true if the addition was successful.   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#addAt">addAt()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="addAt"><!-- --></A>
+   <H3>addAt</H3>
+   <PRE>Boolean <B>addAt</B>(&lt;<a href="Number.html">Number</a>&gt; position,&lt;<a href="HopObject.html">HopObject</a>&gt; subnode)</PRE>
+   
+      <UL>Attaches an additional subnode at the given index.
+ <br /><br />
+ Adds a HopObject to a collection at a certain position, 
+ and shifts the index of all succeeding objects in that 
+ collection by one. Index positions start with 0.
+ <br /><br />
+ Just makes sense for HopObjects, that are not mapped on 
+ a relational DB, since the sort order of the collection 
+ would otherwise be defined by type.properties, resp. by 
+ the database itself. Returns true in case of success.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>position</CODE> -  as Number, the index position where the subnode is to be inserted.  
+      </UL> 
+   
+     <UL><CODE>subnode</CODE> -  as HopObject to add to this node.  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Boolean true if the addition was successful.   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#add">add()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="cache"><!-- --></A>
+   <H3>cache</H3>
+   <PRE><a href="Object.html">Object</a> <B>cache</B>()</PRE>
+   
+      <UL>Cache object providing space for arbitrary run-time data.
+ <br /><br />
+ Each HopObject contains a cache object to store temporary 
+ properties (strings, numbers, objects etc.), a transient 
+ HopObject, which can be used for caching purposes.
+ <br /><br />
+ These properties can be accessed in any thread until the 
+ application is restarted or the HopObject is invalidated, 
+ either manually using the invalidate method, or when the 
+ clearCache method is being called, or whenever Helma is updating 
+ the HopObject's data from a remote database.
+ <br /><br />
+ There is no way to make the cache object persistent.
+ <br /><br />
+ Example:
+ <pre> var obj = root.get(0);
+ obj.cache.message = "This is a temporary message."</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#clearCache">clearCache()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="clearCache"><!-- --></A>
+   <H3>clearCache</H3>
+   <PRE>void <B>clearCache</B>()</PRE>
+   
+      <UL>Clears this HopObject's cache property.
+ <br /><br />
+ Removes all information stored in the cache object. 
+ Doing this by just calling 'obj.cache = null' is not 
+ possible, since the property itself can not be set.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#cache">cache()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="contains"><!-- --></A>
+   <H3>contains</H3>
+   <PRE><a href="Number.html">Number</a> <B>contains</B>(&lt;<a href="HopObject.html">HopObject</a>&gt; obj)</PRE>
+   
+      <UL>Determines if a HopObject contains a certain subnode.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>obj</CODE> -  as HopObject, the node to look for  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Number of the index position or -1   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#indexOf">indexOf()</a></UL><B>Deprecated</B> <I>use indexOf instead  </I><BR/><BR/>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="count"><!-- --></A>
+   <H3>count</H3>
+   <PRE><a href="Number.html">Number</a> <B>count</B>()</PRE>
+   
+      <UL>Get the number of subnodes attached to this HopObject.
+ <br /><br />
+ Example:
+ <pre> res.write(root.count());
+ <i>5</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Number of subnodes   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#size">size()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="forEach"><!-- --></A>
+   <H3>forEach</H3>
+   <PRE>void <B>forEach</B>(&lt;Function&gt; callback)</PRE>
+   
+      <UL>Iterates over each child node of the HopObject.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>callback</CODE> -  The callback function to be  called for each child node. On every call the first  argument of this function is set to the current value  of the counter variable <code>i</code>.    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="get"><!-- --></A>
+   <H3>get</H3>
+   <PRE><a href="HopObject.html">HopObject</a> <B>get</B>(&lt;<a href="String.html">String</a>&gt; id)</PRE>
+   
+      <UL>Retrieves a property or a subnode of a HopObject.
+ <br /><br />
+ Either returns the specifed property of this 
+ HopObject or fetches the specified HopObject from 
+ its persisted subnodes.
+ <br /><br />
+ For HopObjects that are mapped to a relational 
+ database, the id will be matched against the accessname 
+ property as defined in the prototype's type.properties.
+ <br /><br />
+ This method just works for persistent HopObjects. 
+ <br /><br />
+ The type of the result depends on the type of the 
+ submitted argument:
+ <br /><br />
+ A number will retrieve the subnode of the HopObject 
+ at the corresponding index position.
+ <br /><br />
+ A string will retrieve the corresponding property 
+ of the HopObject.
+ <br /><br />
+ A number as string retrieves the 
+ subnode with the corresponding Hop ID.
+ <br /><br />
+ Example:
+ <pre> root.get(0);
+ HopObject author
+ root.get(1);
+ <i>HopObject story</i>
+ &nbsp;
+ root.get("date");
+ Wed Oct 18 02:01:41 GMT+01:00 1971
+ root.get("title");
+ <i>The Nudist On The Late Shift</i>
+ &nbsp;
+ root.get("1");
+ <i>HopObject author</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>id</CODE> -  as String or Number  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        HopObject or the retrieved property   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getById"><!-- --></A>
+   <H3>getById</H3>
+   <PRE><a href="HopObject.html">HopObject</a> <B>getById</B>(&lt;<a href="Number.html">Number</a>&gt; id,&lt;<a href="String.html">String</a>&gt; proto)</PRE>
+   
+      <UL>Retrieves the specified HopObject.
+ <br /><br />
+ If called on a HopObject instance, this getById() 
+ retrieves a child object by ID. If called on a HopObject 
+ constructor, it retrieves the persisted HopObject of 
+ that prototype and with the specified ID.
+ <br /><br />
+ Fetches a HopObject of a certain prototype through 
+ its ID and its prototype name. The prototype name can 
+ either be passed as a second argument, or alternatively 
+ the function can also be called on the prototype itself 
+ with a single argument (e.g. Story.getById(123)).
+ <br /><br />
+ In case of multiple prototypes being mapped on the 
+ same table (which is for instance the case with 
+ inherited prototypes) Helma will not check whether 
+ the prototype of the fetched object actually matches 
+ the specified prototype.
+ <br /><br />
+ Note, that this refers to the static method 'getById', 
+ not to be mixed up with the method getById called on a 
+ specific HopObject.
+ <br /><br />
+ Example:
+ <pre> //get the child with id 17
+ var child = root.getById(17);
+ writeln(child._id);
+ <i>17</i>
+ &nbsp;
+ //get the child at index 17 of the HopObject's children-collection
+ child = root.get(17);
+ writeln(child._id);
+ <i>42</i>
+ &nbsp;
+ //get the child with the name "17" (_children.accessname = name) of the HopObject
+ child = root.get("17");
+ writeln(child._id);
+ <i>69</i>
+ writeln(child.name);
+ <i>17</i>
+ &nbsp;
+ //get the persistent HopObject with prototype "Page" and id 127
+ var page = HopObject.getById(127, "Page");
+ writeln(page._id);
+ <i>127</i>
+ &nbsp;
+ //get the persistent HopObject with prototype "Page" and id 127
+ var page = Page.getById(127);
+ writeln(page._id);
+ <i>127</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>id</CODE> -  as Number  
+      </UL> 
+   
+     <UL><CODE>proto</CODE> -  as String, the name of the prototype  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        HopObject that was retrieved   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getChildElement"><!-- --></A>
+   <H3>getChildElement</H3>
+   <PRE><a href="HopObject.html">HopObject</a> <B>getChildElement</B>(&lt;<a href="String.html">String</a>&gt; name)</PRE>
+   
+      <UL>Optional handler to override the default URL path resolution.
+ <br /><br />
+ If defined, the getChildElement() method is called on an 
+ object contained in the request path in order to determine 
+ the URL path resolution from that object to its (potential) 
+ child objects.
+ <br /><br />
+ The string parameter passed to this method is the name of 
+ the next element in the URL path being resolved. The object 
+ being returned by this method is then used to continue 
+ resolving the URL path.
+ <br /><br />
+ Example:
+ <pre>function getChildElement(name) {
+ &nbsp;&nbsp;if (name == 'transient') {
+ &nbsp;&nbsp;&nbsp;&nbsp;return new HopObject();
+ &nbsp;&nbsp;}
+ &nbsp;&nbsp;else {
+ &nbsp;&nbsp;&nbsp;&nbsp;return this.get(name);
+ &nbsp;&nbsp;}
+ }</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  as String, the name of the child element in the requested URL path  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        HopObject the child object to be used for further path resolution   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getOrderedView"><!-- --></A>
+   <H3>getOrderedView</H3>
+   <PRE><a href="Array.html">Array</a> <B>getOrderedView</B>(&lt;<a href="String.html">String</a>&gt; name)</PRE>
+   
+      <UL>Returns a collection including all subnodes of a 
+ HopObject ordered according to the properties 
+ listed in the string passed as argument.
+ <br /><br />
+ While the sort pattern, passed as string argument, uses 
+ an SQL-like notation for the sorting, it contains 
+ property names, not database column names.
+ <br /><br />
+ The method returns a collection object that is ordered 
+ according to the specified sort order. The returned 
+ collections are cached and bound to the original 
+ collections, i.e. they reflect changes to the original 
+ collection. Both initial ordering and re-ordering are 
+ done on the Helma side, meaning that no additional db 
+ traffic is generated by multiple ordered views.
+ <br /><br />
+ Example:
+ <pre> var orderedByDate = hobj.getOrderedView("createtime desc, name");
+ for (var i in orderedByDate) {
+ &nbsp;&nbsp;doSomething();
+ }
+ // other syntax examples:
+ var orderedByName = hobj.getOrderedView("name");
+ var collectionByName = hobj.collection.getOrderedView("name");</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  as String, the property names to sort by  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Array of the sorted subnodes   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getResource"><!-- --></A>
+   <H3>getResource</H3>
+   <PRE>helma.framework.repository.Resource <B>getResource</B>(&lt;<a href="String.html">String</a>&gt; resourceName)</PRE>
+   
+      <UL>Returns a helma.framework.repository.Resource object 
+ defined for the prototype.
+ <br /><br />
+ Returns a resource referenced by its name for the 
+ current HopObject's prototype - getResource() walks 
+ up the inheritance chain and through all defined 
+ repositories to find the resource and returns null 
+ if unsucessful.
+ <br /><br />
+ Example:
+ <pre> root.getResource("main.skin");
+ /usr/local/helma-apps/myApp/repository1/HopObject/main.skin
+ root.getResource("type.properties");
+ /usr/local/helma-apps/myApp/repository3/Root/type.properties
+ root.getResource("Functions.js");
+ /usr/local/helma-apps/myApp/repository17/Root/Functions.js</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>resourceName</CODE> -  as String, the name of the requested resource  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        helma.framework.repository.Resource   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#getResources">getResources()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getResources"><!-- --></A>
+   <H3>getResources</H3>
+   <PRE><a href="Array.html">Array</a> <B>getResources</B>(&lt;<a href="String.html">String</a>&gt; resourceName)</PRE>
+   
+      <UL>Returns an Array of helma.framework.repository.Resource 
+ objects defined for the prototype.
+ <br /><br />
+ Returns an array of resources by the specified name for 
+ the current HopObject's prototype - getResources() walks 
+ up the inheritance chain and through all defined 
+ repositories to collect all the resources by that name 
+ and returns null if unsucessful.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>resourceName</CODE> -  as String, the name of the requested resource  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Array of helma.framework.repository.Resource objects   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#getResource">getResource()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="href"><!-- --></A>
+   <H3>href</H3>
+   <PRE><a href="String.html">String</a> <B>href</B>(&lt;<a href="String.html">String</a>&gt; action)</PRE>
+   
+      <UL>Returns the absoulte URL path of a HopObject relative 
+ to the application's root.
+ <br /><br />
+ This function is useful when referring to a HopObject 
+ in a markup tag (e.g. with a href attribute in an HTML 
+ &lt;a&gt;-tag). An optional string argument is appended 
+ to the return value.
+ <br /><br />
+ Example:
+ <pre> var obj = root.get(0);
+ &nbsp;
+ res.write('&lt;a href="' + obj.href() + '"&gt;');
+ <i>&lt;a href="/main/"&gt;</i>
+ &nbsp;
+ res.write('&lt;a href="' + obj.href('edit') + '"&gt;');
+ <i>&lt;a href="/main/edit"&gt;</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>action</CODE> -  as String, optional part to be attached to the URL of this HopObject  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        String of the URL path for this HopObject   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="href_macro"><!-- --></A>
+   <H3>href_macro</H3>
+   <PRE>void <B>href_macro</B>(param, action)</PRE>
+   
+      <UL>macro returns the url for any hopobject</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="id_macro"><!-- --></A>
+   <H3>id_macro</H3>
+   <PRE>void <B>id_macro</B>()</PRE>
+   
+      <UL>macro returns the id of a HopObject</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="indexOf"><!-- --></A>
+   <H3>indexOf</H3>
+   <PRE><a href="Number.html">Number</a> <B>indexOf</B>(&lt;<a href="HopObject.html">HopObject</a>&gt; obj)</PRE>
+   
+      <UL>Determines if a HopObject contains a certain subnode.
+ <br /><br />
+ Returns the index position of a Subnode contained by a HopObject 
+ (as usual for JavaScript, 0 refers to the first position).
+ <br /><br />
+ The index position is a relative value inside a HopObject 
+ (not to be confused with a Hop ID which is unique for each HopObject).
+ <br /><br/>
+ If there is no appropriate subnode inside the HopObject the returned value equals -1.
+ <br /><br />
+ Example:
+ <pre> var obj = root.get("myObject");
+ res.write(root.indexOf(obj));
+ <i>23</i>
+ &nbsp;
+ obj = root.get("blobject");
+ res.write(root.indexOf(obj));
+ <i>-1</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>obj</CODE> -  as HopObject, the node to look for  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Number of the index position or -1   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="invalidate"><!-- --></A>
+   <H3>invalidate</H3>
+   <PRE>void <B>invalidate</B>(childId)</PRE>
+   
+      <UL>Marks a HopObject as invalid so that it is fetched 
+ again from the database.
+ <br /><br />
+ Helma will overwrite the HopObject's node cache 
+ with the database contents the next time the 
+ HopObject is accessed.
+ <br /><br />
+ In other words, use this function to kick out 
+ an HopObject of Helma's node cache and force a 
+ database retrieval of the HopObject data.
+ <br /><br />
+ Example:
+ <pre> var obj = this.get(0);
+ obj.invalidate();</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="list"><!-- --></A>
+   <H3>list</H3>
+   <PRE><a href="Array.html">Array</a> <B>list</B>()</PRE>
+   
+      <UL>Returns an array including all subnodes of a HopObject.
+ <br /><br />
+ The start and count parameters are optional, if 
+ omitted, an array of the entire collection of subnodes 
+ is returned, otherwise only the specified range.
+ <br /><br />
+ This function is most useful if the whole 
+ collection of a HopObject's subnodes should be 
+ retrieved as array. However, general use should be 
+ avoided in favor of the method described below.
+ <br /><br />
+ Example:
+ <pre> var objectList = root.list();
+ for (var i=0; i &lt; objectList.length; i++){
+ &nbsp;&nbsp;var myObject = objectList[i];
+ &nbsp;&nbsp;res.writeln(myObject.created);
+ }
+ <i>Wed Oct 18 02:01:41 GMT+01:00 1971
+ Fri Nov 03 13:25:15 GMT+01:00 2000
+ Mon May 29 07:43:09 GMT+01:00 1999</i></pre>
+ <br /><br />
+ With increasing amounts of subnodes tied to a HopObject 
+ the use of list() becomes seriously inefficient in cases  
+ where not all subnodes really need to be read out.
+ <br /><br />
+ This is due to the creation of a JavaScript array 
+ containing the whole bunch of subnodes each time the 
+ function is called.
+ <br /><br />
+ Instead, it is recommended to determine the amount of 
+ subnodes using the function count() and looping through 
+ the subnode collection using the get() function.
+ <br /><br />
+ <pre> var amount = root.size();
+ for (var i=0; i &lt; amount; i++){
+ var myObject = root.get(i);
+ res.writeln(myObject.created);
+ }
+ <i>Wed Oct 18 02:01:41 GMT+01:00 1971
+ Fri Nov 03 13:25:15 GMT+01:00 2000
+ Mon May 29 07:43:09 GMT+01:00 1999</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Array of HopObjects   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="loop_macro"><!-- --></A>
+   <H3>loop_macro</H3>
+   <PRE>void <B>loop_macro</B>(param, collection)</PRE>
+   
+      <UL>generic macro that loops over the childobjects
+ and renders a specified skin for each of them</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>Object</CODE> -  providing the following properties:         skin: the skin to render for each item (required)         collection: the collection containing the items         limit: max. number of items per page               (req.data.page determines the page number)         sort: property name to use for sorting         order: sort order (either "asc" or "desc")         itemPrefix: text to prepend to each items skin render         itemSuffix: text to append to each items skin render    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="onInit"><!-- --></A>
+   <H3>onInit</H3>
+   <PRE>void <B>onInit</B>()</PRE>
+   
+      <UL>If a HopObject prototype defines a function named onInit(), 
+ it will be called on each HopObject that is fetched from 
+ embedded or relational database.
+ <br /><br />
+ Note that it is not called for HopObjects created using 
+ a constructor.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="onPersist"><!-- --></A>
+   <H3>onPersist</H3>
+   <PRE>void <B>onPersist</B>()</PRE>
+   
+      <UL>If a HopObject prototype defines a function named onPersist(), 
+ it will be called on each HopObject immediately before it is 
+ stored to embedded or relational database.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="onRequest"><!-- --></A>
+   <H3>onRequest</H3>
+   <PRE>void <B>onRequest</B>()</PRE>
+   
+      <UL>If defined, the onRequest() function is called on the 
+ object specified by the request path just before the 
+ action is invoked.
+ <br /><br />
+ This is useful for performing some code before each and 
+ every action in every prototype (when defining the 
+ function for the hopobject prototype) or for each action 
+ in one prototype. Often, it is used for checking access 
+ permissions.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="onUnhandledMacro"><!-- --></A>
+   <H3>onUnhandledMacro</H3>
+   <PRE>void <B>onUnhandledMacro</B>(&lt;<a href="String.html">String</a>&gt; name)</PRE>
+   
+      <UL>If a HopObject prototype defines a function named 
+ onUnhandledMacro(), it will be called when a macro is rendered 
+ on the HopObject that can't be mapped to a macro function or 
+ property of the HopObject.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  as String, the name of the unhandled macro    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="persist"><!-- --></A>
+   <H3>persist</H3>
+   <PRE>void <B>persist</B>()</PRE>
+   
+      <UL>Stores a transient HopObject and all HopObjects 
+ reachable from it to database.
+ <br /><br />
+ The function returns the id (primary key) of the 
+ newly stored HopObject as string, or null if the 
+ HopObject couldn't be stored for some reason.
+ <br /><br />
+ Example:
+ <pre> var hobj = new HopObject();
+ hobj.foo = new HopObject();
+ res.debug(hobj.persist());
+ 2
+ res.debug(hobj.foo._id)
+ 3</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="prefetchChildren"><!-- --></A>
+   <H3>prefetchChildren</H3>
+   <PRE>void <B>prefetchChildren</B>(&lt;<a href="Number.html">Number</a>&gt; startIndex, &lt;<a href="Number.html">Number</a>&gt; length)</PRE>
+   
+      <UL>Manually retrieving a particular set of subnodes.
+ <br /><br />
+ This function provides some control of how many 
+ subnodes Helma should retrieve from the database and 
+ hold prepared in the node cache for further processing.
+ <br /><br />
+ This means that for large collections Helma does 
+ not need to retrieve neither the subset of subnodes 
+ via one SQL statement for each subnode nor the whole 
+ collection at once via one statement.
+ <br /><br />
+ Moreover, only subnodes are retrieved that are not 
+ in the node cache already which leads to a maximum of 
+ caching efficiency and loading performance.
+ <br /><br />
+ Example:
+ <pre> res.writeln(root.length);
+ 53874
+ root.prefetchChildren(0, 3);
+ for (var i=0; i&lt;3; i++)
+ &nbsp;&nbsp;res.writeln(i + ": " + root.get(i));
+ <i>HopObject 1
+ HopObject 5
+ HopObject 4</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>startIndex</CODE> -  as Number  
+      </UL> 
+   
+     <UL><CODE>length</CODE> -  as Number    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="remove"><!-- --></A>
+   <H3>remove</H3>
+   <PRE>void <B>remove</B>()</PRE>
+   
+      <UL>Deletes a HopObject from the database.
+ <br /><br />
+ The remove() function deletes a persistent HopObject 
+ from the database.
+ <br /><br />
+ Note that additionally you may want to call the 
+ removeChild() function on any object holding the 
+ deleted object in its child collection in order to 
+ notify it that the child object has been removed.
+ <br /><br />
+ Example:
+ <pre> res.write(parent.size());
+ 24
+ var child = parent.get(5);
+ child.remove();
+ parent.removeChild(child);
+ res.write(parent.size());
+ 23</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#removeChild">removeChild()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="removeChild"><!-- --></A>
+   <H3>removeChild</H3>
+   <PRE>void <B>removeChild</B>(&lt;<a href="HopObject.html">HopObject</a>&gt; child)</PRE>
+   
+      <UL>Notifies a parent object that a child object has been removed.
+ <br /><br />
+ The removeChild() function lets a parent object 
+ know that a child object has been removed. 
+ Note that calling removeChild() will not actually 
+ delete the child object. Directly call remove() 
+ on the child object in order to delete it from 
+ the database.
+ <br /><br />
+ Example:
+ <pre> res.write(parent.size());
+ <i>24</i>
+ var child = parent.get(5);
+ child.remove();
+ parent.removeChild(child);
+ res.write(parent.size());
+ <i>23</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>child</CODE> -  as HopObject  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#remove">remove()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="renderSkin"><!-- --></A>
+   <H3>renderSkin</H3>
+   <PRE>void <B>renderSkin</B>(&lt;<a href="String.html">String</a>&gt; skin, &lt;<a href="Object.html">Object</a>&gt; params)</PRE>
+   
+      <UL>Renders a skin of a HopObject and writes the result 
+ to the output buffer.
+ <br /><br />
+ The name of the skin is defined by the string parameter.
+ <br /><br />
+ A skin can contain markup (e.g. HTML or XML) and macros. 
+ Macros are references to Helma functions wrapped in special 
+ tags (<% and %>). For more information about skin and macro 
+ techniques please refer to the section about About Skins.
+ <br /><br />
+ Optionally, a JavaScript object can be assigned to the 
+ function call as second argument. This object's properties 
+ later can be accessed from the skin via macro calls of 
+ the kind <% param.propertyName %>.
+ <br /><br />
+ If a param property is not set but referred to 
+ in the skin file, it will be replaced with an empty string. 
+ Please note that this behaviour is different from generic 
+ macro calls.
+ <br /><br />
+ Example:
+ <pre> Contents of the file root/example.skin:
+ &lt;html&gt;
+ &lthead&gt;
+ &nbsp;&nbsp;&lt;title&gt;Hello, &lt;% param.title %&gt;!&lt;/title&gt;
+ &lt;/head&gt;
+ &lt;body bgcolor="&lt;% param.bgcolor %&gt;">
+ I greet you &lt;% param.amount %&gt; times.
+ &lt;/body&gt;
+ &lt;/html&gt;</pre>
+ <b>Rendering the skin:</b>
+ <pre> var param = new Object();
+ param.bgcolor = "#ffcc00";
+ param.title = "World";
+ param.amount = "12345";
+ root.renderSkin("example", param);
+ &nbsp;
+ <i>&lt;html&gt;
+ &lt;head&gt;
+ &lt;title&gt;Hello, World!&lt;/title&gt;
+ &lt;/head&gt;
+ &lt;body bgcolor="#ffcc00"&gt;
+ I greet you 12345 times.
+ &lt;/body&gt;</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>skin</CODE> -  as String, the name of the skin to be rendered  
+      </UL> 
+   
+     <UL><CODE>params</CODE> -  as Object, optional properties to be passed to the skin    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="renderSkinAsString"><!-- --></A>
+   <H3>renderSkinAsString</H3>
+   <PRE><a href="String.html">String</a> <B>renderSkinAsString</B>(&lt;<a href="String.html">String</a>&gt; skin, &lt;<a href="Object.html">Object</a>&gt; params)</PRE>
+   
+      <UL>Renders a skin of a HopObject and returns the result as string.
+ <br /><br />
+ Similar to renderSkin(), this function returns the 
+ result of the rendered skin as string instead of 
+ immediately writing it to the response object.
+ <br /><br />
+ Example:
+ <pre> var str = root.renderSkinAsString("example", param);
+ res.write(str);
+ &nbsp;
+ which is equivalent to
+ &nbsp;
+ root.renderSkin("example", param);</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>skin</CODE> -  as String, the name of the skin to be rendered  
+      </UL> 
+   
+     <UL><CODE>params</CODE> -  as Object, optional properties to be passed to the skin  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        String containing the result of the rendered skin   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="setParent"><!-- --></A>
+   <H3>setParent</H3>
+   <PRE>void <B>setParent</B>(&lt;<a href="HopObject.html">HopObject</a>&gt; subnode)</PRE>
+   
+      <UL>Assigns a HopObject as parent to a subnode.
+ <br /><br />
+ Sometimes it is necessary to set a subnode's parent to a certain HopObject. 
+ This is caused by the way Helma is caching subnodes.
+ <br /><br />
+ This is the case, e.g. when you are retrieving a subnode from a relational
+ database through different ways (e.g. by using subnode relations) and you want to 
+ remove this subnode or apply the href() function on it.
+ <br /><br />
+ Example:
+ &nbsp;
+ <pre> var trash = user.stories.get(23);
+ trash.setParent(root);
+ root.remove(trash);</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>subnode</CODE> -  as HopObject    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="size"><!-- --></A>
+   <H3>size</H3>
+   <PRE><a href="Number.html">Number</a> <B>size</B>()</PRE>
+   
+      <UL>Get the number of subnodes attached to this HopObject.
+ <br /><br />
+ Example:
+ <pre> res.write(root.size());
+ <i>5</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Number of subnodes   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#count">count()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="size_macro"><!-- --></A>
+   <H3>size_macro</H3>
+   <PRE>void <B>size_macro</B>(&lt;<a href="Object.html">Object</a>&gt; param, &lt;<a href="String.html">String</a>&gt; name)</PRE>
+   
+      <UL>Render the number of child nodes of the HopObject. 
+ Three cases are distinguished which can be customized
+ by setting param.verbose to "true" and defining the
+ corresponding field of the <code>param</code>
+ argument:
+ <ol>
+ <li>param.none - not a single child node</li>
+ <li>param.one - exactly one child node</li>
+ <li>param.many - more than one child node</li>
+ </ol></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>param</CODE> -  The default macro parameter  
+      </UL> 
+   
+     <UL><CODE>name</CODE> -  The default name for a child node    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="skin_macro"><!-- --></A>
+   <H3>skin_macro</H3>
+   <PRE>void <B>skin_macro</B>(param, name)</PRE>
+   
+      <UL>macro rendering a skin or displaying
+ its source (param.as == "source")</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="switch_macro"><!-- --></A>
+   <H3>switch_macro</H3>
+   <PRE>void <B>switch_macro</B>(param)</PRE>
+   
+      <UL>this macro renders a text depending on
+ the value of a given property</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="update"><!-- --></A>
+   <H3>update</H3>
+   <PRE>void <B>update</B>()</PRE>
+   
+      <UL>Refetches updateable Subnode-Collections from the database. 
+ <br /><br />
+ The following conditions must be met to make a 
+ subnodecollection updateable:<br />
+ 1) the collection must be specified with 
+ collection.updateable=true<br />
+ 2) the id's of this collection must be in ascending order, 
+ meaning, that new records do have a higher id than the 
+ last record loaded by this collection.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+
+
+<!-- ============ METHOD DETAIL END ========== -->
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+
+<!-- =========== END OF NAVBAR =========== -->
+
+<HR>
+<FONT SIZE="-1">
+
+</FONT>
+
+
+
+
+<div class="jsdoc_ctime">Documentation generated by <a href="http://jsdoc.sourceforge.net/" target="_parent">JSDoc</a> on Thu Jul 19 01:13:37 2007</div>
+
+
+</BODY>
+</HTML>

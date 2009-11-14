@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML xmlns:silverna="http://silverna.org">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="slider.css" type="text/css">
+<HEAD> 
+	<script src="../silverna-packs.js"></script>
+	<script src="../widgets/slider.js"></script>
+	<script>
+	function test()
+	{
+		var slider1 = core.web.widgets.Widget.setupAll();
+	}
+	</script>
+</HEAD> 
+<BODY onload="test()"> 
+<div style="padding-left:20px">
+<widget id="slider1" type="core.web.widgets.SliderWidget" startPos="18" maxValue="100" width="200"></widget>
+<br/>
+<widget id="slider2" type="core.web.widgets.SliderWidget" startPos="10" maxValue="100" width="320"></widget>
+<br/>
+<widget id="slider3" type="core.web.widgets.SliderWidget" startPos="0" maxValue="255" width="550"></widget>
+<br/>
+</div>
+</BODY>
+</HTML>

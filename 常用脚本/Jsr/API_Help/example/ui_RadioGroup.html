@@ -1,0 +1,105 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html"/>
+	<title>单选框组实例 -- JSR2+</title>
+	<script type="text/javascript" src="../../common/js/core.js?lib=webui"></script>
+	<link rel="stylesheet" href="../resources/example.css" type="text/css" media="all"/>
+</head>
+
+<body>
+<div id="bodyPanel" style="display:none">
+	<b>单选框组实例</b><hr/><br/>
+	<!-- 面板 -->
+	<div id="panel"></div>
+	<!-- 面板内容 -->
+	<div id="contentPanel">
+		<!-- 控件实例 -->
+		<fieldset id="example"><div class="gbPanel">
+			<table width="463px" height="160px" class="font"><tr>
+				<td valign="top" id="radioGroup1"></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<!-- 相关方法 -->
+		<fieldset id="method"><div class="gbPanel">
+			<table class="method-area1"><tr>
+				<td><button id="b1"></button></td><td><button id="b2"></button></td>
+				<td><button id="b3"></button></td><td><button id="b4"></button></td>
+				<td><button id="b5"></button></td>
+			</tr><tr>
+				<td><button id="b6"></button></td><td><button id="b7"></button></td>
+				<td><button id="b8"></button></td><td></td><td></td>
+			</tr></table>
+			<table style="width:463px;margin-left:10px;"><tr>
+				<td width="33%"><button id="b9"></button></td><td width="33%"></td><td width="33%"></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<div class="font">注: 相关方法是针对 "控件实例" 操作的。</div>
+	</div>
+	<!-- 面板内容结束 -->
+</div>
+</body>
+
+<script>
+var r1, btn, disabled = true, flowLayout = true;
+new UI.Panel({id:"panel", caption:"应用实例 -> 单选框组", width:520, height:398, body:"contentPanel"});
+new UI.GroupBox({id:"example", caption:"控件实例"});
+new UI.GroupBox({id:"method", caption:"相关方法"});
+//创建单选框组
+var newItemValue = 0, radioMembers = [
+	{text:"ABCDEFG", value:"cm-1"},		{text:"JSR WEB前台控件", value:"cm-2"},
+	{text:"测试功能项1", value:"cm-3"},	{text:"测试功能项2", value:"cm-4"},
+	{text:"测试功能项3", value:"cm-5"},	{text:"内容超出文本宽度的测试功能项", value:"cm-6"}
+];
+r1 = new UI.RadioGroup("radioGroup1", "radioGroup1", 110, radioMembers);
+//相关方法按钮
+btn = new UI.Button({id:"b1", caption:"add", width:75});
+btn.bind(function() {newItemValue
+	r1.add({text:"新加入成员", value:"新项-" + (newItemValue++)});
+});
+btn = new UI.Button({id:"b2", caption:"count", width:75});
+btn.bind(function() {
+	alert("控件实例中的 '单选框组' 共有: " + r1.count() + "个 选项。");
+});
+btn = new UI.Button({id:"b3", caption:"disable", width:75});
+btn.bind(function() {
+	r1.disable(disabled);
+	disabled = !disabled;
+});
+btn = new UI.Button({id:"b4", caption:"flowLayout", width:75});
+btn.bind(function() {
+	r1.flowLayout(flowLayout);
+	flowLayout = !flowLayout;
+});
+btn = new UI.Button({id:"b5", caption:"getValue", width:75});
+btn.bind(function() {
+	alert("'单选框组' 的选择值: " + r1.getValue());
+});
+btn = new UI.Button({id:"b6", caption:"onChange", width:75});
+btn.bind(function() {
+	r1.onChange(function() {
+		alert("你选择的是：" + this.text);
+	});
+	alert("点击 '单选框组' 的选项, 看效果。");
+});
+btn = new UI.Button({id:"b7", caption:"removeAll", width:75});
+btn.bind(function() {
+	r1.removeAll();
+});
+btn = new UI.Button({id:"b8", caption:"selected", width:75});
+btn.bind(function() {
+	r1.selected("cm-4");
+	alert("你选择了值为 'cm-4' 的选项。");
+});
+btn = new UI.Button({id:"b9", caption:"getSelectedMember", width:130});
+btn.bind(function() {
+	var tmp = r1.getSelectedMember();
+	tmp && (tmp = tmp.text);
+	alert('你当前选择项的文本是: ' + tmp);
+});
+
+onLoad.add(function(){ $("bodyPanel").style.display = "" });
+</script>
+
+</html>

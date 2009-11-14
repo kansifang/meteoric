@@ -1,0 +1,72 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html"/>
+	<title>多文件上传域控件实例 -- JSR2+</title>
+	<script type="text/javascript" src="../../common/js/core.js?lib=webui,ui_upload"></script>
+	<link rel="stylesheet" href="../resources/example.css" type="text/css" media="all"/>
+</head>
+
+<body>
+<div id="bodyPanel" style="display:none">
+	<b>多文件上传域控件实例</b><hr/><br/>
+	<!-- 面板 -->
+	<div id="panel"></div>
+	<!-- 面板内容 -->
+	<div id="contentPanel">
+		<!-- 控件实例 -->
+		<fieldset id="example"><div class="gbPanel font" style="height:158px">
+			<div style="float:right;padding:6px 16px 0 0">
+				<img id="img1" width="165px" height="144px" src="../resources/image/print.gif"/>
+			</div>
+			<!--项目应用中加属性 method=post enctype=multipart/form-data -->
+			<form action="#" id="form1" style="padding:6px">
+				<div id="upload1" style=""></div>
+			</form>
+		</div></fieldset>
+		<br/>
+		<!-- 相关方法 -->
+		<fieldset id="method"><div class="gbPanel">
+			<table class="method-area1"><tr>
+				<td><button id="b1"></button></td><td><button id="b2"></button></td>
+				<td><button id="b1"></button></td><td><button id="b1"></button></td><td></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<div class="font">注: onSubmit 与 reset 方法只有在Ajax+隐藏iframe上传文件时才可用。</div>
+	</div>
+	<!-- 面板内容结束 -->
+</div>
+</body>
+
+<script>
+var u1, btn, img = $("img1");
+new UI.Panel({id:"panel", caption:"应用实例 -> 多文件上传域控件", width:520, height:342, body:"contentPanel"});
+new UI.GroupBox({id:"example", caption:"控件实例"});
+new UI.GroupBox({id:"method", caption:"相关方法"});
+//创建多文件上传域控件
+u1 = new UI.Upload({id:"upload1", name:"upload1", form:"form1", size:8});
+//相关方法按钮
+btn = new UI.Button({id:"b1", caption:"onDelFile", width:75});
+btn.bind(function() {
+	u1.onDelFile(function() {
+		img.src = "../resources/image/unpreview.gif";
+	});
+	alert("设置了删除文件的回调方法。");
+});
+btn = new UI.Button({id:"b2", caption:"onFileClick", width:75});
+btn.bind(function() {
+	u1.onFileClick(function(name) {
+		if(/^.+\.(jpg|gif)$/.test(name))
+			img.src = "file:///" + name;
+		else
+			img.src = "../resources/image/unpreview.gif";
+	});
+	alert("设置了列表文件单击的回调方法。");
+});
+btn = new UI.Button({id:"b1", caption:"onSubmit", width:75});
+btn = new UI.Button({id:"b1", caption:"reset", width:75});
+
+onLoad.add(function(){ $("bodyPanel").style.display = "" });
+</script>
+
+</html>

@@ -1,0 +1,26 @@
+<h1>Create A New Contact</h1>
+
+<%= errorMessagesFor('contact') %>
+
+<%= startFormTagLocal('contact', 'create') %>
+
+  <label>First Name:</label>
+  <%= textField('contact', 'first_name') %>
+    <br/>
+
+  <label>Last Name:</label>
+  <%= textField('contact', 'last_name') %>
+    <br/>
+
+  <label>Address:</label>
+  <%= textArea('contact', 'address') %>
+    <br/>
+
+  <label>Phone:</label>
+  <%= textField('contact', 'phone') %>
+    <br/>
+
+  <%= submitButtonLocal("ok", "OK") %>
+  <%= linkToLocal('Cancel', 'contact', 'index') %>
+
+<%= endFormTag() %>

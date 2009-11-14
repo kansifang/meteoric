@@ -1,0 +1,121 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html"/>
+	<title>下拉面板实例 -- JSR2+</title>
+	<script type="text/javascript" src="../../common/js/core.js?lib=webui,valid"></script>
+	<link rel="stylesheet" href="../resources/example.css" type="text/css" media="all"/>
+	<style>
+	.new-button{border: 1px solid #FFFFFF;background: url(../resources/image/cpbtn.gif);float: right;}
+	</style>
+</head>
+
+<body>
+<div id="bodyPanel" style="display:none">
+	<b>下拉面板实例</b><hr/><br/>
+	<!-- 面板 -->
+	<div id="panel"></div>
+	<!-- 面板内容 -->
+	<div id="contentPanel">
+		<!-- 控件实例 -->
+		<fieldset id="example"><div class="gbPanel">
+			<table class="font"><tr>
+				<td width="106px">下拉面板:</td>
+				<td><input type="text" id="comboPanel1" /></td>
+			</tr><tr>
+				<td>可编辑的下拉面板:</td><td><input type="text" id="comboPanel2" /></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<!-- 相关方法 -->
+		<fieldset id="method"><div class="gbPanel">
+			<table class="method-area1"><tr>
+				<td><button id="b1"></button></td><td><button id="b2"></button></td>
+				<td><button id="b3"></button></td><td><button id="b4"></button></td>
+				<td><button id="b5"></button></td>
+			</tr><tr>
+				<td><button id="b6"></button></td><td><button id="b7"></button></td>
+				<td><button id="b8"></button></td><td><button id="b9"></button></td>
+				<td><button id="b10"></button></td>
+			</tr></table>
+			<table class="method-area2"><tr>
+				<td><button id="b11"></button></td><td></td><td></td><td></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<div class="font">注: 相关方法是针对 "下拉面板" 操作的, check 与 setCheck 是针对可编辑下拉面板操作的。</div>
+	</div>
+	<!-- 面板内容结束 -->
+</div>
+</body>
+
+<script>
+var c1, c2, btn, tmpPanel, disabled = true;
+new UI.Panel({id:"panel", caption:"应用实例 -> 下拉面板", width:520, height:286, body:"contentPanel"});
+new UI.GroupBox({id:"example", caption:"控件实例"});
+new UI.GroupBox({id:"method", caption:"相关方法"});
+//下拉面板的内容
+tmpPanel = new UI.SliderBar({id:$B("div"), name:"slider1", width:300, minValue:0, maxValue:1439});
+//创建下拉面板
+c1 = new UI.ComboPanel({id:"comboPanel1", name:"comboPanel1", width:180});
+c2 = new UI.ComboPanel({id:"comboPanel2", name:"comboPanel2", editable:true, width:180});
+//相关方法按钮
+btn = new UI.Button({id:"b1", caption:"check", width:75});
+btn.bind(function() {
+	alert(c2.check());
+});
+btn = new UI.Button({id:"b2", caption:"disable", width:75});
+btn.bind(function() {
+	c1.disable(disabled);
+	disabled = !disabled;
+});
+btn = new UI.Button({id:"b3", caption:"focus", width:75});
+btn.bind(function() {
+	c1.focus();
+});
+btn = new UI.Button({id:"b4", caption:"getValue", width:75});
+btn.bind(function() {
+	alert("下拉面板的值: " + c1.getValue());
+});
+btn = new UI.Button({id:"b5", caption:"onChange", width:75});
+btn.bind(function() {
+	c1.onChange(function() {
+		alert("下拉面板 的onChange事件触发了!");
+	});
+	alert("请设置了 '下拉面板' 的面板之后, 然后操作看效果, 键盘输入的值改变不触发此事件。");
+});
+btn = new UI.Button({id:"b6", caption:"setBtnClass", width:75});
+btn.bind(function() {
+	c1.setBtnClass('new-button');
+	alert("为 '下拉面板' 设置了新的下拉按键。");
+});
+btn = new UI.Button({id:"b7", caption:"setCheck", width:75});
+btn.bind(function() {
+	c2.setCheck(Valid.checkEmail, null, "请输入正确的E-mail信箱。", null);
+	alert("请在 '可编辑的下拉面板' 中输入字符, 再点击 check 按钮。");
+});
+btn = new UI.Button({id:"b8", caption:"setPanel", width:75});
+btn.bind(function() {
+	c1.setPanel({width:300, height:19 ,panel:tmpPanel});
+	alert("为 '下拉面板' 设置了新的功能面板。");
+});
+btn = new UI.Button({id:"b9", caption:"setValue", width:75});
+btn.bind(function() {
+	c1.setValue("setValue设置了我 :)");
+});
+btn = new UI.Button({id:"b10", caption:"setWidth", width:75});
+btn.bind(function() {
+	c1.setWidth(220);
+	alert("设置 '下拉面板' 的宽度为: 220px");
+});
+btn = new UI.Button({id:"b11", caption:"setTransform", width:105});
+btn.bind(function() {
+	c1.setTransform(function(val){
+		return (parseInt(val / 60) < 10 ? "0" : "") + parseInt(val / 60) + ":" + ((val % 60) < 10 ? "0" : "") + (val % 60);
+	});
+	alert("设置了 '下拉面板' 的调整处理方法。");
+});
+
+onLoad.add(function(){ $("bodyPanel").style.display = "" });
+</script>
+
+</html>

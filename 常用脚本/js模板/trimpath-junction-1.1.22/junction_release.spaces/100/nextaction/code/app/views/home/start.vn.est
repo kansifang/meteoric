@@ -1,0 +1,46 @@
+<p>
+<b><%= t('Welcome to') %> Next Action</b>
+  <span class="btw">on <%= localDateString(new Date()) %></span>
+</p>
+<p>
+Next Action sẽ giúp bạn sắp xếp và làm xong các công việc nhanh chóng.  
+</p>
+<p>
+Những&nbsp;phần&nbsp;chính&nbsp;của&nbsp;Next&nbsp;Action&nbsp;để&nbsp;giúp&nbsp;bạn&nbsp;làm&nbsp;việc&nbsp;có&nbsp;hiệu&nbsp;quả&nbsp;hơn&nbsp;là...
+</p>
+
+<h2><%= linkToLocal(t('Dashboard'), 'home', 'dashboard') %></h2>
+<p style="padding-left: 10px;">
+<b><%= t('Dashboard') %></b> cho bạn thấy cái nhìn tổng quát về các công việc của bạn,
+giống như màn hình rada cho bạn biết công việc gì bạn phải làm kế tiếp.
+</p>
+
+<h2><%= linkToLocal(t('Calendar'), 'action', 'calender') %></h2>
+<p style="padding-left: 10px;">
+Dựa vào ngày bạn ấn định phải làm xong công việc nào đó, <b><%= t('Calendar') %></b> sẽ cho bạn thấy 
+toàn bộ công việc cần làm của từng tháng.
+</p>
+
+<h2><%= linkToLocal(t('Actions'), 'action', 'index') %>
+<% var c = Action.countActive({ conditions: 'Action.completed_at IS NULL' });
+   if (c > 0) { %>
+<span class="btw">&nbsp;(tổng cộng có <%= c %> việc)</span>
+<% } %>
+</h2>
+<p style="padding-left: 10px;">
+Các công việc là những việc hoặc nhiệm vụ cần phải làm xong.  Bạn có thể bỏ thêm một <b><%= t('Action')%></b> mới vào 
+máy bằng cách dùng bảng "<%= t('Add a new Action') %>" phía bên phải của trang.
+</p>
+
+<h2><%= linkToLocal(t('Contexts'), 'context', 'index') %></h2>
+<p style="padding-left: 10px;">
+Bạn có thể sắp xếp các Công Việc của bạn vào các <b><%= t('Contexts')%></b> khác nhau.  Chẳng hạn như: nhà, văn phòng, 
+điện thoại, đi chợ, linh tinh.  Vì vậy, nếu như lần sau bạn đang cầm điện thoại, bạn có thể biết bạn cần gọi ai, và hoàn tất cuộc nói chuyện đó.
+</p>
+
+<h2><%= linkToLocal(t('Projects'), 'project', 'index') %></h2>
+<p style="padding-left: 10px;">
+Bạn cũng có thể tập trung các Công Việc lại với nhau vào một <b><%= t('Projects')%></b> lớn hơn, như là 
+"thiết kế lại website" hoặc "trương mục nhà băng".
+</p>
+

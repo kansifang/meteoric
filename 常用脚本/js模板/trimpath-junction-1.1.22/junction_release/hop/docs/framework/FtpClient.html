@@ -1,0 +1,808 @@
+<!DOPropertiesCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN""http://www.w3.org/TR/REC-html40/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+FtpClient - Helma Javascript Reference
+</TITLE>
+<LINK REL ="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+
+
+</HEAD>
+<SCRIPT>
+function asd()
+{
+parent.document.title="FtpClient - Helma Javascript Reference";
+}
+</SCRIPT>
+<BODY BGCOLOR="white" onload="asd();">
+      
+      
+
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>FtpClient</H2>
+<PRE>Object
+   |
+   +--<b>FtpClient</b>
+</PRE>
+
+
+<HR>
+
+<DL>
+   <!-- Class definition
+   <DT>class 
+   <B>FtpClient</B>
+    -->
+
+</DL>
+   
+   <P>
+   <B>Deprecated</B> <I>use {link helma.Ftp} instead    </I><BR/><BR/><I>Defined in <a href='overview-summary-FtpClient.js.html'>FtpClient.js</a></I><BR/><BR/>
+   </P>
+   <HR>
+   
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+<!-- =========== END OF NAVBAR =========== -->
+<HR>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TD COLSPAN=2><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD>
+      <CODE>
+	 <B>
+	    <A HREF="#FtpClient()">FtpClient</A></B>(&lt;<a href="String.html">String</a>&gt; server)
+      </CODE>
+      <BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Constructor for File objects, to send and receive files from an FTP server.
+      </TD>
+</TR>
+</TABLE>
+
+<!-- ======== END CONSTRUCTOR SUMMARY ======== -->
+
+&nbsp;
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+   
+
+<!-- =========== END FIELD SUMMARY =========== -->
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TD COLSPAN=2><FONT SIZE="+2">
+<B>Methods Summary</B></FONT></TD>
+</TR>
+
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#ascii">ascii</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Sets transfer mode to ascii for transmitting text-based data.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#binary">binary</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Sets transfer mode to binary for transmitting images and other non-text files.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#cd">cd</A></B>(&lt;<a href="String.html">String</a>&gt; dir)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Changes the working directory on the FTP server.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getFile">getFile</A></B>(&lt;<a href="String.html">String</a>&gt; source,&lt;<a href="String.html">String</a>&gt; dest)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Transfers a file from the FTP server to the local file system.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getString">getString</A></B>(&lt;<a href="String.html">String</a>&gt; source)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Retrieves a file from the FTP server and returns it as string.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#lcd">lcd</A></B>(&lt;<a href="String.html">String</a>&gt; dir)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Changes the working directory of the local machine when being connected to an FTP server.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;Boolean</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#login">login</A></B>(&lt;<a href="String.html">String</a>&gt; username,&lt;<a href="String.html">String</a>&gt; password)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Logs in to the FTP server.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#logout">logout</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Terminates the current FTP session.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;Boolean</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#mkdir">mkdir</A></B>(&lt;<a href="String.html">String</a>&gt; name)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Creates a new directory on the server.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;Boolean</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#putFile">putFile</A></B>(&lt;<a href="String.html">String</a>&gt; dest)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Transfers a file from the local file system to the remote server.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;Boolean</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#putString">putString</A></B>(&lt;<a href="String.html">String</a>&gt; source,&lt;<a href="String.html">String</a>&gt; dest)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Transfers text from a string to a file on the FTP server.
+      </TD>
+   </TR>
+
+
+</TABLE>
+
+
+
+<P>
+<!-- ========== END METHOD SUMMARY =========== -->
+
+
+    <!-- ========= CONSTRUCTOR DETAIL START ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+   <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+      <TD COLSPAN=1>
+      <FONT SIZE="+2"><B>Constructor Detail</B></FONT>
+      </TD>
+   </TR>
+</TABLE>
+
+<A NAME="FtpClient()"><!-- --></A><H3>
+FtpClient</H3>
+<PRE><B>FtpClient</B>(&lt;<a href="String.html">String</a>&gt; server)</PRE>
+
+
+<UL>
+   Constructor for File objects, to send and receive files from an FTP server.
+ <br /><br />
+ The FTP client needs Daniel Savarese's NetComponents 
+ library in the classpath in order to work.
+ <br /><br />
+ Example:
+ <pre> var ftp = new FtpClient("ftp.mydomain.com");</pre>
+</UL>
+
+
+
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>server</CODE> -  as String, the address of the FTP Server to connect to  
+     </UL>
+   
+   
+   </UL>
+
+
+<!-- Constructor return value(s) -->
+
+<!-- End constructor return value(s) -->
+
+<!-- ADDITIONAL ATTRIBUTES -->
+
+<UL>   
+<B>Deprecated</B> <I>use {link helma.Ftp} instead    </I><BR/><BR/>
+</UL>
+
+<HR/>
+<!-- END ADDITIONAL ATTRIBUTES  -->
+
+<!-- ========= CONSTRUCTOR DETAIL END ======== -->
+
+
+<!-- ============ FIELD DETAIL START =========== -->
+
+
+<!-- ============ FIELD DETAIL END =========== -->
+
+<!-- ============ METHOD DETAIL START ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+   <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+      <TD COLSPAN=1><FONT SIZE="+2">
+         <B>Method Detail</B></FONT>
+      </TD>
+   </TR>
+</TABLE>
+
+<!-- One single method detail entry -->
+
+   <A NAME="ascii"><!-- --></A>
+   <H3>ascii</H3>
+   <PRE>void <B>ascii</B>()</PRE>
+   
+      <UL>Sets transfer mode to ascii for transmitting text-based data.
+ <br /><br />
+ Example:
+ <pre> var ftp = new FtpClient("ftp.host.dom");
+ ftp.login("user", "pass");
+ ftp.ascii();</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="binary"><!-- --></A>
+   <H3>binary</H3>
+   <PRE>void <B>binary</B>()</PRE>
+   
+      <UL>Sets transfer mode to binary for transmitting images and other non-text files.
+ <br /><br />
+ Example:
+ <pre> var ftp = new FtpClient("ftp.host.dom");
+ ftp.login("user", "pass");
+ ftp.binary();</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="cd"><!-- --></A>
+   <H3>cd</H3>
+   <PRE>void <B>cd</B>(&lt;<a href="String.html">String</a>&gt; dir)</PRE>
+   
+      <UL>Changes the working directory on the FTP server.
+ <br /><br />
+ Example:
+ <pre> var ftp = new FtpClient("ftp.host.dom");
+ ftp.login("user", "pass");
+ &nbsp;
+ // use absolute pathname
+ ftp.cd("/home/users/fred/www");
+ &nbsp;
+ // change to parent directory
+ ftp.cd("..");
+ &nbsp;
+ // use relative pathname
+ ftp.cd("images");</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>dir</CODE> -  as String, the path that the remote working directory should be changed to    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getFile"><!-- --></A>
+   <H3>getFile</H3>
+   <PRE>void <B>getFile</B>(&lt;<a href="String.html">String</a>&gt; source,&lt;<a href="String.html">String</a>&gt; dest)</PRE>
+   
+      <UL>Transfers a file from the FTP server to the local file system.
+ <br /><br />
+ Example:
+ <pre> var ftp = new FtpClient("ftp.host.dom");
+ ftp.login("user", "pass");
+ ftp.getFile(".htaccess", "htaccess.txt");</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>source</CODE> -  as String, the name of the file that should be downloaded  
+      </UL> 
+   
+     <UL><CODE>dest</CODE> -  as String, the name which the file should be stored under  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#cd">cd()</a><BR/>- <a href="#lcd">lcd()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getString"><!-- --></A>
+   <H3>getString</H3>
+   <PRE><a href="String.html">String</a> <B>getString</B>(&lt;<a href="String.html">String</a>&gt; source)</PRE>
+   
+      <UL>Retrieves a file from the FTP server and returns it as string.
+ <br /><br />
+ Example:
+ <pre> var ftp = new FtpClient("ftp.host.dom");
+ ftp.login("user", "pass");
+ var str = ftp.getString("messages.txt");</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>source</CODE> -  as String, the name of the file that should be downloaded  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        String containing the data of the downloaded file   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#cd">cd()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="lcd"><!-- --></A>
+   <H3>lcd</H3>
+   <PRE>void <B>lcd</B>(&lt;<a href="String.html">String</a>&gt; dir)</PRE>
+   
+      <UL>Changes the working directory of the local machine when being connected to an FTP server.
+ <br /><br />
+ Example:
+ <pre> var ftp = new FtpClient("ftp.host.dom");
+ ftp.login("user", "pass");
+ &nbsp;
+ // use absolute pathname
+ ftp.lcd("/home/users/fred/www");
+ &nbsp;
+ // change to parent directory
+ ftp.lcd("..");
+ &nbsp;
+ // use relative pathname
+ ftp.lcd("images");</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>dir</CODE> -  as String, the path that the local working directory should be changed to    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="login"><!-- --></A>
+   <H3>login</H3>
+   <PRE>Boolean <B>login</B>(&lt;<a href="String.html">String</a>&gt; username,&lt;<a href="String.html">String</a>&gt; password)</PRE>
+   
+      <UL>Logs in to the FTP server.
+ <br /><br />
+ The function returns true if successful, false otherwise
+ <br /><br />
+ Example:
+ <pre> var ftp = new FtpClient("ftp.host.dom");
+ if (ftp.login("user", "pass"))
+ &nbsp;&nbsp;res.write("User logged in.");
+ else
+ &nbsp;&nbsp;res.write("Unable to log in.");
+ &nbsp;
+ <i>User logged in.</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>username</CODE> -  as String  
+      </UL> 
+   
+     <UL><CODE>password</CODE> -  as String  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Boolean true if the login was successful, otherwise false   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="logout"><!-- --></A>
+   <H3>logout</H3>
+   <PRE>void <B>logout</B>()</PRE>
+   
+      <UL>Terminates the current FTP session.
+ <br /><br />
+ Example:
+ <pre> var ftp = new FtpClient("ftp.host.dom");
+ ftp.login("user", "pass");
+ ftp.putFile("htaccess.txt", ".htaccess");
+ ftp.logout();</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="mkdir"><!-- --></A>
+   <H3>mkdir</H3>
+   <PRE>Boolean <B>mkdir</B>(&lt;<a href="String.html">String</a>&gt; name)</PRE>
+   
+      <UL>Creates a new directory on the server.
+ <br /><br />
+ The name of the directory is determined as the function's 
+ string parameter. Returns false when an error occured 
+ (e.g. due to access restrictions, directory already 
+ exists etc.), otherwise true.
+ <br /><br />
+ Example:
+ <pre> var ftp = new FtpClient("ftp.host.dom");
+ ftp.login("user", "pass");
+ if (ftp.mkdir("testdir"))
+ &nbsp;&nbsp;ftp.cd("testdir")
+ else
+ &nbsp;&nbsp;ftp.logout();</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  as String, the name of the directory to be created  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Boolean true if the directory was successfully created, false if there was an error   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="putFile"><!-- --></A>
+   <H3>putFile</H3>
+   <PRE>Boolean <B>putFile</B>(&lt;<a href="String.html">String</a>&gt; dest)</PRE>
+   
+      <UL>Transfers a file from the local file system to the remote server.
+ <br /><br />
+ Returns true if the transmission was successful, otherwise false.
+ <br /><br />
+ Example:
+ <pre> var ftp = new FtpClient("ftp.host.dom");
+ ftp.login("user", "pass");
+ if (ftp.putFile("testfile"))
+ &nbsp;&nbsp;res.write("File transferred successfully.");
+ else
+ &nbsp;&nbsp;res.write("Transfer error.");
+ &nbsp;
+ <i>File transferred successfully.</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>dest</CODE> -  as String, the name of the destination file to be uploaded  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Boolean true if the file was successfully uploaded, false if there was an error   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="putString"><!-- --></A>
+   <H3>putString</H3>
+   <PRE>Boolean <B>putString</B>(&lt;<a href="String.html">String</a>&gt; source,&lt;<a href="String.html">String</a>&gt; dest)</PRE>
+   
+      <UL>Transfers text from a string to a file on the FTP server.
+ <br /><br />
+ Example:
+ <pre> var ftp = new FtpClient("ftp.host.dom");
+ ftp.login("user", "pass");
+ ftp.putString("Hello, World!", "message.txt");</pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>source</CODE> -  as String, the text content that should be uploaded   
+      </UL> 
+   
+     <UL><CODE>dest</CODE> -  as String, the name of the remote destination file  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Boolean true if the file was successfully uploaded, false if there was an error   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+
+
+<!-- ============ METHOD DETAIL END ========== -->
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+
+<!-- =========== END OF NAVBAR =========== -->
+
+<HR>
+<FONT SIZE="-1">
+
+</FONT>
+
+
+
+
+<div class="jsdoc_ctime">Documentation generated by <a href="http://jsdoc.sourceforge.net/" target="_parent">JSDoc</a> on Thu Jul 19 01:13:37 2007</div>
+
+
+</BODY>
+</HTML>

@@ -1,0 +1,167 @@
+<div id="actionsArea">
+{if actions.length > 0}
+${%startFormTagLocal('action', 'updateBulk', null, { style: 'border: none;'})%}
+  <table class="hoverable sortable" id="actions" border="0" cellpadding="0" cellspacing="0" style="margin-right: 5px;">
+    <tr><td nowrap="nowrap" style="display:none;" class="bulk">${t('Selected')}</td>
+        <td>${t('Action')}</td>
+        <td>&nbsp;</td>
+        {if !defined('actionsIgnoreColumns') || !actionsIgnoreColumns.context}
+          <td nowrap>${t('Context')}</td>
+          <td>&nbsp;</td>
+        {/if}
+        {if !defined('actionsIgnoreColumns') || !actionsIgnoreColumns.project}
+          <td nowrap>${t('Project')}</td>
+          <td>&nbsp;</td>
+        {/if}
+  {if (TrimPath.junction.env.type == 'server')}
+        {if !defined('actionsIgnoreColumns') || !actionsIgnoreColumns.contact}
+          <td nowrap>${t('Contact')}</td>
+          <td>&nbsp;</td>
+        {/if}
+  {/if}        
+        <td nowrap="nowrap">${t('Active at')}</td>
+        <td>&nbsp;</td>
+        <td nowrap="nowrap">${t('Due at')}</td>
+        <td>&nbsp;</td>
+        <td nowrap="nowrap">${t('Repeat')}</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td><td>&nbsp;</td>
+        <td>&nbsp;</td>
+        </tr>
+  {for action in actions}
+    <tr id="action_${action.id}" class="actionRow ${action_index % 2 == 0 ? 'even' : 'odd'}">
+        <td nowrap="nowrap" style="display:none; text-align:center;" class="bulk" valign="middle">
+            <input type="checkbox" 
+                   name="selectedActions[${action.id}]" id="selectedActions[${action.id}]"/>
+            </td>
+        <td nowrap="nowrap" valign="middle">
+            <input type="submit"
+                   name="toggleAction_${action.id}"
+                   value="${action.completed_at == null ? t('Done') : t('Not Done')}"
+                   onclick="TrimPath.junctionClient.postAsync('action', 'toggleComplete', ${action.id}, { silent: true });{minify}
+                            this.parentNode.parentNode.style.backgroundColor = 'red'; 
+                            $(this.parentNode.parentNode).fadeOut('slow');
+                            return false;{/minify}"
+                   style="display:inline;"/>
+            ${actionLink(res, action)}
+        </td>
+        <td>&nbsp;</td>
+        {if !defined('actionsIgnoreColumns') || !actionsIgnoreColumns.context}
+          <td nowrap="nowrap" class="subLevel">
+            {if action.context_id != null}
+               {var cname = action.cname || res['contextName_' + action.context_id]}
+               {if cname == null}
+                 {var context = action.getContext()}
+                 {if context != null}
+                   {var cname = action.cname = res['contextName_' + action.context_id] = context.name}
+                 {else}
+                   {var cname = 'unknown'}
+                 {/if}
+               {/if}
+               ${linkToLocal(h(cname), 'context', 'show', action.context_id, modelToolTip(action.getContext(), 'context', res))}
+            {/if}</td>
+          <td>&nbsp;</td>
+        {/if}
+        {if !defined('actionsIgnoreColumns') || !actionsIgnoreColumns.project}
+          <td>
+            {if action.project_id != null} 
+               {var pname = action.pname || res['projectName_' + action.project_id]}
+               {if pname == null}
+                 {var project = action.getProject()}
+                 {if project != null}
+                   {var pname = action.pname = res['projectName_' + action.project_id] = project.name}
+                 {else}
+                   {var pname = 'unknown'}
+                 {/if}
+               {/if}
+               ${linkToLocal(h(pname), 'project', 'show', action.project_id, modelToolTip(action.getProject(), 'project', res))}
+            {/if}</td>
+          <td>&nbsp;</td>
+        {/if}
+  {if (TrimPath.junction.env.type == 'server')}
+        {if !defined('actionsIgnoreColumns') || !actionsIgnoreColumns.contact}
+          <td>
+            {if action.contactVal() != null} 
+               ${linkToLocal(h(action.sname || res['contactName_' + action.contact_id] || action.getContact().displayName()), action.contact_type, 'show', action.contact_id)}
+            {/if}</td>
+          <td>&nbsp;</td>
+        {/if}
+  {/if}        
+        <td nowrap="nowrap">${localDateString(action.active_at)}</td>
+        <td>&nbsp;</td>
+        <td nowrap="nowrap">${localDateString(action.due_at)}</td>
+        <td>&nbsp;</td>
+        <td nowrap="nowrap">${action.repeatSummary()}</td>
+        <td>&nbsp;</td>
+        <td>${linkToLocal(t('edit'), 'action', 'edit', action.id)}</td>
+        <td>&nbsp;</td>
+        <td>${%linkToLocal(t('delete'), 'action', 'destroy', action.id, { method: 'post', confirm: t('Are you sure?')})%}&nbsp;</td>
+    </tr>
+  {/for}
+  </table>
+ 
+  <br/>
+  <div>
+    {if actions.length > 0}
+      <a href="#" onclick="toggleDisplay('bulkMods'); {minify}
+                for (var i = 0, rows = document.getElementById('actions').rows; i < rows.length; i++)
+                    toggleDisplay(rows[i].cells[0]);
+                return false;{/minify}" class="text_link">
+       ${t('bulk changes')}</a>
+    {/if}
+    <div id="bulkMods" style="display:none;">
+    <br/>
+    <fieldset class="bulk">
+      <legend>${t('Bulk changes to selected Actions above')}: 
+        (<a href="#" onclick="{minify}
+                              var c = document.getElementById('actions').getElementsByTagName('input');
+                              for (var i = 0; i < c.length; i++) {
+                                if (c[i].type == 'checkbox')
+                                    c[i].checked = true;
+                              }; return false{/minify}" class="txtLinkUnLn">${t('all')}</a> ${t('or')} 
+         <a href="#" onclick="{minify}
+                              var c = document.getElementById('actions').getElementsByTagName('input');
+                              for (var i = 0; i < c.length; i++) {
+                                if (c[i].type == 'checkbox')
+                                    c[i].checked = false;
+                              }; return false{/minify}" class="txtLinkUnLn">${t('none')}</a>)
+      </legend>
+      {var choices = Context.parentChoices()}
+      ${choices.unshift(['(no change)', "noop"]) |eat}
+      <label>${t('Context')}:</label> ${select('bulk_action', 'context_id', choices)}<br class="clear"/>
+      {var choices = Project.parentChoices()}
+      ${choices.unshift(['(no change)', "noop"]) |eat}
+      <label>${t('Project')}:</label> ${select('bulk_action', 'project_id', choices)}<br class="clear"/>
+      {var choices = Party.choices(null, res)}
+      ${choices.unshift([t('(no change)'), "noop"]) |eat}
+      {if (TrimPath.junction.env.type == 'server')}
+        <label>${t('Contact')}:</label> ${select('bulk_action', 'contact', choices)}<br class="clear"/>
+      {/if}
+      {var choices = [['(no change)', "noop"]].concat(tChoices(colorChoices))}
+      <label>${t('Color')}:</label> ${select('bulk_action', 'color', choices)}<br class="clear"/>
+      <label for="bulk_action[active_at]">${t('Active at')}:</label> 
+         <input type="text" name="bulk_action[active_at]" id="bulk_action[active_at]" value="(no change)">
+         ${dateFillSelect('bulk_action[active_at]')}<br class="clear"/>
+         ${sampleDate()}
+      <label for="bulk_action[due_at]" style="white-space: nowrap;">${t('Due at')}:</label> 
+         <input type="text" name="bulk_action[due_at]" id="bulk_action[due_at]" value="(no change)">
+         ${dateFillSelect('bulk_action[due_at]')}<br class="clear"/>
+         ${sampleDate()}
+      <div class="submit">
+        ${%submitButtonLocal("doBulkUpdate", t('Change selected Actions'), { confirm: t('Are you sure?')})%}
+      </div>
+      <div class="submit">
+        ${%submitButtonLocal("doBulkDelete", t('Deleted selected Actions'), { confirm: t('Are you sure?') })%}
+      </div>
+    </fieldset>
+    </div>
+  </div>
+${endFormTag()}
+{/if}
+</div>
+
+<script>
+$(document).ready(function() {
+    makePopUpCal('bulk_action[active_at]', 'bulk_action[due_at]');
+});
+</script>

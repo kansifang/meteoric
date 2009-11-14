@@ -1,0 +1,57 @@
+<% /* Inputs   : cellId, cellLabel, actions
+      Optional : actionIndex, endBounds */ %>
+
+<div id="calenderDateLabel_<%= cellId %>"
+    class="calenderDateLabel" <%= (res.cellToday ? 'style="background: blue; color: white;"' : '') %>>
+   <%= res.cellLabel %>
+</div>
+
+<% var i      = res.actionIndex || 0;
+   var iStart = i;
+   if (i < actions.length &&
+      (res.endBounds == null ||
+      (actions[i].due_at != null &&
+       actions[i].due_at.length > 0 &&
+       toLocalDashDate(actions[i].due_at).split(' ')[0] < res.endBounds))) { %>
+   <div id="calenderDateBodyPop_<%= cellId %>" 
+        class="calenderDateBodyPop calenderDateDiv"
+        onmouseover="this.style.display = 'block';"
+        onmouseout="this.style.display = 'none';">
+     <ul class="calenderDateActions">
+       <% while (i < actions.length) { 
+                var due_at = toLocalDashDate(actions[i].due_at).split(' ')[0];
+                if (due_at.replace(/-/g, '_') != cellId)
+                    break;
+
+                if (res.endBounds == null || 
+                    (due_at != null    &&
+                     due_at.length > 0 &&
+                     due_at < res.endBounds)) %>
+                   <li><%= actionLink(res, actions[i], 'show', { tooltip: true, prefix_due_at: false }, { id: 'actionPop_' + actions[i].id, 'class': 'draggable' }) %>&nbsp;</li>
+             <% i = i + 1; %>
+       <% } %>
+     </ul>
+   </div>
+   <div id="calenderDateBody_<%= cellId %>" 
+        class="calenderDateBody calenderDateDiv">
+     <div class="calenderDateBodyContainer"
+          onmouseover="$('#calenderDateBodyPop_<%= cellId %>').show()">
+       <ul class="calenderDateActions">
+           <% i = iStart;
+              while (i < actions.length) {
+                var due_at = toLocalDashDate(actions[i].due_at).split(' ')[0];
+                if (due_at.replace(/-/g, '_') != cellId)
+                    break;
+
+                if (res.endBounds == null ||
+                      (due_at != null    &&
+                       due_at.length > 0 &&
+                       due_at < res.endBounds)) %>
+                 <li><%= actionLink(res, actions[i], 'show', { tooltip: false, prefix_due_at: false }, { id: 'action_' + actions[i].id }) %>&nbsp;<br/></li>
+                 <% i = i + 1; %>
+           <% } %>
+       </ul>
+     </div>
+   </div>
+<% } %>
+<% res.actionIndexEnd = i; %>

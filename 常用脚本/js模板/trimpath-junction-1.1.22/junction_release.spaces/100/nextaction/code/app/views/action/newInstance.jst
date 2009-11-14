@@ -1,0 +1,49 @@
+{var normalForm = req.actionName == 'create' || req.actionName == 'newInstance'}
+{var numCols    = normalForm ? 30 : 15}
+${startFormTagLocal('action', 'create')}
+ <div class="wide">
+  <h2>${t('Create a new Action')}
+      {if defined('action') && action.context_id != null && action.getContext() != null}${t('in')} <i>${h(action.getContext().name)}</i>{/if}
+      </h2>
+  <label for="action[name]" class="required">${t('Name')}:</label> ${textField('action', 'name')} 
+    ${errorMessagesOn('action', 'name')}<br/>
+  <label for="action[notes]">${t('Notes')}:</label> ${%textArea('action', 'notes', { cols: numCols, rows: 7, wrap: 'off' })%}<br/>
+  {var choices = Context.parentChoices()}
+  {if choices.length > 1}
+    <label for="action[context_id]">${t('Context')}:</label> ${select('action', 'context_id', choices)}<br class="clear"/>
+  {/if}
+  {var choices = Project.parentChoices()}
+  {if choices.length > 1}
+    <label for="action[project_id]">${t('Project')}:</label> ${select('action', 'project_id', choices)}<br class="clear"/>
+  {/if}
+{if (TrimPath.junction.env.type == 'server')}
+  {var choices = Party.choices(null, res)}
+  {if choices.length > 2}
+    {var contact = action.contactVal()}
+    <label for="action[contact]">${t('Contact')}:</label> ${select('action', 'contact', choices)}<br class="clear"/>
+  {/if}
+{/if}  
+  <label for="action[color]">${t('Color')}:</label> ${select('action', 'color', tChoices(colorChoices))}<br/>
+  <label for="action[active_at]">${t('Active at')}:</label> ${%textField('action', 'active_at', { valueFilter: localDateString })%} ${dateFillSelect('action[active_at]')}<br/>
+    ${sampleDate()}
+  <label for="action[due_at]">${t('Due at')}:</label> ${%textField('action', 'due_at', { valueFilter: localDateString })%} ${dateFillSelect('action[due_at]')}<br/>
+    ${sampleDate()}
+  <label for="action[repeat]">${t('Repeat')}:</label> ${render('action/repeat')}<br/>
+  <div class="submit">
+    ${submitButtonLocal("doCreate", "&nbsp;&nbsp;OK&nbsp;&nbsp;")}
+    {if normalForm}
+      ${%linkToLocal(t('Cancel'), 'action', 'index', null, {'class':'text_link'})%}
+    {/if}
+  </div>
+ </div>
+${endFormTag()}
+
+<script>
+window.onload = function() {
+    document.getElementById('action[name]').focus();
+}
+
+$(document).ready(function() {
+    makePopUpCal('action[active_at]', 'action[due_at]');
+});
+</script>

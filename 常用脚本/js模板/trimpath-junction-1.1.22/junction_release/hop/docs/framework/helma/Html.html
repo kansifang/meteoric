@@ -1,0 +1,2463 @@
+<!DOPropertiesCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN""http://www.w3.org/TR/REC-html40/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+helma.Html - Helma Javascript Reference
+</TITLE>
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../stylesheet.css" TITLE="Style">
+
+
+</HEAD>
+<SCRIPT>
+function asd()
+{
+parent.document.title="helma.Html - Helma Javascript Reference";
+}
+</SCRIPT>
+<BODY BGCOLOR="white" onload="asd();">
+      
+      
+
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>helma.Html</H2>
+<PRE>Object
+   |
+   +--<b>helma.Html</b>
+</PRE>
+
+
+<HR>
+
+<DL>
+   <!-- Class definition
+   <DT>class 
+   <B>helma.Html</B>
+    -->
+
+</DL>
+   
+   <P>
+   <BR/>This class provides various methods for rendering
+ X/Html tags.
+ <BR/><I>Defined in <a href='../overview-summary-Html.js.html'>Html.js</a></I><BR/><BR/>
+   </P>
+   <HR>
+   
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+<!-- =========== END OF NAVBAR =========== -->
+<HR>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<A NAME="constructor_summary"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TD COLSPAN=2><FONT SIZE="+2">
+<B>Constructor Summary</B></FONT></TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD>
+      <CODE>
+	 <B>
+	    <A HREF="#helma.Html()">helma.Html</A></B>()
+      </CODE>
+      <BR>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Creates a new instance of helma.Html
+      </TD>
+</TR>
+</TABLE>
+
+<!-- ======== END CONSTRUCTOR SUMMARY ======== -->
+
+&nbsp;
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+
+   
+
+<!-- =========== END FIELD SUMMARY =========== -->
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TD COLSPAN=2><FONT SIZE="+2">
+<B>Methods Summary</B></FONT></TD>
+</TR>
+
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="../String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#activateUrls">activateUrls</A></B>(&lt;<a href="../String.html">String</a>&gt; str)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Parses the string passed as argument and converts any
+ URL in it into a link tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#button">button</A></B>(&lt;<a href="../Object.html">Object</a>&gt; param)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Renders an x/html button input tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="../String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#buttonAsString">buttonAsString</A></B>(attr)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns a rendered x/html button input tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#checkBox">checkBox</A></B>(&lt;<a href="../Object.html">Object</a>&gt; param)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Renders an x/html checkbox input tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="../String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#checkBoxAsString">checkBoxAsString</A></B>(&lt;<a href="../Object.html">Object</a>&gt; attr)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns a rendered x/html checkbox input tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#closeLink">closeLink</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Renders an x/html closing link tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="../String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#closeLinkAsString">closeLinkAsString</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns a rendered x/html closing link tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#closeTag">closeTag</A></B>(&lt;<a href="../String.html">String</a>&gt; name)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Renders the closing tag of an arbitrary x/html tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="../String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#closeTagAsString">closeTagAsString</A></B>(&lt;<a href="../String.html">String</a>&gt; name)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns the closing tag of an arbitray x/html element
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#color">color</A></B>(&lt;<a href="../String.html">String</a>&gt; c)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Renders a color definition string.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="../String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#colorAsString">colorAsString</A></B>(&lt;<a href="../String.html">String</a>&gt; c)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns a color definition.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#dropDown">dropDown</A></B>(&lt;<a href="../Object.html">Object</a>&gt; param, &lt;<a href="../Array.html">Array</a>&gt; options, &lt;<a href="../String.html">String</a>&gt; selectedValue, &lt;<a href="../String.html">String</a>&gt; firstOption)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Renders a x/html drop down select box
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="../String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#dropDownAsString">dropDownAsString</A></B>(attr, &lt;<a href="../Array.html">Array</a>&gt; options, &lt;<a href="../String.html">String</a>&gt; selectedValue, &lt;<a href="../String.html">String</a>&gt; firstOption)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns a rendered x/html drop down select box
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#element">element</A></B>(&lt;<a href="../String.html">String</a>&gt; name, &lt;<a href="../String.html">String</a>&gt; str, &lt;<a href="../Object.html">Object</a>&gt; attr)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Renders an arbitrary x/html element
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="../String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#elementAsString">elementAsString</A></B>(&lt;<a href="../String.html">String</a>&gt; name, &lt;<a href="../String.html">String</a>&gt; str, &lt;<a href="../Object.html">Object</a>&gt; attr)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Return an arbitrary x/html element
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#file">file</A></B>(&lt;<a href="../Object.html">Object</a>&gt; attr)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Renders an x/html file input tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="../String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#fileAsString">fileAsString</A></B>(&lt;<a href="../Object.html">Object</a>&gt; attr)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns a rendered x/html file input tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#form">form</A></B>(&lt;<a href="../Object.html">Object</a>&gt; attr)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Renders an x/html opening form tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="../String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#formAsString">formAsString</A></B>(&lt;<a href="../Object.html">Object</a>&gt; attr)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns an x/html opening form tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#hidden">hidden</A></B>(&lt;<a href="../Object.html">Object</a>&gt; param)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Renders an x/html input tag of type "hidden"
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="../String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#hiddenAsString">hiddenAsString</A></B>(&lt;<a href="../Object.html">Object</a>&gt; attr)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns a rendered x/html input tag of type "hidden"
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#input">input</A></B>(&lt;<a href="../Object.html">Object</a>&gt; param)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Renders an x/html text input tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="../String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#inputAsString">inputAsString</A></B>(&lt;<a href="../Object.html">Object</a>&gt; attr)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns a rendered x/html text input tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#link">link</A></B>(&lt;<a href="../Object.html">Object</a>&gt; attr, &lt;<a href="../String.html">String</a>&gt; text)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Renders an x/html link tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="../String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#linkAsString">linkAsString</A></B>(&lt;<a href="../Object.html">Object</a>&gt; attr, &lt;<a href="../String.html">String</a>&gt; text)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns a rendered x/html link tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#map">map</A></B>(&lt;<a href="../String.html">String</a>&gt; name, &lt;<a href="../Array.html">Array</a>&gt; param)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Renders an image map based on an array containing the map parameters.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="../String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#mapAsString">mapAsString</A></B>(&lt;<a href="../String.html">String</a>&gt; name, &lt;<a href="../Array.html">Array</a>&gt; areas)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns a rendered image map based on an array containing the map parameters.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#openLink">openLink</A></B>(&lt;<a href="../Object.html">Object</a>&gt; attr)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Renders an x/html opening link tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="../String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#openLinkAsString">openLinkAsString</A></B>(&lt;<a href="../Object.html">Object</a>&gt; attr)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns an x/html opening link tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#openTag">openTag</A></B>(&lt;<a href="../String.html">String</a>&gt; name, &lt;<a href="../Object.html">Object</a>&gt; attr)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Renders the opening tag of an arbitrary x/html tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="../String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#openTagAsString">openTagAsString</A></B>(&lt;<a href="../String.html">String</a>&gt; name, &lt;<a href="../Object.html">Object</a>&gt; attr)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns the opening tag of an arbitrary x/html tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#password">password</A></B>(&lt;<a href="../Object.html">Object</a>&gt; attr)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Renders an x/html password input tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="../String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#passwordAsString">passwordAsString</A></B>(&lt;<a href="../Object.html">Object</a>&gt; attr)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns a rendered x/html password input tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#radioButton">radioButton</A></B>(&lt;<a href="../Object.html">Object</a>&gt; param)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Renders an x/html radiobutton input tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="../String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#radioButtonAsString">radioButtonAsString</A></B>(&lt;<a href="../Object.html">Object</a>&gt; attr)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns a rendered x/html radio input tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#submit">submit</A></B>(&lt;<a href="../Object.html">Object</a>&gt; param)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Renders an x/html submit input tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="../String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#submitAsString">submitAsString</A></B>(&lt;<a href="../Object.html">Object</a>&gt; attr)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns a rendered x/html submit input tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#table">table</A></B>(&lt;<a href="../Array.html">Array</a>&gt; headers, &lt;<a href="../Array.html">Array</a>&gt; data, &lt;<a href="../Object.html">Object</a>&gt; param)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Renders a complete x/html table.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="../String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#tableAsString">tableAsString</A></B>(&lt;<a href="../Array.html">Array</a>&gt; headers, &lt;<a href="../Array.html">Array</a>&gt; data, &lt;<a href="../Object.html">Object</a>&gt; attr)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns a rendered x/html table
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#tag">tag</A></B>(&lt;<a href="../String.html">String</a>&gt; name, &lt;<a href="../Object.html">Object</a>&gt; attr)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Renders an empty arbitrary x/html tag ("contentless tag")
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="../String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#tagAsString">tagAsString</A></B>(&lt;<a href="../String.html">String</a>&gt; name, &lt;<a href="../Object.html">Object</a>&gt; attr)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns an empty arbitrary x/html tag ("contentless tag")
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#textArea">textArea</A></B>(&lt;<a href="../Object.html">Object</a>&gt; param)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Renders an x/html textarea tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="../String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#textAreaAsString">textAreaAsString</A></B>(&lt;<a href="../Object.html">Object</a>&gt; attr)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns a rendered x/html textarea tag
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&lt;static&gt;&nbsp;&nbsp;Boolean</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#!s!isSelected">isSelected</A></B>(&lt;<a href="../String.html">String</a>&gt; value, &lt;String|Array&gt; selectedValue)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Static helper method used in helma.Html.checkBox
+ and helma.Html.dropDown to check if a current value
+ matches against one or more selected values passed
+ as argument
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&lt;static&gt;&nbsp;&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#!s!renderMarkupPart">renderMarkupPart</A></B>(&lt;<a href="../String.html">String</a>&gt; name, &lt;<a href="../String.html">String</a>&gt; start, &lt;<a href="../String.html">String</a>&gt; end, &lt;<a href="../Object.html">Object</a>&gt; attr)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Static helper method that renders an arbitrary markup part.
+      </TD>
+   </TR>
+
+
+</TABLE>
+
+
+
+<P>
+<!-- ========== END METHOD SUMMARY =========== -->
+
+
+    <!-- ========= CONSTRUCTOR DETAIL START ======== -->
+
+<A NAME="constructor_detail"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+   <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+      <TD COLSPAN=1>
+      <FONT SIZE="+2"><B>Constructor Detail</B></FONT>
+      </TD>
+   </TR>
+</TABLE>
+
+<A NAME="helma.Html()"><!-- --></A><H3>
+helma.Html</H3>
+<PRE><B>helma.Html</B>()</PRE>
+
+
+<UL>
+   Creates a new instance of helma.Html
+</UL>
+
+
+
+   </UL>
+
+
+<!-- Constructor return value(s) -->
+
+   <UL>
+   <B>Returns:</B>
+     <UL>
+     A newly created instance of helma.Html   
+     </UL>
+   </UL>
+
+<!-- End constructor return value(s) -->
+
+<!-- ADDITIONAL ATTRIBUTES -->
+
+<HR/>
+<!-- END ADDITIONAL ATTRIBUTES  -->
+
+<!-- ========= CONSTRUCTOR DETAIL END ======== -->
+
+
+<!-- ============ FIELD DETAIL START =========== -->
+
+
+<!-- ============ FIELD DETAIL END =========== -->
+
+<!-- ============ METHOD DETAIL START ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+   <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+      <TD COLSPAN=1><FONT SIZE="+2">
+         <B>Method Detail</B></FONT>
+      </TD>
+   </TR>
+</TABLE>
+
+<!-- One single method detail entry -->
+
+   <A NAME="activateUrls"><!-- --></A>
+   <H3>activateUrls</H3>
+   <PRE><a href="../String.html">String</a> <B>activateUrls</B>(&lt;<a href="../String.html">String</a>&gt; str)</PRE>
+   
+      <UL>Parses the string passed as argument and converts any
+ URL in it into a link tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>str</CODE> -  The string wherein URLs should be  converted into link tags  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        The string containing URLs converted into link tags   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="button"><!-- --></A>
+   <H3>button</H3>
+   <PRE>void <B>button</B>(&lt;<a href="../Object.html">Object</a>&gt; param)</PRE>
+   
+      <UL>Renders an x/html button input tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>param</CODE> -  An object containing the tag attributes    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="buttonAsString"><!-- --></A>
+   <H3>buttonAsString</H3>
+   <PRE><a href="../String.html">String</a> <B>buttonAsString</B>(attr)</PRE>
+   
+      <UL>Returns a rendered x/html button input tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>param</CODE> -  An object containing the tag attributes  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        The rendered button input tag   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#button">button()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="checkBox"><!-- --></A>
+   <H3>checkBox</H3>
+   <PRE>void <B>checkBox</B>(&lt;<a href="../Object.html">Object</a>&gt; param)</PRE>
+   
+      <UL>Renders an x/html checkbox input tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>param</CODE> -  An object containing the tag attributes    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="checkBoxAsString"><!-- --></A>
+   <H3>checkBoxAsString</H3>
+   <PRE><a href="../String.html">String</a> <B>checkBoxAsString</B>(&lt;<a href="../Object.html">Object</a>&gt; attr)</PRE>
+   
+      <UL>Returns a rendered x/html checkbox input tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>attr</CODE> -  An object containing the tag attributes  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        The rendered checkbox tag   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#checkBox">checkBox()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="closeLink"><!-- --></A>
+   <H3>closeLink</H3>
+   <PRE>void <B>closeLink</B>()</PRE>
+   
+      <UL>Renders an x/html closing link tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="closeLinkAsString"><!-- --></A>
+   <H3>closeLinkAsString</H3>
+   <PRE><a href="../String.html">String</a> <B>closeLinkAsString</B>()</PRE>
+   
+      <UL>Returns a rendered x/html closing link tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Rhe rendered closing link tag   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#closeLink">closeLink()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="closeTag"><!-- --></A>
+   <H3>closeTag</H3>
+   <PRE>void <B>closeTag</B>(&lt;<a href="../String.html">String</a>&gt; name)</PRE>
+   
+      <UL>Renders the closing tag of an arbitrary x/html tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  The tag name    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="closeTagAsString"><!-- --></A>
+   <H3>closeTagAsString</H3>
+   <PRE><a href="../String.html">String</a> <B>closeTagAsString</B>(&lt;<a href="../String.html">String</a>&gt; name)</PRE>
+   
+      <UL>Returns the closing tag of an arbitray x/html element</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  The tag name  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        The rendered closing tag   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#closeTag">closeTag()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="color"><!-- --></A>
+   <H3>color</H3>
+   <PRE>void <B>color</B>(&lt;<a href="../String.html">String</a>&gt; c)</PRE>
+   
+      <UL>Renders a color definition string. If the string passed as
+ argument contains only hex characters it will be prefixed with a
+ hash sign if necessary, otherwise this method assumes that the
+ value is a named color (eg. "yellow").</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>c</CODE> -  The color definintion  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>Deprecated</B> <I></I><BR/><BR/>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="colorAsString"><!-- --></A>
+   <H3>colorAsString</H3>
+   <PRE><a href="../String.html">String</a> <B>colorAsString</B>(&lt;<a href="../String.html">String</a>&gt; c)</PRE>
+   
+      <UL>Returns a color definition.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>c</CODE> -  The color definintion  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        The rendered color definition   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>Deprecated</B> <I></I><BR/><BR/><B>See:</B><UL>- <a href="#color">color()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="dropDown"><!-- --></A>
+   <H3>dropDown</H3>
+   <PRE>void <B>dropDown</B>(&lt;<a href="../Object.html">Object</a>&gt; param, &lt;<a href="../Array.html">Array</a>&gt; options, &lt;<a href="../String.html">String</a>&gt; selectedValue, &lt;<a href="../String.html">String</a>&gt; firstOption)</PRE>
+   
+      <UL>Renders a x/html drop down select box</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>param</CODE> -  An object containing the tag attributes  
+      </UL> 
+   
+     <UL><CODE>options</CODE> -  Either an array of strings, an array with   several <code>{value: v, display: d}</code> objects, or a collection   of <code>["value", "display"]</code> arrays in an array  
+      </UL> 
+   
+     <UL><CODE>selectedValue</CODE> -  The value to pre-select  
+      </UL> 
+   
+     <UL><CODE>firstOption</CODE> -  An optional first option to display in the  select box (this option will always have no value)    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="dropDownAsString"><!-- --></A>
+   <H3>dropDownAsString</H3>
+   <PRE><a href="../String.html">String</a> <B>dropDownAsString</B>(attr, &lt;<a href="../Array.html">Array</a>&gt; options, &lt;<a href="../String.html">String</a>&gt; selectedValue, &lt;<a href="../String.html">String</a>&gt; firstOption)</PRE>
+   
+      <UL>Returns a rendered x/html drop down select box</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>options</CODE> -  Either an array of strings, an array with   several <code>{value: v, display: d}</code> objects, or a collection   of <code>["value", "display"]</code> arrays in an array  
+      </UL> 
+   
+     <UL><CODE>selectedValue</CODE> -  The value to pre-select  
+      </UL> 
+   
+     <UL><CODE>firstOption</CODE> -  An optional first option to display in the  select box (this option will always have no value)  
+      </UL> 
+   
+     <UL><CODE>param</CODE> -  An object containing the tag attributes  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        The rendered drop down select box   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#dropDown">dropDown()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="element"><!-- --></A>
+   <H3>element</H3>
+   <PRE>void <B>element</B>(&lt;<a href="../String.html">String</a>&gt; name, &lt;<a href="../String.html">String</a>&gt; str, &lt;<a href="../Object.html">Object</a>&gt; attr)</PRE>
+   
+      <UL>Renders an arbitrary x/html element</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  The element name  
+      </UL> 
+   
+     <UL><CODE>str</CODE> -  The content of the element  
+      </UL> 
+   
+     <UL><CODE>attr</CODE> -  An optional object containing element attributes    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="elementAsString"><!-- --></A>
+   <H3>elementAsString</H3>
+   <PRE><a href="../String.html">String</a> <B>elementAsString</B>(&lt;<a href="../String.html">String</a>&gt; name, &lt;<a href="../String.html">String</a>&gt; str, &lt;<a href="../Object.html">Object</a>&gt; attr)</PRE>
+   
+      <UL>Return an arbitrary x/html element</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  The element name  
+      </UL> 
+   
+     <UL><CODE>str</CODE> -  The content of the element  
+      </UL> 
+   
+     <UL><CODE>attr</CODE> -  An optional object containing element attributes  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        The rendered element   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#element">element()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="file"><!-- --></A>
+   <H3>file</H3>
+   <PRE>void <B>file</B>(&lt;<a href="../Object.html">Object</a>&gt; attr)</PRE>
+   
+      <UL>Renders an x/html file input tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>attr</CODE> -  An object containing the tag attributes    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="fileAsString"><!-- --></A>
+   <H3>fileAsString</H3>
+   <PRE><a href="../String.html">String</a> <B>fileAsString</B>(&lt;<a href="../Object.html">Object</a>&gt; attr)</PRE>
+   
+      <UL>Returns a rendered x/html file input tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>attr</CODE> -  An object containing the tag attributes  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        The rendered file input tag   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#file">file()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="form"><!-- --></A>
+   <H3>form</H3>
+   <PRE>void <B>form</B>(&lt;<a href="../Object.html">Object</a>&gt; attr)</PRE>
+   
+      <UL>Renders an x/html opening form tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>attr</CODE> -  An object containing the tag attributes    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="formAsString"><!-- --></A>
+   <H3>formAsString</H3>
+   <PRE><a href="../String.html">String</a> <B>formAsString</B>(&lt;<a href="../Object.html">Object</a>&gt; attr)</PRE>
+   
+      <UL>Returns an x/html opening form tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>attr</CODE> -  An object containing the tag attributes  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        The rendered opening form tag   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#form">form()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="hidden"><!-- --></A>
+   <H3>hidden</H3>
+   <PRE>void <B>hidden</B>(&lt;<a href="../Object.html">Object</a>&gt; param)</PRE>
+   
+      <UL>Renders an x/html input tag of type "hidden"</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>param</CODE> -  An object containing the tag attributes    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="hiddenAsString"><!-- --></A>
+   <H3>hiddenAsString</H3>
+   <PRE><a href="../String.html">String</a> <B>hiddenAsString</B>(&lt;<a href="../Object.html">Object</a>&gt; attr)</PRE>
+   
+      <UL>Returns a rendered x/html input tag of type "hidden"</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>attr</CODE> -  An object containing the tag attributes  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        The rendered input element   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#hidden">hidden()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="input"><!-- --></A>
+   <H3>input</H3>
+   <PRE>void <B>input</B>(&lt;<a href="../Object.html">Object</a>&gt; param)</PRE>
+   
+      <UL>Renders an x/html text input tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>param</CODE> -  An object containing the tag attributes    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="inputAsString"><!-- --></A>
+   <H3>inputAsString</H3>
+   <PRE><a href="../String.html">String</a> <B>inputAsString</B>(&lt;<a href="../Object.html">Object</a>&gt; attr)</PRE>
+   
+      <UL>Returns a rendered x/html text input tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>attr</CODE> -  An object containing the tag attributes  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        The rendered text input tag   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#input">input()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="link"><!-- --></A>
+   <H3>link</H3>
+   <PRE>void <B>link</B>(&lt;<a href="../Object.html">Object</a>&gt; attr, &lt;<a href="../String.html">String</a>&gt; text)</PRE>
+   
+      <UL>Renders an x/html link tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>attr</CODE> -  An object containing the link attributes  
+      </UL> 
+   
+     <UL><CODE>text</CODE> -  The text to appear as link    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="linkAsString"><!-- --></A>
+   <H3>linkAsString</H3>
+   <PRE><a href="../String.html">String</a> <B>linkAsString</B>(&lt;<a href="../Object.html">Object</a>&gt; attr, &lt;<a href="../String.html">String</a>&gt; text)</PRE>
+   
+      <UL>Returns a rendered x/html link tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>attr</CODE> -  An object containing the link attributes  
+      </UL> 
+   
+     <UL><CODE>text</CODE> -  The text to appear as link  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        The rendered link tag   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#link">link()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="map"><!-- --></A>
+   <H3>map</H3>
+   <PRE>void <B>map</B>(&lt;<a href="../String.html">String</a>&gt; name, &lt;<a href="../Array.html">Array</a>&gt; param)</PRE>
+   
+      <UL>Renders an image map based on an array containing the map parameters.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  The name of the image map   
+      </UL> 
+   
+     <UL><CODE>param</CODE> -  An array containing objects, where each of them   contains the attributes for a single image map entry    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="mapAsString"><!-- --></A>
+   <H3>mapAsString</H3>
+   <PRE><a href="../String.html">String</a> <B>mapAsString</B>(&lt;<a href="../String.html">String</a>&gt; name, &lt;<a href="../Array.html">Array</a>&gt; areas)</PRE>
+   
+      <UL>Returns a rendered image map based on an array containing the map parameters.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  The name of the image map   
+      </UL> 
+   
+     <UL><CODE>areas</CODE> -  An array containing objects, where each of them   contains the attributes for a single image map entry  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        The rendered image map   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#map">map()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="openLink"><!-- --></A>
+   <H3>openLink</H3>
+   <PRE>void <B>openLink</B>(&lt;<a href="../Object.html">Object</a>&gt; attr)</PRE>
+   
+      <UL>Renders an x/html opening link tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>attr</CODE> -  An object containing the tag attributes     
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="openLinkAsString"><!-- --></A>
+   <H3>openLinkAsString</H3>
+   <PRE><a href="../String.html">String</a> <B>openLinkAsString</B>(&lt;<a href="../Object.html">Object</a>&gt; attr)</PRE>
+   
+      <UL>Returns an x/html opening link tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>attr</CODE> -  An object containing the tag attributes   
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        The rendered open link tag   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#openTag">openTag()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="openTag"><!-- --></A>
+   <H3>openTag</H3>
+   <PRE>void <B>openTag</B>(&lt;<a href="../String.html">String</a>&gt; name, &lt;<a href="../Object.html">Object</a>&gt; attr)</PRE>
+   
+      <UL>Renders the opening tag of an arbitrary x/html tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  The tag name  
+      </UL> 
+   
+     <UL><CODE>attr</CODE> -  An optional object containing element attributes    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="openTagAsString"><!-- --></A>
+   <H3>openTagAsString</H3>
+   <PRE><a href="../String.html">String</a> <B>openTagAsString</B>(&lt;<a href="../String.html">String</a>&gt; name, &lt;<a href="../Object.html">Object</a>&gt; attr)</PRE>
+   
+      <UL>Returns the opening tag of an arbitrary x/html tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  The tag name  
+      </UL> 
+   
+     <UL><CODE>attr</CODE> -  An optional object containing element attributes  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        The rendered x/html opening tag   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#openTag">openTag()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="password"><!-- --></A>
+   <H3>password</H3>
+   <PRE>void <B>password</B>(&lt;<a href="../Object.html">Object</a>&gt; attr)</PRE>
+   
+      <UL>Renders an x/html password input tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>attr</CODE> -  An object containing the tag attributes    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="passwordAsString"><!-- --></A>
+   <H3>passwordAsString</H3>
+   <PRE><a href="../String.html">String</a> <B>passwordAsString</B>(&lt;<a href="../Object.html">Object</a>&gt; attr)</PRE>
+   
+      <UL>Returns a rendered x/html password input tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>attr</CODE> -  An object containing the tag attributes  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        The rendered password input tag   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#password">password()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="radioButton"><!-- --></A>
+   <H3>radioButton</H3>
+   <PRE>void <B>radioButton</B>(&lt;<a href="../Object.html">Object</a>&gt; param)</PRE>
+   
+      <UL>Renders an x/html radiobutton input tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>param</CODE> -  An object containing the tag attributes    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="radioButtonAsString"><!-- --></A>
+   <H3>radioButtonAsString</H3>
+   <PRE><a href="../String.html">String</a> <B>radioButtonAsString</B>(&lt;<a href="../Object.html">Object</a>&gt; attr)</PRE>
+   
+      <UL>Returns a rendered x/html radio input tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>attr</CODE> -  An object containing the tag attributes  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        The rendered element   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#radioButton">radioButton()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="submit"><!-- --></A>
+   <H3>submit</H3>
+   <PRE>void <B>submit</B>(&lt;<a href="../Object.html">Object</a>&gt; param)</PRE>
+   
+      <UL>Renders an x/html submit input tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>param</CODE> -  An object containing the tag attributes    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="submitAsString"><!-- --></A>
+   <H3>submitAsString</H3>
+   <PRE><a href="../String.html">String</a> <B>submitAsString</B>(&lt;<a href="../Object.html">Object</a>&gt; attr)</PRE>
+   
+      <UL>Returns a rendered x/html submit input tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>attr</CODE> -  An object containing the tag attributes  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        The rendered submit input tag   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#submit">submit()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="table"><!-- --></A>
+   <H3>table</H3>
+   <PRE>void <B>table</B>(&lt;<a href="../Array.html">Array</a>&gt; headers, &lt;<a href="../Array.html">Array</a>&gt; data, &lt;<a href="../Object.html">Object</a>&gt; param)</PRE>
+   
+      <UL>Renders a complete x/html table.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>headers</CODE> -  An array containing table headers  
+      </UL> 
+   
+     <UL><CODE>data</CODE> -  A two-dimensional array containing the table data  
+      </UL> 
+   
+     <UL><CODE>param</CODE> -  An object containing the following properties:  <ul>  <li><code>table</code>: Attributes to render within the opening <code>&lt;table&gt;</code> tag</li>  <li><code>tr</code>: Attributes to render within each <code>&lt;tr&gt;</code> tag</li>  <li><code>td</code>: Attributes to render within each <code>&lt;td&gt;</code> tag</li>  <li><code>th</code>: Attributes to render within each <code>&lt;th&gt;</code> tag</li>  <li><code>trHead</code>: Attributes to render within each <code>&lt;tr&gt;</code> tag  in the header area of the table</li>  <li><code>trEven</code>: Attributes to render within each even <code>&lt;tr&gt;</code> tag</li>  <li><code>trOdd</code>: Attributes to render within each odd <code>&lt;tr&gt;</code> tag</li>  <li><code>tdEven</code>: Attributes to render within each even <code>&lt;td&gt;</code> tag</li>  <li><code>tdOdd</code>: Attributes to render within each odd <code>&lt;td&gt;</code> tag</li>  <li><code>thEven</code>: Attributes to render within each even <code>&lt;th&gt;</code> tag</li>  <li><code>thOdd</code>: Attributes to render within each odd <code>&lt;th&gt;</code> tag</li>  </ul>    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="tableAsString"><!-- --></A>
+   <H3>tableAsString</H3>
+   <PRE><a href="../String.html">String</a> <B>tableAsString</B>(&lt;<a href="../Array.html">Array</a>&gt; headers, &lt;<a href="../Array.html">Array</a>&gt; data, &lt;<a href="../Object.html">Object</a>&gt; attr)</PRE>
+   
+      <UL>Returns a rendered x/html table</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>headers</CODE> -  An array containing table headers  
+      </UL> 
+   
+     <UL><CODE>data</CODE> -  A two-dimensional array containing the table data  
+      </UL> 
+   
+     <UL><CODE>attr</CODE> -  For a description see <a href="#table">table()</a>  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        The rendered table   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#table">table()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="tag"><!-- --></A>
+   <H3>tag</H3>
+   <PRE>void <B>tag</B>(&lt;<a href="../String.html">String</a>&gt; name, &lt;<a href="../Object.html">Object</a>&gt; attr)</PRE>
+   
+      <UL>Renders an empty arbitrary x/html tag ("contentless tag")</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  The tag name  
+      </UL> 
+   
+     <UL><CODE>attr</CODE> -  An optional object containing tag attributes    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="tagAsString"><!-- --></A>
+   <H3>tagAsString</H3>
+   <PRE><a href="../String.html">String</a> <B>tagAsString</B>(&lt;<a href="../String.html">String</a>&gt; name, &lt;<a href="../Object.html">Object</a>&gt; attr)</PRE>
+   
+      <UL>Returns an empty arbitrary x/html tag ("contentless tag")</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  The tag name  
+      </UL> 
+   
+     <UL><CODE>attr</CODE> -  An optional object containing tag attributes  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        The rendered element   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#tag">tag()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="textArea"><!-- --></A>
+   <H3>textArea</H3>
+   <PRE>void <B>textArea</B>(&lt;<a href="../Object.html">Object</a>&gt; param)</PRE>
+   
+      <UL>Renders an x/html textarea tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>param</CODE> -  An object containing the tag attributes    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="textAreaAsString"><!-- --></A>
+   <H3>textAreaAsString</H3>
+   <PRE><a href="../String.html">String</a> <B>textAreaAsString</B>(&lt;<a href="../Object.html">Object</a>&gt; attr)</PRE>
+   
+      <UL>Returns a rendered x/html textarea tag</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>attr</CODE> -  An object containing the tag attributes  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        The rendered textarea tag   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#textArea">textArea()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="!s!isSelected"><!-- --></A>
+   <H3>isSelected</H3>
+   <PRE>&lt;static&gt;&nbsp;Boolean <B>isSelected</B>(&lt;<a href="../String.html">String</a>&gt; value, &lt;String|Array&gt; selectedValue)</PRE>
+   
+      <UL>Static helper method used in helma.Html.checkBox
+ and helma.Html.dropDown to check if a current value
+ matches against one or more selected values passed
+ as argument</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>value</CODE> -  The current value to check  
+      </UL> 
+   
+     <UL><CODE>selectedValue</CODE> -  Either a single  value to check against the current value, or an array  containing values.  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        True in case the value is among the selected  values, false otherwise   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="!s!renderMarkupPart"><!-- --></A>
+   <H3>renderMarkupPart</H3>
+   <PRE>&lt;static&gt;&nbsp;void <B>renderMarkupPart</B>(&lt;<a href="../String.html">String</a>&gt; name, &lt;<a href="../String.html">String</a>&gt; start, &lt;<a href="../String.html">String</a>&gt; end, &lt;<a href="../Object.html">Object</a>&gt; attr)</PRE>
+   
+      <UL>Static helper method that renders an arbitrary markup part.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>name</CODE> -  The element's name  
+      </UL> 
+   
+     <UL><CODE>start</CODE> -  Prefix of each rendered element  
+      </UL> 
+   
+     <UL><CODE>end</CODE> -  Suffix of each rendered element  
+      </UL> 
+   
+     <UL><CODE>attr</CODE> -  Optional element attributes    
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+
+
+<!-- ============ METHOD DETAIL END ========== -->
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+
+<!-- =========== END OF NAVBAR =========== -->
+
+<HR>
+<FONT SIZE="-1">
+
+</FONT>
+
+
+
+
+<div class="jsdoc_ctime">Documentation generated by <a href="http://jsdoc.sourceforge.net/" target="_parent">JSDoc</a> on Thu Jul 19 01:13:37 2007</div>
+
+
+</BODY>
+</HTML>

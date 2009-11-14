@@ -1,0 +1,25 @@
+${startFormTagLocal('project', 'create')}
+ <h2>${t('Create a new Project')}</h2>
+ <div class="wide">
+  <label for="project[name]" class="required">${t('Name')}:</label> ${textField('project', 'name')}
+    ${errorMessagesOn('project', 'name')}<br/>
+  <label for="project[notes]">${t('Notes')}:</label> ${%textArea('project', 'notes', { cols: 40, rows: 10, wrap: 'off' })%}<br/>
+  {var choices = Project.parentChoices()}
+  {if choices.length > 1}
+    <label for="project[parent_project_id]">${t('Parent Project')}:</label> ${select('project', 'parent_project_id', choices)}<br/>
+  {/if}  
+  <label for="project[color]">${t('Color')}:</label> ${select('project', 'color', tChoices(colorChoices))}<br/>
+  <label for="project[due_at]">${t('Due at')}:</label> ${%textField('project', 'due_at', { valueFilter: localDateString })%}<br/>
+    ${sampleDate()}
+  <div class="submit">
+    ${submitButtonLocal("doCreate", "&nbsp;&nbsp;OK&nbsp;&nbsp;")}
+    ${%linkToLocal(t('Cancel'), 'project', 'index', null, {'class':'text_link'})%}
+  </div>
+ </div>
+${endFormTag()}
+
+<script>
+$(document).ready(function() {
+    makePopUpCal('project[due_at]');
+});
+</script>

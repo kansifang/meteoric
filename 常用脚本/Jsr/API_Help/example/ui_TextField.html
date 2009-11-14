@@ -1,0 +1,112 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html"/>
+	<title>文本框实例 -- JSR2+</title>
+	<script type="text/javascript" src="../../common/js/core.js?lib=webui,valid"></script>
+	<link rel="stylesheet" href="../resources/example.css" type="text/css" media="all"/>
+</head>
+
+<body>
+<div id="bodyPanel" style="display:none">
+	<b>文本框实例</b><hr/><br/>
+	<!-- 面板 -->
+	<div id="panel"></div>
+	<!-- 面板内容 -->
+	<div id="contentPanel">
+		<!-- 控件实例 -->
+		<fieldset id="example"><div class="gbPanel">
+			<table class="font"><tr>
+				<td width="50px">文本框1:</td>
+				<td><div style="width:415px"><input type="text" id="text1" /></div></td>
+			</tr><tr>
+				<td>文本框2:</td><td><input type="text" id="text2" /></td>
+			</tr><tr>
+				<td>口令框:</td><td><input type="password" id="possword1" /></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<!-- 相关方法 -->
+		<fieldset id="method"><div class="gbPanel">
+			<table class="method-area1"><tr>
+				<td><button id="b1"></button></td><td><button id="b2"></button></td>
+				<td><button id="b3"></button></td><td><button id="b4"></button></td>
+				<td><button id="b5"></button></td>
+			</tr><tr>
+				<td><button id="b6"></button></td><td><button id="b7"></button></td>
+				<td><button id="b8"></button></td><td><button id="b9"></button></td>
+				<td><button id="b10"></button></td>
+			</tr><tr>
+				<td><button id="b11"></button></td><td></td><td></td><td></td><td></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<div class="font">注: 相关方法是针对 "文本框1" 操作的。</div>
+	</div>
+	<!-- 面板内容结束 -->
+</div>
+</body>
+
+<script>
+var t1, t2, p1, btn, readOnly = true, disabled = true;
+new UI.Panel({id:"panel", caption:"应用实例 -> 文本框", width:520, height:325, body:"contentPanel"});
+new UI.GroupBox({id:"example", caption:"控件实例"});
+new UI.GroupBox({id:"method", caption:"相关方法"});
+//创建文本框|密码框
+t1 = new UI.TextField({id:"text1", name:"text1", length:30, width: 180});
+t2 = new UI.TextField({id:"text2", name:"text2", value:"带默认值的文本框", width: 180});
+p1 = new UI.TextField({id:"possword1", name:"pwd1", width: 180});
+//相关方法按钮
+btn = new UI.Button({id:"b1", caption:"autoSize", width:75});
+btn.bind(function() {
+	t1.autoSize();
+});
+btn = new UI.Button({id:"b2", caption:"check", width:75});
+btn.bind(function() {
+	alert(t1.check());
+});
+btn = new UI.Button({id:"b3", caption:"disable", width:75});
+btn.bind(function() {
+	t1.disable(disabled);
+	disabled = !disabled;
+});
+btn = new UI.Button({id:"b4", caption:"focus", width:75});
+btn.bind(function() {
+	t1.focus();
+});
+btn = new UI.Button({id:"b5", caption:"getValue", width:75});
+btn.bind(function() {
+	alert("文本框1: " + t1.getValue());
+});
+btn = new UI.Button({id:"b6", caption:"onKeyPress", width:75});
+btn.bind(function() {
+	t1.onKeyPress(function(){ t2.setValue(t1.getValue()) });
+	alert("请在 '文本框1' 中输入字符, 注意 '文本框2' 的变化。");
+});
+btn = new UI.Button({id:"b7", caption:"readOnly", width:75});
+btn.bind(function() {
+	t1.readOnly(readOnly);
+	readOnly = !readOnly;
+});
+btn = new UI.Button({id:"b8", caption:"reset", width:75});
+btn.bind(function() {
+	t1.reset();
+});
+btn = new UI.Button({id:"b9", caption:"setCheck", width:75});
+btn.bind(function() {
+	t1.setCheck(Valid.checkEmail, null, "请输入正确的E-mail信箱。", null);
+	alert("请在 '文本框1' 中输入字符, 再点击check按钮。");
+});
+btn = new UI.Button({id:"b10", caption:"setValue", width:75});
+btn.bind(function() {
+	t1.setValue("setValue设置了我 :)");
+});
+btn = new UI.Button({id:"b11", caption:"setWidth", width:75});
+btn.bind(function() {
+	t1.setWidth(220);
+	alert("设置 '文本框1' 的宽度为: 220px");
+});
+
+onLoad.add(function(){ $("bodyPanel").style.display = "" });
+</script>
+
+</html>

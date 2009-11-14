@@ -1,0 +1,50 @@
+${res.action_repeat = Action.repeatCodeToInfo(defined('action') ? action.repeat : null) |eat}
+<div class="actionRepeat">
+  <table>
+    <tr><td nowrap="nowrap">
+      ${radioButton('action_repeat', 'type', '')} 
+        ${t('Don\'t repeat')}<br/>
+      ${radioButton('action_repeat', 'type', 'w')} 
+        ${t('Every')}
+        <select name="action_repeat[w1]">
+          ${optionsForSelect(tChoices(dayOfWeekChoices), action_repeat.w1 != null ? action_repeat.w1 : 1)}
+        </select>
+        <br/>
+      ${radioButton('action_repeat', 'type', 'm')} 
+        ${t('On the')}
+        <input type="input" name="action_repeat[m1]" size="3" value="${action_repeat.m1 || 5}"/>${t('th day of every month')}<br/>
+      ${radioButton('action_repeat', 'type', 'n')} 
+        ${t('On the')}
+        {if textLanguageFormat(res) == 1}
+          <select name="action_repeat[n2]">
+            ${optionsForSelect(tChoices(dayOfWeekChoices), action_repeat.n2 != null ? action_repeat.n2 : 1)}
+          </select>
+          <select name="action_repeat[n1]">
+            ${optionsForSelect(tChoices(weekOfMonthChoices), action_repeat.n1 || 1)}
+          </select>
+        {else}
+          <select name="action_repeat[n1]">
+            ${optionsForSelect(tChoices(weekOfMonthChoices), action_repeat.n1 || 1)}
+          </select>
+          <select name="action_repeat[n2]">
+            ${optionsForSelect(tChoices(dayOfWeekChoices), action_repeat.n2 != null ? action_repeat.n2 : 1)}
+          </select>
+        {/if}
+        ${t('of each month')}
+        <br/>
+      ${radioButton('action_repeat', 'type', 'y')} 
+        {if textLanguageFormat(res) == 1}
+          ${t('On day')} 
+          <input type="input" name="action_repeat[y2]" size="3" value="${action_repeat.y2 || 31}"/> /
+          <input type="input" name="action_repeat[y1]" size="3" value="${action_repeat.y1 || 1}"/> ${t('of each year (dd/mm)')}
+        {else}
+          ${t('On')} 
+          <input type="input" name="action_repeat[y1]" size="3" value="${action_repeat.y1 || 1}"/> /
+          <input type="input" name="action_repeat[y2]" size="3" value="${action_repeat.y2 || 31}"/> ${t('of each year (mm/dd)')}
+        {/if}<br/>
+      ${radioButton('action_repeat', 'type', 'a')} 
+        <input type="input" name="action_repeat[a1]" size="4" value="${action_repeat.a1 || 14}"/>
+        ${t('days after the Action is completed')}<br/>
+    </td></tr>
+  </table>
+</div>

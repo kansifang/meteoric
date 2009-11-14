@@ -1,0 +1,101 @@
+.panelTable{
+	border-right: 0px ridge; 
+	border-top: 0px ridge; 
+	z-index: 1000; 
+	left: 0px; 
+	visibility: visible; 
+	overflow: hidden; 
+	border-left: 0px ridge; 
+	width: 253px; 
+	border-bottom: 0px ridge; 
+	position: absolute; 
+	top: 24px; 
+	height: 185px;
+}
+.arrow_left{
+	background-image:url(icon_arrow_left.gif);
+	background-repeat:no-repeat;
+	background-position: 0px 0px; 
+	cursor: pointer;
+}
+.arrow_right{
+	background-image:url(icon_arrow_right.gif);
+	background-repeat:no-repeat;
+	background-position: 0px 0px; 
+	cursor: pointer;
+}
+.panelTD{
+	padding-right: 8px; 
+	border-top: #f8f8f6 1px solid; 
+	padding-left: 8px; 
+	padding-bottom: 8px; 
+	border-left: #f8f8f6 1px solid; 
+	padding-top: 8px;
+}
+
+.weekEnd {
+	font: 9pt 宋体; 
+	color: #ff0000; 
+	border-bottom: #a0c6e5 1px solid
+}
+
+.weekDay{
+	font: 9pt 宋体; 
+	border-bottom: #a0c6e5 1px solid
+}
+
+.dateGrid{
+	font: 9pt 宋体; 
+	cursor: pointer;
+	v-align: center;
+	border-color:#e5e6ec;
+	text-align:middle;
+	background-color: #ffffff;
+	height:16px;
+	color:#000000;
+}
+
+.dateGridHid{
+	font: 9pt 宋体; 
+	cursor: pointer;
+	v-align:center;
+	border-color:#e5e6ec;
+	text-align:middle;
+	background-color: #ffffff;
+	height:16px;
+	color:#c6c6c6;
+}
+
+.bbutton2 {
+	BORDER-TOP: #82829E 1px solid; 
+	BORDER-RIGHT: #82829E 1px solid; 
+	BORDER-BOTTOM: #82829E 1px solid;
+	BORDER-LEFT: #82829E 1px solid;
+	background-color: #ECECF4;
+	PADDING-RIGHT: 3px; 
+	PADDING-LEFT: 3px; 
+	FONT-SIZE: 12px;
+	height:20px; 
+	CURSOR: pointer; 
+	COLOR: black;
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, 
+	StartColorStr=#ffffff, EndColorStr=#CDCCDF); 
+} 
+.calendar_textboxDate 
+{
+
+	 border-bottom: #7b9ebc 1px double; 
+     border-left: #7b9ebc 1px double; 
+	 border-right: #7b9ebc 1px double; 
+	 border-top: #7b9ebc 1px double;
+	 width:135px;
+}
+img.calendar_popupButton 
+{
+	border:none;
+	margin-bottom:1px;
+	margin-left:2px;
+	padding:0px;
+	vertical-align: text-bottom;
+	cursor:pointer;
+}

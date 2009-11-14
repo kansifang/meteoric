@@ -1,0 +1,10 @@
+<h1>Contacts</h1>
+
+<%= linkToLocal('Create A New Contact', 'contact', 'newInstance') %>
+
+<ul>
+  <% for (var i = 0; i < contacts.length; i++) { %>
+    <li><%= linkToLocal(contacts[i].last_name + ', ' + contacts[i].first_name,
+                        'contact', 'show', contacts[i].id) %></li>
+  <% } %>
+</ul>

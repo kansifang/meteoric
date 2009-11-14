@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:silverna="http://silverna.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Defer And Listener</title>
+	<script src="../silverna-packs.js"></script>
+	<script>
+	function test()
+	{
+		add.defer(10,[10,20]);
+		var a = new TypeA();
+		a.defer("add", 1000);
+
+		foo.listen(function(o){
+				return o.i--;
+			},200,{i:10});
+	}
+	function add(x,y)
+	{
+		alert(x+y);
+	}
+	function TypeA()
+	{
+		this.x = 10;
+		this.y = 30;
+		this.add = function()
+		{
+			alert(this.x + this.y);
+		}
+	}
+	function foo(o)
+	{
+		alert(o.i);
+	}
+	</script>
+</head>
+<body onload="test()" style="width:800px;height:600px;padding:0 0 0 0;margin:0 0 0 0">
+<div id ="test" style="border: solid 1px #3377cc;width:100px;"><div>Hello!</div></div>
+</body>
+</html>

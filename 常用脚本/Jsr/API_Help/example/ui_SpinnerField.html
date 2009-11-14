@@ -1,0 +1,117 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html"/>
+	<title>微调框实例 -- JSR2+</title>
+	<script type="text/javascript" src="../../common/js/core.js?lib=webui"></script>
+	<link rel="stylesheet" href="../resources/example.css" type="text/css" media="all"/>
+</head>
+
+<body>
+<div id="bodyPanel" style="display:none">
+	<b>微调框实例</b><hr/><br/>
+	<!-- 面板 -->
+	<div id="panel"></div>
+	<!-- 面板内容 -->
+	<div id="contentPanel">
+		<!-- 控件实例 -->
+		<fieldset id="example"><div class="gbPanel">
+			<table class="font"><tr>
+				<td width="50px">微调框1:</td>
+				<td><div style="width:415px"><input type="text" id="spinner1" /></div></td>
+			</tr><tr>
+				<td>微调框2:</td><td title="微调框2的取值: -25到55之间 调整步长: 6"><input type="text" id="spinner2" /></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<!-- 相关方法 -->
+		<fieldset id="method"><div class="gbPanel">
+			<table class="method-area1"><tr>
+				<td><button id="b1"></button></td><td><button id="b2"></button></td>
+				<td><button id="b3"></button></td><td><button id="b4"></button></td>
+				<td><button id="b5"></button></td>
+			</tr><tr>
+				<td><button id="b6"></button></td><td><button id="b7"></button></td>
+				<td><button id="b8"></button></td><td><button id="b9"></button></td><td></td>
+			</tr><tr>
+				<td><button id="b10"></button></td><td><button id="b11"></button></td>
+				<td><button id="b12"></button></td><td></td>
+			</tr>
+			</table>
+		</div></fieldset>
+		<br/>
+		<div class="font">注: 相关方法是针对 "微调框1" 操作的。</div>
+	</div>
+	<!-- 面板内容结束 -->
+</div>
+</body>
+
+<script>
+var s1, s2, btn, editable = true, disabled = true;
+new UI.Panel({id:"panel", caption:"应用实例 -> 微调框", width:520, height:288, body:"contentPanel"});
+new UI.GroupBox({id:"example", caption:"控件实例"});
+new UI.GroupBox({id:"method", caption:"相关方法"});
+//创建微调框
+s1 = new UI.SpinnerField({id:"spinner1", name:"spinner1", width:160});
+s2 = new UI.SpinnerField({id:"spinner2", name:"spinner2", value:15, width:160, minValue:-25, maxValue:55, step:6});
+//相关方法按钮
+btn = new UI.Button({id:"b1", caption:"autoSize", width:75});
+btn.bind(function() {
+	s1.autoSize();
+});
+btn = new UI.Button({id:"b2", caption:"disable", width:75});
+btn.bind(function() {
+	s1.disable(disabled);
+	disabled = !disabled;
+});
+btn = new UI.Button({id:"b3", caption:"editable", width:75});
+btn.bind(function() {
+	s1.editable(editable);
+	editable = !editable;
+});
+btn = new UI.Button({id:"b4", caption:"focus", width:75});
+btn.bind(function() {
+	s1.focus();
+});
+btn = new UI.Button({id:"b5", caption:"getValue", width:75});
+btn.bind(function() {
+	alert("微调框1的值: " + s1.getValue());
+});
+btn = new UI.Button({id:"b6", caption:"onAdjust", width:75});
+btn.bind(function() {
+	s1.onAdjust(function(){ s2.setValue(s1.getValue()) });
+	alert("请调整 '微调框1' 的值, 注意 '微调框2' 的变化。");
+});
+btn = new UI.Button({id:"b7", caption:"reset", width:75});
+btn.bind(function() {
+	s1.reset();
+});
+btn = new UI.Button({id:"b8", caption:"setValue", width:75});
+btn.bind(function() {
+	s1.setValue("22");
+	alert("设置了 '微调框1' 的值为: 22 。");
+});
+btn = new UI.Button({id:"b9", caption:"setWidth", width:75});
+btn.bind(function() {
+	s1.setWidth(220);
+	alert("设置 '微调框1' 的宽度为: 220px");
+});
+btn = new UI.Button({id:"b10", caption:"设置最小值", width:75});
+btn.bind(function() {
+	s1.min = -55;
+	alert("设置了 '微调框1' 的最小值为: -55 。");
+});
+btn = new UI.Button({id:"b11", caption:"设置最大值", width:75});
+btn.bind(function() {
+	s1.max = 86;
+	alert("设置了 '微调框1' 的最大值为: 86 。");
+});
+btn = new UI.Button({id:"b12", caption:"设置步长", width:75});
+btn.bind(function() {
+	s1.step = 7;
+	alert("设置了 '微调框1' 的调整步长为: 7 。");
+});
+
+onLoad.add(function(){ $("bodyPanel").style.display = "" });
+</script>
+
+</html>

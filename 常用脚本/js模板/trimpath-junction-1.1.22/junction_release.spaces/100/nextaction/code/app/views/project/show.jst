@@ -1,0 +1,61 @@
+<div class="form">
+ <h2>${t('Project')}: <span style="${colorStyle(project)}">${h(project.name)}</span></h2>
+ <table>
+  <tr valign="top">
+    <td class="label required">${t('Name')}:&nbsp;
+    </td>
+    <td style="color: ${project.color};">${h(project.name)}
+    </td>
+  </tr>
+  <tr valign="top">
+    <td class="label">${t('Notes')}:&nbsp;
+    </td>
+    <td><pre>${h(project.notes)}</pre>
+    </td>
+  </tr>
+  <tr>
+    <td class="label">${t('Due at')}:&nbsp;
+    </td>
+    <td>${localDateString(project.due_at)}
+    </td>
+  </tr>
+  <tr>
+    <td class="label">${t('Completed at')}:&nbsp;
+    </td>
+    <td>${localDateString(project.completed_at)}
+    </td>
+  </tr>
+  <tr>
+    <td class="label">${t('Parent Project')}:&nbsp;
+    </td>
+    <td>
+      {if project.parent_project_id}
+        {var parentProject = project.getParentProject()}
+        ${linkToLocal(h(parentProject.name), 'project', 'show', project.parent_project_id, modelToolTip(parentProject, 'project', res))}
+      {/if}
+    </td>
+  </tr>
+  <tr>
+    <td>
+    </td>
+    <td class="buttons" style="padding-top: 10px;">
+      ${%linkToLocal(t('Edit'), 'project', 'edit', project.id, { 'class': 'button' })%} 
+      ${%linkToLocal(t('Delete'), 'project', 'destroy', project.id, { method: 'post', confirm: destroyConfirmMessage, 'class': 'button' })%}
+    </td>
+  </tr>
+ </table>
+</div>
+
+<div class="related">
+  <hr/>
+  {if actions.length > 0}
+    ${render('action/indexBody')}
+  {/if}
+  <br/>
+  {if project.completed_at == null}
+    ${startFormTagLocal('action', 'newInstance')}
+      <input type="hidden" name="action[project_id]" id="action[project_id]" value="${project.id}">
+      ${%submitButtonLocal('doActionCreate', t('Add an Action to ') + TrimPath.junctionUtil.encodeQuotes(project.name) + ' Project')%}
+    ${endFormTag()}
+  {/if}
+</div>

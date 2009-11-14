@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Next Action</title>
+
+<script type="text/javascript" src="/javascripts/trimpath/junctionUtil.js"></script>
+
+<%= javascriptIncludeTag('trimpath/base') %>
+<%= javascriptIncludeTag('trimpath/dragdrop') %>
+
+<%= javascriptIncludeTag('domLib') %>
+<%= javascriptIncludeTag('sortable') %>
+<%= javascriptIncludeTag('jquery-1.2.pack') %>
+
+<%= stylesheetIncludeTag('reset_min') %>
+<%= stylesheetIncludeTag('application') %>
+
+<%= javascriptIncludeTag('jquery-calendar.pack') %>
+<%= stylesheetIncludeTag('jquery-calendar') %>
+
+<script language="javascript">
+var toggleDisplay = function(el, doc, showStr) { 
+    showStr = showStr || "block";
+    if (el instanceof Array) {
+        for (var i = 0; i < el.length; i++)
+            toggleDisplay(el[i], doc, showStr);
+        return;
+    }
+    var doc = doc || document;
+    if (typeof(el) == "string")
+        el = doc.getElementById(el);
+    if (el != null)
+        el.style.display = (el.style.display != showStr ? showStr : "none");
+    return el;
+}
+
+// original author - cj@brainstack.com
+// license - public domain
+
+var keyMap = [
+ { keyCode:49,  shift:false, ctrl:false, alt:true,  fn:"TrimPath.junctionClient.get('home', 'dashboard')"   }, // Alt/1
+ { keyCode:50,  shift:false, ctrl:false, alt:true,  fn:"TrimPath.junctionClient.get('action', 'index')"     }, // Alt/2
+ { keyCode:51,  shift:false, ctrl:false, alt:true,  fn:"TrimPath.junctionClient.get('context', 'index')"    }, // Alt/3
+ { keyCode:52,  shift:false, ctrl:false, alt:true,  fn:"TrimPath.junctionClient.get('project', 'index')"    }, // Alt/4
+ { keyCode:53,  shift:false, ctrl:false, alt:true,  fn:"TrimPath.junctionClient.get('home', 'completed')"   }, // Alt/5
+ { keyCode:54,  shift:false, ctrl:false, alt:true,  fn:"TrimPath.junctionClient.get('home', 'statistics')"  }, // Alt/6
+ { keyCode:119, shift:false, ctrl:true,  alt:false, fn:null } // Ctrl/W
+]
+
+findKeyMap = function(e) {
+    for (var i = 0; i < keyMap.length; i++) {
+        if (keyMap[i].keyCode  == e.which
+            && keyMap[i].shift == e.shiftKey
+            && keyMap[i].ctrl  == e.ctrlKey
+            && keyMap[i].alt   == e.altKey) 
+            return keyMap[i].fn // the mapped target name
+    }
+    return null // not mapped
+}
+
+processKey = function(e){
+    var handler = findKeyMap(e);
+    if (handler != null)
+        eval(handler);
+}
+
+if (document != null) {
+    if (document.captureEvents != null)
+        document.captureEvents(Event.KEYPRESS);
+
+    document.onkeyup = processKey;
+}
+
+dateFillFuncs = {
+  '' : function(date) {
+    return null;
+  },
+  'today' : function(date) {
+    return date;
+  },
+  'tomorrow' : function(date) {
+    date.setDate(date.getDate() + 1);
+    return date;
+  },
+  'next week' : function(date) {
+    date.setDate(date.getDate() + (7 - date.getDay()) + 1)    
+    return date;
+  },
+  'one week' : function(date) {
+    date.setDate(date.getDate() + 7);
+    return date;
+  }, 
+  'two weeks' : function(date) {
+    date.setDate(date.getDate() + 14);
+    return date;
+  }, 
+  'next month' : function(date) {
+    date.setMonth(date.getMonth() + 1);
+    date.setDate(1);
+    return date;
+  },
+  'one month' : function(date) {
+    date.setMonth(date.getMonth() + 1);
+    return date;
+  }
+}
+
+dateFillCalc = function(fillerName) {
+    var filler = dateFillFuncs[fillerName];
+    if (filler != null) {
+        var d = filler(new Date());
+        if (d != null)
+            return TrimPath.junctionUtil.toLocalDateString(d);
+        return '';
+    }
+    return null;
+}
+
+///////////////////////////////////////////////
+
+ajax = function(method, req, callback) {
+    TrimPath.ajax('<%= TrimPath.junction.env.appUrl %>',
+                  method, req, callback);
+}
+
+ajaxGet  = function(req, callback) { ajax('get', req, callback); }
+ajaxPost = function(req, callback) { ajax('post', req, callback); }
+</script>
+</head>
+<body>
+<div class="header">
+    <div class="header_tools">
+      <% var userKey = TrimPath.junction.env.getInfo('userKey');
+         if (userKey != null &&
+             userKey.length > 0) { %>
+        <%= t('hello') %> <%= TrimPath.junction.env.getInfo('userKey') %>
+         |
+      <% } %>
+      <%= t('personal edition') %> <%= NEXT_ACTION_VERSION %>
+       |
+      <%= linkToLocal(t('admin'), 'home', 'settings') %>
+       |
+      <%= linkToLocal(t('about'), 'home', 'about') %>
+       |
+      <a href="http://trimpath.com/forum/viewforum.php?id=3" target="_blank"><%= t('forum') %></a>
+    </div>
+    <span class="header_title">
+      <img src="nextaction;public?path=/images/nextAction32x32.gif">
+      <%= linkToLocal('Next Action', 'home', 'start') %>
+    </span>
+
+    <% if (isDemoMode()) { %>
+      &nbsp;&nbsp;<i><%= linkToLocal('-- running in demo mode', 'home', 'about') %></i>
+    <% } %>
+
+    <br class="clear"/>
+    <div class="header_menu">
+      <ul>
+        <li><%= linkToLocal(t('Dashboard'), 'home', 'dashboard') %></li>
+        <li><%= linkToLocal(t('Calendar'), 'action', 'calender') %></li>
+        <li><%= linkToLocal(t('Actions'), 'action', 'index') %></li>
+<% if (TrimPath.junction.env.type == 'server') { %>
+        <li><%= linkToLocal(t('People'), 'person', 'index') %></li>
+<% } %>
+        <li><%= linkToLocal(t('Contexts'), 'context', 'index') %></li>
+        <li><%= linkToLocal(t('Projects'), 'project', 'index') %></li>
+        <li><%= linkToLocal(t('Completed'), 'home', 'completed') %></li>
+        <li><%= linkToLocal(t('Statistics'), 'home', 'statistics') %></li>
+        <% if (TrimPath.junction.env.type == 'client' &&
+               TrimPath.junction.env.getInfo('userKey') != null &&
+               TrimPath.junction.env.getInfo('userKey').length > 0) { %>
+          <li><%= linkToLocal('Sync', 'home', 'sync') %></li>
+        <% } %>
+      </ul>
+    </div>
+</div>
+<div class="main_flash_notice" id="main.flash_notice">
+  <%= flash['notice'] %>
+</div>
+<div>
+<table width="100%">
+<tr>
+<td valign="top" class="mainContainer">
+<div class="main" id="main">
+  <%= res.contentForLayout %>
+</div>
+</td>
+<% if (res.sidebar != false) { %>
+  <% res.sidebar = res.sidebar || []; %>
+
+  <% res.sidebar.push(render('action/newInstanceMini'));
+     res.sidebar.push('<br/>');
+     %>
+
+  <% res.activeContexts = Context.allLevels(null, res);
+     if (res.activeContexts.length > 0) {
+         res.sidebar.push(render('context/listMini'));
+     } %>
+
+  <% res.activeProjects = Project.allLevels(null, res); %>
+  <% if (res.activeContexts.length > 0 && res.activeProjects.length > 0) {
+         res.sidebar.push('<hr style="margin-top: 15px; margin-bottom: 0px;">');
+     } %>
+  
+  <% if (res.activeProjects.length > 0) {
+         res.sidebar.push(render('project/listMini'));
+     } %>
+
+  <% if (sidebar.length > 0) { %>
+    <td valign="top" class="sidebarContainer" width="280">
+      <div class="sidebar" id="sidebar">
+        <%= res.sidebar.join('\n') %>
+      </div>
+    </td>
+  <% } %>
+<% } %>
+</tr>
+</table>
+<br class="clear"/>
+</div>
+<% var dFooter = new Date(); %>
+<div class="footer">
+    <hr/>
+    <%= t('Copyright')%> (c) 2005 - <%= dFooter.getFullYear() %> <a href="http://trimpath.com/">TrimPath</a>
+     | 
+    <%= linkToLocal(t('about'), 'home', 'about') %>
+     |
+    <a href="http://trimpath.com/forum/viewforum.php?id=3" target="_blank"><%= t('forum') %></a>
+</div>
+
+<script>
+popUpCalOptions = { clearText : 'clear',
+                    closeText : 'X',
+                    currentText : 'today',
+                    prevText : '&lt;&lt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
+                    nextText : '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;&gt;',
+                    dateFormat : 'YMD/',
+                    speed  : 'fast' };
+
+makePopUpCal = function() {
+    popUpCal.setDefaults(popUpCalOptions);
+    for (var i = 0; i < arguments.length; i++) {
+        if (document.getElementById(arguments[i]) != null)
+            $(document.getElementById(arguments[i])).calendar(popUpCalOptions);
+    }
+}
+
+window.onload = function() {
+    Sortable.init();
+}
+</script>
+
+</body>
+</html>

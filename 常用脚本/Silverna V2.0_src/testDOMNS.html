@@ -1,0 +1,48 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<input id="order.item" value="a"/>
+<input id="order.x.0" value="b"/>
+<input id="order.x.1" value="c"/>
+<div id="order.x.2">d</div>
+<table id="test">
+	<tbody>
+	<tr><td ns="orderDetails.[].a"><input type="checkbox" checked/></td><td ns="orderDetails.0.x">1</td><td ns="orderDetails.0.y"><input value="a"/></td></tr>
+	<tr><td ns="orderDetails.[].a"><input type="checkbox" checked/></td><td ns="orderDetails.1.x">1</td><td ns="orderDetails.1.y"><input value="a"/></td></tr>
+	<tr><td ns="orderDetails.[].a"><input type="checkbox"/></td><td ns="orderDetails.2.x">2</td><td ns="orderDetails.2.y"><input value="b"/></td></tr>
+	<tr><td ns="orderDetails.[].a"><input type="checkbox" checked/></td><td ns="orderDetails.3.x">3</td><td ns="orderDetails.3.y"><input value="c"/></td></tr>
+	<tr><td ns="orderDetails.[].a"><input type="checkbox"/></td><td ns="orderDetails.4.x">4</td><td ns="orderDetails.4.y"><input value="d"/></td></tr>
+	<tr><td ns="orderDetails.[].a"><input type="checkbox"/></td><td ns="orderDetails.5.x">5</td><td ns="orderDetails.5.y"><input value="e"/></td></tr>
+	</tbody>
+</table>
+<script src="silverna-packs.js"></script>
+<script>
+var a = [1,2,3];
+alert(a.remove(1));
+alert(a);
+//这个例子演示了从DOM对象创建JSON对象的方法，通过id或者ns属性
+window.setByNS("order.item", $("order.item").value);
+alert(order.item); //得到a
+var d = document.getNS("order.x.0","order.x.1","order.x.2");
+alert(d.order.x); //得到b,c,d
+//注意如果是表单元素，得到value，checkbox和radio得到的是true和false
+
+//这个方法可以将table里的值全部读到一个对象中，可以把这个方法增加到通用的函数库中去（但是不要加到silverna-packs.js里）
+function getTableNS(table)
+{
+	if(typeof table == "string") table = $id(table);
+	var cells = [];
+	for(var i = 0; i < table.rows.length; i++)
+	{
+		var row = table.rows[i];
+		for(var j = 0; j < row.cells.length; j++)
+		{
+			var cell = row.cells[j];
+			cells.push(cell);
+		}
+	}
+	return document.getNS.apply(document,cells);
+}
+var o = getTableNS("test");
+alert(o.orderDetails[0].a);
+alert(o.orderDetails[0].y);
+alert(o.orderDetails[2].a);
+</script>

@@ -1,0 +1,95 @@
+<div class="form">
+ <h2>${t('Person')}: ${linkToLocal(person.displayName(), 'person', 'show', person.id)}</h2>
+ <table>
+  <tr valign="top">
+    <td class="label">${t('Last Name')}:
+    </td>
+    <td>${person.name_last|h}
+    </td>
+  </tr>
+  <tr valign="top">
+    <td class="label">${t('First Name')}:
+    </td>
+    <td>${person.name_first|h}
+    </td>
+  </tr>
+  <tr valign="top">
+    <td class="label">${t('Title')}:
+    </td>
+    <td>${person.title|h}
+    </td>
+  </tr>
+  <tr valign="top">
+    <td class="label">${t('Background')}:
+    </td>
+    <td>${person.background|h}
+    </td>
+  </tr>
+  <tr>
+    <td>
+    </td>
+    <td class="buttons">
+      ${%linkToLocal(t('Edit'), 'person', 'edit', person.id, { 'class': 'button' })%} 
+      ${%linkToLocal(t('Delete'), 'person', 'destroy', person.id, { method: 'post', confirm: destroyConfirmMessage, 'class': 'button' })%}
+    </td>
+  </tr>
+ </table>
+</div>
+
+<div class="related">
+  <h3>${t('Contact Information:')}</h3>
+  {for c in person.getPartyContacts()}
+    ${c.type}, ${c.display()}
+  {/for}
+
+  ---
+  <script>
+  PartyContactTypeFields = <%= TrimPath.junctionUtil.toJsonString(PartyContact.typeFields) %>;
+  </script>
+
+  ${startFormTagLocal('partyContact', 'create')}
+    <input type="hidden" name="partyContact[party_id]" value="${person.id}"/>
+
+    <div id="partyContactTemplate">
+        <table>
+        <tr valign="top">
+        <td> 
+            ${%select('partyContact_N', 'location', PartyContact.locations)%} &nbsp;
+        </td> 
+        <td> 
+            ${%select('partyContact_N', 'type', PartyContact.types, { onchange: "toggleDisplay(['type_" + PartyContact.types.join("','type_") + "'], document, 'none'); toggleDisplay('type_' + this.value)" })%}
+        </td> 
+        <td>    
+            {for field in PartyContact.fields}
+              <div id="container_partyContact_N[${field}" style="display: ${type_index == 0 ? 'block' : 'none'};">
+                  <label for="partyContact_N[f${field}]">${t(field)}:</label> 
+                  <input type="text" 
+                         name="partyContact_N[${field}]" 
+                         value=""/>
+                  <br class="clear"/>
+              </div>
+            {/for}
+        </td> 
+        <td>    
+        </td> 
+        </tr> 
+        </table> 
+    </div>
+
+    ${submitButtonLocal("doCreate", t('Save Contact Info'))}
+
+    ${linkToLocal(t('Cancel'), 'person', 'show', person.id)}
+  ${endFormTag()}
+</div>
+
+<div class="related">
+  <hr/>
+  {if actions.length > 0}
+    ${render('action/indexBody')}
+  {/if}
+  <br/>
+  ${startFormTagLocal('action', 'newInstance')}
+    <input type="hidden" name="action[contact]" id="action[contact]" value="person|${person.id}">
+    ${%submitButtonLocal('doActionCreate', t('Add an Action to ') + person.displayName())%}
+  ${endFormTag()}
+</div>

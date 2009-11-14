@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> New Document </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+ </HEAD>
+
+ <BODY>
+<script>
+Function.prototype.$bind=function(object)
+{
+	var callback = function (fn) {
+		return fn;
+	}
+	with(object)
+	{
+		return eval('callback(' + this.toString() + ')');
+	}
+}
+
+var obj={a:1,b:2};
+var f=function (){
+	a=10;
+	b=11;
+}.$bind(obj);
+f();
+alert(obj.a);
+//----------------------------------------------------------------------------------------------------
+G = {};
+G.objInstanceOf = function(obj, c){
+	if(typeof(c) == "string")
+		return typeof(obj) == c;
+	if(obj instanceof c || c.__templete__ && obj instanceof c.__templete__)
+		return true;
+	var _interfaces = obj && obj.__interfaces__;
+	if(_interfaces)
+		for(var i = 0, len = _interfaces; i < len; i++){
+			if(_interfafces[i] == c)
+				return true;
+		}
+	return false;
+};
+
+G.objectAsPrototype = function(obj, c){
+	c = c || function(){};
+	c.prototype = obj;
+	return c;
+};
+
+Function.prototype.getPrototypeObject = function(){
+	var p = this.__templete__ || (this.__templete__= G.objectAsPrototype(this.prototype));
+	return new p();
+};
+
+Function.prototype.$pextends = function(p){
+	var me = this.$bind({$super:p});
+	var ins = function()
+	{	
+		var ret = me.apply(this, arguments);
+		return ret;
+	}
+
+	ins.prototype = p.getPrototypeObject();
+	return ins;
+};
+//--------------------------------------------------------------------------------------------------------
+function B(){};
+var A = function(){
+	alert($super);
+}.$pextends(B);
+var a = new A();
+//---------------------------------------------------------------------------------------------------------
+Function.prototype.$verify = function(){
+
+	var me = this;
+	var _args = arguments;
+	
+	//第一范式 [new] T <=> [new] R:function(){donothing, return T.apply},R.prototype = T.prototype 
+	var mins = function(){
+		for(var i = 0, len = _args.length; i < len; i++)
+		{
+			if(!G.objInstanceOf(arguments[i],_args[i])){
+					throw new TypeError("函数的参数类型不匹配，位置："+(i+1));
+			}
+		}
+		return me.apply(this, arguments);
+	}
+	mins.prototype = me.prototype;
+	
+	return mins;	
+}
+//-------------------------------------------------------------------------------------------------------
+var foo = function(x,y){
+	alert(x+y);
+}.$verify("number","number");
+
+foo(1,2);
+
+var foo2 = function(x,y){
+	x(y);
+}.$verify(Function,"number");
+//foo("error",2);
+
+foo2(function(x){alert(x)},10);
+//foo2("x","y");
+
+var Class3 = function(x,y){
+	this.x = x;
+	this.y = y;
+}.$verify("number","number");
+Class3.prototype.dist2 = function(){return this.x*this.x + this.y*this.y};
+var c = new Class3(10,20);
+alert(c.dist2());
+
+//--------------------------------------------------------------------------------------------------------
+Function.prototype.$staticable = function()
+{
+	var me = this;
+	var cache = [];
+	var index = 0;
+
+	var mins = function(){
+		mins.alloc = function(){
+			cache[index] = cache[index] || {};
+			return cache[index++];
+		};
+		var ret = me.apply(this, arguments);
+		mins.alloc = null;
+		index = 0;
+		return ret;
+	}
+
+	mins.prototype = me.prototype;
+
+	return mins; 
+}
+//----------------------------------------------------------------------------------------------------------
+var Test = function(){
+	var x = Test.alloc();
+	x.a = x.a || 0;
+	x.a++;
+	return x.a;
+}.$staticable();
+
+for(var i = 0; i < 10; i++)
+	alert(Test());
+//-----------------------------------------------------------------------------------------------------------
+Function.prototype.$protected = function(){
+	var me = this;
+	
+	var mins = function(){
+
+		var p = me.getPrototypeObject();
+
+		var ret = function(){}; //create a new object
+
+		for(var each in mins.prototype)  //clone prototypes
+		{
+			if(mins.prototype[each] instanceof Function){
+				ret.prototype[each] = function(){
+					return mins.prototype[each].apply(p,arguments);	//call by p
+				}
+				p[each] = mins.prototype[each];
+			}
+			else{ 
+				p[each] = ret.prototype[each] = mins.prototype[each];
+			}
+		}
+		me.apply(p,arguments);//clone a new object by me
+
+		return new ret(); //return this object;
+	}
+	return mins;
+}
+//----------------------------------------------------------------------------------------------------------------
+//将一个类型的this域声明为全部私有
+var Test = function(x,y)
+{
+	this.x = x;
+	this.y = y;
+}.$protected();
+Test.prototype.getX = function(){
+	return this.x;
+}
+var t = new Test(5,10);
+alert(t.x);
+alert(t.getX());
+</script>  
+ </BODY>
+</HTML>

@@ -1,0 +1,58 @@
+<script>
+Object.prototype.getByNS = function(s)
+{
+	var n = s.split(".");
+	var o = this;
+	try{
+		for(var i = 0; i < n.length; i++)
+		{
+			var t = n[i];
+			if(parseInt(t).toString() == t)
+			{
+				o = o[t - 0];
+			}
+			else
+				o = o[t];
+		}
+		return o;
+	}
+	catch(e){
+		return null;
+	}
+}
+Object.prototype.setByNS = function(s, val)
+{
+	var n = s.split(".");
+	var o = this;
+	for(var i = 0; i < n.length - 1; i++)
+	{
+		var t = n[i];
+		var nt = n[i+1];
+
+		if(parseInt(t).toString() == t)
+		{
+			t-=0;
+		}
+		if(o[t] == null) 
+		{
+			if(parseInt(nt).toString() == nt)
+				o[t] = [];
+			else
+				o[t] = {};
+		}
+		
+		o = o[t];
+	}
+	o[n[i]] = val;
+	return val;
+}
+window.setByNS = Object.prototype.setByNS;
+window.getByNS = Object.prototype.getByNS;
+var a = new Object;
+a.setByNS("b.c.d", 100);
+alert(a.b.c.d);
+alert(a.getByNS("b.c.d"));
+window.setByNS("x.y.1",200);
+alert(x.y[1]);
+alert(window.getByNS("x.y"));
+</script>

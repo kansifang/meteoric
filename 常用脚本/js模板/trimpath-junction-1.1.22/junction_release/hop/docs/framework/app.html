@@ -1,0 +1,2161 @@
+<!DOPropertiesCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN""http://www.w3.org/TR/REC-html40/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+app - Helma Javascript Reference
+</TITLE>
+<LINK REL ="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+
+
+</HEAD>
+<SCRIPT>
+function asd()
+{
+parent.document.title="app - Helma Javascript Reference";
+}
+</SCRIPT>
+<BODY BGCOLOR="white" onload="asd();">
+      
+      
+
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>app</H2>
+<PRE>Object
+   |
+   +--<b>app</b>
+</PRE>
+
+
+<HR>
+
+<DL>
+   <!-- Class definition
+   <DT>class 
+   <B>app</B>
+    -->
+
+</DL>
+   
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+<!-- =========== END OF NAVBAR =========== -->
+<HR>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<!-- ======== END CONSTRUCTOR SUMMARY ======== -->
+
+&nbsp;
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+   <A NAME="field_summary"><!-- --></A>
+      <TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+         <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+            <TD COLSPAN=2><FONT SIZE="+2">
+               <B>Properties Summary</B></FONT></TD>
+         </TR>
+
+   <!-- This is one instance field summary -->
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;Application</CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#__app__">__app__</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This property contains a reference this application's instance of the Packages.helma.framework.core.Application class.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="Object.html">Object</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#data">data</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Object that serves as a cache for application specific data.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;String[]</CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#globalMacroPath">globalMacroPath</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The app.globalMacroPath property allows to define a search path for global macros.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="Number.html">Number</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#maxThreads">maxThreads</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This property contains the maximum number of additional threads (=request evaluators)
+ <br /><br />
+ The maximum number of additional threads that are being 
+ created by Helma to handle incoming requests.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;Map</CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#modules">modules</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Map object that can be used as an application wide data cache
+ <br /><br />
+ This property offers a dedicated place to store 
+ module-related data on an application wide level.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;Function</CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#processMacroParameter">processMacroParameter</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This allows the application to set a callback function for pre-processing 
+ macro parameters formatted as $(...).</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;Map</CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#properties">properties</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Map of any specified application or server properties
+ <br /><br />
+ This property offers access to each key/value 
+ pair defined in either app.properties or in 
+ server.properties.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="Array.html">Array</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#repositories">repositories</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List of the application's code repositories
+ <br /><br />
+ This property offers a dedicated place to store 
+ module-related data on an application wide level.</TD>
+   </TR>
+   
+
+   </TABLE>
+   &nbsp;
+   
+
+   
+
+<!-- =========== END FIELD SUMMARY =========== -->
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TD COLSPAN=2><FONT SIZE="+2">
+<B>Methods Summary</B></FONT></TD>
+</TR>
+
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#addCronJob">addCronJob</A></B>(functionNameAsString, year, month, day, weekday, hour, minute)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Adds a global function to the list of CronJobs that are being called periodically.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#addRepository">addRepository</A></B>(&lt;<a href="String.html">String</a>&gt; repository)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Adds a code repository to the current application
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#clearCache">clearCache</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Removes all objects from the object cache for the current application.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Number.html">Number</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#countSessions">countSessions</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns the number of currently active sessions.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;SessionObject</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#createSession">createSession</A></B>(sessionID)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Creates a SessionObject with the passed sessionID as its unique identifier.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#debug">debug</A></B>(&lt;<a href="String.html">String</a>&gt; filenameOrText,&lt;<a href="String.html">String</a>&gt; text)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Writes a string to a log file if debug is set to true in app.properties.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Number.html">Number</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getActiveThreads">getActiveThreads</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns the number of currently active threads (=request evaluators).
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Array.html">Array</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getActiveUsers">getActiveUsers</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns an array of Users, that are currently logged in.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getAppDir">getAppDir</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns the absolute path to the application directory.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;Map</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getAppsProperties">getAppsProperties</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Get a wrapper around the app's apps.properties
+ <br /><br />
+ To get a Map of app.properties and server.properties for 
+ this application, use app.properties instead.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Number.html">Number</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getCacheUsage">getCacheUsage</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns the number of currently cached objects for the current application.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Object.html">Object</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getCronJobs">getCronJobs</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns an object of scheduled cron jobs.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getDir">getDir</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns the absolute path to the application directory.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Number.html">Number</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getErrorCount">getErrorCount</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns the number of errors that have occurred since the application has been started.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Number.html">Number</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getFreeThreads">getFreeThreads</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns the number of currently free threads (i.e.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Number.html">Number</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getMaxThreads">getMaxThreads</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns the maximum number of threads (i.e.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getName">getName</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns the name of the current application, i.e.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Array.html">Array</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getRegisteredUsers">getRegisteredUsers</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns an array of all existing users.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Number.html">Number</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getRequestCount">getRequestCount</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns the number of web requests that occurred since the application has been started.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="String.html">String</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getServerDir">getServerDir</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns the absolute path to the home directory of this Helma installation.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;SessionObject</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getSession">getSession</A></B>(&lt;<a href="String.html">String</a>&gt; sessionID)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns a SessionObject identified through the passed sessionID, if such a session exists.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Array.html">Array</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getSessions">getSessions</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns an array of all currently active sessions, represented as SessionObjects.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Array.html">Array</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getSessionsForUser">getSessionsForUser</A></B>(&lt;User&gt; user)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns an array of active sessions for the specified user
+ <br /><br />
+ Returns an array of all currently active sessions, which 
+ have been associated with the passed User.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;Map</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getSkinfiles">getSkinfiles</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns a Map that allows access to all defined file-based skins.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;Map</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getSkinfilesInPath">getSkinfilesInPath</A></B>(&lt;<a href="Array.html">Array</a>&gt; skinpath)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Return a map of skin resources including the specified,
+ app-specific skinpath
+ <br /><br />
+ The map contains for each prototype one entry (for 
+ prototypes containing also uppercase letters, also an 
+ entry with the lowercased prototype name is contained).
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Date.html">Date</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getUpSince">getUpSince</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns the timestamp of when that application has been started.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;User</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getUser">getUser</A></B>(&lt;<a href="String.html">String</a>&gt; username)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns a User identified through the passed username.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Number.html">Number</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#getXmlrpcCount">getXmlrpcCount</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Returns the number of XmlRpc requests that occurred since the application has been started.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Object.html">Object</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#invoke">invoke</A></B>(&lt;<a href="Object.html">Object</a>&gt; thisObject,&lt;Function&gt; fnc,&lt;<a href="Array.html">Array</a>&gt; args,&lt;<a href="Number.html">Number</a>&gt; timeout)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Trigger a synchronous Helma invocation.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Object.html">Object</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#invokeAsync">invokeAsync</A></B>(&lt;<a href="Object.html">Object</a>&gt; thisObject,&lt;Function&gt; fnc,&lt;<a href="Array.html">Array</a>&gt; args,&lt;<a href="Number.html">Number</a>&gt; timeout)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Trigger an asynchronous Helma invocation.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#log">log</A></B>(&lt;<a href="String.html">String</a>&gt; filenameOrText,&lt;<a href="String.html">String</a>&gt; text)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Writes a string to a log file.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;User</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#registerUser">registerUser</A></B>(&lt;<a href="String.html">String</a>&gt; username, &lt;<a href="String.html">String</a>&gt; password)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Creates a new User object
+ <br /><br />
+ Creates a new HopObject of prototype User, stores it 
+ persistently, and returns the created User object.</p> 
+ <br /><br />
+ When mapping the User prototype to a relational 
+ database, the type.properties file must contain mappings
+ for the '_name'-property (the username) and for a 
+ property named 'password'.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#removeCronJob">removeCronJob</A></B>(&lt;<a href="String.html">String</a>&gt; functionName)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Removes a CronJob, identified through the passed function name, from the list of CronJobs.
+      </TD>
+   </TR>
+
+
+</TABLE>
+
+
+
+<P>
+<!-- ========== END METHOD SUMMARY =========== -->
+
+
+    <!-- ========= CONSTRUCTOR DETAIL START ======== -->
+
+
+<!-- Constructor return value(s) -->
+
+<!-- End constructor return value(s) -->
+
+<!-- ADDITIONAL ATTRIBUTES -->
+
+<HR/>
+<!-- END ADDITIONAL ATTRIBUTES  -->
+
+<!-- ========= CONSTRUCTOR DETAIL END ======== -->
+
+
+<!-- ============ FIELD DETAIL START =========== -->
+
+   <A NAME="field_detail"><!-- --></A>
+   <TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+      <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+         <TD COLSPAN=1><FONT SIZE="+2"><B>Properties Detail</B></FONT></TD>
+      </TR>
+   </TABLE>
+
+   
+   <A NAME="__app__"><!-- --></A>
+   <H3>__app__</H3>
+   <PRE>Application&nbsp;<B>__app__</B></PRE>
+   <UL>
+   This property contains a reference this application's instance of the Packages.helma.framework.core.Application class.
+ <br /><br />
+ It represents the currently running application, and 
+ offers some additional public methods. See Helma's JavaDocs 
+ on Packages.helma.framework.core.Application for more information.
+   
+   </UL>
+   <HR>
+   
+   <A NAME="data"><!-- --></A>
+   <H3>data</H3>
+   <PRE><a href="Object.html">Object</a>&nbsp;<B>data</B></PRE>
+   <UL>
+   Object that serves as a cache for application specific data.
+ <br /><br />
+ This property offers the possibility to store arbitrary data 
+ on an application wide level, and is available as long as the 
+ application is running.
+ <br /><br />
+ Note, that this can just be used as a temporary storage 
+ (i.e. as a 'cache'), since this data is not stored persistently 
+ within Helma, and is lost when the application is restarted. 
+ However, unlike global properties, any data stored in this 
+ object will not be garbage collected during runtime.
+ <br /><br />
+ Example:
+ <pre> app.data.runlevel = 4;
+ app.data.language = "en";
+ &nbsp;
+ res.write(app.data);
+ <i>TransientNode app</i>
+ &nbsp;
+ for (var p in app.data)
+ &nbsp;&nbsp;res.writeln(p + ": " + app.data[p]);
+ <i>runlevel: 4
+ language: en</i>
+ &nbsp;
+ res.write(app.data.runlevel);
+ <i>4</i>
+ &nbsp;
+ res.write(app.data["language"]);
+ <i>en</i></pre>
+   
+   </UL>
+   <HR>
+   
+   <A NAME="globalMacroPath"><!-- --></A>
+   <H3>globalMacroPath</H3>
+   <PRE>String[]&nbsp;<B>globalMacroPath</B></PRE>
+   <UL>
+   The app.globalMacroPath property allows to define a search path for global macros. 
+ This is a String array containing a list of global namespaces.
+   
+   </UL>
+   <HR>
+   
+   <A NAME="maxThreads"><!-- --></A>
+   <H3>maxThreads</H3>
+   <PRE><a href="Number.html">Number</a>&nbsp;<B>maxThreads</B></PRE>
+   <UL>
+   This property contains the maximum number of additional threads (=request evaluators)
+ <br /><br />
+ The maximum number of additional threads that are being 
+ created by Helma to handle incoming requests. This property 
+ is readable and writeable.
+ <br /><br />
+ See also: <a href="#getActiveThreads">getActiveThreads()</a>, <a href="#getFreeThreads">getFreeThreads()</a>, <a href="#getMaxThreads">getMaxThreads()</a>
+   
+   </UL>
+   <HR>
+   
+   <A NAME="modules"><!-- --></A>
+   <H3>modules</H3>
+   <PRE>Map&nbsp;<B>modules</B></PRE>
+   <UL>
+   Map object that can be used as an application wide data cache
+ <br /><br />
+ This property offers a dedicated place to store 
+ module-related data on an application wide level. 
+ Note, that this can just be used as a temporary 
+ storage (i.e. as a 'cache'), since this data is not 
+ stored persistently within Helma, and is lost when 
+ the application is restarted.
+ <br /><br />
+ See also: <a href="#data">data</a>
+   
+   </UL>
+   <HR>
+   
+   <A NAME="processMacroParameter"><!-- --></A>
+   <H3>processMacroParameter</H3>
+   <PRE>Function&nbsp;<B>processMacroParameter</B></PRE>
+   <UL>
+   This allows the application to set a callback function for pre-processing 
+ macro parameters formatted as $(...). The function is expected to take 
+ the raw parameter value as argument and return the processed parameter.
+   
+   </UL>
+   <HR>
+   
+   <A NAME="properties"><!-- --></A>
+   <H3>properties</H3>
+   <PRE>Map&nbsp;<B>properties</B></PRE>
+   <UL>
+   Map of any specified application or server properties
+ <br /><br />
+ This property offers access to each key/value 
+ pair defined in either app.properties or in 
+ server.properties. These properties are read-only.
+ <br /><br />
+ To get a Map of apps.properties for this application,
+ use the app.getAppsProperties method instead.
+ <br /><br />
+ Example:
+ <pre> # File app.properties:
+ debug = true
+ color = #ffcc00
+ &nbsp;
+ res.write(app.properties);
+ <i>{debug=true,color=#ffcc00}</i>
+ &nbsp;
+ for (var p in app.properties)
+ &nbsp;&nbsp;res.writeln(p + ": " + app.properties[p]);
+ <i>debug: true
+ color: #ffcc00</i>
+ &nbsp;
+ res.write(app.properties.debug);
+ <i>true</i>
+ &nbsp;
+ res.write(app.properties["color"]);
+ <i>#ffcc00</i></pre>
+   
+   </UL>
+   <HR>
+   
+   <A NAME="repositories"><!-- --></A>
+   <H3>repositories</H3>
+   <PRE><a href="Array.html">Array</a>&nbsp;<B>repositories</B></PRE>
+   <UL>
+   List of the application's code repositories
+ <br /><br />
+ This property offers a dedicated place to store 
+ module-related data on an application wide level. 
+ Note, that this can just be used as a temporary 
+ storage (i.e. as a 'cache'), since this data is not 
+ stored persistently within Helma, and is lost when 
+ the application is restarted.
+ <br /><br />
+ See also: <a href="#data">data</a>
+   
+   </UL>
+   <HR>
+   
+
+
+<!-- ============ FIELD DETAIL END =========== -->
+
+<!-- ============ METHOD DETAIL START ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+   <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+      <TD COLSPAN=1><FONT SIZE="+2">
+         <B>Method Detail</B></FONT>
+      </TD>
+   </TR>
+</TABLE>
+
+<!-- One single method detail entry -->
+
+   <A NAME="addCronJob"><!-- --></A>
+   <H3>addCronJob</H3>
+   <PRE>void <B>addCronJob</B>(functionNameAsString, year, month, day, weekday, hour, minute)</PRE>
+   
+      <UL>Adds a global function to the list of CronJobs that are being called periodically.
+ <br /><br />
+ If the property 'schedulerInterval' has not been set 
+ otherwise in app.properties, the function will be called 
+ every 60 seconds.
+ <br /><br />
+ By passing along further arguments it is possible to define 
+ at what times that function should be called. The same syntax 
+ ('*', '1,10,15', '1-5',..) as for Unix' crontab file can be used. 
+ Note, that if the property 'schedulerInterval' has been set in 
+ app.properties below 60, the function will be called several 
+ times in the minute, that it is supposed to run.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>functionName</CODE> -  as String, name of function to be scheduled as cron job  
+      </UL> 
+   
+     <UL><CODE>crontab</CODE> -  syntax of comma delimited arguments for year, month, day, weekday, hour, minute  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#getCronJobs">getCronJobs()</a><BR/>- <a href="#removeCronJob">removeCronJob()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="addRepository"><!-- --></A>
+   <H3>addRepository</H3>
+   <PRE>void <B>addRepository</B>(&lt;<a href="String.html">String</a>&gt; repository)</PRE>
+   
+      <UL>Adds a code repository to the current application</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>repository</CODE> -  as String, the path to the code repository   
+      </UL> 
+   
+     <UL><CODE>repository</CODE> -  as a Repository object, implementing the Repository interface  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#repositories">repositories</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="clearCache"><!-- --></A>
+   <H3>clearCache</H3>
+   <PRE>void <B>clearCache</B>()</PRE>
+   
+      <UL>Removes all objects from the object cache for the current application.
+ <br /><br />
+ By calling this method it is possible to make sure Helma 
+ will fetch all objects fresh from the database.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#getCacheUsage">getCacheUsage()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="countSessions"><!-- --></A>
+   <H3>countSessions</H3>
+   <PRE><a href="Number.html">Number</a> <B>countSessions</B>()</PRE>
+   
+      <UL>Returns the number of currently active sessions.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Number of sessions (integer)   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#createSession">createSession()</a><BR/>- <a href="#getSession">getSession()</a><BR/>- <a href="#getSessions">getSessions()</a><BR/>- <a href="#getSessionsForUser">getSessionsForUser()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="createSession"><!-- --></A>
+   <H3>createSession</H3>
+   <PRE>SessionObject <B>createSession</B>(sessionID)</PRE>
+   
+      <UL>Creates a SessionObject with the passed sessionID as its unique identifier.
+ <br /><br />
+ If a session with that ID already exists, that session will be returned.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>String</CODE> -  of the ID for this session  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        SessionObject for the specified    
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#countSessions">countSessions()</a><BR/>- <a href="#getSession">getSession()</a><BR/>- <a href="#getSessions">getSessions()</a><BR/>- <a href="#getSessionsForUser">getSessionsForUser()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="debug"><!-- --></A>
+   <H3>debug</H3>
+   <PRE>void <B>debug</B>(&lt;<a href="String.html">String</a>&gt; filenameOrText,&lt;<a href="String.html">String</a>&gt; text)</PRE>
+   
+      <UL>Writes a string to a log file if debug is set to true in app.properties.
+ <br /><br />
+ Either the text provided as the first argument is written 
+ to the eventLog file or the text that is provided as the second 
+ argument is written to a log file who's name is specified as the 
+ first argument.
+ <br /><br />
+ Writing to a file can be overridden by setting the property 
+ "logdir" in the server.properties or app.properties file to 
+ the value "console".
+ <br /><br />
+ Example:
+ <pre> # File helma/apps/test/app.properties:
+ debug = true
+ &nbsp;
+ // File helma/apps/test/root/main.hac:
+ app.debug("This message is written to the test application's event log.");
+ app.debug("custom", "This message is written to the custom.log file.");
+ &nbsp;
+ File helma/log/test_event.log:
+ <i>[2006/07/11 17:08] This message is written to the test application's event log.</i>
+ &nbsp;
+ File helma/log/custom.log:
+ <i>[2006/07/11 17:08] This message is written to the custom.log file.</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>filenameOrText</CODE> -  as String, the log filename to write to or the text to write to the eventLog file  
+      </UL> 
+   
+     <UL><CODE>text</CODE> -  as String the text to write, if the filename was specified as the first argument  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#log">log()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getActiveThreads"><!-- --></A>
+   <H3>getActiveThreads</H3>
+   <PRE><a href="Number.html">Number</a> <B>getActiveThreads</B>()</PRE>
+   
+      <UL>Returns the number of currently active threads (=request evaluators).</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Number of currently active threads (integer)    
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#getFreeThreads">getFreeThreads()</a><BR/>- <a href="#getMaxThreads">getMaxThreads()</a><BR/>- <a href="#maxThreads">maxThreads</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getActiveUsers"><!-- --></A>
+   <H3>getActiveUsers</H3>
+   <PRE><a href="Array.html">Array</a> <B>getActiveUsers</B>()</PRE>
+   
+      <UL>Returns an array of Users, that are currently logged in.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Array of User objects   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#getUser">getUser()</a><BR/>- <a href="#getRegisteredUsers">getRegisteredUsers()</a><BR/>- <a href="#registerUser">registerUser()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getAppDir"><!-- --></A>
+   <H3>getAppDir</H3>
+   <PRE><a href="String.html">String</a> <B>getAppDir</B>()</PRE>
+   
+      <UL>Returns the absolute path to the application directory.
+ <br /><br />
+ For multiple repositories this is either, the directory 
+ specified as 'appdir' in apps.properties, or the first 
+ FileRepository occurring in the repository list.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        String with the absolut path to the application directory   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#getDir">getDir()</a><BR/>- <a href="#getServerDir">getServerDir()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getAppsProperties"><!-- --></A>
+   <H3>getAppsProperties</H3>
+   <PRE>Map <B>getAppsProperties</B>()</PRE>
+   
+      <UL>Get a wrapper around the app's apps.properties
+ <br /><br />
+ To get a Map of app.properties and server.properties for 
+ this application, use app.properties instead.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        a readonly wrapper around the application's apps.properties   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#properties">properties</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getCacheUsage"><!-- --></A>
+   <H3>getCacheUsage</H3>
+   <PRE><a href="Number.html">Number</a> <B>getCacheUsage</B>()</PRE>
+   
+      <UL>Returns the number of currently cached objects for the current application.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Number of cached objects   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#clearCache">clearCache()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getCronJobs"><!-- --></A>
+   <H3>getCronJobs</H3>
+   <PRE><a href="Object.html">Object</a> <B>getCronJobs</B>()</PRE>
+   
+      <UL>Returns an object of scheduled cron jobs.
+ <br /><br />
+ Returns a JavaScript object with the function names as 
+ property names and the Packages.helma.util.CronJob instance as 
+ property values.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Object with Packages.helma.util.CronJob properties   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#addCronJob">addCronJob()</a><BR/>- <a href="#removeCronJob">removeCronJob()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getDir"><!-- --></A>
+   <H3>getDir</H3>
+   <PRE><a href="String.html">String</a> <B>getDir</B>()</PRE>
+   
+      <UL>Returns the absolute path to the application directory.
+ <br /><br />
+ For multiple repositories this is either, the directory 
+ specified as 'appdir' in apps.properties, or the first 
+ FileRepository occurring in the repository list.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        String with the absolut path to the application directory   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#getAppDir">getAppDir()</a><BR/>- <a href="#getServerDir">getServerDir()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getErrorCount"><!-- --></A>
+   <H3>getErrorCount</H3>
+   <PRE><a href="Number.html">Number</a> <B>getErrorCount</B>()</PRE>
+   
+      <UL>Returns the number of errors that have occurred since the application has been started.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Number of errors (integer)   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#getUpSince">getUpSince()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getFreeThreads"><!-- --></A>
+   <H3>getFreeThreads</H3>
+   <PRE><a href="Number.html">Number</a> <B>getFreeThreads</B>()</PRE>
+   
+      <UL>Returns the number of currently free threads (i.e. request evaluators).
+ <br /><br />
+ This is equivalent to app.getMaxThreads() minus app.getActiveThreads().</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Number of free threads (integer)   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#getMaxThreads">getMaxThreads()</a><BR/>- <a href="#getActiveThreads">getActiveThreads()</a><BR/>- <a href="#maxThreads">maxThreads</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getMaxThreads"><!-- --></A>
+   <H3>getMaxThreads</H3>
+   <PRE><a href="Number.html">Number</a> <B>getMaxThreads</B>()</PRE>
+   
+      <UL>Returns the maximum number of threads (i.e. request evaluators).</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Number of threads (integer)   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#getActiveThreads">getActiveThreads()</a><BR/>- <a href="#getFreeThreads">getFreeThreads()</a><BR/>- <a href="#maxThreads">maxThreads</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getName"><!-- --></A>
+   <H3>getName</H3>
+   <PRE><a href="String.html">String</a> <B>getName</B>()</PRE>
+   
+      <UL>Returns the name of the current application, i.e. the name used in apps.properties.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        String with application's name   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getRegisteredUsers"><!-- --></A>
+   <H3>getRegisteredUsers</H3>
+   <PRE><a href="Array.html">Array</a> <B>getRegisteredUsers</B>()</PRE>
+   
+      <UL>Returns an array of all existing users.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Array of User objects   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#getActiveUsers">getActiveUsers()</a><BR/>- <a href="#getUser">getUser()</a><BR/>- <a href="#registerUser">registerUser()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getRequestCount"><!-- --></A>
+   <H3>getRequestCount</H3>
+   <PRE><a href="Number.html">Number</a> <B>getRequestCount</B>()</PRE>
+   
+      <UL>Returns the number of web requests that occurred since the application has been started.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Number of web requests served (integer)   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#getUpSince">getUpSince()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getServerDir"><!-- --></A>
+   <H3>getServerDir</H3>
+   <PRE><a href="String.html">String</a> <B>getServerDir</B>()</PRE>
+   
+      <UL>Returns the absolute path to the home directory of this Helma installation.
+ <br /><br />
+ If Helma is run in embedded mode, this will be 
+ equal to the application directory.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        String with absolute path to home directory   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#getAppDir">getAppDir()</a><BR/>- <a href="#getDir">getDir()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getSession"><!-- --></A>
+   <H3>getSession</H3>
+   <PRE>SessionObject <B>getSession</B>(&lt;<a href="String.html">String</a>&gt; sessionID)</PRE>
+   
+      <UL>Returns a SessionObject identified through the passed sessionID, if such a session exists.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>sessionID</CODE> -  as String, the ID of an existing session  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        SessionObject matching the specified ID or null if there is no matching session   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#countSessions">countSessions()</a><BR/>- <a href="#createSession">createSession()</a><BR/>- <a href="#getSessions">getSessions()</a><BR/>- <a href="#getSessionsForUser">getSessionsForUser()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getSessions"><!-- --></A>
+   <H3>getSessions</H3>
+   <PRE><a href="Array.html">Array</a> <B>getSessions</B>()</PRE>
+   
+      <UL>Returns an array of all currently active sessions, represented as SessionObjects.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Array of SessionObject   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#countSessions">countSessions()</a><BR/>- <a href="#createSession">createSession()</a><BR/>- <a href="#getSession">getSession()</a><BR/>- <a href="#getSessionsForUser">getSessionsForUser()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getSessionsForUser"><!-- --></A>
+   <H3>getSessionsForUser</H3>
+   <PRE><a href="Array.html">Array</a> <B>getSessionsForUser</B>(&lt;User&gt; user)</PRE>
+   
+      <UL>Returns an array of active sessions for the specified user
+ <br /><br />
+ Returns an array of all currently active sessions, which 
+ have been associated with the passed User. Returns an empty 
+ array if no User is passed.
+ <br /><br />
+ Passing a string of the username as argument has been 
+ deprecated in favor of passing a User object.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>user</CODE> -  as User object  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Array of SessionObject   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#countSessions">countSessions()</a><BR/>- <a href="#createSession">createSession()</a><BR/>- <a href="#getSession">getSession()</a><BR/>- <a href="#getSessions">getSessions()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getSkinfiles"><!-- --></A>
+   <H3>getSkinfiles</H3>
+   <PRE>Map <B>getSkinfiles</B>()</PRE>
+   
+      <UL>Returns a Map that allows access to all defined file-based skins.
+ <br /><br />
+ The map contains for each prototype one entry (for 
+ prototypes containing also uppercase letters, also an 
+ entry with the lowercased prototype name is contained). 
+ This entry contains for each skin file residing in that 
+ prototype directory, an entry with the name of the file 
+ and the content/source of that file as its value.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Map of SkinMap objects   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#getSkinfilesInPath">getSkinfilesInPath()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getSkinfilesInPath"><!-- --></A>
+   <H3>getSkinfilesInPath</H3>
+   <PRE>Map <B>getSkinfilesInPath</B>(&lt;<a href="Array.html">Array</a>&gt; skinpath)</PRE>
+   
+      <UL>Return a map of skin resources including the specified,
+ app-specific skinpath
+ <br /><br />
+ The map contains for each prototype one entry (for 
+ prototypes containing also uppercase letters, also an 
+ entry with the lowercased prototype name is contained). 
+ This entry contains for each skin file residing in that 
+ prototype directory, an entry with the name of the file 
+ and the content/source of that file as its value.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>skinpath</CODE> -  as Array, directory paths or HopObjects to search for skins  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Map of SkinMap objects   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#getSkinfiles">getSkinfiles()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getUpSince"><!-- --></A>
+   <H3>getUpSince</H3>
+   <PRE><a href="Date.html">Date</a> <B>getUpSince</B>()</PRE>
+   
+      <UL>Returns the timestamp of when that application has been started.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Date when the application last started   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#getErrorCount">getErrorCount()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getUser"><!-- --></A>
+   <H3>getUser</H3>
+   <PRE>User <B>getUser</B>(&lt;<a href="String.html">String</a>&gt; username)</PRE>
+   
+      <UL>Returns a User identified through the passed username.
+ <br /><br />
+ The prototype User must have a username defined 
+ through the '_name'-property in type.properties for 
+ this to work.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>username</CODE> -  as String  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        User object with the specified _name property   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#getActiveUsers">getActiveUsers()</a><BR/>- <a href="#getRegisteredUsers">getRegisteredUsers()</a><BR/>- <a href="#registerUser">registerUser()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="getXmlrpcCount"><!-- --></A>
+   <H3>getXmlrpcCount</H3>
+   <PRE><a href="Number.html">Number</a> <B>getXmlrpcCount</B>()</PRE>
+   
+      <UL>Returns the number of XmlRpc requests that occurred since the application has been started.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Number of XmlRpc requests served (integer)   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#getUpSince">getUpSince()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="invoke"><!-- --></A>
+   <H3>invoke</H3>
+   <PRE><a href="Object.html">Object</a> <B>invoke</B>(&lt;<a href="Object.html">Object</a>&gt; thisObject,&lt;Function&gt; fnc,&lt;<a href="Array.html">Array</a>&gt; args,&lt;<a href="Number.html">Number</a>&gt; timeout)</PRE>
+   
+      <UL>Trigger a synchronous Helma invocation.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>thisObject</CODE> -  as Object, the object to invoke the function on, or null for global invocation  
+      </UL> 
+   
+     <UL><CODE>fnc</CODE> -  the function or function name to invoke  
+      </UL> 
+   
+     <UL><CODE>args</CODE> -  as Array, optional arguments to be passed to the function fnc  
+      </UL> 
+   
+     <UL><CODE>timeout</CODE> -  as Number, optional amount of milliseconds after which the invocation should be interrupted  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        the value returned by the function fnc   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#invokeAsync">invokeAsync()</a></UL><B>Throws:</B><UL>- Exception exception thrown by the function  </UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="invokeAsync"><!-- --></A>
+   <H3>invokeAsync</H3>
+   <PRE><a href="Object.html">Object</a> <B>invokeAsync</B>(&lt;<a href="Object.html">Object</a>&gt; thisObject,&lt;Function&gt; fnc,&lt;<a href="Array.html">Array</a>&gt; args,&lt;<a href="Number.html">Number</a>&gt; timeout)</PRE>
+   
+      <UL>Trigger an asynchronous Helma invocation. 
+ <br /><br />
+ This method returns immedately with an object that 
+ allows to track the result of the function invocation 
+ with the following methods and properties:
+ <ul>
+ <li>running - true while the function is running, false afterwards</li>
+ <li>result - the value returned by the function, if any</li>
+ <li>exception - the exception thrown by the function, if any</li>
+ <li>waitForResult() - wait indefinitely until invocation terminates
+ and return the result</li>
+ <li>waitForResult(t) - wait for the specified number of milliseconds
+ for invocation to terminate and return the result</li>
+ </ul></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>thisObject</CODE> -  as Object, the object to invoke the function on, or null for global invocation  
+      </UL> 
+   
+     <UL><CODE>fnc</CODE> -  the function or function name to invoke  
+      </UL> 
+   
+     <UL><CODE>args</CODE> -  as Array, optional arguments to be passed to the function fnc  
+      </UL> 
+   
+     <UL><CODE>timeout</CODE> -  as Number, optional amount of milliseconds after which the invocation should be interrupted  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Object with the properties described above   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#invoke">invoke()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="log"><!-- --></A>
+   <H3>log</H3>
+   <PRE>void <B>log</B>(&lt;<a href="String.html">String</a>&gt; filenameOrText,&lt;<a href="String.html">String</a>&gt; text)</PRE>
+   
+      <UL>Writes a string to a log file.
+ <br /><br />
+ Either the text provided as the first argument is written 
+ to the eventLog file or the text that is provided as the second 
+ argument is written to a log file who's name is specified as 
+ the first argument.
+ <br /><br />
+ Writing to a file can be overriden by setting the property 
+ "logdir" in the server.properties or app.properties file to 
+ the value "console".
+ <br /><br />
+ Example:
+ <pre> app.debug("This message is written to the test application's event log.");
+ app.debug("custom", "This message is written to the custom.log file.");
+ &nbsp;
+ File helma/log/test_event.log:
+ <i>[2006/07/11 17:08] This message is written to the test application's event log.</i>
+ &nbsp;
+ File helma/log/custom.log:
+ <i>[2006/07/11 17:08] This message is written to the custom.log file.</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>filenameOrText</CODE> -  as String, the log filename to write to or the text to write to the eventLog file  
+      </UL> 
+   
+     <UL><CODE>text</CODE> -  as String the text to write, if the filename was specified as the first argument  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#debug">debug()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="registerUser"><!-- --></A>
+   <H3>registerUser</H3>
+   <PRE>User <B>registerUser</B>(&lt;<a href="String.html">String</a>&gt; username, &lt;<a href="String.html">String</a>&gt; password)</PRE>
+   
+      <UL>Creates a new User object
+ <br /><br />
+ Creates a new HopObject of prototype User, stores it 
+ persistently, and returns the created User object.</p> 
+ <br /><br />
+ When mapping the User prototype to a relational 
+ database, the type.properties file must contain mappings
+ for the '_name'-property (the username) and for a 
+ property named 'password'.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>username</CODE> -  as String  
+      </UL> 
+   
+     <UL><CODE>password</CODE> -  as String  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        User object that was created   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#getActiveUsers">getActiveUsers()</a><BR/>- <a href="#getUser">getUser()</a><BR/>- <a href="#getRegisteredUsers">getRegisteredUsers()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="removeCronJob"><!-- --></A>
+   <H3>removeCronJob</H3>
+   <PRE>void <B>removeCronJob</B>(&lt;<a href="String.html">String</a>&gt; functionName)</PRE>
+   
+      <UL>Removes a CronJob, identified through the passed function name, from the list of CronJobs.</UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>functionName</CODE> -  as String  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <UL>   
+   <B>See:</B><UL>- <a href="#addCronJob">addCronJob()</a><BR/>- <a href="#getCronJobs">getCronJobs()</a></UL>
+   </UL>
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+
+
+<!-- ============ METHOD DETAIL END ========== -->
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+
+<!-- =========== END OF NAVBAR =========== -->
+
+<HR>
+<FONT SIZE="-1">
+
+</FONT>
+
+
+
+
+<div class="jsdoc_ctime">Documentation generated by <a href="http://jsdoc.sourceforge.net/" target="_parent">JSDoc</a> on Thu Jul 19 01:13:37 2007</div>
+
+
+</BODY>
+</HTML>

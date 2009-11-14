@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>iGoogle</title>
+<link rel="stylesheet" type="text/css" href="ig.css"/>
+<script type="text/javascript" src="ig.js"></script>
+<script>
+_pl=false;
+_old_html = false;
+_cbp=true;
+_upc();
+</script>
+<script type="text/javascript" src="zxml.js"></script>
+</head>
+<body>
+
+<div id="modules">
+<div class="yui-gb" id="t_1">
+
+</div>
+</div>
+
+<script>
+        function contentsshow() {
+            var oXmlHttp = zXmlHttp.createRequest();
+            oXmlHttp.open("get", "contents.asp", true);
+            oXmlHttp.onreadystatechange = function () {
+                if (oXmlHttp.readyState == 4) {
+                    if (oXmlHttp.status == 200) {
+                        _gel("t_1").innerHTML=oXmlHttp.responseText;
+			_table=_gel("t_1");
+			_pl=true;
+			_upc();
+                    } else {
+                        errordisplay("An error occurred: " + oXmlHttp.statusText);
+                    }
+                }            
+            };
+            oXmlHttp.send(null);
+        }        
+        function errordisplay(sText) {
+            _gel("t_1").innerHTML = sText;
+        }
+contentsshow();
+</script>
+
+<noscript>
+您需要启动JavaScript 才能使用本网页
+</noscript>
+</body>
+</html>

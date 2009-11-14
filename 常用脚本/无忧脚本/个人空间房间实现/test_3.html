@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <body>
+    </body>
+</html>
+<script language="javascript">
+    Function.prototype.msg = "msg";
+    function $(){
+        var div = document.createElement("div");
+        div.style.border = "1px solid #ff0000";
+        div.style.position = "absolute";
+        div.style.width = "100px";
+        div.style.height = "100px";
+        div.innerHTML = "canvas";
+        return div;
+    }
+    
+    var m = $();
+    alert(m.msg);
+    function $p(a, b){
+        function T(){
+            if (a) 
+                a.apply(this);
+            b.apply(this);
+        }
+        if (a) 
+            b.prototype = new a();
+        return T;
+    }
+    
+    var Component = $p(null, function(){
+        this.position = function(x, y){
+            with (this.style) {
+                left = x;
+                top = y;
+            }
+        }
+        this.size = function(w, h){
+            with (this.style) {
+                width = w;
+                height = h;
+            }
+        }
+        this.show = function(){
+            alert("show A");
+            return;
+        }
+        this.show1 = function(){
+            alert("show1 A");
+            return;
+        }
+        this.addChild = function(a){
+            this.appendChild(a);
+            return;
+        }
+        this.removeChild = function(a){
+            this.removeChild(a);
+            return;
+        }
+    })
+    var Canvas = $p(Component, function(){
+        var _super = arguments.callee.prototype;
+        this.init = function(){
+            alert("canvas init!");
+            return;
+        }
+        this.show = function(){
+            _super.show();
+            alert("show Canvas");
+        }
+        this.showCanvas = function(){
+            alert("showCanvas Canvas");
+        }
+    });
+    var Panel = $p(Canvas, function(){
+        var _super = arguments.callee.prototype;
+        this.init = function(){
+            _super.init();
+            alert("panel init!");
+            return;
+        }
+        this.show = function(){
+            _super.show();
+            alert("show Panel");
+        }
+        this.showPanel = function(){
+            alert("showPanel Panel");
+        }
+    });
+    var TitleWindow = $p(Panel, function(){
+        var _super = arguments.callee.prototype;
+        this.init = function(){
+            _super.init();
+            alert("win init!");
+            return;
+        }
+        this.show = function(){
+            _super.show();
+            alert("show TitleWindow" + this.msg);
+        }
+    });
+    function $new(o){
+        var e = $();
+        o.apply(e);
+        e.init();
+        return e;
+    }
+    
+    var $stage = document.body;
+    var canvas = $new(Canvas);
+    canvas.position(1, 100);
+    canvas.show();
+    var panel = $new(Panel);
+    panel.position(100, 100);
+    panel.show();
+    var win = $new(TitleWindow);
+    win.position(200, 100);
+    win.show();
+    win.show1();
+    win.showCanvas();
+    win.showPanel();
+    var win1 = $new(TitleWindow);
+    win1.position(300, 100);
+    win1.size(400, 400);
+    $stage.appendChild(canvas);
+    $stage.appendChild(panel);
+    $stage.appendChild(win);
+    $stage.appendChild(win1);
+    win1.addChild(win);
+    win1.addChild($new(TitleWindow));
+</script>

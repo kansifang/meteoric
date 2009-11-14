@@ -1,0 +1,11 @@
+<div class="personListMini listMini">
+<h2><%= linkToLocal(t('Your Contacts'), 'person', 'index') %>:</h2>
+
+<ul>
+<% for (var i = 0; i < res.activePersons.length; i++) { %>
+  <li>
+    <%= linkToLocal(res.activePersons[i].displayName(), 'person', 'show', res.activePersons[i].id)%>
+  </li>
+<% } %>
+</ul>
+</div>

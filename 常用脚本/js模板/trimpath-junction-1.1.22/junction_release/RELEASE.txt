@@ -1,0 +1,12 @@
+Junction web-MVC framework and server, 1.1.22
+ - built on 2008/05/07 19:44
+
+License:
+ - copyright (C) 2005, 2006, 2007 Steve Yen, TrimPath
+ - released under dual GPL and APL licenses
+ - embedded components and libraries have their own respective licenses
+
+See:
+ - http://trimpath.com
+ - http://code.google.com/p/trimpath
+

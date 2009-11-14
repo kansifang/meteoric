@@ -1,0 +1,46 @@
+<div>
+  <h2>${actions.length} ${t('Completed Actions')}</h2>
+  {if actions.length > 0}
+    <table class="hoverable sortable" id="completedActions">
+      <tr><td nowrap="nowrap">${t('Action')}</td>
+          <td></td>
+          <td nowrap="nowrap">${t('Context')}</td>
+          <td></td>
+          <td nowrap="nowrap">${t('Completed at')}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          </tr>
+    {for action in actions}
+      <tr><td nowrap="nowrap">
+            <input type="checkbox" ${action.completed_at != null ? '"checked"' : ''}
+                   onclick="TrimPath.junctionClient.postAsync('action', 'toggleComplete', ${action.id}, { silent: true });{minify}
+                            this.parentNode.parentNode.style.backgroundColor = 'red'; 
+                            $(this.parentNode.parentNode).fadeOut('slow');{/minify}">
+              ${actionLink(res, action)}</td>
+          <td>&nbsp;&nbsp;</td>
+          <td>
+            {if action.getContext()}
+              ${linkToLocal(h(action.cname || ''), 'context', 'show', action.context_id, modelToolTip(action.getContext(), 'context', res))}
+            {/if}
+          </td>
+          <td>&nbsp;&nbsp;</td>
+          <td>${localDateString(action.completed_at)}</td>
+          <td>${linkToLocal(t('edit'), 'action', 'edit', action.id)}</td>
+          <td>&nbsp;&nbsp;</td>
+          <td>${%linkToLocal(t('delete'), 'action', 'destroy', action.id, { method: 'post', confirm: t('Are you sure?')})%}</td>
+          </tr>
+    {/for}
+    </table>
+  {else}
+    <br/>
+    <div class="firstTime">
+      ${render('action/completedFirstTime')}
+    </div>
+  {/if}
+</div>
+
+{if actions.length > 0}
+<br>
+${%linkToLocal(t('Delete All Completed Actions'), 'action', 'destroyCompleted', null, { method: 'post', confirm: t('Are you sure?'), 'class': 'button' })%}
+{/if}

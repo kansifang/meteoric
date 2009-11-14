@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Untitled Document</title>
+		<style type="text/css">
+			span[data="span D data"]{color:#f00;}
+			div>div>div>p+p+p span+span{color:#f00;}
+			div>div>div+p>span:first-child{color:#f00;}
+		</style>
+	</head>
+	<body>
+
+<div>First DIV
+ <p>Paragraph One -
+  <span>A</span>
+  <span>B</span>
+ </p>
+ <div>Second DIV
+  <p>Paragraph Two -
+   <span>C</span>
+   <span data="span D data">D</span>
+  </p>
+  <p>Paragraph Three -
+   <span>E</span>
+   <span>F</span>
+  </p>
+  <p>Paragraph Four -
+   <span>G</span>
+   <span>H</span>
+  </p>
+  <div>Third DIV
+   <p>Paragraph Five -
+    <span>I</span>
+    <span>J</span>
+   </p>
+   <p>Paragraph Six -
+    <span>K</span>
+    <span>L</span>
+   </p>
+   <p>Paragraph Seven -
+    <span>M</span>
+    <span>N</span>
+   </p>
+  </div>
+  <p>Paragraph Eight -
+   <span>O</span>
+   <span>P</span>
+  </p>
+ </div>
+ <p>Paragraph Nine -
+  <span>Q</span>
+  <span>R</span>
+ </P>
+</div>
+
+<script type="text/javascript" src="http://www.easyui.org.cn/easyui.js"></script>
+<script type="text/javascript" defer="defer">
+window.onload = function(){
+var dElements = easyUI.cssSelector('span[data="span D data"],div>div>div>p+p+p span+span,div>div>div+p>span:first-child');
+for(var i=0;i<dElements.length;i++){
+    alert(dElements[i].innerHTML);
+}};
+</script>
+	</body>
+</html>

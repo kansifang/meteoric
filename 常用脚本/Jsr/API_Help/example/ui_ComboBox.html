@@ -1,0 +1,177 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html"/>
+	<title>下拉列表框实例 -- JSR2+</title>
+	<script type="text/javascript" src="../../common/js/core.js?lib=webui,valid"></script>
+	<link rel="stylesheet" href="../resources/example.css" type="text/css" media="all"/>
+</head>
+
+<body>
+<div id="bodyPanel" style="display:none">
+	<b>下拉列表框实例</b><hr/><br/>
+	<!-- 面板 -->
+	<div id="panel"></div>
+	<!-- 面板内容 -->
+	<div id="contentPanel">
+		<!-- 控件实例 -->
+		<fieldset id="example"><div class="gbPanel">
+			<table class="font"><tr>
+				<td width="116px">下拉列表框:</td><td>
+					<select id="comboBox1">
+						<option value="f1">ABCDEFG</option>
+						<option value="f2">JSR WEB前台控件</option>
+						<option value="f3">测试功能项1</option>
+						<option value="f4">测试功能项2</option>
+						<option value="f5">测试功能项3</option>
+						<option value="f6">内容超出列表宽度的测试功能项1</option>
+						<option value="f7">内容超出列表宽度的测试功能项2</option>
+						<option value="f8">内容超出列表宽度的测试功能项3</option>
+						<option value="f9">AABBCCDDEEFFGGHHIIGGKKLLMM4</option>
+					</select>
+				</td>
+			</tr><tr>
+				<td>可编辑的下拉列表框:</td><td>
+					<select id="comboBox2">
+						<option value="h1">分类项目一</option>
+						<option value="h2" selected>分类项目二</option>
+						<option value="h3">分类项目三</option>
+						<option value="h4">分类项目四</option>
+						<option value="h5">分类项目五</option>
+						<option value="h6">分类项目六</option>
+						<option value="h7">分类项目七</option>
+						<option value="h8">分类项目八</option>
+						<option value="h9">分类项目九</option>
+					</select>
+				</td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<!-- 相关方法 -->
+		<fieldset id="method"><div class="gbPanel">
+			<table class="method-area1"><tr>
+				<td><button id="b1"></button></td><td><button id="b2"></button></td>
+				<td><button id="b3"></button></td><td><button id="b4"></button></td>
+				<td><button id="b5"></button></td>
+			</tr><tr>
+				<td><button id="b6"></button></td><td><button id="b7"></button></td>
+				<td><button id="b8"></button></td><td><button id="b9"></button></td>
+				<td><button id="b10"></button></td>
+			</tr><tr>
+				<td><button id="b11"></button></td><td><button id="b12"></button></td>
+				<td><button id="b13"></button></td><td></td><td></td>
+			</tr></table>
+			<table class="method-area2"><tr>
+				<td><button id="b14"></button></td><td><button id="b15"></button></td>
+				<td><button id="b16"></button></td><td></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<div class="font">注: 相关方法是针对 "下拉列表框" 操作的, check 与 setCheck 是针对可编辑下拉框操作的。</div>
+	</div>
+	<!-- 面板内容结束 -->
+</div>
+
+<select id="$_select">
+	<option value="f1">2222</option>
+	<option value="f2">33333</option>
+	<option value="f3">44444</option>
+	<option value="f4">55555</option>
+	<option value="f5">66666</option>
+	<option value="f6">77777</option>
+	<option value="f7">888888</option>
+	<option value="f8">9999999999</option>
+	<option value="f9">-----------</option>
+</select>
+</body>
+
+<script>
+var c1, c2, btn, disabled = true;
+new UI.Panel({id:"panel", caption:"应用实例 -> 下拉列表框", width:520, height:312, body:"contentPanel"});
+new UI.GroupBox({id:"example", caption:"控件实例"});
+new UI.GroupBox({id:"method", caption:"相关方法"});
+//创建下拉列表框
+c1 = new UI.ComboBox({id:"comboBox1", name:"comboBox1", width:150, row:6});
+c2 = new UI.ComboBox({id:"comboBox2", name:"comboBox2", width:150, row:5, editable:true});
+
+var c3 = new UI.ComboBox({id:"$_select", name:"$_select", width:200, row:7});
+//相关方法按钮
+btn = new UI.Button({id:"b1", caption:"addItem", width:75});
+btn.bind(function() {newItemValue
+	c1.addItem('新加入的项', "新项-" + (newItemValue++));
+});
+btn = new UI.Button({id:"b2", caption:"check", width:75});
+btn.bind(function() {
+	alert(c2.check());
+});
+btn = new UI.Button({id:"b3", caption:"disable", width:75});
+btn.bind(function() {
+	c1.disable(disabled);
+	disabled = !disabled;
+});
+btn = new UI.Button({id:"b4", caption:"fillData", width:75});
+btn.bind(function() {
+	c1.fillData(newKey, newVal);
+});
+btn = new UI.Button({id:"b5", caption:"focus", width:75});
+btn.bind(function() {
+	c1.focus();
+});
+btn = new UI.Button({id:"b6", caption:"getText", width:75});
+btn.bind(function() {
+	alert("'下拉列表框' 的选择项文本:\n" + c1.getText());
+});
+btn = new UI.Button({id:"b7", caption:"getValue", width:75});
+btn.bind(function() {
+	alert("'下拉列表框' 的选择项的值: " + c1.getValue());
+});
+btn = new UI.Button({id:"b8", caption:"onChange", width:75});
+btn.bind(function() {
+	c1.onChange(function() {
+		alert("'下拉列表框' 的onChange事件触发了!");
+	});
+});
+btn = new UI.Button({id:"b9", caption:"removeAll", width:75});
+btn.bind(function() {
+	c1.removeAll();
+});
+btn = new UI.Button({id:"b10", caption:"removeItem", width:75});
+btn.bind(function() {
+	c1.removeItem(c1.selectIndex);
+});
+btn = new UI.Button({id:"b11", caption:"setCheck", width:75});
+btn.bind(function() {
+	c2.setCheck(Valid.checkEmail, null, "请输入正确的E-mail信箱。", null);
+	alert("请在 '可编辑的下拉列表框' 中输入字符, 再点击 check 按钮。");
+});
+btn = new UI.Button({id:"b12", caption:"setValue", width:75});
+btn.bind(function() {
+	c1.setValue('f4');
+	alert("设置了 '下拉列表框' 的值为: f4\n点击getValue按钮测试结果。");
+});
+btn = new UI.Button({id:"b13", caption:"setWidth", width:75});
+btn.bind(function() {
+	c1.setWidth(220);
+	alert("设置 '下拉列表框' 的宽度为: 220px");
+});
+btn = new UI.Button({id:"b14", caption:"getIndexByText", width:105});
+btn.bind(function() {
+	alert("'下拉列表框' 中的 '测试功能项1' 是第 " + (c1.getIndexByText("测试功能项1") + 1) + " 项");
+});
+btn = new UI.Button({id:"b15", caption:"getIndexByValue", width:105});
+btn.bind(function() {
+	alert("'下拉列表框' 中值为 'f2' 是第 " + (c1.getIndexByValue("f2") + 1) + " 项");
+});
+btn = new UI.Button({id:"b16", caption:"selectByIndex", width:105});
+btn.bind(function() {
+	c1.selectByIndex(1)
+	alert("设置 '下拉列表框' 选中了第 2 项");
+});
+
+onLoad.add(function(){ $("bodyPanel").style.display = "" });
+
+var newItemValue = 0,
+newKey = ["第一项", "第二项", "第三项", "第四项", "第五项", "第六项", "第七项", "第八项", "第九项"],
+newVal = ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8", "a9"];
+</script>
+
+</html>

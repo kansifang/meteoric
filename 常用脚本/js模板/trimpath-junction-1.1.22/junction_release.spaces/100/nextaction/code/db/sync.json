@@ -1,0 +1,9 @@
+{
+  clientDbCache: {
+    general : {
+      Action  : "WHERE (active = 1 AND completed_at IS NULL) OR (updated_at >= date('now', '-1 month'))",
+      Context : true,
+      Project : true
+    }
+  }
+}

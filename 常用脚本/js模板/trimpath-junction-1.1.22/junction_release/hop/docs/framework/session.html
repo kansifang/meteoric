@@ -1,0 +1,592 @@
+<!DOPropertiesCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN""http://www.w3.org/TR/REC-html40/loose.dtd">
+<!--NewPage-->
+<HTML>
+<HEAD>
+<TITLE>
+session - Helma Javascript Reference
+</TITLE>
+<LINK REL ="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+
+
+</HEAD>
+<SCRIPT>
+function asd()
+{
+parent.document.title="session - Helma Javascript Reference";
+}
+</SCRIPT>
+<BODY BGCOLOR="white" onload="asd();">
+      
+      
+
+<!-- ======== START OF CLASS DATA ======== -->
+<H2>session</H2>
+<PRE>Object
+   |
+   +--<b>session</b>
+</PRE>
+
+
+<HR>
+
+<DL>
+   <!-- Class definition
+   <DT>class 
+   <B>session</B>
+    -->
+
+</DL>
+   
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+<!-- =========== END OF NAVBAR =========== -->
+<HR>
+
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+
+<!-- ======== END CONSTRUCTOR SUMMARY ======== -->
+
+&nbsp;
+
+<!-- =========== FIELD SUMMARY =========== -->
+
+   <A NAME="field_summary"><!-- --></A>
+      <TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+         <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+            <TD COLSPAN=2><FONT SIZE="+2">
+               <B>Properties Summary</B></FONT></TD>
+         </TR>
+
+   <!-- This is one instance field summary -->
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="String.html">String</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#_id">_id</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The unique identifier for a session object (session cookie).</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="String.html">String</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#cookie">cookie</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The cookie value of a session.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="HopObject.html">HopObject</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#data">data</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Object providing space for run-time user data (user cache).</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="Date.html">Date</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#lastModified">lastModified</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The date a session was created or a login or logout was performed the last time.</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;<a href="String.html">String</a></CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#message">message</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If set, the message will be available during the next request as res.message</TD>
+   </TR>
+   
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+   <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1">
+   <CODE>&nbsp;User</CODE></FONT></TD>
+   <TD><CODE><B><A HREF="#user">user</A></B></CODE>
+   <BR>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A reference to the user object associated with the current session.</TD>
+   </TR>
+   
+
+   </TABLE>
+   &nbsp;
+   
+
+   
+
+<!-- =========== END FIELD SUMMARY =========== -->
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+
+<A NAME="method_summary"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TD COLSPAN=2><FONT SIZE="+2">
+<B>Methods Summary</B></FONT></TD>
+</TR>
+
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Date.html">Date</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#lastActive">lastActive</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 A date object representing the time this user's session was last active.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;Boolean</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#login">login</A></B>(&lt;User&gt; user,&lt;<a href="String.html">String</a>&gt; password)
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Logs in a user defined by its name and a password phrase, or by directly passing a HopObject.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;<a href="Date.html">Date</a></CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#onSince">onSince</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 A date object representing the time a user's session was started.
+      </TD>
+   </TR>
+
+   <TR BGCOLOR="white" CLASS="TableRowColor">
+      <TD ALIGN="right" VALIGN="top" WIDTH="1%">
+	 <FONT SIZE="-1">
+	    <CODE>&nbsp;void</CODE>
+	 </FONT>
+      </TD>
+      <TD>
+	 <CODE>
+	    <B>
+	       <A HREF="#touch">touch</A></B>()
+	 </CODE>
+	 <BR>
+	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 Refreshes the user's session.
+      </TD>
+   </TR>
+
+
+</TABLE>
+
+
+
+<P>
+<!-- ========== END METHOD SUMMARY =========== -->
+
+
+    <!-- ========= CONSTRUCTOR DETAIL START ======== -->
+
+
+<!-- Constructor return value(s) -->
+
+<!-- End constructor return value(s) -->
+
+<!-- ADDITIONAL ATTRIBUTES -->
+
+<HR/>
+<!-- END ADDITIONAL ATTRIBUTES  -->
+
+<!-- ========= CONSTRUCTOR DETAIL END ======== -->
+
+
+<!-- ============ FIELD DETAIL START =========== -->
+
+   <A NAME="field_detail"><!-- --></A>
+   <TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+      <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+         <TD COLSPAN=1><FONT SIZE="+2"><B>Properties Detail</B></FONT></TD>
+      </TR>
+   </TABLE>
+
+   
+   <A NAME="_id"><!-- --></A>
+   <H3>_id</H3>
+   <PRE><a href="String.html">String</a>&nbsp;<B>_id</B></PRE>
+   <UL>
+   The unique identifier for a session object (session cookie).
+ <br /><br />
+ Contains the unique identifier of the current 
+ session, which is equivalent to the value stored in
+ the HopSession-cookie on the client side.
+ <br /><br />
+ This property is read-only.
+ <br /><br />
+ Example:
+ <pre> res.writeln(session._id);
+ <i>1fcca129764400&#64;eefa22dfab</i></pre>
+   
+   </UL>
+   <HR>
+   
+   <A NAME="cookie"><!-- --></A>
+   <H3>cookie</H3>
+   <PRE><a href="String.html">String</a>&nbsp;<B>cookie</B></PRE>
+   <UL>
+   The cookie value of a session.
+ <br /><br />
+ Contains the unique identifier of the current 
+ session, which is equivalent to the value stored 
+ in the HopSession-cookie on the client side.
+ <br /><br />
+ This property is read-only.
+ <br /><br />
+ Example:
+ <pre> res.writeln(session.cookie);
+ <i>1fcca129764400&#64;eefa22dfab</i></pre>
+   
+   </UL>
+   <HR>
+   
+   <A NAME="data"><!-- --></A>
+   <H3>data</H3>
+   <PRE><a href="HopObject.html">HopObject</a>&nbsp;<B>data</B></PRE>
+   <UL>
+   Object providing space for run-time user data (user cache).
+ <br /><br />
+ This property of the SessionObject offers the 
+ possibility to store arbitrary data within the current 
+ user session. Note, that this can just be used as a 
+ temporary storage, since sessions are not stored 
+ persistently within Helma, and are generally lost when 
+ the application is restarted.
+ <br /><br />
+ Example:
+ <pre> session.data.lastclick = new Date();
+ session.data.language = "en";
+ &nbsp;
+ res.write(session.data);
+ <i>TransientNode session</i>
+ &nbsp;
+ for (var p in session.data)
+ &nbsp;&nbsp;res.writeln(p + ": " + session.data[p]);
+ <i>lastclick: Fri Jul 12 14:08:20 CEST 2002
+ language: en</i>
+ &nbsp;
+ res.write(session.data.lastclick);
+ <i>Fri Jul 12 14:08:20 CEST 2002</i>
+ &nbsp;
+ res.write(session.data["language"]);
+ <i>en</i></pre>
+   
+   </UL>
+   <HR>
+   
+   <A NAME="lastModified"><!-- --></A>
+   <H3>lastModified</H3>
+   <PRE><a href="Date.html">Date</a>&nbsp;<B>lastModified</B></PRE>
+   <UL>
+   The date a session was created or a login or logout was performed the last time.
+ <br /><br />
+ This is a convenience property to acknowledge 
+ that pages are often dependent on the login status 
+ and must be re-rendered when a user has logged in, 
+ logged out or is running with a new session.
+ <br /><br />
+ Contains the timestamp of when the associated 
+ client started the session, or logged in, or 
+ logged out the last time, whichever happened most 
+ recently.
+ <br /><br />
+ This property is read- and write-able.
+ <br /><br />
+ Example:
+ <pre> if (session.lastModified < this.modifytime)
+ &nbsp;&nbsp;renderSkin("main");
+ else
+ &nbsp;&nbsp;res.notModified();</pre>
+   
+   </UL>
+   <HR>
+   
+   <A NAME="message"><!-- --></A>
+   <H3>message</H3>
+   <PRE><a href="String.html">String</a>&nbsp;<B>message</B></PRE>
+   <UL>
+   If set, the message will be available during the next request as res.message
+   
+   </UL>
+   <HR>
+   
+   <A NAME="user"><!-- --></A>
+   <H3>user</H3>
+   <PRE>User&nbsp;<B>user</B></PRE>
+   <UL>
+   A reference to the user object associated with the current session.
+ <br /><br />
+ Contains a reference to the UserObject associated 
+ with this session. This property is null if the client 
+ has not been logged in yet, or has already been logged 
+ out. Checking this for being unequal to null is the 
+ usual way to check whether a client is logged in or not. 
+ This property is read-only, but can be set through the 
+ method session.login(User usr).
+ <br /><br />
+ Example:
+ <pre> session.login("tobi", "mumbl3");
+ res.write(session.user);
+ <i>HopObject tobi</i>
+ &nbsp;
+ res.write(session.user.registered);
+ <i>Thu Jun 28 17:25:33 CEST 2001</i>
+ &nbsp;
+ res.write(session.user["url"]);
+ <i>http://helma.org</i></pre>
+   
+   </UL>
+   <HR>
+   
+
+
+<!-- ============ FIELD DETAIL END =========== -->
+
+<!-- ============ METHOD DETAIL START ========== -->
+
+<A NAME="method_detail"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+   <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+      <TD COLSPAN=1><FONT SIZE="+2">
+         <B>Method Detail</B></FONT>
+      </TD>
+   </TR>
+</TABLE>
+
+<!-- One single method detail entry -->
+
+   <A NAME="lastActive"><!-- --></A>
+   <H3>lastActive</H3>
+   <PRE><a href="Date.html">Date</a> <B>lastActive</B>()</PRE>
+   
+      <UL>A date object representing the time this user's session was last active.
+ <br /><br />
+ Contains the timestamp of the last web request, that 
+ has been submitted by that client. This property is 
+ read-only, but can be set to the current time through 
+ session.touch().
+ <br /><br />
+ For new sessions, if the session represents a 
+ registered user the result equals the date the user 
+ was logged in the last time; otherwise the result 
+ equals the current date.
+ <br /><br />
+ This property is read-only
+ <br /><br />
+ Example:
+ <pre> res.write(session.lastActive())
+ <i>Thu Nov 02 16:12:13 GMT+01:00 2000</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Date of last request by this user   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="login"><!-- --></A>
+   <H3>login</H3>
+   <PRE>Boolean <B>login</B>(&lt;User&gt; user,&lt;<a href="String.html">String</a>&gt; password)</PRE>
+   
+      <UL>Logs in a user defined by its name and a password phrase, or by directly passing a HopObject.
+ <br /><br />
+ There are two variants of session.login():
+ <br /><br />
+ If called with one HopObject argument, the session 
+ is associated with the user represented by the 
+ HopObject.
+ <br /><br />
+ If called with two string arguments, it returns true 
+ if the user name / password pair matches the stored 
+ values in the database and false otherwise.
+ <br /><br />
+ Associates the passed User to that session, 
+ i.e. logs the client in as that User. The property 
+ user of the session object will refer to the User.
+ <br /><br />
+ Example:
+ <pre> var login = session.login("tobi", "mumbl3");
+ if (login)
+ &nbsp;&nbsp;res.write("Welcome back, " + session.user.name + "!");
+ else
+ &nbsp;&nbsp;res.write("Oops, please try again...");
+ <i>Welcome back, tobi!</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <UL>
+   <B>Parameters:</B>
+   
+     <UL><CODE>user</CODE> -  as User object to be logged in  
+      </UL> 
+   
+     <UL><CODE>user</CODE> -  as String, the username of the user to be checked  
+      </UL> 
+   
+     <UL><CODE>password</CODE> -  as String, if the first parameter is a username  
+      </UL> 
+   
+   </UL>
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Boolean true if the user was logged in, otherwise false   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="onSince"><!-- --></A>
+   <H3>onSince</H3>
+   <PRE><a href="Date.html">Date</a> <B>onSince</B>()</PRE>
+   
+      <UL>A date object representing the time a user's session was started.
+ <br /><br />
+ This property is read-only.
+ <br /><br />
+ Example:
+ <pre> res.write(session.onSince());
+ <i>Fri Aug 10 16:36:36 GMT+02:00 2001</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+   <UL>
+   <B>Returns:</B>
+        <UL>
+        Date when the current session was started.   
+        </UL>
+   </UL>
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+   <A NAME="touch"><!-- --></A>
+   <H3>touch</H3>
+   <PRE>void <B>touch</B>()</PRE>
+   
+      <UL>Refreshes the user's session.
+ <br /><br />
+ The session's expiration date is set to the current date 
+ plus session timeout. This also happens automatically 
+ when a user request is sent to Helma.
+ <br /><br />
+ The lastActive property will be set to the current 
+ timestamp. Useful to artificially avoid a session timeout.
+ <br /><br />
+ Example:
+ <pre> res.writeln(session.lastActive);
+ <i>Fri Jul 12 14:40:20 CEST 2002</i>
+ &nbsp;
+ session.touch();
+ &nbsp;
+ res.writeln(session.lastActive);
+ <i>Fri Jul 12 14:55:20 CEST 2002</i></pre></UL>
+   
+
+   <!-- METHOD PARAMETERS START -->
+   
+   <!-- METHOD PARAMETERS END -->
+
+   
+
+   <!-- ADDITIONAL ATTRIBUTES START -->
+   
+   <!-- ADDITIONAL ATTRIBUTES  END -->
+<HR>
+
+
+
+<!-- ============ METHOD DETAIL END ========== -->
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+<!-- ========== START OF NAVBAR ========== -->
+<A NAME="navbar_bottom"><!-- --></A>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0">
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+  SUMMARY:&nbsp;<A HREF="#constructor_summary">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_summary">Properties</A>&nbsp;|&nbsp;<A HREF="#method_summary">Methods</A></FONT></TD>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">
+DETAIL:&nbsp;<A HREF="#constructor_detail">Constructor</A>&nbsp;|&nbsp;<A HREF="#field_detail">Properties</A>&nbsp;|&nbsp;<A HREF="#method_detail">Methods</A></FONT></TD>
+</TR>
+</TABLE>
+
+<!-- =========== END OF NAVBAR =========== -->
+
+<HR>
+<FONT SIZE="-1">
+
+</FONT>
+
+
+
+
+<div class="jsdoc_ctime">Documentation generated by <a href="http://jsdoc.sourceforge.net/" target="_parent">JSDoc</a> on Thu Jul 19 01:13:37 2007</div>
+
+
+</BODY>
+</HTML>

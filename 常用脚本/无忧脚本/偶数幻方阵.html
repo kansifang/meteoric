@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Untitled Document</title>
+    </head>
+    <body>
+        <pre>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+    var Mar=[];
+    function make(n){
+        if (n%4)
+        {
+            alert("N必须是4的整数倍！");
+            return false;
+        }
+        var dir=1,area=Math.pow(n,2);
+        var block,block_length
+        var v,h,r
+        var base = "01 08 11 14 12 13 02 07 06 03 16 09 15 10 05 04".split(" ");
+        block_length = n / 4;
+        block = Math.pow(block_length,2);
+
+        for (var i=0; i<n; i++)
+        {
+            for (var j=0; j<n; j++)
+            {
+              Mar[i*n+j]=0;
+            }
+        }
+        for (var i=0; i < n; i++)
+        {
+            for (var j=0; j < n; j++)
+            {
+                var r= i % block_length;
+                var c= j % block_length;
+                var t= c ; c= r ; r= t;
+                r= block_length-r-1;
+                var h1= Math.floor(i/block_length);
+                var v1= Math.floor(j / block_length)
+                var mn= base[h1*4+ v1]-1;
+                var h2= mn;
+                var v2= mn % 1;
+                var ha= Math.pow(block_length,2);
+                var ra= block_length;
+                Mar[i*n+j]= h2*ha+ v2+ r* ra+ c+ 1;
+            }
+        }
+        return true;
+    }
+
+    function print()
+    {
+        var n = Math.sqrt(Mar.length);
+        for(var i=0; i < n; i++)
+        {
+            document.write("\n\n");
+            for(var j=0; j < n; j++)
+            {
+                document.write(Mar[i*n+j]+"\t");
+            }
+        }
+    }
+    make(4);
+    print();
+//-->
+</SCRIPT>
+</pre>
+    </body>
+</html>

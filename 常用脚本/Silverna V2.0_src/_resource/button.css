@@ -1,0 +1,54 @@
+.bt_normal{
+	border-top: #82829e 1px solid; 
+	border-right: #82829e 1px solid; 
+	border-bottom: #82829e 1px solid;
+	border-left: #82829e 1px solid;
+	background-color: #ececf4;
+	padding-top: 2px;
+	font-size: 12px;
+	cursor: pointer; 
+	color: black;       
+	filter: progid:dximagetransform.microsoft.gradient(gradienttype=0, 
+	startcolorstr=#ffffff, endcolorstr=#cdccdf); 
+}
+.bt_hover{
+	border-top: #003074 1px solid; 
+	border-right: #003074 1px solid; 
+	border-bottom: #003074 1px solid;
+	border-left: #003074 1px solid;
+	background-color: #62a0e0;
+	padding-top: 2px;
+	font-size: 12px; 
+	cursor: pointer; 
+	color: black; 
+	filter: progid:dximagetransform.microsoft.gradient(gradienttype=0, 
+	startcolorstr=#d0dee7, endcolorstr=#f7f9fc); 
+}
+.bt_down
+{
+	border-top: #ffc73c 1px solid; 
+	border-right: #ffc73c 1px solid; 
+	border-bottom: #ffc73c 1px solid;
+	border-left: #ffc73c 1px solid; 
+	padding-top: 2px;
+	font-size: 12px;
+	filter: 
+	progid:dximagetransform.microsoft.gradient(gradienttype=0, 
+	startcolorstr=#ecebe6, endcolorstr=#ffffff); 
+	cursor: pointer; 
+	color: black;  
+}
+.bt_up
+{
+	border-top: #82829e 1px solid; 
+	border-right: #82829e 1px solid; 
+	border-bottom: #82829e 1px solid;
+	border-left: #82829e 1px solid; 
+	padding-top: 2px;
+	background-color: #ececf4;
+	font-size: 12px; 
+	filter: progid:dximagetransform.microsoft.gradient(gradienttype=0, 
+	startcolorstr=#ffffff, endcolorstr=#cdccdf); 
+	cursor: pointer; 
+	color: black;
+}

@@ -1,0 +1,51 @@
+<div class="form">
+ <h2>${t('Context')}: <span style="${colorStyle(context)}">${h(context.name)}</span></h2>
+ <table>
+  <tr valign="top">
+    <td class="label required">${t('Name')}:&nbsp;
+    </td>
+    <td style="color: ${context.color};">${h(context.name)}
+    </td>
+  </tr>
+  <tr valign="top">
+    <td class="label">${t('Notes')}:&nbsp;
+    </td>
+    <td><pre>${h(context.notes)}</pre>
+    </td>
+  </tr>
+  <tr>
+    <td class="label">${t('Parent Context')}:&nbsp;
+    </td>
+    <td>
+      {if context.parent_context_id}
+         {var parentContext = context.getParentContext()}
+         ${linkToLocal(h(parentContext.name), 'context', 'show', context.parent_context_id, modelToolTip(parentContext, 'context', res))}
+      {/if}
+    </td>
+  </tr>
+  <tr>
+    <td>
+    </td>
+    <td class="buttons" style="padding-top: 10px;">
+      ${%linkToLocal(t('Edit'), 'context', 'edit', context.id, { 'class': 'button' })%}
+      ${%linkToLocal(t('Delete'), 'context', 'destroy', context.id, { method: 'post', confirm: destroyConfirmMessage, 'class': 'button' })%}
+    </td>
+  </tr>
+ </table>
+</div>
+
+<div class="related">
+  <hr/>
+  {if actions.length > 0}
+    ${render('action/indexBody')}
+  {/if}
+  <br/>
+  ${startFormTagLocal('action', 'newInstance')}
+    <input type="hidden" name="action[context_id]" id="action[context_id]" value="${context.id}">
+    {if textLanguageFormat(res) == 1}
+      ${%submitButtonLocal('doActionCreate', t('Add an Action to Context ') + TrimPath.junctionUtil.encodeQuotes(context.name))%}
+    {else}
+      ${%submitButtonLocal('doActionCreate', t('Add an Action to ') + TrimPath.junctionUtil.encodeQuotes(context.name) + ' Context')%}
+    {/if}
+  ${endFormTag()}
+</div>

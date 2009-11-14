@@ -1,0 +1,137 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html"/>
+	<title>列表框实例 -- JSR2+</title>
+	<script type="text/javascript" src="../../common/js/core.js?lib=webui"></script>
+	<link rel="stylesheet" href="../resources/example.css" type="text/css" media="all"/>
+</head>
+
+<body>
+<div id="bodyPanel" style="display:none">
+	<b>列表框实例</b><hr/><br/>
+	<!-- 面板 -->
+	<div id="panel"></div>
+	<!-- 面板内容 -->
+	<div id="contentPanel">
+		<!-- 控件实例 -->
+		<fieldset id="example"><div class="gbPanel">
+			<table class="font"><tr>
+				<td width="180px">&nbsp;列表框1:</td><td width="180px">&nbsp;列表框2:</td>
+			</tr><tr>
+				<td><select id="list1">
+						<option value="f1">ABCDEFG</option>
+						<option value="f2">JSR WEB前台控件</option>
+						<option value="f3">测试功能项1</option>
+						<option value="f4">测试功能项2</option>
+						<option value="f5">测试功能项3</option>
+						<option value="f6">内容超出列表宽度的测试功能项1</option>
+						<option value="f7">内容超出列表宽度的测试功能项2</option>
+						<option value="f8">内容超出列表宽度的测试功能项3</option>
+						<option value="f9">AABBCCDDEEFFGGHHIIGGKKLLMM4</option>
+					</select>
+				</td><td>
+					<select id="list2">
+						<option value="h1">分类项目一</option>
+						<option value="h2">分类项目二</option>
+						<option value="h3">分类项目三</option>
+						<option value="h4">分类项目四</option>
+						<option value="h5">分类项目五</option>
+						<option value="h6">分类项目六</option>
+						<option value="h7">分类项目七</option>
+						<option value="h8">分类项目八</option>
+						<option value="h9">分类项目九</option>
+					</select>
+				</td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<!-- 相关方法 -->
+		<fieldset id="method"><div class="gbPanel">
+			<table class="method-area1"><tr>
+				<td><button id="b1"></button></td><td><button id="b2"></button></td>
+				<td><button id="b3"></button></td><td><button id="b4"></button></td>
+				<td><button id="b5"></button></td>
+			</tr><tr>
+				<td><button id="b6"></button></td><td><button id="b7"></button></td>
+				<td><button id="b8"></button></td><td><button id="b9"></button></td>
+				<td></td>
+			</tr></table>
+			<table class="method-area2"><tr>
+				<td><button id="b10"></button></td><td><button id="b11"></button></td>
+				<td></td><td></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<div class="font">注: 相关方法是针对 "列表框1" 操作的。</div>
+	</div>
+	<!-- 面板内容结束 -->
+</div>
+</body>
+
+<script>
+var l1, l2, btn, disabled = true;
+new UI.Panel({id:"panel", caption:"应用实例 -> 列表框", width:520, height:400, body:"contentPanel"});
+new UI.GroupBox({id:"example", caption:"控件实例"});
+new UI.GroupBox({id:"method", caption:"相关方法"});
+//创建列表框
+l1 = new UI.ListView({id:"list1", name:"list1", width:160, row:7});
+l2 = new UI.ListView({id:"list2", name:"list2", width:180, row:7});
+//相关方法按钮
+btn = new UI.Button({id:"b1", caption:"addItem", width:75});
+btn.bind(function() {newItemValue
+	l1.addItem('新加入的项', "新项-" + (newItemValue++));
+});
+btn = new UI.Button({id:"b2", caption:"disable", width:75});
+btn.bind(function() {
+	l1.disable(disabled);
+	disabled = !disabled;
+});
+btn = new UI.Button({id:"b3", caption:"fillData", width:75});
+btn.bind(function() {
+	l1.fillData(newKey, newVal);
+});
+btn = new UI.Button({id:"b4", caption:"getText", width:75});
+btn.bind(function() {
+	alert("列表框1的选择项文本:\n" + l1.getText());
+});
+btn = new UI.Button({id:"b5", caption:"getValue", width:75});
+btn.bind(function() {
+	alert("列表框1的选择项的值: " + l1.getValue());
+});
+btn = new UI.Button({id:"b6", caption:"onChange", width:75});
+btn.bind(function() {
+	l1.onChange(function() {
+		alert("列表框1的onChange事件触发了!\n你选择的是第 " + (l1.selectIndex + 1) + " 项。");
+	});
+	alert("请在 '列表框1' 中选择任意一项。");
+});
+btn = new UI.Button({id:"b7", caption:"removeAll", width:75});
+btn.bind(function() {
+	l1.removeAll();
+});
+btn = new UI.Button({id:"b8", caption:"removeItem", width:75});
+btn.bind(function() {
+	l1.removeItem(l1.selectIndex);
+});
+btn = new UI.Button({id:"b9", caption:"setValue", width:75});
+btn.bind(function() {
+	l1.setValue('f4');
+	alert("设置了 '列表框1' 的值为: f4\n点击getValue按钮测试结果。");
+});
+btn = new UI.Button({id:"b10", caption:"getIndexByText", width:105});
+btn.bind(function() {
+	alert("'列表框1' 中的 '测试功能项1' 是第 " + (l1.getIndexByText("测试功能项1") + 1) + " 项");
+});
+btn = new UI.Button({id:"b11", caption:"getIndexByValue", width:105});
+btn.bind(function() {
+	alert("'列表框1' 中值为 'f2' 是第 " + (l1.getIndexByValue("f2") + 1) + " 项");
+});
+
+onLoad.add(function(){ $("bodyPanel").style.display = "" });
+
+var newItemValue = 0,
+newKey = ["第一项", "第二项", "第三项", "第四项", "第五项", "第六项", "第七项", "第八项", "第九项"],
+newVal = ["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8", "a9"];
+</script>
+
+</html>

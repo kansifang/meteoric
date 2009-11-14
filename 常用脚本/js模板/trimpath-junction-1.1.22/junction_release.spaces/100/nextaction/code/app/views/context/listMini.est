@@ -1,0 +1,14 @@
+<div class="contextListMini listMini">
+<h2><%= linkToLocal(t('Your Contexts'), 'context', 'index') %>:</h2>
+
+<% for (var i = 0; i < res.activeContexts.length; i++) { %>
+  &nbsp;
+  <% if (res.activeContexts[i].namePrefix == '') { %>
+      <b><%= contextLink(res,activeContexts[i]) %></b>
+  <% } else { %> 
+      <%= res.activeContexts[i].namePrefix %>
+      <%= contextLink(res,activeContexts[i]) %>
+  <% } %>
+  <br/>
+<% } %>
+</div>

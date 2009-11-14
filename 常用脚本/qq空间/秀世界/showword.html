@@ -1,0 +1,887 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn">
+    <head>
+        <!--缓存信息-->
+        <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+        <meta http-equiv="X-UA-Compatible" content="IE=7" />
+        <meta http-equiv="Content-Language" content="gb2312" />
+        <!--编码信息-->
+        <meta name="robots" content="all" />
+        <!--机器人爬虫-->
+        <meta name="author" content="Tencent-ISRD" />
+        <meta name="Copyright" content="Tencent" />
+        <meta name="Description" content="Qzone icon list" />
+        <meta name="Keywords" content="Qzone icon list" />
+        <title>迷你屋</title>
+        <!-- 开发环境
+        <link rel="stylesheet" rev="stylesheet" href="http://imgcache.qq.com/qqhome_v2/qzone/gb_minihome.css" type="text/css" media="screen"/>
+        <link rel="stylesheet" rev="stylesheet" href="http://imgcache.qq.com/qqhome_v2/qzone/minihome_detail_d.css" type="text/css" media="screen"/>
+        <link rel="stylesheet" rev="stylesheet" href="http://imgcache.qq.com/qzone_v5/1/gb_color.css" type="text/css" media="screen"/>
+        --><!-- 预发布环境 -->
+        <link rel="stylesheet" rev="stylesheet" href="http://imgcache.qq.com/qzone_v5/css/gb_d/minihome_d_out.css" type="text/css" media="screen"/>
+        <link rel="stylesheet" rev="stylesheet" href="http://imgcache.qq.com/qzone_v5/1/gb_color.css" type="text/css" media="screen"/>
+        <script type="text/javascript">
+            document.domain = "qq.com";
+            document.write('<link rel="stylesheet" rev="stylesheet" href="http://imgcache.qq.com/qzone_v5/' + (parent.g_StyleID ? parent.g_StyleID : 1) + '/gb_color.css" type="text/css" media="screen"/>');
+            //document.write('<script type="text/javascript" src="http://world.show.qq.com/cgi-bin/qqhome_user_ad?uin=' + top.g_iUin +'"><' + '/script>');
+        </script>
+    </head>
+    <body id="minhome_home_detail" class="minhome" onclick="HideMoreFunction(this);">
+        <div class="gb_cont_noleft">
+            <!--=S 右边 -->
+            <div class="gb_cont_m">
+                <div class="bg_mode">
+                    <div class="box_ml bor">
+                        <div class="mode_gb">
+                            <div class="mode_gb_cont">
+                                <div class="mode_gb_title style_mode_gb_title">
+                                    <div class="bg_mode_gb_title">
+                                        <h3><img src="http://imgcache.qq.com/ac/b.gif" alt="icon" class="icon_title" />秀世界</h3>
+                                    </div>
+                                </div>
+                                <div class="header mode_menu_tag2">
+                                    <ul>
+                                        <li class="nowtag" id="nowtag">
+                                            <a href="#2">迷你屋</a>
+                                        </li>
+                                        <li class="feed_minihome" id="feed_minihome" style="display:none">
+                                            <a href="#2" onclick='window.open("http://world.show.qq.com/cgi-bin/qqhome_user_dynamic_html?dynamic_type=0&begin_date=&end_date=&host_uin="+top.g_iUin+"&g_begin_end_date="+escape("最近3天"),"_self");return false;'>秀世界动态</a>
+                                        </li>
+                                        <li id="showworld_flower">
+                                            <a href="http://show.qq.com/community/flower/flowerapp/minihome_garden.htm">花园</a>
+                                        </li>
+                                        <!--li class="feed_minihome"><a href="#">名称修改</a></li-->
+                                    </ul>
+                                    <p class="msg">
+                                        <a href="#2" onclick='window.open("http://world.show.qq.com/mall/inc/item.html?lv1=single&lv2=22&dialog=send","_blank");try{pgvSendClick({hottag:"ISD.QQshow.MiniHome.GOAD1"})}catch(e){};' class="c_tx4" id="msg_send_1" style="display:none">新版迷你屋用户免费获赠套装啦！</a>
+                                        <a href="#2" onclick='window.open("http://show.qq.com/live/mnw/index.html","_blank");try{pgvSendClick({hottag:"ISD.QQshow.MiniHome.GOAD2"})}catch(e){};' class="c_tx4" id="msg_send_2" style="display:none">迷你屋精品推荐，还可以免费领取爱情幸运符！</a>
+                                    </p>
+                                </div>
+                                <div class="none_room bgr" style="display:none" id="noroom_div">
+                                </div>
+                                <div class="host_host_room_img_list" id="room_list_div" style="display:none">
+                                    <div class="room_img_list bgr">
+                                        <div class="bgr2 jump_left" id="toleft" onclick="oNav.g_CurrPage=oNav.g_CurrPage-1;showRoomList();">
+                                        </div>
+                                        <div class="room_img_list_con">
+                                            <ul id="room_list">
+                                            </ul>
+                                            <!--TPL.ROOM
+                                            <%--HD--%>
+                                            <%--LB--%>
+                                            <%--EB--%>
+                                            <li id="li_room_<%no%>"><img onload="this.onload=null;fadeIn(this);" onclick="oNav.LoadRoom($('room_body'),<%no%>);LoadWords(1);FreshRoomName();" src="http://qqhome2-user.qq.com/<%uin%>/<%no%>/1/" alt="<%name%>" style="filter:progid:DXImageTransform.Microsoft.Alpha(enabled=true,opacity=0);"/><span class="hot" style='display:<%hot%>;'>HOT</span><p><%name%></p></li>
+                                            <%--EE--%>
+                                            <%--LE--%>
+                                            <%--TL--%>
+                                            TPL.ROOM-->
+                                        </div>
+                                        <div class="bgr2 jump_right" id="toright" onclick="oNav.g_CurrPage=oNav.g_CurrPage+1;showRoomList();">
+                                        </div>
+                                    </div>
+                                    <div class="host_host_room_btn bgr" id="bt_new" style="display:none">
+                                        <button type="button" class="bgr2 c_tx2 add_room" onclick="AddRoom();FreshRoomName();showRoomList();">
+                                            新建房间
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="main" id="main_div">
+                                    <div class="room_detail">
+                                        <div class="room_detail_main">
+                                            <h2 class="c_tx4" id="room_name"></h2>
+                                            <p id="guestpanel" style="display:none">
+                                                <button type="button" class="bt_tx4" onclick="SendWords()">
+                                                    <strong>冒泡留言</strong>
+                                                </button>
+                                                <button type="button" class="bt_tx4" id="a_rename" onclick="HideBubs(this);">
+                                                    隐藏泡泡
+                                                </button>
+                                                <button type="button" class="bt_tx7" onclick="Imitate(this);">
+                                                    试用主人装扮
+                                                </button>
+                                                <button type="button" class="bt_tx4" onclick="CopyAddress();">
+                                                    复制地址
+                                                </button>
+                                            </p>
+                                            <p id="masterpanel" style="display:none">
+                                                <button type="button" class="bt_tx2" id="a_rename" onclick="window._showModalDialog('/qzone/rename_room.html?op=2',null,'180,440,100,100','重命名',true);FreshRoomName();">
+                                                    重命名
+                                                </button>
+                                                <button type="button" class="bt_tx2" id="masterpanel_ivt" onclick="window._showModalDialog('/qzone/alert_qqshow_art.htm?op=2',null,'480,480,100,100','邀请好友',true);">
+                                                    邀请
+                                                </button>
+                                                <button type="button" class="bt_tx7" id="bt_tomall" onclick="GoToMall(1);">
+                                                    去商城装扮此房间
+                                                </button>
+                                                <button type="button" class="bt_tx4" onclick="SendWords()">
+                                                    <strong>冒泡留言</strong>
+                                                </button>
+                                                <span class="more_function bg">
+                                                    <button type="button" class="bt_tx4" onclick="MoreFunction();" id="bt_more_function">
+                                                        更多功能&#9660;
+                                                    </button>
+                                                    <span class="more_function_list bgr" id="more_function" style="display:none" onmouseout="this.style.display='none'" onmouseover="this.style.display=''"><a href="#2" onclick="SetDefault();return false;">空间首页显示</a><a href="#2" onclick="CopyAddress();return false;">复制地址</a><a href="#2" onclick="DeleteThisRoom();return false;">删除房间</a><a href="#2" onclick="UnSetHomeFlag();return false;">取消客户端图标</a></span></span>
+                                            </p>
+                                            <a href="javascript:void(0);" id="roominfo" onclick="GetMore();return false"></a>
+                                        </div>
+                                        <div class="tips_minihome type2" id="tips_minihome">
+                                            <p class="tips_minihome_detail bgr2" id="home_tips" style="display:none">
+                                                <img class="icon_hint" alt="hint" src="http://imgcache.qq.com/ac/b.gif"/>您可以拖动、删减房间内的物品或人物。修改后，点击“保存”按钮生效。
+                                                <button type="button" class="em save" onclick="if(CheckQzoneLogin()){oNav.SaveRoom();}else{ToLogin();}">
+                                                    保存
+                                                </button>
+                                                <button type="button" class="undo" onclick="if(CheckQzoneLogin()){oNav.RestoreRoom();}else{ToLogin();}LoadWords(1);">
+                                                    恢复
+                                                </button>
+                                            </p>
+                                            <p class="my_minihome_box bgr2">
+                                                <button type="button" class="bt_tx5" onclick="window._showModalDialog('/qzone/alert_qqshow_art.htm?op=4',null,'430,307,100,100','我的储物箱',true);">
+                                                    我的储物箱
+                                                </button>
+                                            </p>
+                                        </div>
+                                        <div class="room" id="room_body">
+                                        </div>
+                                    </div>
+                                    <ul class="msg_list" id="msg_list">
+                                    </ul>
+                                    <!--TPL.WORD
+                                    <%--HD--%>
+                                    <%--LB--%>
+                                    <%--EB--%>
+                                    <li class="bg2 stencillink" id="li_<%guin%>">
+                                    <div class="avatar">
+                                    <a href="http://<%guin%>.qzone.qq.com/home" class="name" target="_blank"><%nick%></a>
+                                    <a href="http://<%guin%>.qzone.qq.com/home" target="_blank" class="face">
+                                    <span><img id="userimg" name="userimg" onload="this.onload=null;FixUser(this);" src="<%user_img%>" alt="<%nick%>" style="display:none"/></span></a>
+                                    </div>
+                                    <div class="msg_content">
+                                    <div class="bubble1" style="background:url(http://qqhome2-item.qq.com/<%bubid%>/12/01/) no-repeat left top;*background-image:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://qqhome2-item.qq.com/<%bubid%>/12/01/', sizingMethod='scale');">
+                                    <div class="bubble_content">
+                                    <div class="v_elm">
+                                    <span class="i_v_elm" id="msg_<%guin%>">
+                                    <%word%>
+                                    </span>
+                                    <span class="edge_v_elm"></span>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    <p class="func"><button type="button" style="display:<%display2%>" title="邀请进迷你屋" class="bgr c_tx2" onclick="InviteUser(<%guin%>,false,'<%nick%>')">邀</button><button type="button" title="删除此留言" class="bgr bt_close" onclick="DelWord(<%guin%>)" style="display:<%display1%>">删除此留言</button></p>
+                                    </li>
+                                    <%--EE--%>
+                                    <%--LE--%>
+                                    <%--TL--%>
+                                    TPL.WORD-->
+                                    <p class="page_s" id="page" style="display:none">
+                                    </p>
+                                </div>
+                                <!--===E 房间-->
+                            </div>
+                            <!--==E 模框内容-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--=E 右边 -->
+        </div>
+    </body>
+    <script type="text/javascript" src="http://imgcache.qq.com/qqhome_v2/htdocs/js/common.js">
+    </script>
+    <script type="text/javascript" src="http://imgcache.qq.com/qqhome_v2/htdocs/js/home.js">
+    </script>
+    <script type="text/javascript" src="http://imgcache.qq.com/qzone/blog/script/ubb.js">
+    </script>
+    <script type="text/javascript" src="http://imgcache.qq.com/qzone/blog/script/common.js">
+    </script>
+    <script type="text/javascript" src="http://imgcache.qq.com/qqhome_v2/global/js/global_xml_header.js">
+    </script>
+    <script type="text/javascript" src="http://imgcache.qq.com/qqhome_v2/htdocs/js/showworld.js">
+    </script>
+    <script type="text/javascript">
+        
+        var m_iCurrUin = parseInt(getURLParam("uin"));
+        var m_iNo = parseInt(getURLParam("no"));
+        var m_iBub = parseInt(getURLParam("bub"));
+        var m_iMasterUin = GetQzoneLoginUin();
+        var oUser;
+        var oNav;
+        var m_oRoom = document.getElementById("room_body");
+        var oRoom = m_oRoom;
+        var iNum;
+        var max;
+        var timeoutId;
+        var m_iAppID = parseInt(getURLParam("appid"));
+        if (10001 == m_iAppID) {
+            window.open("http://show.qq.com/community/flower/flowerapp/minihome_garden.htm", "_self");
+        }
+        
+        function InitRoomList(noFresh){
+        
+            function InitSucc(iCode){
+                var m_iIndex = oUser.getScenInfo(m_iNo);
+                oNav.LoadRoom($("room_body"), m_iIndex ? m_iNo : 0);
+                if (oNav.g_CurrentRoomId == -1) {
+                    if (m_iCurrUin == m_iMasterUin) {
+                        oNav.AddRoom("我的第一间迷你屋");
+                    }
+                    else {
+                        showNoRoom();
+                        return;
+                    }
+                }
+                if (m_iIndex && 1 == m_iBub) {
+                    setTimeout(DelayShowBubble, 3000);
+                }
+                setTimeout(showRoomList, 1500);
+                FreshRoomName();
+                if ((0 == oUser.g_UserInfo.qwinfo.send) && (m_iCurrUin == m_iMasterUin)) {
+                    $("msg_send_1").style.display = "";
+                }
+                else {
+                    $("msg_send_2").style.display = "";
+                }
+                
+                LoadWords(1);
+                if (CheckQzoneLogin() && m_iMasterUin != m_iCurrUin) {
+                    var gUser = new QSUser(m_iMasterUin);
+                    gUser.getInfo(null, null, QSAjax.XMLCALL);
+                    oNav.InitGuest(gUser);
+                }
+                
+            }
+            
+            function GetUserSucc(iCode){
+                oNav = new QSNavigator(oUser);
+                oNav.Init(InitSucc);
+            }
+            
+            function GetUserFail(){
+                //window.location.reload(true);
+            }
+            function fnFail(iCode){
+            
+                if (oUser.g_ScenInfo.sceninfo.length == 0) {
+                    showNoRoom();
+                }
+                else {
+                    window.location.reload(true);
+                }
+            }
+            if ((window.frameElement.id) == "") {
+                window.frameElement.id = "minihome_iframe";
+            }
+            oUser = oUser ? oUser : (new QSUser(m_iCurrUin));
+            oUser.getInfo(null, GetUserFail, QSAjax.XMLCALL, 1);
+            oUser.getScenList(0, GetUserSucc, GetUserSucc, QSAjax.XMLCALL);
+            if (m_iCurrUin != m_iMasterUin) //客人模式
+            {
+                if (oUser.g_ScenInfo.sceninfo.length == 0) {
+                    showNoRoom();
+                }
+                else {
+                    $("room_list_div").style.display = "";
+                    $("masterpanel").style.display = "none";
+                    $("guestpanel").style.display = "";
+                    $("tips_minihome").className = "tips_minihome type2";
+                    if (InRoom()) {
+                        $("home_tips").style.display = "";
+                    }
+                    $("room_list_div").className = "";
+                }
+            }
+            else {
+                $("room_list_div").style.display = "";
+                $("noroom_div").style.display = "none";
+                $("home_tips").style.display = "";
+                $("guestpanel").style.display = "none";
+                $("masterpanel").style.display = "";
+                $("tips_minihome").className = "tips_minihome";
+                $("bt_new").style.display = "";
+                $("feed_minihome").style.display = "";
+            }
+        }
+        
+        function CopyAddress(){
+            window.clipboardData.setData('Text', "http://user.qzone.qq.com/" + top.g_iUin + "/?url=http://world.show.qq.com/qzone/showworld.htm%3Fuin%3D" + top.g_iUin + "%26no%3D" + oNav.g_CurrentRoomId);
+            parent.showMsgbox("此网址已复制", "", 1000, 500);
+            $("more_function").style.display = "none";
+        }
+        
+        function DeleteThisRoom(){
+            oNav.DeleteRoom();
+            LoadWords(1);
+            setTimeout(showRoomList, 1000);
+            FreshRoomName();
+            $("more_function").style.display = "none";
+        }
+        
+        function MoreFunction(){
+            $("more_function").style.display = "";
+            window.event.cancelBubble = true;
+            return;
+        }
+        
+        function HideMoreFunction(srcElem){
+        
+            if (srcElem.id == "bt_more_function") {
+                return;
+            }
+            else {
+                $("more_function").style.display = "none";
+            }
+            
+        }
+        
+        function FreshRoomName(){
+            oNav.FreshRoomName($("room_name"), $("roominfo"));
+            if (m_oRoom.m_oScene && HomeShow.GetItemList(m_oRoom).length == 0 && m_iCurrUin == m_iMasterUin) {
+                if (timeoutId) {
+                    clearTimeout(timeoutId);
+                }
+                bid = parent.showBubble($("bt_tomall"), "", '您的房间还是空的，<br>快去商场装扮一下吧！', -1, '', 'minihome_empty', 'width:200px', null);
+                timeoutId = setTimeout(function(){
+                    parent.hideBubble("minihome_empty");
+                    timeoutId = null;
+                }, 5000);
+            }
+            return;
+        }
+        
+        function DelayShowBubble(){
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
+            bid = parent.showBubble($("masterpanel_ivt"), "", '快来邀请好友到访吧！', -1, '', 'minihome_empty', 'width:200px', null);
+            timeoutId = setTimeout(function(){
+                parent.hideBubble("minihome_empty");
+                timeoutId = null;
+            }, 5000);
+        }
+        
+        function showNoRoom(){
+            $("main_div").style.visibility = "hidden";
+            $("room_list_div").style.visibility = "hidden";
+            $("noroom_div").innerHTML = '<p class="tips total">主人的秀世界中还没有房间哦~</p>';
+            $("noroom_div").style.display = "";
+        }
+        
+        function InRoom(iUin){
+            if (!m_oRoom.m_oScene) 
+                return false;
+            for (var i = 0; i < m_oRoom.m_oScene.m_arrUsers.length; i++) {
+                if ((iUin || m_iMasterUin) == m_oRoom.m_oScene.m_arrUsers[i].m_iUin) 
+                    return true;
+            }
+            return false;
+        }
+        
+        function LoadWords(pno){
+            var uin;
+            var mapName = [['iUinGuest', '<%guin%>'], ['iUinGuest', '<%display1%>', function(v){
+                if (GetQzoneLoginUin() == m_iCurrUin) {
+                    return "";
+                }
+                return GetQzoneLoginUin() == v ? "" : "none";
+            }
+        ], ['iUinGuest', '<%display2%>', function(v){
+                uin = v;
+                if (GetQzoneLoginUin() == m_iCurrUin) {
+                    return "";
+                }
+                return "none";
+            }
+        ], ['showid', '<%user_img%>', function(v){
+                return v > 0 ? "http://acfs.tencent.com/R" + uin + "_0_0_" + v + "/" : "http://acfs.tencent.com/" + uin + "/100/"
+            }
+        ], ['sWord', '<%word%>', function(v){
+                if (v == "") {
+                    if (uin == GetQzoneLoginUin()) 
+                        return "尚未发言<br/><a href='#2' onclick='SendWords()'>编辑</a>"
+                    else 
+                        return "尚未发言";
+                }
+                else {
+                    v = filterWord(v);
+                    return ubbReplace(v, 'face');
+                }
+            }
+        ], ['bubid', '<%bubid%>', function(v){
+                return parseInt(v) > 2000000 ? v : 2000002
+            }
+        ], ['nick', '<%nick%>', function(v){
+                return v == "" ? uin : v.escScript().escHtml()
+            }
+        ]];
+            
+            var sUrl = "http://" + globe_domain + "/cgi-bin/qqhome_user_words_get?size=12&uin=" + oNav.g_Uin + "&no=" + oNav.g_CurrentRoomId + "&pno=" + pno;
+            function fnSucc(oResponseXml){
+                var aData = oResponseXml.getElementsByTagName("node");
+                var pnum = oResponseXml.getElementsByTagName("QQHOME")[0].getAttribute("pnum");
+                showQQHomeXmlNode(oResponseXml, $("msg_list"), "node", document.body.innerHTML.between("<!--TPL.WORD", "TPL.WORD-->"), mapName);
+                if (pnum == 0) {
+                    $("page").style.display = "none";
+                }
+                if (pnum > 0) {
+                    $("page").style.display = "";
+                    showQQHOMEPage(pno, pnum == 0 ? 1 : pnum, function(n){
+                        return "javascript:LoadWords(" + n + ")";
+                    }, $("page"), 0);
+                }
+                if (pno == 1) {
+                    window.m_oHomeXml = oResponseXml;
+                    InitHomeWord(oResponseXml)
+                }
+                
+                //if(document.all)
+                //setTimeout(FixUser,500);
+            }
+            function fnFail(oResponseXml){
+                ShowTip(3, '对不起，操作失败，请稍候再试！', 3000);
+            }
+            
+            getQQHomeXml(sUrl, fnSucc, fnFail, fnFail);
+            
+        }
+        
+        function InitHomeWord(oXml){
+            var aUser = oXml.getElementsByTagName("head");
+            var bFindMaster;
+            iNoWordCount = 0;
+            
+            for (var i = 0; i < aUser.length; i++) {
+                var uin = aUser[i].getAttribute("iUinGuest");
+                var word = aUser[i].getAttribute("sWord").trim();
+                var sNick = aUser[i].getAttribute("nick") == "" ? aUser[i].getAttribute("iUinGuest") : aUser[i].getAttribute("nick");
+                var bubid = aUser[i].getAttribute("bubid");
+                var showid = parseInt(aUser[i].getAttribute("showid"));
+                
+                //showid = 575074;
+                
+                
+                if (word == "") 
+                    iNoWordCount++;
+                if (GetQzoneLoginUin() == uin && word == "") 
+                    SetUserWord(m_oRoom, uin, "尚未发言<br/><a href='javascript:SendWords();'></a>", sNick, true, bubid, showid);
+                else 
+                    if (GetQzoneLoginUin() == uin) {
+                        word = filterWord(word);
+                        word = ubbReplace(word, 'face') + "<br/><a href='javascript:SendWords();'></a>"
+                        SetUserWord(m_oRoom, uin, word, sNick, true, bubid, showid);
+                    }
+                    else {
+                        word = filterWord(word);
+                        SetUserWord(m_oRoom, uin, ubbReplace(word, 'face'), sNick, true, bubid, showid);
+                    }
+                
+                if (uin == m_iCurrUin) 
+                    bFindMaster = true;
+            }
+            if (!bFindMaster && GetQzoneLoginUin() == m_iCurrUin) 
+                SetUserWord(m_oRoom, m_iCurrUin, "尚未发言<br/><a href='javascript:SendWords();'></a>", "", true, 0, 0);
+            //$("total").innerHTML = "冒泡留言人数：" + (iTotal - iNoWordCount);
+            //FreshRoomInfo();
+        }
+        
+        function _KickUser(iUin){
+            if (GetQzoneLoginUin() == iUin && parent.g_iUin == iUin) {
+                alert("主人不能删除自己");
+                return false;
+            }
+            if (!confirm("确认踢出房间吗?")) 
+                return false;
+            DelUser(m_oRoom, iUin);
+            
+            if (oNav.g_strCmd.indexOf("add_" + iUin + "|") > -1) {
+                var patten = new RegExp("add_" + iUin + "|", "gi");
+                oNav.g_strCmd = oNav.g_strCmd.replace(patten, "");
+            }
+            else {
+                oNav.g_strCmd += "kic_" + iUin + "|";
+            }
+            DoSave();
+            HomeShow.Encode(m_oRoom);
+            FreshRoomName();
+            return true;
+        }
+        
+        
+        function _DelUser(iUin){
+            if (GetQzoneLoginUin() == iUin && parent.g_iUin == iUin) {
+                alert("主人不能删除自己");
+                return;
+            }
+            if (!confirm("确认删除吗?")) 
+                return;
+            DelUser(m_oRoom, iUin);
+            
+            if (oNav.g_strCmd.indexOf("add_" + iUin + "|") > -1) {
+                var patten = new RegExp("add_" + iUin + "|", "gi");
+                oNav.g_strCmd = oNav.g_strCmd.replace(patten, "");
+            }
+            else {
+                oNav.g_strCmd += "del_" + iUin + "|";
+            }
+            DoSave();
+            HomeShow.Encode(m_oRoom);
+            FreshRoomName();
+        }
+        
+        function showRoomList(){
+            var mapName = [['iNo', '<%uin%>', function(v){
+                return m_iCurrUin
+            }
+        ], ['iNo', '<%no%>'], ['name', '<%name%>', function(v){
+                return v.escHtml().trim();
+            }
+        ], ['iNo', '<%hot%>', function(v){
+                return (v == oUser.g_ScenInfo.hotRoom) ? "" : "none"
+            }
+        ]];
+            var pNum = (m_iMasterUin == m_iCurrUin) ? 4 : 5;
+            if (0 == oNav.g_CurrPage) {
+                $("toleft").disabled = true;
+                $("toleft").className = "bgr2 jump_left btn_disable";
+            }
+            else {
+                $("toleft").disabled = false;
+                $("toleft").className = "bgr2 jump_left";
+            }
+            
+            var lastPage = parseInt((oUser.g_ScenInfo.sceninfo.length / pNum));
+            if (lastPage == oNav.g_CurrPage || (((oUser.g_ScenInfo.sceninfo.length % pNum) == 0) && lastPage == (oNav.g_CurrPage + 1))) {
+                $("toright").disabled = true;
+                $("toright").className = "bgr2 jump_right btn_disable";
+            }
+            else {
+                $("toright").disabled = false;
+                $("toright").className = "bgr2 jump_right"
+            }
+            var iStart = 0 + (oNav.g_CurrPage * pNum);
+            if (iStart == oUser.g_ScenInfo.sceninfo.length) {
+                oNav.g_CurrPage--;
+                iStart = 0 + (oNav.g_CurrPage * pNum);
+            }
+            var iEnd = (pNum + (oNav.g_CurrPage * pNum)) < oUser.g_ScenInfo.sceninfo.length ? (pNum + (oNav.g_CurrPage * pNum)) : oUser.g_ScenInfo.sceninfo.length;
+            
+            showQQHomeData(oUser.g_ScenInfo.sceninfo, $("room_list"), document.body.innerHTML.between("<!--TPL.ROOM", "TPL.ROOM-->"), mapName, iStart, iEnd, 1);
+        }
+        
+        function fadeIn(elem){
+            for (var i = 0; i <= 100; i += 4) {
+                (function(){
+                    var pos = i;
+                    setTimeout(function(){
+                        setOpacity(elem, pos);
+                    }, (pos + 1) * 10);
+                })();
+            }
+        }
+        
+        function setOpacity(elem, level){
+            elem.style.filter = "progid:DXImageTransform.Microsoft.Alpha(enabled=true,opacity=" + level + ")";
+        }
+        
+        function filterWord(v){
+            var arrTxt = v.split('\n');
+            if (arrTxt.length >= 5) {
+                arrTxt = arrTxt.slice(0, 4);
+                v = arrTxt.join('\n') + "\n……";
+            }
+            return v;
+        }
+        
+        function FixUser(aImg){
+            try {
+                if ((aImg.mimeType.toUpperCase().indexOf("GIF") == -1)) //png
+                {
+                    var oSpan = aImg.parent || aImg.parentElement;
+                    var oParent = oSpan.parent || oSpan.parentElement;
+                    oSpan.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + aImg.src + "',sizingMethod='scale',enabled='" + true + "')";
+                    oParent.className = "face new_face";
+                }
+                aImg.style.display = "";
+            } 
+            catch (e) {
+            };
+            
+            }
+        
+        function GetMore(){
+            window._showModalDialog('/qzone/alert_qqshow_art.htm?op=1', null, '480,480,100,100', '房间好友', true);
+        }
+        
+        function AddRoom(){
+            if (oUser.g_ScenInfo.sceninfo.length >= 20) {
+                alert("您的目前房间（包括暂存房间）已经达到上限，不能新建了，您可以装扮暂存房间保存为新房间或者删除已有的房间。");
+                return;
+            }
+            window._showModalDialog('/qzone/rename_room.html?op=1', null, '180,440,100,100', '新建房间', true);
+        }
+        
+        function SendWords(){
+            //var sWord = window.prompt("请输入冒泡留言");
+            
+            if (!CheckQzoneLogin()) {
+                parent.showLoginBox();
+                return;
+            }
+            var iHisId = getUserHisId();
+            window._showModalDialog('/qzone/alert_qqshow_art.htm?op=0&his=' + iHisId, null, '360,490,100,100', '冒泡留言', true);
+        }
+        
+        function getUserHisId(iUin){
+            if (!m_oRoom.m_oScene) 
+                return false;
+            for (var i = 0; i < m_oRoom.m_oScene.m_arrUsers.length; i++) {
+                if ((iUin || m_iMasterUin) == m_oRoom.m_oScene.m_arrUsers[i].m_iUin) 
+                    return m_oRoom.m_oScene.m_arrUsers[i].m_iItemNo ? m_oRoom.m_oScene.m_arrUsers[i].m_iItemNo : 0;
+            }
+            return 0;
+        }
+        
+        function GoToMall(flag){
+            if (flag == 1) 
+                window.open("http://" + globe_domain + "/mall/inc/item.html?lv1=suit&lv2=4&room=" + oNav.g_CurrentRoomId);
+            else 
+                location.href = "http://" + globe_domain + "/qzone/minihome_modi.htm?room=" + oNav.g_CurrentRoomId;
+        }
+        
+        function InviteUser(iUin, flag, sNick){
+            sNick = sNick.toString();
+            iNum = m_oRoom.m_oScene.m_arrUsers.length;
+            max = oNav.g_User.g_ScenInfo.sceninfo[oNav.g_RoomIndex].max;
+            if (!InRoom(iUin)) {
+                if (iNum * 1 >= max * 1) {
+                    alert("好友数达到该房间人口上限");
+                    return;
+                }
+            }
+            else {
+                return;
+            }
+            
+            
+            if ($("li_" + iUin)) {
+                $("li_" + iUin).style.visibility = "hidden";
+            }
+            
+            var iBaseX = 614 / 5;
+            var iBaseY = 392 / 3;
+            var iXPos = Math.random(new Date()) * iBaseX * 3;
+            var iYPos = Math.random(new Date()) * iBaseY * 2;
+            
+            var newUser = AddUser(m_oRoom, iUin, 0, 0, iXPos, iYPos, "");
+            if (newUser) {
+                var sWord = $("msg_" + iUin) ? $("msg_" + iUin).innerHTML : "";
+                sWord = sWord.indexOf("尚未发言") > -1 ? "" : sWord;
+                
+                SetUserWord(m_oRoom, iUin, sWord, sNick == "" ? iUin : sNick, true, 0);
+                var strCmd = "add_" + iUin + "|";
+                if (oNav.g_strCmd.indexOf(strCmd) == -1) 
+                    oNav.g_strCmd += strCmd;
+                //$("num").innerHTML = parseInt($("num").innerHTML) + 1;
+                //FreshRoomInfo();
+                iNum++;
+            }
+            
+            if (!flag && newUser) {
+                DoSave();
+            }
+            HomeShow.Encode(m_oRoom);
+            FreshRoomName();
+            
+            //ShowTip();
+            //debug("op cmd: " + oNav.g_strCmd);
+        }
+        
+        function DelWord(iUin){
+        
+            if (!confirm("确认删除该条留言？")) 
+                return;
+            var sUrl = "http://" + globe_domain + "/cgi-bin/qqhome_user_words_del?uin=" + m_iCurrUin + "&deluin=" + iUin + "&no=" + oNav.g_CurrentRoomId;
+            
+            function fnSucc(oResponseXml){
+                LoadWords(1);
+            }
+            function fnFail(oResponseXml){
+                //window.showSimpleTips('对不起，操作失败，请稍候再试！',3000,2);
+                ShowTip(3, '对不起，操作失败，请稍候再试！', 3000);
+            }
+            getQQHomeXml(sUrl, fnSucc, fnFail, fnFail);
+        }
+        
+        function DoSave(bNeedAlert){
+            if (!CheckQzoneLogin()) {
+                //window.showSimpleTips('对不起，请先登录后保存装扮！',3000,2);
+                parent.showLoginBox("zhen");
+                return;
+            }
+            
+            HomeShow.Encode(m_oRoom);
+            
+            var sUrl = "http://" + globe_domain + "/cgi-bin/qqhome_user_opsave?no=" + oNav.g_CurrentRoomId + "&show=" + m_oRoom.m_strShow.escUrl() + "&cmd=" + oNav.g_strCmd + "&uin=" + oNav.g_Uin;
+            
+            function fnSucc(oResponseXML){
+                //HideTip();
+                if (bNeedAlert) 
+                    ShowTip(2, '保存成功！', 3000);
+                //window.showSimpleTips('保存成功！',3000,2);
+                oNav.g_strCmd = "";
+                LoadWords(1);
+                if (m_oRoom.m_arrHistory) {
+                    m_oRoom.m_arrHistory = [];
+                    m_oRoom.m_iHistoryPointer = 0;
+                }
+                oNav.g_User.UpdateScen(oNav.g_CurrentRoomId, m_oRoom.m_strShow);
+            }
+            
+            function fnFail(oResponseXML){
+                QQHomeCommXMLError(oResponseXML);
+            }
+            getQQHomeXml(sUrl, fnSucc, fnFail, fnFail);
+        }
+        
+        window.fireEvent = function(oItem, sType){
+            if (sType == "move") {
+                ShowTip();
+                oNav.NeedSaveRoom();
+            }
+        }
+        
+        function ToLogin(){
+            parent.showLoginBox("zhen");
+        }
+        
+        function SetDefault(){
+            var sUrl = "http://" + globe_domain + "/cgi-bin/qqhome_user_set_default_scenario";
+            $("more_function").style.display = "none";
+            var iRet = confirm("是否设置该迷你屋到Qzone首页?")
+            if (!iRet) 
+                return;
+            sUrl += "?scenario=" + oNav.g_CurrentRoomId;
+            function fnSucc(oResponseXML){
+                //window.showSimpleTips('设置默认房间成功',3000,2);
+                //ShowTip(2,'设置默认房间成功！',3000);
+                //parent.showMsgbox('您已经将该房间设置为首页显示。<br/>若您的首页模块没有秀世界，请先<br/>设置秀世界模块即可在首页看到该间迷你屋了');
+                alert('您已经将该房间设置为首页显示。\n若您的首页模块没有秀世界，请先设置秀世界模块即可在首页看到该间迷你屋了。');
+                //		setTimeout(parent.hideMsgbox,2000);
+            }
+            function fnFail(oResponseXML){
+                parent.showMsgbox('设置封面失败！');
+                setTimeout(parent.hideMsgbox, 2000);
+                //ShowTip(3,'设置默认房间失败！',3000);
+                //window.showSimpleTips('设置默认房间失败',3000,2);
+            }
+            getQQHomeXml(sUrl, fnSucc, fnFail, fnFail);
+        }
+        
+        function ShowTip(type, sMsg, iTime){
+            if (!type) {
+                if (m_iCurrUin == m_iMasterUin) {
+                    $("home_tips").innerHTML = '<img class="icon_hint" alt="hint" src="http://imgcache.qq.com/ac/b.gif"/>您调整了房间内的物品或人物，需要保存才能生效，请点击“保存”。<button type="button" class="em save" onclick="if(CheckQzoneLogin()){oNav.SaveRoom();}else{ToLogin();}">保存</button><button type="button" class="undo" onclick="if(CheckQzoneLogin()){oNav.RestoreRoom();}else{ToLogin();}LoadWords(1);">恢复</button>';
+                }
+                else {
+                    $("home_tips").innerHTML = '<img class="icon_hint" alt="hint" src="http://imgcache.qq.com/ac/b.gif"/>您调整了自己的位置，需要保存才能生效，请点击“保存”。<button type="button" class="em save" onclick="if(CheckQzoneLogin()){oNav.SaveRoom();}else{ToLogin();}">保存</button><button type="button" class="undo" onclick="if(CheckQzoneLogin()){oNav.RestoreRoom();}else{ToLogin();}LoadWords(1);">恢复</button>';
+                }
+                $("home_tips").style.display = InRoom() ? "" : "none";
+                return;
+            }
+            if (type == 1) {
+                $("home_tips").innerHTML = '<img class="icon_hint" alt="hint" src="http://imgcache.qq.com/ac/b.gif"/>' + sMsg.escHtml();
+                
+            }
+            if (type == 2) {
+                $("home_tips").innerHTML = '<img class="icon_hint_success" alt="hint" src="http://imgcache.qq.com/ac/b.gif"/>' + sMsg.escHtml();
+            }
+            if (type == 3) {
+                $("home_tips").innerHTML = '<img class="icon_hint_advise" alt="hint" src="http://imgcache.qq.com/ac/b.gif"/>' + sMsg.escHtml();
+            }
+            if (type == 4) {
+                if (m_iCurrUin == m_iMasterUin) {
+                    $("home_tips").innerHTML = '<img class="icon_hint" alt="hint" src="http://imgcache.qq.com/ac/b.gif"/>您可以移动、删减房间内的物品或人物。修改后，点击“保存”按钮生效。<button type="button" class="em save" onclick="if(CheckQzoneLogin()){oNav.SaveRoom();}else{ToLogin();}">保存</button><button type="button" class="undo" onclick="if(CheckQzoneLogin()){oNav.RestoreRoom();}else{ToLogin();}LoadWords(1);">恢复</button>';
+                }
+                else {
+                    $("home_tips").innerHTML = '<img class="icon_hint" alt="hint" src="http://imgcache.qq.com/ac/b.gif"/>您可以移动自己。修改后，点击“保存”按钮生效。<button type="button" class="em save" onclick="if(CheckQzoneLogin()){oNav.SaveRoom();}else{ToLogin();}">保存</button><button type="button" class="undo" onclick="if(CheckQzoneLogin()){oNav.RestoreRoom();}else{ToLogin();}LoadWords(1);">恢复</button>';
+                }
+                $("home_tips").style.display = InRoom() ? "" : "none";
+                return;
+            }
+            setTimeout(HideTip, iTime);
+            $("home_tips").style.display = InRoom() ? "" : "none";
+        }
+        
+        function HideTip(){
+            if (InRoom()) {
+                if (m_iCurrUin == m_iMasterUin) {
+                    $("home_tips").innerHTML = '<img class="icon_hint" alt="hint" src="http://imgcache.qq.com/ac/b.gif"/>您可以移动、删减房间内的物品或人物。修改后，点击“保存”按钮生效。<button type="button" class="em save" onclick="if(CheckQzoneLogin()){oNav.SaveRoom();}else{ToLogin();}">保存</button><button type="button" class="undo" onclick="if(CheckQzoneLogin()){oNav.RestoreRoom();}else{ToLogin();}LoadWords(1);">恢复</button>';
+                }
+                else {
+                    $("home_tips").innerHTML = '<img class="icon_hint" alt="hint" src="http://imgcache.qq.com/ac/b.gif"/>您可以移动自己。修改后，点击“保存”按钮生效。<button type="button" class="em save" onclick="if(CheckQzoneLogin()){oNav.SaveRoom();}else{ToLogin();}">保存</button><button type="button" class="undo" onclick="if(CheckQzoneLogin()){oNav.RestoreRoom();}else{ToLogin();}LoadWords(1);">恢复</button>';
+                }
+            }
+        }
+        
+        function Imitate(){
+            var directUrl = "http://world.show.qq.com/mall/inc/item.html?" + "guin=" + oNav.g_Uin + "&gno=" + oNav.g_CurrentRoomId + "&imitate=1";
+            window.open(directUrl, "_blank");
+            return;
+        }
+        
+        
+        var bHide = true;
+        function HideBubs(oEle){
+            for (var i = 0; i < m_oRoom.m_oScene.m_arrUsers.length; i++) {
+                var oUserNode = m_oRoom.m_oScene.m_arrUsers[i].m_oNode;
+                if (oUserNode.childNodes[0].childNodes[0].innerHTML == "") 
+                    continue;
+                oUserNode.childNodes[0].style.visibility = bHide ? "hidden" : "";
+            }
+            oEle.innerHTML = bHide ? "显示泡泡" : "隐藏泡泡";
+            bHide = !bHide;
+        }
+        
+        function UnSetHomeFlag(){
+            function fnSucc(oResponseXML){
+                var iCode = oResponseXML.getElementsByTagName("QQHOME")[0].getAttribute("code");
+                if (iCode != 0) {
+                    parent.showMsgbox("对不起，设置失败，请稍后再试！");
+                    setTimeout(parent.hideMsgbox, 1500);
+                    return;
+                }
+                parent.showMsgbox("设置成功！");
+                setTimeout(parent.hideMsgbox, 1500);
+            }
+            
+            function fnError(){
+                parent.showMsgbox("对不起，设置失败，请稍后再试！");
+                setTimeout(parent.hideMsgbox, 1500);
+                return;
+            }
+            var sUrl = "http://world.show.qq.com/cgi-bin/qqhome_user_unsetflag";
+            var xhr = new QSWORLD.XHR(sUrl, fnSucc, null, fnError);
+            xhr.send();
+        }
+        
+        InitRoomList();
+        
+    </script>
+    <script language="javascript">
+        function loadOtherJs(){
+            try {
+                var js1 = new GetJs("http://pingjs.qq.com/ping.js", function(){
+                    if (typeof(pgvMain) == 'function') {
+                        pgvMain("", {
+                            statIframe: true
+                        });
+                    }
+                }, null);
+                js1.init();
+            } 
+            catch (e) {
+            };
+            }
+        
+        setTimeout(loadOtherJs, 5000);
+    </script>
+</html>

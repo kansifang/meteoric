@@ -1,0 +1,15 @@
+/*
+ * @(#)  example.css
+ * UI控件实例样式表
+ * @author   gugao
+ * @date     2008-03-18
+ * @version  1.0
+ */
+
+body { margin:0; }
+#bodyPanel { padding: 50px 50px; }
+#contentPanel { margin: 10px; }
+.gbPanel { padding:5px; }
+.method-area1,.method-area2 { width: 463px; margin-left: 10px; }
+.method-area1 td { width:20%; }
+.method-area2 td { width:25%; }

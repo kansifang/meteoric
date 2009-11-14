@@ -1,0 +1,27 @@
+<div>
+  <h2>${persons.length} ${t('People')} -- ${t('(feature in progress)')}</h2>
+  {if persons.length > 0}
+    <br/>
+    <table class="hoverable sortable" id="persons">
+      <tr><td>${t('Person')}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          </tr>
+    {for person in persons}
+      <tr><td width="200">${linkToLocal(person.displayName(), 'person', 'show', person.id)}</td>
+          <td>${linkToLocal(t('edit'), 'person', 'edit', person.id)}</td>
+          <td>&nbsp;&nbsp;</td>
+          <td>${%linkToLocal(t('delete'), 'person', 'destroy', person.id, { method: 'post', confirm: destroyConfirm(person) })%}</td>
+          </tr>
+    {/for}
+    </table>
+  {else}
+    <div class="firstTime">
+      ${render('person/personFirstTime')}
+    </div>
+  {/if}
+</div>
+
+<br/>
+${%linkToLocal(t('Add a new Person'), 'person', 'newInstance', null, { 'class': 'button' })%}

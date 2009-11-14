@@ -1,0 +1,33 @@
+<h3>${t('Translations')}:</h3>
+${t('Your current language is ')}<b>${ res.getLocale() }</b>.
+${t('You can change it right now to...')}
+<ul>
+  <li>${% linkToLocal(t('en - english'),    { controllerName:'home', actionName:'settings', locale: 'en' }, { method: 'post', 'class':'text_link' }) %}</li>
+  <li>${% linkToLocal(t('vn - vietnamese'), { controllerName:'home', actionName:'settings', locale: 'vn' }, { method: 'post', 'class':'text_link' }) %}</li>
+</ul>
+
+{if allowImEx()}
+    <br/>
+    <hr/>
+    <h3>${t('Export')}:</h3>
+    ${t('You can export Next Action data using...')}
+    <ul>
+      <li>${%linkToLocal(t('JSON data export'), 'home', 'jsonExport', null, {'class':'text_link'})%}</li>
+    </ul>
+
+    <h3>${t('Import')}:</h3>
+    ${t('You can import data into Next Action using...')}
+    <ul>
+      <li>${%linkToLocal(t('JSON data import'), 'home', 'jsonImport', null, {'class':'text_link'})%}</li>
+    </ul>
+{/if}
+
+{if !isDemoMode()}
+  <br/>
+  <hr/>
+  <h3>${t('Reset Database')}:</h3>
+  ${t('To start from a clean database and delete all the existing data, click here')}: 
+  <p>
+
+  &nbsp;&nbsp; ${%linkToLocal(t('Delete All Records!'), 'home', 'deleteAllRecords', null, { method: 'post', confirm: 'This operation is irreversible.  Are you sure you want to clear the entire database?', 'class': 'button' })%}
+{/if}

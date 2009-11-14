@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Untitled Document</title>
+	</head>
+	<body>
+		<script>
+		var myObject = new Object();
+		myObject.a = 10;
+		myObject["b"] = 20;
+		with(myObject)
+		{
+			document.write("a = " + a + "<br/>");
+			document.write("b = " + b + "<br/>");
+		}
+		
+		var myObject2 = {a:1, b:2};
+		with(myObject2)
+		{
+			document.write("a = " + a + "<br/>");
+			document.write("b = " + b + "<br/>");
+		}
+		</script>
+	</body>
+</html>

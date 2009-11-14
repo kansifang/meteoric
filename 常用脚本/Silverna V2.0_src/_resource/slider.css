@@ -1,0 +1,7 @@
+.ucren-slidebar			{ position: relative; left: 0; top: -10px; background-color: red;}
+.ucren-slidebar	.road	{ position: absolute; left: 0; top: 0; height: 22px; }
+.ucren-slidebar .btn	{ position: absolute; left: 0; top: 0; background: url("slide-btn.gif") no-repeat 0 0; width: 11px; height: 22px; }
+.ucren-slidebar .btn-dis{ background-position: -11px 0; }
+.ucren-slidebar .road .center{ background: url("slide-road-center.gif") repeat-x 0 8px; height: 22px; }
+.ucren-slidebar .road .left	{ background: url("slide-road-left.gif") no-repeat 0 8px; width: 2px; height: 22px; }
+.ucren-slidebar .road .right{ background: url("slide-road-right.gif") no-repeat 0 8px; width: 2px; height: 22px; }

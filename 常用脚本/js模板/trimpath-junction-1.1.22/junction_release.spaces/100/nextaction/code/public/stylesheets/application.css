@@ -1,0 +1,492 @@
+/********************                      ******************/
+/******************** overwrite reset font ******************/
+
+h1 {
+    font-size: x-large;
+    font-weight: bolder;
+    margin-top:    17px;
+    margin-bottom: 8px;
+}
+h2 {
+    font-size: large;
+    font-weight: bold;
+    margin-top:    12px;
+    margin-bottom: 6px;
+}
+h3 {
+    font-size: medium;
+    font-weight: bold;
+    margin-top:    10px;
+    margin-bottom: 2px;
+}
+h4 {
+    font-size: small;
+}
+h5 {
+    font-size: x-small;
+}
+h6 {
+    font-size: xx-small;
+}
+p {
+    margin-top:    10px;
+    margin-bottom: 10px;
+}
+ul {
+    margin: 3px;
+}
+li {
+    margin-left: 12px;
+}
+dl {
+    margin-top:    7px;
+    margin-bottom: 7px;
+}
+dt {
+    margin-top: 2px;
+}
+dd {
+    margin-left: 30px;
+}
+
+/******************** end overwrite reset font ******************/
+body {
+    margin: 0px 0px;
+    background: #b9dbb9;
+    padding: 0px 0px;
+    font-family: Verdana;
+    font-size: 10pt;
+}
+h2 {
+    font-size: 13pt;
+}
+TABLE, TR, TD {
+    font-size: 10pt;
+}
+.header {
+    border-bottom: 5px solid #a0b9a0;
+    background: #d0e0f3; 
+    padding: .5em 1em;
+    white-space: nowrap;
+}
+.header a {
+    color: #333;
+    text-decoration: none;
+}
+.header a:hover {
+    background-color: #efe;
+    text-decoration: underline
+}
+.header_tools {
+    float: right;
+    font-size: 10px;
+}
+.header_title {
+    font-size: 16pt;
+    font-weight: bold;
+    color: #336633;
+}
+.header_menu UL {
+    margin: .7em 0em .5em 0em;
+    padding: 0em 0em 0em 0em;
+}
+.header_menu UL LI {
+    display: inline;
+    margin: 0em 0em 0em 0em;
+    border-left: 1px solid #666;
+    padding: 0em 1em 0em 1em;
+}
+.footer {
+    padding: .5em 1em;
+    font-size: 10px;
+    text-align: right;
+}
+.footer a {
+    color: #333;
+    text-decoration: none;
+}
+.footer a:hover {
+    background-color: #eee;
+    text-decoration: underline
+}
+.clear {
+    clear: both;
+}
+TD.buttons {
+  padding: 4px 4px 4px 4px;
+}
+A.button, A.button:visited {
+    border: 1px solid #333;
+    padding: 1px 10px 1px 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    background: #eee;
+    white-space: nowrap;
+}
+A.button:hover {
+    background: #d0f3e0;
+}
+A.confirm {
+    font-weight: normal;
+}
+A.confirm:hover {
+    background: #f66;
+    color: #fff;
+}
+INPUT.confirm:hover {
+    background: #f66;
+}
+.btw {
+    font-size: 10px;
+    color: #933;
+}
+.sidebarContainer {
+    padding: 0 0;
+}
+.sidebar {
+    padding: 0 0;
+}
+.mainContainer {
+}
+.main {
+    margin: 0 1em 0 1em;
+    background-color: #fff;
+    padding: 5px 5px 15px 15px;
+}
+.main_flash_notice {
+    margin: 1em 1em;
+    color: red;
+}
+div.main h2 {
+    margin: 2px 0 2px 0;
+    background: #c9ebc9;
+    padding: 4px 4px 4px 4px;
+}
+div.main h2 A {
+    text-decoration: none;
+    color: #333;
+}
+div.main h2 A:visited {
+    text-decoration: none;
+    color: #333;
+}
+div.main h2 A:hover {
+    background: #fff;
+}
+div.main form {
+    line-height: 150%;
+}
+div.form {
+    line-height: 150%;
+}
+div.main form h2, form h2 {
+    margin: 0 0 20px 0;
+    border-bottom: 1px solid #999;
+    padding: 10px 20px 10px 20px;
+}
+div.form h2 {
+    margin: 0 0 20px 0;
+    border-bottom: 1px solid #999;
+    padding: 10px 20px 10px 20px;
+}
+div.form h2 a, form h2 a {
+    color: #333;
+    text-decoration: none;
+}
+div.form h2 a:hover, form h2 a:hover {
+    background: #d0f3e0;
+    text-decoration: underline;
+}
+form input, form select {
+    margin-bottom: .2em;
+}
+.required {
+    font-weight: bold;
+}
+label {
+    float: left;
+    width: 6em;
+    margin-right: .5em;
+    text-align: right;
+    text-weight: normal;
+}
+td.label {
+    width: 12em;
+    text-align: right;
+}
+form label {
+    margin-top: .2em;
+}
+form .btw {
+    margin-left: 8em;
+    line-height: 2em;
+}
+form .formError {
+    margin-left: 8em;
+    color: red;
+    font-weight: bold;
+}
+form div.wide {
+    white-space: nowrap;
+}
+div.wide label {
+    width: 8em;
+}
+div.wide .btw {
+    margin-left: 15em;
+    line-height: 2em;
+}
+div.wide .formError {
+    margin-left: 13em;
+}
+div.submit {
+    border-top: 1px solid #d8d8d8;
+    padding-top: 1em;
+    padding-left: 3em;
+    padding-bottom: 1em;
+}
+div.wide div.submit {
+    padding-left: 5em;
+}
+div.submit div.wide a:hover {
+    background: #d0f3e0;
+    text-decoration: none;
+}
+div.related {
+    padding: 1.5em 1em;
+}
+div.related form {
+    border: none;
+}
+div.middle{
+    width: 70%;
+}
+div.side {
+    float: right;
+    margin: 3em 0;
+    width: 30%;
+}
+div.dashboard TABLE {
+    background-color: #ffe;
+    padding: .5em 0;
+}
+div.dashboard TABLE TD {
+    padding: 0 1em;
+}
+div.dashboard h4 {
+    padding-left: 2.5em;
+    font-weight: normal;
+}
+div.dashboard hr {
+    visibility: hidden;
+}
+div.dashboard a {
+    text-decoration: none;
+    color: #333;
+}
+div.dashboard TD a:hover {
+    background-color: #eee;
+}
+div.dashboard TD + TD a:hover {
+    background-color: #6f9;
+}
+div.dashboard TH {
+    padding-top: .5em;
+    padding-left: 1em;
+}
+div.dashboard TH select {
+    font-size: xx-small;
+}
+TD.dashboard_topLevel a {
+    font-weight: bold;
+    color:       blue;
+    font-size:   normal;
+}
+TD.topLevel a {
+    font-weight: bold;
+    color: blue;
+}
+TD.subLevel a {
+    color: black;
+}        
+div.dashboardPrefs {
+    font-size: xx-small;
+    text-align: right;
+    line-height: 3em;
+}
+div.dashboardPrefs select {
+    font-size: xx-small;
+}
+.dashboardAction {
+    display: block;
+    padding-left: 2em;
+    text-indent: -2em;
+}
+div.contexts TABLE TR TD {
+    width: 18em;
+}
+div.contexts TABLE TR TD + TD {
+    width: auto;
+}
+div.contexts h4 {
+    padding-left: 2.5em;
+    font-weight: normal;
+}
+div.newInstanceMini {
+    background-color: #d0e0f3;
+    padding: 5px 15px 5px 15px;
+    white-space: nowrap;
+}
+div.newInstanceMini label {
+    float: left;
+    width: 5em;
+    margin-right: .5em;
+    text-align: right;
+    text-weight: normal;
+}
+div.listMini {
+    padding: 5px 15px 0px 20px;
+    white-space: nowrap;
+}
+div.listMini UL {
+    list-style-type: disc;
+    color: #777;
+}
+div.listMini A {
+    color: #444;
+    text-decoration: none;
+}
+div.listMini A:hover {
+    background-color: #efe;
+}
+input.toggleAction {
+    font-size: x-small;
+}
+input.toggleAction:hover {
+    background-color: lime;
+}
+input:hover {
+    background-color: lime;
+}    
+div.actionRepeat {
+    margin-top: .2em;
+}
+div.actionRepeat TD {
+    font-size: 12px;
+}
+.bulk {
+    background-color: #dfe;
+}
+fieldset.bulk {
+    padding: 1em 1em 0 0;
+}
+.bulk legend {
+    border: 1px solid #333;
+    background-color: #dfe;
+    padding: .5em 1em;
+}
+.aboutPop {
+    margin: 0 4em 10px 1em;
+    background: #d0e0f3;
+    padding: 1em 2em 1em 2em;
+}
+.aboutPop p {
+    padding-left: 20px;
+}
+.firstTime {
+    margin: 0 4em 0 1em;
+    background: #d0e0f3;
+    padding: 1em 2em 1em 2em;
+}
+TR.actionRow INPUT {
+    font-size: 8pt;
+}
+.hoverable > TBODY > TR:hover {
+    background-color: #eee;
+}
+.hoverable a {
+    text-decoration: none;
+}
+.hoverable a:hover {
+    text-decoration: underline;
+}
+.hoverable a.confirm:hover {
+    background: red;
+    text-decoration: none;
+}
+.tooltip {
+    border: 2px solid blue;
+    background-color: white;
+}
+.tooltip .caption {
+    padding: .2em .5em;
+    background-color: #eee;
+    font-weight: bold;
+    text-align: left;
+}
+.tooltip TABLE {
+    padding: .2em 1em;
+}
+.tooltip TD.tooltipLabel {
+    vertical-align: top;
+    text-align: right;
+}
+.tooltip TD {
+    vertical-align: top;
+    text-align: left;
+}
+a.text_link:hover {
+    background: #d0f3e0;
+    text-decoration: none;
+}
+a.txtLinkUnLn:hover {
+    text-decoration: none;
+}
+/* ================================================ */
+
+/* Sortable tables, from http://www.kryogenix.org/code/browser/sorttable */
+table.sortable a.sortheader {
+    background-color:#eee;
+    color:#666666;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+}
+table.sortable span.sortarrow {
+    color: black;
+    text-decoration: none;
+}
+
+/* ============== make alternate background color in table            ============== */
+
+tr.even td {background-color:#cde2cc;}
+tr.odd  td {background-color:#fff;} 
+
+/* ================================================ */
+
+@media print
+{
+.header, .footer, .side, input { 
+    display: none; 
+}
+div.newInstanceMini {
+    display: none; 
+}
+div.dashboard h1, div.dashboard h2, div.dashboard h3, div.dashboard h4 {
+    font-size: 7pt;
+}
+div.dashboard td, div.dashboard th {
+    font-size: 7pt;
+}
+div.dashboard td + td {
+    line-height: 2em;
+}
+div.dashboardPrefs, div.dashboard th select {
+    display: none;
+}
+TD.sidebarContainer {
+    display: none;
+}
+}
+

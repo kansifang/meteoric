@@ -1,0 +1,29 @@
+{if projects.length > 0}
+<div>
+  <h2>${projects.length} ${t('Completed Projects')}</h2>
+    <table class="hoverable sortable" id="completedProjects">
+      <tr><td nowrap="nowrap">${t('Project')}</td>
+          <td></td>
+          <td nowrap="nowrap">${t('Completed at')}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          </tr>
+    {for project in projects}
+      <tr><td nowrap="nowrap">
+            ${%projectLink(res, project, 'show')%}</td>
+          <td>&nbsp;&nbsp;</td>
+          <td>${localDateString(project.completed_at)}</td>
+          <td>&nbsp;&nbsp;</td>
+          <td>${linkToLocal(t('edit'), 'project', 'edit', project.id)}</td>
+          <td>&nbsp;&nbsp;</td>
+          <td>${%linkToLocal(t('delete'), 'project', 'destroy', project.id, { method: 'post', confirm: project.destroyConfirm()})%}</td>
+          </tr>
+    {/for}
+    </table>
+</div>
+
+<br>
+${%linkToLocal(t('Delete All Completed Projects'), 'project', 'destroyCompleted', null, { method: 'post', confirm: t('Are you sure?  It will also delete any sub-Projects and related Actions in the Project'), 'class': 'button' })%}
+{/if}

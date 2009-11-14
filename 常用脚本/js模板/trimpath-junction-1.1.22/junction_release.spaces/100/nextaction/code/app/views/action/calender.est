@@ -1,0 +1,306 @@
+<% res.cellWidth  = res.cellWidth  || 100; %>
+<% res.cellHeight = res.cellHeight || 60; %>
+
+<style>
+.calender {
+  border: 1px solid #99bb99;
+}
+.calender TH {
+  border-bottom: 1px solid #999;
+  text-align: center;
+}
+.calenderNav {
+  padding: 8px 0 2px 0;
+}
+.calenderNav A {
+  color: #333;
+  text-decoration: none;
+  margin: 2px 0 2Px 0;
+  border: 1px solid #888;
+  background: #eee;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.calenderNav A:hover {
+  background: blue;
+  color: white;
+}
+.calenderDate {
+  height: <%= cellHeight %>px;
+  margin: 0 0 0 0;
+  border: 1px solid #aaa;
+  padding: 0 0 0 0;
+  font-size: 9px;
+  overflow: hidden;
+}
+.calenderDateBody {
+  position: relative;
+  width: <%= cellWidth %>px;
+  height: <%= cellHeight %>px;
+  overflow: hidden;
+  font-size: 14px;
+}
+.calenderDateBodyContainer {
+  position: relative;
+  white-space: nowrap;
+}
+.calenderDateBodyPop {
+  display: none;
+  position: absolute;
+  white-space: nowrap;
+  background: #e0e0e0;
+  z-index: 1;
+  font-size: 14px;
+}
+.calenderDateLabel {
+  padding-left: 4px;
+  border-bottom: 1px solid #fff;
+}
+.calenderToday .calenderDateLabel {
+  border-bottom: 1px solid #bbb;
+  background: #c9ebc9;
+  font-weight: bold;
+}
+.calenderMid {
+  font-size: 14px;
+}
+.calenderMid .calenderDateLabel {
+  border-bottom: 1px solid #bbb;
+  background: #fff;
+  font-weight: bold;
+}
+.calender UL {
+  list-style-type: none;
+  margin-top: 0;
+  margin-left: 0;
+  padding-left: 10px;
+}
+.calender LI {
+  margin-left: 0;
+  padding-left: 0;
+}
+.calenderSun {
+  color: red;
+}
+.actionsNonDue {
+  margin-left: 40px;
+  position: relative;
+  height: 150px;
+  overflow: scroll;
+}
+</style>
+
+<table class="calender">
+  <colgroup>
+      <col width="<%= cellWidth %>"/>
+      <col width="<%= cellWidth %>"/>
+      <col width="<%= cellWidth %>"/>
+      <col width="<%= cellWidth %>"/>
+      <col width="<%= cellWidth %>"/>
+      <col width="<%= cellWidth %>"/>
+      <col width="<%= cellWidth %>"/>
+  </colgroup>
+
+  <tr>
+    <td colspan="7" valign="bottom">
+    <div class="calenderNav" style="float:right;">
+        &nbsp;
+        <% var today = clearHMS(new Date()); %>
+        <%= linkToLocal(t('today'), { controllerName: 'action', 
+                                      actionName: 'calender', 
+                                      ym: toYM(today) }) %>
+        &nbsp;
+    </div>
+    <div class="calenderNav" style="text-align:center; white-space:nowrap;">
+        <% var d = new Date(midDate); d.setFullYear(d.getFullYear() - 1); %>
+        <%= linkToLocal('&lt;&lt;', { controllerName: 'action', 
+                                      actionName: 'calender', 
+                                      ym: toYM(d) }) %>
+        &nbsp;
+        <% var d = new Date(midDate); d.setDate(1); d.setMonth(d.getMonth() - 1); %>
+        <%= linkToLocal('&lt;', { controllerName: 'action', 
+                                  actionName: 'calender', 
+                                  ym: toYM(d) }) %>
+        &nbsp;
+        <% var d = new Date(midDate); %>
+        <% if (textLanguageFormat(res) == 1) { %>
+           <%= linkToLocal('<b>' + toMY(d) + '</b>', { 
+                                    controllerName: 'action', 
+                                    actionName: 'calender', 
+                                    ym: toMY(d) }) %>
+        <% } else { %>
+           <%= linkToLocal('<b>' + toYM(d) + '</b>', { 
+                                    controllerName: 'action', 
+                                    actionName: 'calender', 
+                                    ym: toYM(d) }) %>
+        <% } %>                                    
+        &nbsp;
+        <% var d = new Date(midDate); d.setDate(1); d.setMonth(d.getMonth() + 1); %>
+        <%= linkToLocal('&gt;', { controllerName: 'action', 
+                                  actionName: 'calender', 
+                                  ym: toYM(d) }) %>
+        &nbsp;
+        <% var d = new Date(midDate); d.setFullYear(d.getFullYear() + 1); %>
+        <%= linkToLocal('&gt;&gt;', { controllerName: 'action', 
+                                      actionName: 'calender', 
+                                      ym: toYM(d) }) %>
+        &nbsp;
+    </div>
+    <hr/>
+    </td>
+  </tr>
+
+  <tr>
+      <th width="<%= cellWidth %>" style="color: red;">Sun</th>
+      <th width="<%= cellWidth %>">Mon</th>
+      <th width="<%= cellWidth %>">Tue</th>
+      <th width="<%= cellWidth %>">Wed</th>
+      <th width="<%= cellWidth %>">Thu</th>
+      <th width="<%= cellWidth %>">Fri</th>
+      <th width="<%= cellWidth %>">Sat</th>
+  </tr>
+  <tr>
+      <% if (begDate.getDay() != 0) { %>
+        <td colspan="<%= begDate.getDay() %>"></td>
+      <% } %>
+      <% res.actionIndex = 0;
+         while (begDate < endDate) { %>
+           <% if (begDate.getDay() == 0) { %>
+                 </tr><tr>
+           <% } %>
+           
+           <% res.cellId    = TrimPath.junctionUtil.toLocalDateString(begDate).replace(/\//g, '_'); %>
+           <% res.cellLabel = begDate.getDate(); %>
+           <% var cellMid   = begDate.getMonth() == midDate.getMonth(); %>
+           <% res.cellToday = sameDate(begDate, today); %>
+
+           <% begDate.setDate(begDate.getDate() + 1); %>
+           <% res.endBounds = toLocalDashDateObj(begDate).split(' ')[0]; %>
+           <td width="<%= cellWidth %>"
+               id="calenderDate_<%= cellId %>" 
+               class="calenderDate droppable <%= (cellMid ? 'calenderMid' : '') %> <%= (begDate.getDay() == 1 ? 'calenderSun' : '') %>" 
+               valign="top"
+               onmouseover="this.style.background=(calHoverColor || '');"
+               onmouseout="this.style.background='';"
+               onclick="if (document.getElementById('action[due_at]')) { document.getElementById('action[due_at]').value = '<%= cellId.replace(/_/g, '/') %>'; }; return false;">
+               <%= render('action/calenderCell') %>
+           </td>
+
+           <% if (res.actionIndexEnd == 0) 
+                  res.actionIndex = 0;
+              else 
+                  res.actionIndex = res.actionIndexEnd || (res.actionIndex + 1); %>
+      <% } %>
+  </tr>
+</table>
+
+<br/>
+
+<% if (actionsNonDue.length > 0) { %>
+    <h2>
+      <%= t('Actions with no due date') %> &nbsp;
+      <span class="btw"><%= t('you can drag these onto the calendar') %>...</span>
+    </h2>
+    <div class="actionsNonDue">
+      <% for (var i = 0; i < actionsNonDue.length; i++) { %>
+        <%= actionLink(res, actionsNonDue[i], 'show', { tooltip: true, prefix_due_at: false }, { id: 'actionNonDue_' + actionsNonDue[i].id, 'class': 'draggable' }) %>
+        <br/>
+      <% } %>
+    </div>
+<% } %>
+
+<% if (actions.length <= 0) { %>
+  <p>
+    <%= t('Please use the <b>Add a new Action</b> entry area on the right to add an Action') %>.
+  </p>
+<% } %>
+
+<hr/>
+<p>
+  <%= t('Actions will appear on the calendar based on their <b>Due at</b> field') %>. 
+</p>
+
+<script>
+  calHoverColor = '';
+  domTT_activate_ORIG = null;
+
+  calenderInit = function() {
+      // Initialize all the drag-drop of the calender.
+      //
+      domTT_activate_ORIG = domTT_activate_ORIG || domTT_activate;
+
+      var droppableIds = [];
+
+      $.each($('td.droppable'), function(i, el) { droppableIds.push(el.id); });
+    
+      $.each($('a.draggable'), function(i, el) {
+        TrimPath.dragDrop.makeDraggable(el, { 
+            dragSourceId    : el.id,
+            dragSourceClone : true,
+            droppableIds    : droppableIds,
+            offsetY : 20,
+            onStart : function() {
+                calHoverColor  = '#c9ebc9';
+                domTT_activate = function() {};
+            },
+            onDrop : function(current, event, target, droppableId) {
+                if (typeof(droppableId) == 'string') {
+                    // Check first if we're dropping on the same date, so no-op.
+                    //
+                    for (var p = el; p != null && p != document.body; p = p.parentNode)
+                        if (p.id == droppableId)
+                            return;
+                    
+                    var dropDate = droppableId.split('_');
+                    dropDate.shift();
+                    dropDate = dropDate.join('/');
+
+                    var actionId = parseInt(el.id.split('_')[1], 10);
+
+                    ajaxPost({ controllerName : 'action',
+                               actionName : 'changeDueAt',
+                               objId : actionId,
+                               dueAt : dropDate }, 
+                             function(result) {
+                                if (typeof(result) == 'string' &&
+                                    result.match(/^(fail|noop):/) == null) {
+                                    var s = $('#actionPop_' + actionId);
+                                    if (s.length > 0) {
+                                        if (s.parents('ul.calenderDateActions').children().length <= 1)
+                                           s.parents('div.calenderDateDiv').remove();
+                                        else
+                                           s.parent('ul.calenderDateActions li').remove();
+                                    }
+
+                                    var s = $('#action_' + actionId);
+                                    if (s.length > 0) {
+                                        if (s.parents('ul.calenderDateActions').children().length <= 1)
+                                           s.parents('div.calenderDateDiv').remove();
+                                        else
+                                           s.parent('ul.calenderDateActions li').remove();
+                                    }
+
+                                    if (el.parentNode != null)
+                                        el.parentNode.removeChild(el);
+
+                                    $('#' + droppableId).html(result);
+
+                                    calenderInit();
+                                }
+                             });
+                }
+            },
+            onEnd : function(dragInfo) {
+                calHoverColor = '';
+                domTT_activate = domTT_activate_ORIG;
+                if (dragInfo != null &&
+                    dragInfo.dragObject != null &&
+                    dragInfo.dragObject.parentNode != null)
+                    dragInfo.dragObject.parentNode.removeChild(dragInfo.dragObject);
+            }
+        });
+      });
+  }
+
+  setTimeout(calenderInit, 400);
+</script>

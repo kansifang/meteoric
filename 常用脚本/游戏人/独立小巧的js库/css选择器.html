@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Untitled Document</title>
+	</head>
+	<body>
+		<pre>
+			CSS选择器实现原理
+
+
+自从JQuery实现了Selector后，貌似其他一些JavaScript框架也开始向Selector靠拢，相继推出了自己的CSS选择器，考虑到css选择器确实强大，所以，在easyUI中也添加了一个自己的cssSelector方法：easyUI.cssSelector('css选择器',dom范围)
+
+CSS选择器实现原理：
+
+一、解析
+
+1、格式化数据，将css选择器转换成一种便于后面进行操作的格式，这一步很重要，这是数据结构部分，后面的实现都将以此为依据。
+
+以下面数据为例：
+
+#a b.c .d + e:first-child > f[data = "hello world!"]
+
+首先，捕获形如 [ 属性 = 值 ] 的数据，将"="两边的空格去掉，然后将“值”里的空格替换为一个不太可能会出现的临时字串，如0x20156
+
+然后，在+、：、>、[ 符号前加空格
+
+接着，将#、.、+、:、]、>后的空格去掉
+
+最好将单引号和双引号也都去掉
+
+做完上述替换操作后，变可得到形如下面的数据：
+
+#a b.c .d +e :first-child >f [data=hello0xdh20156world!]
+
+2、将格式化后的数据转换成这样的伪代码：取节点函数('css选择符',上一次操作的结果)，以空格为分隔：
+
+取节点函数('#a',上一次操作的结果)
+取节点函数('b.c',上一次操作的结果)
+取节点函数('.d',上一次操作的结果)
+取节点函数('+e',上一次操作的结果)
+取节点函数(':first-child',上一次操作的结果)
+取节点函数('>f',上一次操作的结果)
+取节点函数('[data=hello0xdh20156world!]',上一次操作的结果)
+
+3、将css选择器解析成具体的取节点函数，如：
+
+#a应当解析成：document.getElementById('a')
+
+E#a应当解析成：document.getElementsByTagName('E')，然后遍历id=a的
+之前进行过转换的0x20156记得重新转换为空格。
+
+更多css Selectors的解释请参见：
+http://www.w3.org/TR/CSS2/selector.html
+
+二、编写取节点函数，将伪代码实现在easyUI.cssSelector的实现中采用的是eval的方式，目前该方法尚未完全支持CSS2选择器，还在测试阶段！
+
+演示：
+
+easyUI Css Selector测试地址：http://www.jslab.org.cn/?tag=cssSelector
+		</pre>
+	</body>
+</html>

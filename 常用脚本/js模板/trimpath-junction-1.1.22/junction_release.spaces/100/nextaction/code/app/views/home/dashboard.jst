@@ -1,0 +1,125 @@
+{var NUM_ACTION_COLUMNS = Preference.getInt('dashboard.numActionColumns', 3)}
+{var ACTION_DAYS_AHEAD  = Preference.getInt('dashboard.activeDaysAhead', null)}
+{var FOCUS_CONTEXT_ID   = req['focusContextId'] || 'all'}
+{var FOCUS_PROJECT_ID   = req['focusProjectId'] || 'all'}
+
+{macro contextSection(context_id, contextName, contextPrefix, contextParentId)}
+  {if FOCUS_CONTEXT_ID == 'all' ||
+      FOCUS_CONTEXT_ID == context_id ||
+      FOCUS_CONTEXT_ID == contextParentId}
+    {var isTopLevel = (contextPrefix == '') || (contextParentId == null)}
+    {if (isTopLevel)}
+        <tr><td colspan="${NUM_ACTION_COLUMNS + 1}"><hr/></td></tr>
+    {/if}
+    <tr {if isTopLevel}class="topLevel"{/if}">
+        {if context_id != null}
+            {if isTopLevel}
+              <td class="dashboard_topLevel" valign="top" nowrap="nowrap" colspan="${NUM_ACTION_COLUMNS + 1}"
+                  style="background:#f0f0f0;">
+                ${contextLink(res, context)}
+              </td>
+              </tr>
+              <tr><td></td>
+            {else}
+              <td valign="top" nowrap="nowrap">&nbsp;
+                   ${context.namePrefix}
+                   ${contextLink(res, context)}
+              </td>
+            {/if}
+        {else}
+            <td valign="top" nowrap="nowrap" colspan="${NUM_ACTION_COLUMNS + 1}"
+                style="background:#f0f0f0;">
+              <i>${contextName}</i>
+            </td>
+            </tr>
+            <tr><td></td>
+        {/if}
+        {var column = 0}
+        {for action in actions}
+          {if action.context_id == context_id &&
+              (FOCUS_PROJECT_ID == 'all' ||
+               FOCUS_PROJECT_ID == action.project_id)}
+            {if column > 0 && column % NUM_ACTION_COLUMNS == 0}
+              </tr><tr><td></td>
+            {/if}
+            <td id="action_${action.id}" valign="top">
+              <span class="dashboardAction">
+                <input type="checkbox" ${action.completed_at != null ? '"checked"' : ''}
+                   onclick="TrimPath.junctionClient.postAsync('action', 'toggleComplete', ${action.id}, { silent: true });{minify}
+                            this.parentNode.style.backgroundColor = 'red';
+                            $(this.parentNode).fadeOut('slow'){/minify}">
+                ${actionLink(res, action, 'edit')}
+              </span>
+            </td>
+            ${column = column + 1 |eat}
+          {/if}
+        {/for}
+    </tr>
+  {/if}
+{/macro}
+
+<div>
+  <h2>${t('Dashboard')} <span class="btw">${localDateString(new Date())}</span></h2>
+  {if (contexts.length > 0 || actions.length > 0)}
+  <table><tr><td>
+  <div class="dashboard">
+    <table>
+      <tr class="dashboardControls">
+          <th nowrap="nowrap">
+            <b>${t('Context')}:</b>
+            {var choices = Context.parentChoices()}
+            {if choices.length > 0}
+              <select onchange="TrimPath.junctionClient.get('home', 'dashboard', null, { focusContextId: this.value, focusProjectId: '${FOCUS_PROJECT_ID}' }); return false;">
+                ${optionsForSelect([[t('(show all)'), 'all']].concat(choices), FOCUS_CONTEXT_ID)}
+              </select>
+            {/if}
+            </th>
+          <th colspan="${NUM_ACTION_COLUMNS}">
+            <b>${t('Actions')}:</b>
+            {var choices = Project.parentChoices()}
+            {if choices.length > 0}
+              <select onchange="TrimPath.junctionClient.get('home', 'dashboard', null, { focusContextId: '${FOCUS_CONTEXT_ID}', focusProjectId: this.value }); return false;">
+                ${optionsForSelect([[t('(for all Projects)'), 'all']].concat(choices), FOCUS_PROJECT_ID)}
+              </select>
+            {/if}
+            </th>
+      </tr>
+      {for context in contexts}
+        ${contextSection(context.id, h(context.name), context.prefix, context.parent_context_id)}
+      {/for}
+      ${contextSection(null, t('no context'))}
+    </table>
+  </div>
+  <br/>
+  <div class="dashboardPrefs">
+    ${t('show actions for')}:
+    <select onchange="TrimPath.junctionClient.get('home', 'dashboard', null, { activeDaysAhead: this.value }); return false;">
+      ${optionsForSelect(tChoices(activeDaysAheadChoices), ACTION_DAYS_AHEAD)}
+    </select><br/>
+    ${t('show # of columns')}: 
+    <select onchange="TrimPath.junctionClient.get('home', 'dashboard', null, { numActionColumns: this.value }); return false;">
+      ${optionsForSelect([1, 2, 3, 4, 5, 100], NUM_ACTION_COLUMNS)}
+    </select>
+  </div>
+  </td></tr></table>
+  {else}
+    {if ACTION_DAYS_AHEAD == null}
+      <p>
+        ${t('You have zero remaining Actions')}.
+      </p>
+      <p>
+        ${t('Please use the "Add a new Action" entry area on the right to add an Action')}.<p>
+      </p>
+    {else}
+      <p>
+      ${t('No Actions match the active date filter')}.
+      <p>
+      ${t('Change the Actions active date filter')}:
+      <select onchange="TrimPath.junctionClient.get('home', 'dashboard', null, { activeDaysAhead: this.value }); return false;">
+        ${optionsForSelect(activeDaysAheadChoices, ACTION_DAYS_AHEAD)}
+      </select>
+      <p>
+      ${t('Or, please use the "Add a new Action" entry area on the right to add an Action')}.<p>
+    {/if}
+  {/if}
+</div>

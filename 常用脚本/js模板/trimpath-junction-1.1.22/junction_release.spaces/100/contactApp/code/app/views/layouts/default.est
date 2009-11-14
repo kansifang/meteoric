@@ -1,0 +1,9 @@
+<html>
+<head>
+  <title>Contact Manager App</title>
+  <script type="text/javascript" src="/javascripts/trimpath/junctionUtil.js"></script>
+</head>
+<body>
+  <%= contentForLayout %>
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Untitled Document</title>
+	</head>
+	<body>
+		<div id=output></div>
+<script>
+function Order(compare)
+{
+    if(!compare)compare=new Function("a","b","return a-b");
+    Array.prototype.sort.call(this,compare);
+    this.unshift=this.insert;
+    this.push=this.insert;
+    this.concat=function()
+    {
+        var r=this;       
+        for(var j=0;j<arguments.length;j++)
+        {
+            var a=arguments[j];
+            if(a.length)
+            {
+                for(var i=0;i<a.length;i++)
+                {
+                    r.insert(a[i]);
+                }
+            }
+            else r.insert(a);
+        }
+        return r;
+    };    
+    this.reverse=function()
+    {
+        var r=Array.prototype.reverse.call(this);
+        var ccompare=compare;
+        var rcompare=function(a,b)
+        {
+            return -ccompare(a,b);
+        }
+        compare=rcompare;
+        return this;
+    };
+    this.sort=function(sortfunction)
+    {
+        if(arguments.length==0)sortfunction=compare;
+        Array.prototype.sort.call(this,sortfunction)
+        compare=sortfunction;
+    };
+    this.slice=function(start,end){
+        var r=Array.prototype.slice.call(this,start,end);
+        OrderList.call(r);
+        return r;
+    };
+
+    this.splice=function(start,deleteCount){
+        var r=Array.prototype.splice.call(this,start,deleteCount);
+        OrderList.call(r,compare);
+        if(arguments.length>2)
+        {
+            for(var i=2;i<arguments.length;i++)
+            {
+                this.insert(arguments[i]);
+            }
+        }
+        return r;
+    };
+
+    function search(start,end,newNode)
+    {        
+        if(end==start)
+        {
+            return end;            
+        }
+        else
+        {
+            var m=Math.floor((start+end)/2);
+            if(compare(this[m],newNode)==0)return m;
+            if(compare(this[m],newNode)<0)return search.call(this,m+1,end,newNode);
+            if(compare(this[m],newNode)>0)return search.call(this,start,m,newNode);
+        }
+    };
+    this.insert=function(newNode)
+    {
+        return Array.prototype.splice.call(this,search.call(this,0,this.length,newNode),0,newNode);
+    };
+    this.contains=function(newNode)
+    {
+        if(this[search.call(this,0,this.length,newNode)]==newNode)return true;
+        else return false;
+    }
+}
+function OrderArray(compare)
+{
+    var a=new Array();
+    Order.call(a,compare);
+    return a;
+}
+
+
+</script>
+<script>
+
+
+function ArrayCollection(distance)
+{
+    var struct=new OrderArray(
+        function(a,b){
+            return distance(b)-distance(a);
+        }
+    )
+	this.struct=struct;
+    this.takeMin=function(){
+        return struct.pop();
+    }
+    this.insert=function(){
+        return struct.insert(arguments[0]);
+    }
+    this.empty=function(){
+        return !struct.length;
+    }
+}
+function SimpleCollection(distance)
+{
+    var struct=new Array()
+	this.struct=struct;
+    this.takeMin=function(){
+		var mindistance=Infinity,minindex=0;
+	    for(var i=0;i<struct.length;i++)
+		{
+			if(distance(struct[i])<mindistance)
+			{
+				mindistance=distance(struct[i]);
+				minindex=i;
+			}
+		}
+		var tmp=struct[minindex];
+		struct[minindex]=struct[struct.length-1];
+		struct[struct.length-1]=tmp;
+        return struct.pop();
+    }
+    this.insert=function(){
+        return struct.push(arguments[0]);
+    }
+    this.empty=function(){
+        return !struct.length;
+    }
+}
+/*
+var tmp=new SimpleCollection(function(x){return x;});
+tmp.insert(3);
+tmp.insert(2);
+tmp.insert(1);
+tmp.insert(6);
+tmp.insert(7);
+alert(tmp.takeMin());
+alert(tmp.struct);
+*/
+function pathSearch(Collection)
+{
+    this.map;
+    var map;
+    this.width;
+    var me=this;
+    this.pos=function (pos)
+    {
+        if(pos.length)
+            return pos[1]*this.width+pos[0];
+        else
+            return [Math.floor(pos/this.width),pos%this.width+1];
+    }
+    var defaultFlag=['*','S','E',' '];
+    this.loadStrMap=function(strmap,flag)
+    {
+        flag=flag||defaultFlag;
+        this.map=new Array();
+        map=this.map;
+        this.width=strmap[0].length+2;
+        for(var i=0;i<this.width;i++)this.map.push("*");
+        
+        for(var y=0;y<strmap.length;y++)
+        {
+            this.map.push("*");     
+            for(var x=0;x<this.width;x++)
+            {           
+                switch(strmap[y].charAt(x))
+                {
+                case flag[0]:
+                    this.map.push("*");
+                    break;
+                case flag[1]:
+                    this.start=[x+1,y+1];
+                    this.map.push(" ");
+                    break;
+                case flag[2]:
+                    this.end=[x+1,y+1];
+                    this.map.push(" ");
+                    break;
+                case flag[3]:
+                    this.map.push(" ");
+                    break;
+                }
+            }
+            this.map.push("*");
+
+        }
+        for(var i=0;i<this.width;i++)this.map.push("*");
+    }
+    this.loadArrMap=function(strmap,flag)
+    {
+        flag=flag||[1,2,3,0];
+        this.map=new Array();
+        map=this.map;
+        this.width=strmap[0].length+2;
+        for(var i=0;i<this.width;i++)this.map.push("*");
+        
+        for(var y=0;y<strmap.length;y++)
+        {
+            this.map.push("*");     
+            for(var x=0;x<this.width;x++)
+            {
+           
+                switch(strmap[y][x])
+                {
+                case flag[0]:
+                    this.map.push("*");
+                    break;
+                case flag[1]:
+                    this.start=[x+1,y+1];
+                    this.map.push(" ");
+                    break;
+                case flag[2]:
+                    this.end=[x+1,y+1];
+                    this.map.push(" ");
+                    break;
+                case flag[3]:
+                    this.map.push(" ");
+                    break;
+                }
+            }
+            this.map.push("*");
+
+        }
+        for(var i=0;i<this.width;i++)this.map.push("*");
+
+    }
+
+    this.getPath=function()
+	{
+        var r=new Array();
+        r.push(this.pos(this.end));
+        
+        if(map[r[0]]==" "||this.map[r[0]]=="*")return null;
+        
+        while(r[r.length-1]!=-1)
+        {
+            //document.write(r[r.length-1]+" ");
+            //alert(this.map[54]);
+            r.push(this.map[r[r.length-1]]);
+        }
+        r.pop();
+      
+        r.tran=function(){
+            for(var i=0;i<this.length;i++)
+            {
+                r[i]=me.pos(r[i]);
+            }
+            return this;
+        }
+        return r.reverse();        
+    }
+
+    this.bfs=function()
+	{
+
+        var queue=new Array();
+        queue.push(this.pos(this.start));
+        this.map[queue[0]]=-1;
+        queue.insert=function(pos,curr)
+        {
+
+            if(map[pos]==" ")
+            {
+                map[pos]=curr;
+                this.push(pos);
+            }
+        }
+        while(queue.length)
+        {            
+            var curr=queue.shift();
+            queue.insert(curr+1,curr);
+            queue.insert(curr-1,curr);
+            queue.insert(curr+this.width,curr);
+            queue.insert(curr-this.width,curr);
+            if(this.map[curr+1]!="*"||this.map[curr+this.width]!="*")
+                queue.insert(curr+this.width+1,curr);
+            if(this.map[curr+1]!="*"||this.map[curr-this.width]!="*")
+                queue.insert(curr-this.width+1,curr);
+            if(this.map[curr-1]!="*"||this.map[curr+this.width]!="*")
+                queue.insert(curr+this.width-1,curr);
+            if(this.map[curr-1]!="*"||this.map[curr-this.width]!="*")
+                queue.insert(curr-this.width-1,curr);
+
+        }
+
+    }
+
+    this.astar=function()
+	{
+        var end=this.end;
+        var G=new Array(map.length);
+        function distance(pos)
+        {
+            var base=G[pos];
+            pos=me.pos(pos);
+            var a=Math.abs(pos[0]-end[1]);
+            var b=Math.abs(pos[1]-end[0]);
+            return base+10*(a+b)-6*((a>b)?a:b);
+        }
+        
+        var queue=new Collection(distance);
+        queue.insert(me.pos(this.start));
+		queue[0]=queue.struct[0];
+		
+        this.map[queue[0]]=-1;
+        G[queue[0]]=0;
+        queue.insert2=function(pos,curr,f)
+        {
+            var g=G[curr]+10;
+            if(f)g+=4;
+            if(map[pos]==" "||G[pos]>g)
+            {
+                map[pos]=curr;
+                G[pos]=g;
+                this.insert(pos);
+            }
+        }
+        while(!queue.empty())
+        {
+            var curr=queue.takeMin();
+            queue.insert2(curr+1,curr);
+            queue.insert2(curr-1,curr);
+            queue.insert2(curr+this.width,curr);
+            queue.insert2(curr-this.width,curr);
+            if(this.map[curr+1]!="*"||this.map[curr+this.width]!="*")
+                queue.insert2(curr+this.width+1,curr,1);
+            if(this.map[curr+1]!="*"||this.map[curr-this.width]!="*")
+                queue.insert2(curr-this.width+1,curr,1);
+            if(this.map[curr-1]!="*"||this.map[curr+this.width]!="*")
+                queue.insert2(curr+this.width-1,curr,1);
+            if(this.map[curr-1]!="*"||this.map[curr-this.width]!="*")
+                queue.insert2(curr-this.width-1,curr,1);
+            if((typeof map[this.pos(this.end)])== "number")break;      
+        }
+    }
+    var viewer=[];
+    this.show=function(){
+        var size=10;
+        var x=0,y=0;
+        var create=false;
+        if(!viewer.length)create=true;
+        for(var i=0;i<this.map.length;i++)
+        {
+            if(!(i%this.width)){y++;x=0;}
+            x++;
+            if(create)viewer.push(document.createElement("img"));
+            viewer[viewer.length-1].style.position="absolute";
+            viewer[viewer.length-1].style.top=y*size+"px";
+            viewer[viewer.length-1].style.left=x*size+"px";
+            if(this.map[i]=="*")viewer[viewer.length-1].style.background="red";
+            else viewer[viewer.length-1].style.background="blue";
+            viewer[viewer.length-1].style.width=size;
+            viewer[viewer.length-1].style.geight=size;
+            document.body.appendChild(viewer[viewer.length-1]);
+        }
+        viewer[this.pos(this.start)].style.background="green";
+        viewer[this.pos(this.end)].style.background="black";
+        //document.writeln(this.pos([8,7]));
+    }
+    this.showPath=function(path)
+    {
+        if(viewer.length)
+        {
+            for(var i=0;i<path.length;i++)
+            {
+                viewer[path[i]].style.background="yellow";
+            }
+        }    
+    }
+}
+
+window.onload=function()
+{
+var arrmap = [ // handest
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,1,1,1,1,1,1,1,1,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1,1,1,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,1,0,1,0,0,0,0,0,1,0,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,1,1,1,0,1,0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,1,0,0,1,1,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,1,1,1,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,1,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,1,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,1,0,1,1,1,1,1,1,1,1,1,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0],
+[0,0,0,0,1,0,0,0,0,0,2,0,1,0,0,1,0,1,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0],
+[0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,1,0,0,1,0,1,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0],
+[0,0,0,0,1,1,1,1,1,1,1,1,1,0,0,1,0,1,0,0,1,0,1,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,1,0,0,1,0,1,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,1,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,1,0,0,0,1,1,0,0,1,1,1,1,1,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,1,0,0,1,0,1,0,0,0,0,0,3,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,1,1,1,1,1,1,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,0,0],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+];
+    var map0=new pathSearch(ArrayCollection);
+    map0.loadArrMap(arrmap);
+    map0.show();
+    var begin=new Date();
+    map0.astar();
+    var end=new Date();
+    alert(end-begin);
+    map0.showPath(map0.getPath());
+}
+</script>
+	</body>
+</html>

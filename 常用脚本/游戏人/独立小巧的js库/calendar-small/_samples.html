@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+ *@Generator -> LiHuiGang - Email:lhg133@126.com - QQ:463214570
+ *@Copyright (c) 2009 LiHuiGang Compostion - Blog:http://www.cnblogs.com/lhgstudio
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>lhgcalendar - samples</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style type="text/css">
+body{margin:0;padding:0;font:14px Verdana, Arial, sans-serif;line-height:200%;}
+#content{padding-left:50px;padding-right:50px;}
+#content h2{font-size:18px;color:#1E9300;padding-top:8px;margin-bottom:8px;}
+#content h3{margin-top:8px;margin-bottom:8px;FONT:bold 14px 宋体,tahoma,arial,sans-serif;COLOR:#0033CC;}
+#content div{margin-top:10px;margin-bottom:10px;border:#666 solid 1px;padding:10px;}
+#content span{color:#f00;font-weight:bold;}
+ul, ol{color:#000000;}
+	</style>
+	<script type="text/javascript" src="lhgcalendar.js"></script>
+<body>
+    <div id="content">
+	    <h2>一、组件简介</h2>
+		<span>lhgcalendar 是一款小巧、高效、美观的弹出日历组件。它的功能虽然不多，但使用非常简单。它是一个非常小巧的组件，代码只有一个文件，大小6K，因此使得它在功能小也就简单了一些（但个人认为只要在满足使用的情况下，使用更简洁的组件不仅减少了文件的大小，还可提高网页加载的速度，提高组件的运行效率。当然如果你想使用功能强大的日历组件，网上有很多这样的组件您尽可以去使用。但我认为功能多的组件肯定就有你用不到的功能，这样肯定就浪费了一些宝贵的有限的资源。所以本组件适用于那些功能要求不多，但要求小巧，高效率的组件的人，个人认为效率还是第一位的）。 </span><br />
+		<b>它的主要特点有：</b><br />
+	    <ol>
+	        <li>小巧：整个组件代码只有一个文件lhgcalendar.js，大小为5.4K。</li>
+	        <li>调用简单：你只需要在相应位置添加一个事件来调用主函数即可（参考下面有示列）。</li>
+	        <li>效率高：你试下就知道了:-)。</li>
+	        <li>外观还看得过去：呵呵，这个算不上特点，本人界面设计能力差，不过提供的这2种样式还算过得去。</li>
+	        <li>支持的浏览器：<span>IE6+，Firefox2.0+，Chrome(谷歌浏览器)，Opera9.5+，Safari3.0+等。</span></li>
+		</ol>
+		如果使用上有任何问题可与我共同探讨。我的QQ：463214570 ，blog：http://www.cnblogs.com/lhgstudio
+		<h2>二、组件结构</h2>
+		<ol>
+		    <li><span>lhgcalendar.js</span>：组件核心文件，其实也就这一个文件:-)。</li>
+			<li><span>skin</span>：包含组件图片文件和样式表文件的文件夹。</li>
+			<li><span>skin/default.css</span>：组件默认式表文件。</li>
+			<li><span>skin/gray.css</span>：灰以样式的样式表文件。</li>
+		</ol>
+		<h2>三、调用方法及参数说明</h2>
+		<ol>
+        <li>在需要调用的页面引入lhgcalendar.js，例如：<span>&lt;script type=&quot;text/javascript&quot; src=&quot;lhgcalenar.js&quot;&gt;&lt;/script&gt;</span></li>
+	    <li>然后在要调用的位置上引发的事件中加入调用代码，例如：&lt;input type=&quot;text&quot; onclick=&quot;lhgcalendar();&quot;/&gt;</li>
+	    <li>参数说明：只有一个参数，就是接收日期的控件的ID，用法见下面的示例<br/>
+          还有就是在lhgcalendar.js里有个组件的配置对象：var <span></span>config = { dir : '', skin : 'default' } 中的dir指的是日历显示在控件的下面还右面， 默认是下面，写成'right'就是在右面；skin指的就是皮肤名称。</li>
+		<li><span>注：日期的格式为 M-Y-D</span></li>
+		</ol>
+	    <h2>四、功能及示例</h2>
+		<h3>1. 常规调用</h3>
+	  <div>
+		    <input type="text" id="l1" onclick="lhgcalendar();" /><br />
+	  <span>调用代码：</span>&lt;input id=&quot;date1&quot; type=&quot;text&quot; onclick=&quot;<span>lhgcalendar();</span>&quot;/&gt;</div>
+		<h3>2. 图标触发</h3>
+	  <div>
+		    <input type="text" id="l2" /> <img align="absmiddle" src="date.gif" onclick="lhgcalendar('l2');" /><br />
+		  <span>调用代码：</span>&lt;input type=&quot;text&quot; id=&quot;<span>date2</span>&quot; /&gt; &lt;img align=&quot;absmiddle&quot; src=&quot;date.gif&quot; onclick=&quot;lhgcalendar('<span>date2</span>');&quot; /&gt;;		<br />
+		  注：date2为输入框的id
+	  </div>
+	</div>
+</body>
+</html>

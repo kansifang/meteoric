@@ -1,0 +1,48 @@
+<p>
+<b><%= t('Welcome to') %> Next Action</b>
+  <span class="btw">on <%= localDateString(new Date()) %></span>
+</p>
+<p>
+Next Action helps you get things done.  
+</p>
+<p>
+The&nbsp;key&nbsp;areas&nbsp;of&nbsp;Next&nbsp;Action&nbsp;to&nbsp;help&nbsp;you&nbsp;be&nbsp;productive&nbsp;are...
+</p>
+
+<h2><%= linkToLocal(t('Dashboard'), 'home', 'dashboard') %></h2>
+<p style="padding-left: 10px;">
+The <b>Dashboard</b> lets you see a grand overview of your work,
+like a radar screen for what you can work on next.
+</p>
+
+<h2><%= linkToLocal(t('Calendar'), 'action', 'calender') %></h2>
+<p style="padding-left: 10px;">
+The <b>Calendar</b> shows a monthly calendar view of your work,
+based on when your Actions are due.
+</p>
+
+<h2><%= linkToLocal(t('Actions'), 'action', 'index') %>
+<% var c = Action.countActive({ conditions: 'Action.completed_at IS NULL' });
+   if (c > 0) { %>
+<span class="btw">&nbsp;(<%= c %> total)</span>
+<% } %>
+</h2>
+<p style="padding-left: 10px;">
+Actions are your tasks or to-do items.  You can add a new <b>Action</b>
+using the entry box on the right side of the page.
+</p>
+
+<h2><%= linkToLocal(t('Contexts'), 'context', 'index') %></h2>
+<p style="padding-left: 10px;">
+You can organize your Actions by into different <b>Contexts</b>,
+like: home, office, phone, grocery, errands.  So, the next time
+you're by your phone, for example, you can see who you need to call, and
+get those calls done.
+</p>
+
+<h2><%= linkToLocal(t('Projects'), 'project', 'index') %></h2>
+<p style="padding-left: 10px;">
+You can also group your Actions together into larger <b>Projects</b>, such as
+"site redesign" or "westfield account".
+</p>
+

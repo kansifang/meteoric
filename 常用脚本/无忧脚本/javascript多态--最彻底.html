@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Untitled Document</title>
+	</head>
+	<body>
+		<script>
+		function animal(n,c,w,r){
+		    this.name = n;
+		    this.color = c;
+		    this.weight = w;
+		    this.run=r;
+		}
+		var cat=new animal("cat","Yellow","3kg",function(){alert(this.name+" slowly run!")});
+		var dog=new animal("dog","white","5kg",function(){alert(this.name+" quickly run!")});
+		cat.run();
+		dog.run();
+		
+		 </script>
+	</body>
+</html>

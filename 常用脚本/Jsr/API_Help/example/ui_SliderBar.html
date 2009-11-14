@@ -1,0 +1,108 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html"/>
+	<title>滑动条实例 -- JSR2+</title>
+	<script type="text/javascript" src="../../common/js/core.js?lib=webui"></script>
+	<link rel="stylesheet" href="../resources/example.css" type="text/css" media="all"/>
+</head>
+
+<body>
+<div id="bodyPanel" style="display:none">
+	<b>滑动条实例</b><hr/><br/>
+	<!-- 面板 -->
+	<div id="panel"></div>
+	<!-- 面板内容 -->
+	<div id="contentPanel">
+		<!-- 控件实例 -->
+		<fieldset id="example"><div class="gbPanel">
+			<table class="font"><tr>
+				<td width="100px">滑动条1:</td><td width="363px"><div><div id="sliderBar1"></div></div></td>
+			</tr><tr>
+				<td width="100px">滑动条2:</td><td><div id="sliderBar2"></div></td>
+			</tr><tr>
+				<td>onChange 事件:</td><td><input type="text" id="text1" /></td>
+			</tr><tr>
+				<td>onAdjust 事件:</td><td><input type="text" id="text2" /></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<!-- 相关方法 -->
+		<fieldset id="method"><div class="gbPanel">
+			<table class="method-area1"><tr>
+				<td><button id="b1"></button></td><td><button id="b2"></button></td>
+				<td><button id="b3"></button></td><td><button id="b4"></button></td>
+				<td><button id="b5"></button></td>
+			</tr><tr>
+				<td><button id="b6"></button></td><td><button id="b7"></button></td>
+				<td></td><td></td><td></td>
+			</tr></table>
+			<table class="method-area2"><tr>
+				<td><button id="b8"></button></td><td><button id="b9"></button></td>
+				<td></td><td></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<div class="font">注: 相关方法是针对 "滑动条1" 操作的。</div>
+	</div>
+	<!-- 面板内容结束 -->
+</div>
+</body>
+
+<script>
+var s1, s2, t1, t2, btn, disabled = true;
+new UI.Panel({id:"panel", caption:"应用实例 -> 滑动条", width:520, height:336, body:"contentPanel"});
+new UI.GroupBox({id:"example", caption:"控件实例"});
+new UI.GroupBox({id:"method", caption:"相关方法"});
+t1 = new UI.TextField({id:"text1", name:"text1", width: 180});
+t2 = new UI.TextField({id:"text2", name:"text2", width: 180});
+//创建滑动条
+s1 = new UI.SliderBar({id:"sliderBar1", name:"sliderBar1", width:300, minValue:0, maxValue:160});
+s2 = new UI.SliderBar({id:"sliderBar2", name:"sliderBar2", width:300, minValue:20, maxValue:280});
+//相关方法按钮
+btn = new UI.Button({id:"b1", caption:"autoSize", width:75});
+btn.bind(function() {
+	s1.autoSize();
+});
+btn = new UI.Button({id:"b2", caption:"disable", width:75});
+btn.bind(function() {
+	s1.disable(disabled);
+	disabled = !disabled;
+});
+btn = new UI.Button({id:"b3", caption:"getValue", width:75});
+btn.bind(function() {
+	alert("'滑动条1' 的值: " + s1.getValue());
+});
+btn = new UI.Button({id:"b4", caption:"onAdjust", width:75});
+btn.bind(function() {
+	s1.onAdjust(function(){ t2.setValue(s1.getValue()) });
+	alert("请调整 '滑动条1' 注意 'onAdjust 事件' 文本框的变化。");
+});
+btn = new UI.Button({id:"b5", caption:"onChange", width:75});
+btn.bind(function() {
+	s1.onChange(function(){ t1.setValue(s1.getValue()) });
+	alert("请调整 '滑动条1' 注意 'onChange 事件' 文本框的变化。");
+});
+btn = new UI.Button({id:"b6", caption:"reset", width:75});
+btn.bind(function() {
+	s1.reset();
+});
+btn = new UI.Button({id:"b7", caption:"setValue", width:75});
+btn.bind(function() {
+	s1.setValue(62);
+	alert("设置了 '滑动条1' 的值为: 62 。");
+});
+btn = new UI.Button({id:"b8", caption:"setMaxValue", width:105});
+btn.bind(function() {
+	s1.setMaxValue(520);
+	alert("设置了 '滑动条1' 的最大值为: 520 。");
+});
+btn = new UI.Button({id:"b9", caption:"setMinValue", width:105});
+btn.bind(function() {
+	s1.setMinValue(66);
+	alert("设置了 '滑动条1' 的最小值为: 66 。");
+});
+
+onLoad.add(function(){ $("bodyPanel").style.display = "" });
+</script>
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <body>
+        <div id="Login" style="position:absolute;border:1px solid #bfbfbf;width:100px;height:100px;"/>
+    </body>
+</html>
+<script language="javascript">
+    function $(){
+        var div = document.createElement("div");
+        div.style.border = "1px solid #ff0000";
+        div.style.position = "absolute";
+        div.style.width = "100px";
+        div.style.height = "100px";
+        div.innerHTML = "canvas";
+        return div;
+    }
+    
+    function $package(a, b){
+        a[b[0]] = b[1];
+    }
+    
+    function $class(a, b){
+        return [a, b];
+    }
+    
+    function $extend(a, b){
+        b.prototype = new a();
+        return b;
+    }
+    
+    function $new(a, b, c){
+        if (!b) 
+            b = $();
+        a.apply(b);
+        b.init(c);
+        return b;
+    }
+    
+    //=====================================
+    var fox = {
+        ui: {}
+    };
+    $package(fox.ui, $class("Component", function(){
+        var _this = this;
+        var _super = arguments.callee.prototype;
+        this.init = function(){
+            //alert("Component init!");
+            return;
+        }
+        this.position = function(x, y){
+            with (_this.style) {
+                left = x;
+                top = y;
+            }
+            return;
+        }
+        this.size = function(w, h){
+            with (_this.style) {
+                width = w;
+                height = h;
+            }
+            return;
+        }
+        this.show = function(){
+            alert("Component show");
+            return;
+        }
+    }));
+    $package(fox.ui, $class("Canvas", $extend(fox.ui.Component, function(){
+        fox.ui.Component.apply(this);
+        var _this = this;
+        var _super = arguments.callee.prototype;
+        this.init = function(){
+            _super.init();
+            alert("Canvas init!");
+            return;
+        }
+        this.show = function(){
+            _super.show();
+            alert("Canvas show!");
+            return;
+        }
+    })));
+    $package(fox.ui, $class("Login", $extend(fox.ui.Canvas, function(){
+        fox.ui.Component.apply(this);
+        var _this = this;
+        var _super = arguments.callee.prototype;
+        this.init = function(){
+            _super.init();
+            alert("Login init!");
+            this.innerHTML = "Login....."
+            return;
+        }
+        this.show = function(){
+            _super.show();
+            alert("Login show!");
+            return;
+        }
+        this.onclick = function(e){
+            _this.show();
+            return;
+        }
+    })));
+    
+    function Drag(target){
+        //var e = e || event;
+        var self = this;
+        
+        this.box = document.createElement("div");
+        this.box.style.position = "absolute";
+        this.box.style.top = target.style.top;
+        this.box.style.left = target.style.left;
+        this.box.style.width = target.style.width;
+        this.box.style.height = target.style.height;
+        this.box.style.border = "1px dotted #000000";
+        target.parentNode.appendChild(this.box);
+        //
+        document.onmousemove = function(e){
+            var e = e || event;
+            self.box.style.left = e.clientX - target.offX;
+            self.box.style.top = e.clientY - target.offY;
+            return;
+        }
+        document.onmouseup = function(e){
+            var e = e || event;
+            target.style.top = self.box.style.top;
+            target.style.left = self.box.style.left;
+            document.body.removeChild(self.box);
+            document.onmousemove = null;
+            document.onmouseup = null;
+            return;
+        }
+    }
+    
+    function $drag(a){
+        a.onmousedown = function(e){
+            var e = e || event;
+            document.body.appendChild(this);
+            this.offX = e.clientX - this.offsetLeft;
+            this.offY = e.clientY - this.offsetTop;
+            Drag(this);
+        }
+        return;
+    }
+    
+    var $stage = document.body;
+    
+    for (var i = 0; i < 100; i++) {
+        var component = $new(fox.ui.Component);
+        component.position(10 + i * 40, 100);
+        component.size(100 + Math.random() * 100, 100 + Math.random() * 100);
+        $drag(component);
+        component.style.background = "#bfbfbb";
+        component.innerHTML = "component" + i;
+        $stage.appendChild(component);
+    }
+    
+    var canvas = $new(fox.ui.Canvas);
+    canvas.position(500, 100);
+    $stage.appendChild(canvas);
+    
+    Login = $new(fox.ui.Login, Login);
+    Login.position(300, 300);
+    Login.show();
+    $drag(canvas);
+    $drag(Login);
+</script>

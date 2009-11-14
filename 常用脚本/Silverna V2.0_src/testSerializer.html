@@ -1,0 +1,26 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="silverna-packs.js"></script>
+<script>
+if(!Object.prototype.serialize)
+{
+	Object.prototype.serialize = Serializer.prototype.serialize;
+	Number.prototype.serialize = function(encoder){return this};
+	String.prototype.serialize = function(encoder){return encoder(this)};
+	Boolean.prototype.serialize = function(encoder){return this};
+}
+alert({a:1,b:true,c:"abc"}.serialize());
+
+var t = {
+    a:123,
+	b:456,
+	c:":{},",  //作为分隔字符串的这四个特殊字符出现在属性和值中会被替代为\u003a \u007b \u007d \u002c 程序中需要进行还原处理
+	d:{
+		x:159,
+		y:new Object
+	}
+}
+alert(t.serialize());
+
+alert([1,2,3,4,5].serialize()); //数组用 数字:值 的格式
+
+</script>

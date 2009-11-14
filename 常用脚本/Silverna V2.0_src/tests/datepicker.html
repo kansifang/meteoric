@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:silverna="http://silverna.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Calendar</title>
+	<script src="../silverna-packs.js"></script>
+	<script src="../widgets/mopcalendar.js"></script>
+	<script src="../widgets/datepicker.js"></script>
+	<script>
+	function test()
+	{
+		core.web.widgets.Widget.setupAll();
+	}
+	</script>
+</head>
+<body onload="test()" style="height:600px;width:800px;">
+	<silverna:widget id="p1" type="core.web.widgets.DatePickerWidget">
+		<silverna:face id="i1" name="dateInputField" readonly="true"></silverna:face>
+		<silverna:face id="c1" date="2007-07-01" visibility="hidden"></silverna:face>
+	</silverna:widget>
+	<!--
+	<silverna:widget id="p2" type="core.web.widgets.DatePickerWidget">
+		<silverna:face id="i1" name="dateInputField" readonly="true"></silverna:face>
+		<silverna:face id="c1" date="2007-07-01" visibility="hidden"></silverna:face>
+		<silverna:face id="b1" name="dateSelectButton" image="datepicker.gif"></silverna:face>
+	</silverna:widget>
+	<silverna:widget id="p3" type="core.web.widgets.DatePickerWidget">
+		<silverna:face id="i1" name="dateInputField" readonly="true"></silverna:face>
+		<silverna:face id="c1" date="2007-07-01" visibility="hidden"></silverna:face>
+		<silverna:face id="b1" name="dateSelectButton" image="datepicker.gif"></silverna:face>
+	</silverna:widget>
+	-->
+</body>
+</html>

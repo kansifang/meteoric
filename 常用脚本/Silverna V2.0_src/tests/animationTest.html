@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:silverna="http://silverna.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>AnimationTest</title>
+	<script src="../silverna-packs.js"></script>
+	<script src="../lib/silverna-animations.js"></script>
+	<script>
+	function test()
+	{
+		with(core.web.widgets.adorners.animations)
+		{
+			var anim = new Animation();
+			anim.setPanel($$("test"));
+			anim.setProvider(function(evt){
+				evt.x++;
+				return evt.x < 200;
+			});
+			$("play").onclick = function(){
+				anim.play(function(args){
+					anim.panel.setPosition(args.x);
+				},{x:0});
+
+				manim.play();
+				manim2.play();
+				sanim.play();
+			}
+			$("pause").onclick = function(){
+				anim.pause();
+	
+				manim.pause();
+				manim2.pause();
+				sanim.pause();
+			}
+			$("continue").onclick = function(){
+				anim.resume();
+
+				manim.resume();
+				manim2.resume();
+				sanim.resume();
+			}
+			$("reset").onclick = function(){
+				anim.reset();
+
+				manim.reset();
+				manim2.reset();
+				sanim.reset();
+			}
+			anim.onreset = function(evt){
+				anim.panel.setPosition(0);
+				evt.x = 0;
+			}
+			var manim = new MoveAnimation();
+			manim.setPanel($$("test2"));
+			manim.coordinateType = "XY";
+			manim.setRange([0,0],[1000,1000]);
+			manim.setPath(function(co){
+				if(!co.r) co.r = 0;
+				co.r += 0.02;
+				co.x = Math.cos(co.r)*100 + 100;
+				co.y = Math.sin(co.r)*100 + 100;
+			});
+			manim.onreset = function(evt)
+			{
+				this.panel.setAbsPosition(0,100);
+			}
+			
+			var manim2 = new MoveAnimation();
+			manim2.setPanel($$("test3"));
+			manim2.setPath(function(x){return Math.cos(0.1*x)*20+20});
+			manim2.onreset = function(evt)
+			{
+				this.panel.setAbsPosition(0,200);
+			}
+			manim2.coordinateType = "Y";
+
+			var sanim = new SlideAnimation();
+			sanim.setPanel($$("test4"));
+			sanim.setRange(null,[200,1000])
+			sanim.onreset = function(evt)
+			{
+				this.panel.resize(0);
+			}
+
+			var fanim = new FadeAnimation();
+			fanim.setPanel($$("test5"));
+			fanim.speed = 2;
+			fanim.onreset = function(){
+				fanim.panel.el.style.filter = "alpha(opacity=100)";
+			}
+			//fanim.setRange(100,0);
+			//fanim.play();
+			//fanim.shine();
+	
+			var fanim2 = new FadeAnimation();
+			fanim2.setPanel($$("test2"));
+			fanim2.speed = 2;
+			//fanim.setRange(100,0);
+			//fanim.play();
+			//fanim2.shine();
+			
+			$("fadeIn").onclick = function(){
+				fanim.fadeIn();
+				fanim2.fadeIn();
+			}
+			$("fadeOut").onclick = function(){
+				fanim.fadeOut();
+				fanim2.fadeOut();
+			}
+			$("shine").onclick = function(){
+				fanim.shine();
+				fanim2.shine();
+			}
+			$("stop").onclick = function(){
+				fanim.abort();
+				fanim2.abort();
+			}
+		}
+	}
+	</script>
+</head>
+<body onload="test()" style="width:800px;height:600px;padding:0 0 0 0;margin:0 0 0 0">
+<div id ="test" style="position:absolute;border: solid 1px #3377cc;width:100px;"><div>Hello!</div></div>
+<br/><br/><button id="play">开始</button><button id="pause">暂停</button><button id="continue">继续</button><button id="reset">重置</button>
+<div id ="test2" style="position:absolute;border: solid 1px #3377cc;width:100px;top:100px;left:0px;"><div>51js</div></div>
+<div id ="test3" style="position:absolute;border: solid 1px #3377cc;width:100px;top:200px;left:0px;"><div>无忧脚本</div></div>
+<div style="height:20px"><div id ="test4" style="position:absolute;border: solid 1px #3377cc;width:0px;top:300px;left:0px;background-color:#3377cc"></div></div>
+<div style="height:20px"><div id ="test5" style="position:absolute;border: solid 1px #3377Bc;width:110px;top:400px;left:10px;background-color:#3377cc"></div></div>
+<br/><br/><button id="fadeIn">FadeIn</button><button id="fadeOut">FadeOut</button><button id="shine">Shine</button><button id="stop">Stop</button>
+</body>
+</html>

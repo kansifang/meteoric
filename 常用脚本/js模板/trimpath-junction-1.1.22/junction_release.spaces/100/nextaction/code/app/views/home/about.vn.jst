@@ -1,0 +1,155 @@
+<div>
+<h2>Vài nét về Next Action</h2>
+Next Action, Loại Dùng Cho Cá Nhân, Phiên Bản số ${NEXT_ACTION_VERSION}
+{if isDemoMode()}
+  -- đang chạy ở trạng thái chạy thử
+{/if}
+<p>
+
+Next Action là một chương trình liệt kê và theo dõi để giúp bạn 
+<a href="http://trimpath.com/project/wiki/GettingThingsDone">Làm Xong Việc</a> nhanh chóng.  
+Chương trình này giống như một người phụ tá giúp đỡ bạn làm việc có hiệu suất cao và hoàn tất 
+các công việc bạn cần làm đúng thời gian đã định.
+
+<h3>Các Đặc Điểm:</h3>
+<ul>
+<li>Chạy nhanh gọn.</li>
+<li>Dễ sử dụng.</li>
+<li>Code có thể coi được.</li>
+<li>Chương trình chạy ngay cả khi internet bị mất, bị chậm hay có lúc chạy lúc không.</li>
+</ul>
+
+<h3>Những Điều Cần Làm:</h3>
+{if isDemoMode()}
+  Bạn đang chạy Next Action ở trạng thái <b>chạy thử</b>.<p>
+
+  Trạng thái chạy thử có nghĩa là <b><i>bất kỳ dữ liệu nào mà bạn đánh vào máy sẽ bị xóa</i></b> 
+  khi bạn đóng web browser.  Muốn ra khỏi trạng thái chạy thử,
+  ngay bây giờ bạn hãy <a href="http://gears.google.com/">cài đặt và cho phép Google Gears chạy</a>
+  để có thể sử dụng toàn bộ chức năng của Next Action, Loại Dùng Cho Cá Nhân.
+{else}
+  Chúc mừng, chúc mừng, bạn đã cài đặt xong nhu liệu cần thiết để Next Action, Loại Dùng Cho Cá Nhân, 
+  có thể chạy không bị giới hạn một số chức năng của nó.<p>
+
+  Bây giờ, bạn phải nhấn nút <i>Xóa Hết Dữ Liệu!</i> ở dưới để xóa tất cả các dữ liệu được tạo sẵn để lập kế hoạch mới cho riêng bạn: 
+  <p>
+
+  &nbsp;&nbsp; ${%linkToLocal(t('Delete All Records!'), 'home', 'deleteAllRecords', null, { method: 'post', confirm: t('This operation is irreversible.  Are you sure you want to clear the entire database?'), 'class': 'button' })%}
+  <p>
+
+  Phiên bản Next Action này là loại dùng cho cá nhân.  Vì vậy, bất kỳ dữ liệu nào bạn tạo ra được lưu trữ 
+  trên máy tính của bạn.  Các dữ liệu của bạn sẽ không bị gởi ra bên ngoài, nhưng sẽ được lưu trữ trong 
+  chương trình chạy nhanh của Google Gears trong máy tính của bạn.<p>
+
+  Hãy chắc chắn bạn <b>bookmark trang này</b> (hoặc tốt hơn, và tiện lợi hơn, là bạn bookmark trang ${linkToLocal(t('Dashboard'), 'home', 'dashboard')}) 
+  để bạn có thể mở lại Next Action một cách dễ dàng hơn.
+{/if}
+
+<h3>Phần mềm cần thiết để chạy:</h3>
+Web browsers chạy được Next Action là: Firefox 2.0+, IE 7+.<p>
+
+<a href="http://gears.google.com/">Google Gears</a> : 
+{if isDemoMode()}
+  bạn cần <a href="http://gears.google.com/">cài đặt Google Gears</a>
+  để dùng chung với Next Action nếu bạn muốn dùng thêm các chức năng khác bị 
+  giới hạn do chạy trong trạng thái chạy thử.
+{else}
+  phần mềm Google Gears đã được cài đặt trong máy tính này và web browser.  
+  Khi bạn giới thiệu bạn bè về Next Action, bạn hãy nói cho họ biết là họ 
+  cần cài đặt phần mềm Google Gears trên máy của họ trước khi chạy Next Action 
+  cho những kế hoạch của họ.
+{/if}
+<p>
+
+<h3>Cách Dùng Next Action:</h3>
+Nhấn chuột vào những điểm kết nối hàng ngang ở trên đầu để làm quen với các chức năng của chương trình.  Các kết nối ở trên bao gồm...
+
+<ul>
+<li>
+${linkToLocal(t('Dashboard'), 'home', 'dashboard')} 
+cho bạn thấy rõ một cách tổng quát những Công Việc đang cần làm.
+</li>
+<li>
+${linkToLocal(t('Actions'), 'action', 'index')} 
+liệt kê những Công Việc còn lại.
+</li>
+<li>
+${linkToLocal(t('Projects'), 'project', 'index')} 
+giúp bạn sắp xếp và gộp lại những Công Việc có liên quan với nhau thành những Đê Án lớn hơn.
+</li>
+<li>
+${linkToLocal(t('Contexts'), 'context', 'index')} 
+để bạn sắp xếp các Công Việc gần giống nhau vào những nhóm công việc.
+</li>
+<li>
+${linkToLocal(t('Completed'), 'action', 'completed')} 
+liệt kê tất cả những Công Việc bạn đã làm xong -- bạn có thấy rằng bạn đã làm được nhiều việc hơn và nhanh hơn không?
+</li>
+<li>
+${linkToLocal(t('Statistics'), 'home', 'statistics')} 
+cho bạn thấy số công việc còn lại cần làm và bạn đang ở chỗ nào trong kế hoạch của bạn.
+</li>
+</ul>
+
+<h3>Cách bỏ công việc cần làm vào Next Action:</h3>
+Bạn hãy dùng chỗ  '${t('Add a new Action')}' ở góc bên phải của trang để ghi 
+vào máy Các Công Việc cần làm của bạn.  Khung ghi công việc cần làm này luôn luôn được thấy và 
+nằm phía bên phải để bạn có thể ghi vào máy ngay công việc cần làm trước khi bạn quên mất.
+<p>
+
+Bạn có thể dùng kết nối ${linkToLocal(t('detailed entry'), 'action', 'newInstance')} 
+ở phía bên phải của trang để ghi vào máy Công Việc cần làm chi tiết hơn.<p>
+
+Nếu bạn muốn ghi vào máy một loạt các Công Việc cần làm cùng một lúc, bạn có thể dùng kết nối 
+${linkToLocal(t('bulk entry'), 'action', 'newInstance')} để điền vào nhanh hơn.  Kết nối 
+'${t('bulk entry')}' cũng luôn xuất hiện bên phải của trang.
+
+<h3>Chi tiết Công Việc:</h3>
+Mỗi Công Việc đều có các phần sau đây, nhưng một vài phần không bắt buộc bạn điền vào.  
+Và cũng có một vài chi tiết bạn chỉ có thể thấy ở '${t('detailed entry')}' hoặc ở 
+trang bạn sửa Công Việc mà thôi.
+
+  <dl style="padding-left: 1em;">
+    <dt>${t('Name')}</dt>
+      <dd>Bắt buộc phải điền vào.  Tốt nhất là tên Công Việc phải ngắn gọn, như là 'mua sửa ở costco', hoặc 'mua xe mới'.</dd>
+    <dt>${t('Notes')}</dt>
+      <dd>Có thể để trống, dùng để ghi thêm chi tiết hay những thông tin cần thiết dùng cho Công Việc cần làm.</dd>
+    <dt>${t('Color')}</dt>
+      <dd>Có thể để trống, nhưng để phân biệt với các Công Việc khác, bạn có thể dùng màu sắc như là màu <font color="red">đỏ</font>.</dd>
+    <dt>${t('Active at')}</dt>
+      <dd>Có thể để trống.  Đôi khi, bạn không cần phải lo lắng phải làm một công việc nào đó cho đến một thời điểm nào đó
+          trong tương lai, chẳng hạn như 'hai tuần sau' mới làm.  Khi bạn điền ngày tháng vào 'Bắt đầu' làm, 
+          tức là bạn báo cho chương trình biết là không được cho Công Việc này xuất hiện trong '${t('Dashboard')}' cho đến khi 
+          thời gian '${t('Active at')}' đến.  Để phần này được chạy, bạn cần phải chọn trong '${t('show actions for')}' nằm ở 
+          gần cuối trang '${t('Dashboard')}'.</dd>
+    <dt>${t('Due at')}</dt>
+      <dd>Có thể để trống.  Phần này cho bạn biết ngày nào là hạn chót Công Việc phải làm xong.  Nhưng một khi bạn muốn sửa đổi để công việc đó phải xong trước ngày nào đó hoặc bạn di chuyển ngày trong lịch làm việc, thì ngày đó phải là ngày hôm nay hoặc sau đó. </dd>
+    <dt>${t('Completed at')}</dt>
+      <dd>Bất cứ khi nào bạn đánh dấu một Công Việc đã làm xong hay hoàn tất, 
+          chương trình sẽ ghi ngày làm xong trong ô này.  Sau khi một Công Việc 
+          đã làm xong, nó chỉ được cho thấy ở trang ${linkToLocal(t('Completed'), 'action', 'completed')} mà thôi.
+    <dt>${t('Repeat')}</dt>
+      <dd>Có thể để trống.  Ô ${t('Repeat')} để bạn bảo chương trình phải làm lại một Công Việc nào đó, 
+          chẳng hạn như mua thiệp chúc sinh nhật cho một người nào đó mỗi năm.  Chức năng làm lại hay lập lại công việc này  
+          chỉ được chạy khi mà bạn đã làm xong một Công Việc.  Nếu một Công Việc vừa làm xong mà có đánh dấu ${t('Repeat')} trên nó, 
+          chương trình sẽ tự động tạo ra một Công Việc mới hoàn toàn giống y chang như Công Việc vừa làm xong với ngày tháng được tự 
+          động điền vào.</dd>
+  </dl>
+
+Bạn cũng có thể liên kết một Công Việc với một Đề Án.  Ví dụ như là Công Việc 'thuê xe Limos' có thể liên kết với Đề Án 'Đám Cưới'.  
+
+Bạn cũng có thể liên kết một Công Việc với một Nhóm Việc.  Ví dụ như là Công Việc 'khảo giá máy Wii' có thể liên kết với Nhóm Việc 
+'Điện thoại & Máy tính'.  
+
+Bạn có thể sửa Các Công Việc, Nhóm Việc và Đề Án của bạn bất kỳ lúc nào sau khi đã bỏ vào chương trình Next Action.<p>
+
+<h3>Lưu Bản Sao:</h3>
+Để lưu bản sao các hồ sơ dữ liệu trong máy của bạn, xin vui lòng sao chép lại những hồ sơ có liên quan được  
+trình bày trong tài liệu <a href="http://code.google.com/apis/gears/api_database.html#directories">
+Google Gears database file locations</a>.
+
+<h3>Tìm Hiểu Thêm:</h3>
+Thỉnh thoảng xem thêm thông tin ở   
+<a href="http://trimpath.com/project/wiki/NextAction">trang giới thiệu</a> Next Action và  
+<a href="http://trimpath.com/blog">TrimPath blog</a>.<p>
+</div>

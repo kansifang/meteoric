@@ -1,0 +1,27 @@
+<html>
+<body>
+<h1>Login To Space <% response.info.spaceKey %>:</h1>
+
+<form method="POST"
+      action="<% response.href %>">
+
+<h2><% response.msg %></h2>
+
+<p>
+  <label>Login:</label>
+  <input type="text" name="userKey" id="userKey" value=""/>
+</p>
+
+<p>
+  <label>Password:</label>
+  <input type="password" name="password" id="password" value=""/>
+</p>
+
+<p>
+  <input type="submit" name="login" value="Login"/>
+  <a href="/">cancel</a>
+</p>
+
+</form>
+<body>
+</html>

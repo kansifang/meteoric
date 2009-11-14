@@ -1,0 +1,574 @@
+﻿/*定义界面主体包括（字体、边距、滚动条样式）*/
+body { 
+    font-family: "arial", "helvetica", "sans-serif", ""; 
+	font-size: 9pt; 
+    margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px;margin-top: 0px
+	scrollbar-face-color:#efefe7;
+    scrollbar-highlight-color:#ffffff;
+    scrollbar-3dlight-color:#a5a5a5;
+    scrollbar-darkshadow-color:#a5a5a5;
+    scrollbar-shadow-color:#d6d6ce;
+    scrollbar-arrow-color:#003184;
+    scrollbar-track-color:#deded6;
+	}
+  /*注释：定义图片引用*/
+  img
+  {
+    border:none;
+    margin:0px;
+    padding:0px;
+  }
+
+/*字体样式·全局，建议用于div、span，不要用于font和table*/
+/*加大字体*/
+.bigtext { 
+    font-family: "arial", "helvetica", "sans-serif",""; 
+	font-size: 14px; 
+	line-height: 150%; 
+	color: #ffffff;
+	font-weight: bold;
+	 }
+/*加粗字体*/ 
+.boldtext {
+	font-family: "arial", "helvetica", "sans-serif", "";
+	font-size: 12px;
+	line-height: 150%;
+	color: #ffffff;
+	font-weight: bold;
+	 }
+/*灰体，注意尽量不要用它来表示“非激活”状态，因为浏览器会为disable状态自动导入默认的样式*/
+.boldtextgray {
+	font-family: "arial", "helvetica", "sans-serif", "";
+	font-size: 12px;
+	line-height: 150%;
+	color: #838383;
+	font-weight: bold;
+	 }
+/*红色字体，用来标识必填项*/
+.boldtextred {
+	font-family: "arial", "helvetica", "sans-serif", "";
+	font-size: 12px;
+	line-height: 150%;
+	color: #9a0000;
+	font-weight: bold;
+	 }
+
+/*对页面上的可编辑框或区域应用此样式*/
+div.editform
+	{
+		margin-top:10px;
+		border:1px solid #94a5b5;
+		padding:10 10 10 10;
+		padding-top: 0;
+		display:none;
+	}
+/*对页面上的绘图区域应用此样式*/
+div.canvas
+{
+	position:"relative";
+	background-color:"#CFCFCF";
+	border: solid 1px #b4b4b4;
+}
+/*默认的form样式，取消了间隔和缩进*/
+form {
+		margin: 0 0 0 0;
+		padding: 0 0 0 0; 
+	}
+
+/***组合样式，用来展示页面上的select框***/
+span.combobox {
+	font: 9pt "宋体";
+	background-color: #ffffff;
+	height: 16px;
+	border-bottom: #b4b4b4 1px double; 
+    border-left: #b4b4b4 1px double; 
+	border-right: #b4b4b4 1px double; 
+	border-top: #b4b4b4 1px double;
+	overflow:hidden;
+}
+
+select.noborder {
+	width: 157px;
+	height: 20px;
+	font: 9pt "宋体";
+	margin:-2 -2 -2 -2;
+}
+/*************************************/
+
+/*表格缺省样式*/
+table { 
+    font-family: "arial", "helvetica", "sans-serif",""; 
+	font-size: 9pt; 
+	line-height: 150%; 
+	color: #000000;
+	 }
+/*表格样式，可编辑列表...*/
+table.listtable {
+	width:100%;
+	margin-top:20px;
+	font:9pt 宋体;
+	background-color:#aca7ac;
+}
+/*左边树型菜单表格距离*/
+.table1
+	{
+	margin: 9 0 0 6;
+	}
+	
+/*还没用到*/
+.table2
+	{
+	margin: 3px;
+	}	
+	
+/*首页表格与表格之间的距离*/
+.table3
+	{
+	margin: 7px 0 0 0;
+	}
+	
+/**组合样式：页签界面外框*/	
+.table4
+	{
+	margin-top: 9px;
+	margin-left: 8px;
+	}
+ 
+.table5
+	{
+	margin-top: 0px;
+	margin-left: 8px;
+	
+	}
+
+/*默认单元格样式——禁止换行*/
+td{
+	nw:expression(this.nowrap=true);
+}
+
+
+.td1
+	{
+	padding-top: 14px;
+	padding-left: 14px;
+	padding-right: 14px;
+	padding-bottom: 14px;
+	}
+/*弹出编辑窗口，控制边距*/
+.td2
+	{
+	padding: 10px;
+	}
+/*弹出编辑窗口，提示信息栏边距*/
+.td3
+	{
+	padding-top: 0px;
+	padding-left: 24px;
+	padding-right: 24px;
+	padding-bottom: 0px;
+	}
+.td4
+	{
+	padding-top: 14px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	}
+.td5
+	{
+	padding: 6 4 10 4;
+	}
+
+/*单元格内容样式*/
+td.note{
+	padding-left:6px;
+	padding-top: 3;
+	padding-bottom: 1;
+}
+
+/*表格中的复选框样式*/
+td.checkbox{
+	width:35px;
+	text-align:center;
+	padding-top: 3;
+	padding-bottom: 1;
+}
+
+/*表格标题行样式*/
+tr.tablehead{
+	text-align:center;
+	height:22px;
+	background-color:#c1d4e3;
+}
+/*表格标题列样式*/
+td.title{
+	background-image:url(/resource/images/tab_title_bg.gif);
+}
+/*内容行样式1*/
+tr.content0{
+	background-color: #f6f6f6;
+	height: 14px;
+}
+
+
+tr.titrow
+     {
+	font-family: "";
+	font-size: 9px;
+	color: #ffffff;
+	height: 24px;
+     } 
+tr.note1
+		{
+	background-color: #ebf2f9;
+	height: 22px;
+	color: #000000;
+		}
+.td {
+	 border-bottom: #a5b1c1 1px double; 
+     border-left: #a5b1c1 0px double; 
+	 border-right: #a5b1c1 0px double; 
+	 border-top: #a5b1c1 0px double;
+}
+
+/*页签体边框、边距控制*/
+.bigtableborder
+	{
+	margin-top: 0px;
+	margin-left: 8px;
+	border-right: #94a5b5 1px solid; 
+	border-top: #94a5b5 0px solid; 
+	border-left: #94a5b5 1px solid; 
+	border-bottom: #94a5b5 1px solid;
+	}
+/*还没用到*/
+.table5
+	{
+	margin-top: 0px;
+	margin-left: 8px;
+	}
+
+
+/*组织架构边框控制*/
+.tableborder1
+	{
+	border: #7fa0bf 1px solid; 
+	}
+	
+/*选择边框控制*/
+.tableborder2
+	{
+	border: #808080 1px solid; 
+	}
+
+/***组合样式：信息分类字体、脚线样式*/
+.bartext {
+	font-family: "arial", "helvetica", "sans-serif", "";
+	font-size: 12px;
+	line-height: 150%;
+	color: #5f6050;
+	font-weight: bold;
+	 }
+.trborder1
+	{
+	border-right: #838574 0px solid; 
+	border-top: #838574 0px solid; 
+	border-left: #838574 0px solid; 
+	border-bottom: #838574 1px solid;
+	}
+/*****************************************/
+
+/**组合样式：列表表格内线边框*/
+.trborder2
+	{
+	padding:1px 2px 1px 2px;
+	border-right: #a4a6a4 1px solid; 
+	border-top: #a4a6a4 0px solid; 
+	border-left: #a4a6a4 0px solid; 
+	border-bottom: #a4a6a4 1px solid;
+	}
+
+.trborder3
+	{
+	padding:1px 2px 1px 2px;
+	border-right: #a4a6a4 0px solid; 
+	border-top: #a4a6a4 0px solid; 
+	border-left: #a4a6a4 0px solid; 
+	border-bottom: #a4a6a4 1px solid;
+	}
+/*************************************************/
+
+/**组合样式：动作下拉菜单*/
+.traction
+	{
+	padding: 1px;
+	border-right: #526d8c 1px solid; 
+	border-top: #526d8c 0px solid; 
+	border-left: #526d8c 1px solid; 
+	border-bottom: #526d8c 1px solid
+	}
+
+.traction2
+	{
+	border-right: #526d8c 0px solid; 
+	border-top: #526d8c 0px solid; 
+	border-left: #526d8c 0px solid; 
+	border-bottom: #526d8c 1px solid
+	}
+
+.traction3
+	{
+	border-right: #526d8c 1px solid; 
+	border-top: #526d8c 1px solid; 
+	border-left: #526d8c 1px solid; 
+	border-bottom: #526d8c 0px solid
+	}
+/***********************************************/
+
+/*定义输入框类型：不可编辑状态*/
+.textbox
+    {
+     background-color:ffffff; 
+	 border-bottom: #b4b4b4 1px double; 
+     border-left: #b4b4b4 1px double; 
+	 border-right: #b4b4b4 1px double; 
+	 border-top: #b4b4b4 1px double;
+	 color: expression(this.readonly==true?"#808080":"#000000");
+	 }
+
+input.checkbox{
+	width:12px;
+	height:12px;
+}
+
+input.textbox
+	{
+		font: 9pt "宋体";
+		background-color: #ffffff;
+		width:156px;
+		height: 20px;
+		border-bottom: #b4b4b4 1px double; 
+		border-left: #b4b4b4 1px double; 
+		border-right: #b4b4b4 1px double; 
+		border-top: #b4b4b4 1px double;
+		color: expression(this.readonly==true?"#808080":"#000000");
+	}
+
+input.button
+	{
+		font-family: 宋体;
+		font-size: 9pt;
+		/*background-image : url(/resource/images/left_menu_bg_blue.gif);*/
+		background-color:#e7edf4;
+		height:20px;
+		border : solid 1px #86a8ce;
+		width:34px;
+		text-align : center;
+		padding-top : 3px;
+		color: #000000;
+		cursor: pointer;
+	}
+/*定义输入框类型：限于预付单*/
+.textboxborder
+    {
+	width:100%;
+     background-color:; 
+	 border:  0px double;
+	 }
+
+/*数量输入框：只能输入0~9数字和"+-"*/
+input.quantity
+	{
+     background-color:ffffff; 
+	 border-bottom: #b4b4b4 1px double; 
+     border-left: #b4b4b4 1px double; 
+	 border-right: #b4b4b4 1px double; 
+	 border-top: #b4b4b4 1px double;
+	 color:expression(this.readonly==true?"#808080":"#000000");
+	 text-align:right;
+	 keydown:expression(
+							onkeypress=function()
+							{
+								var ch = String.fromCharCode(event.keyCode);
+								
+								if(TextBoxElement.getCursorPosition(this)==0 && (ch=="+"||ch=="-")
+								|| !isNaN(parseInt(ch)))
+								{
+									return true;
+								}
+								return false;
+							}
+					   );
+	}
+/*金额输入框*/
+input.money
+	{
+     background-color:ffffff; 
+	 border-bottom: #b4b4b4 1px double; 
+     border-left: #b4b4b4 1px double; 
+	 border-right: #b4b4b4 1px double; 
+	 border-top: #b4b4b4 1px double;
+	 color:expression(this.readonly==true?"#808080":"#000000");
+	 text-align:right;
+	 keydown:expression(
+							onkeypress=function()
+							{
+								var ch = String.fromCharCode(event.keyCode);
+								var pos = TextBoxElement.getCursorPosition(this);
+
+								var testVal = this.value.substring(0, pos) + ch + this.value.substring(pos);
+
+								if(/^([+-])?(0|[1-9][0-9]*)(\.[0-9]{0,2})?$/.test(testVal))
+								{
+									return true;
+								}
+								return false;
+							}
+					   );
+	}
+
+.textboxline_1
+    {
+	 width:100%;
+     background-color:#FFFBFF; 
+	 border-bottom: #b4b4b4 1px double; 
+     border-left: #b4b4b4 0px double; 
+	 border-right: #b4b4b4 0px double; 
+	 border-top: #b4b4b4 0px double;
+	 }
+
+
+.textboxgray
+     {
+	 background-color: ; 
+	 border-bottom: #b4b6b4 1px double; 
+     border-left: #b4b6b4 1px double; 
+	 border-right: #b4b6b4 1px double; 
+	 border-top: #b4b6b4 1px double;
+}
+
+/*定义输入框类型：线*/
+.textboxline 
+    {
+     width:156px;
+	 background-color:f6f6f6; 
+	 border-bottom: #b4b4b4 1px double; 
+     border-left: #b4b4b4 0px double; 
+	 border-right: #b4b4b4 0px double; 
+	 border-top: #b4b4b4 0px double;
+} 
+/*定义输入框类型：可编辑*/
+.textboxbulue 
+     {
+	 width:156px;
+	 border-bottom: #7b9ebc 1px double; 
+     border-left: #7b9ebc 1px double; 
+	 border-right: #7b9ebc 1px double; 
+	 border-top: #7b9ebc 1px double;
+	 color: expression(this.readonly==true?"#808080":"#000000");
+     }
+	 
+.textboxblue 
+     {
+	 width:156px;
+	 border-bottom: #7b9ebc 1px double; 
+     border-left: #7b9ebc 1px double; 
+	 border-right: #7b9ebc 1px double; 
+	 border-top: #7b9ebc 1px double;
+	 color: expression(this.readonly==true?"#808080":"#000000");
+     }
+
+/*定义可回车带出输入框类型*/
+.textboxquick 
+{
+	width: 156px;
+	border: #7b9ebc 1px double;
+	background-image: url(/resource/images/quick.gif);
+	background-position: center right;
+	background-repeat: no-repeat;	 
+}     
+/*inputbox end */
+
+/**按钮组合样式**/
+/*初始状态 */ 
+.bbutton2
+    {
+	border-bottom: #596CA5 1px solid;
+	border-left: #8596CA 1px solid;
+	border-right: #596CA5 1px double;
+	border-top: #8596CA 1px solid;
+	font-size:9pt;
+	text-align:center;
+	vertical-align:top;
+	height:19px;
+	padding-left:7px;
+	padding-right:7px;
+	background-image: url(../images/button_fill_up.gif);
+    }
+/*滑过状态 */ 
+.bbutton2_up
+    {
+	border-bottom: #CE6B00 1px solid;
+	border-left: #FFB56B 1px solid;
+	border-right: #CE6B00 1px double;
+	border-top: #FFB56B 1px solid;
+	font-size:9pt;
+	text-align:center;
+	vertical-align:top;
+	font-size:9pt;
+	height:19px;
+	background-image: url(../images/button_fill_up.gif);
+    }
+/*点击状态 */ 
+.bbutton2_down
+    {
+	border-bottom: #CE6B00 1px solid;
+	border-left: #FFB56B 1px solid;
+	border-right: #CE6B00 1px double;
+	border-top: #FFB56B 1px solid;
+	font-size:9pt;
+	text-align:center;
+	vertical-align:top;
+	font-size:9pt;
+	height:19px;
+	background-image: url(../images/button_fill_down.gif);
+    }
+/*按钮禁用状态 */ 
+.buttonforbid
+    {
+	border-bottom: #909090 1px solid;
+	border-left: #B5B5B5 1px solid;
+	border-right: #909090 1px double;
+	border-top: #B5B5B5 1px solid;
+	font-size:9pt;
+	text-align:center;
+	vertical-align:top;
+	font-size:9pt;
+	height:19px;
+	background-image: url(../images/button_forbid.gif);
+    }		
+/* button end */
+    
+.navpoint {font-size: 9pt; cursor: hand; color: #003366; font-family: webdings}
+
+
+/*普通文字链接样式*/
+a.:link { font-family: "arial", "helvetica", "sans-serif","";  font-size: 9pt; color: #205aa7; text-decoration: none} 
+a.:visited { font-family: "arial", "helvetica", "sans-serif","";  font-size: 9pt; color: #205aa7; text-decoration: none} 
+a.:hover { font-family: "arial", "helvetica", "sans-serif","";  font-size: 9pt; color: #205aa7; text-decoration: underline} 
+a.:active { font-family: "arial", "helvetica", "sans-serif","";  font-size: 9pt; color: #000000; text-decoration: none}
+/*文字链接为白色*/
+a.white:link { font-size: 9pt; color: #ffffff; text-decoration: none} 
+a.white:visited { font-size: 9pt; color: #ffffff; text-decoration: none} 
+a.white:hover { font-size: 9pt; color: #eeeeee; text-decoration: underline} 
+a.white:active { font-size: 9pt; color: #000000; text-decoration: none}
+/*文字链接为黑色*/
+a.black:link { font-size: 9pt; color: #000000; text-decoration: none} 
+a.black:visited { font-size: 9pt; color: #000000; text-decoration: none} 
+a.black:hover { font-size: 9pt; color: #000000; text-decoration: underline} 
+a.black:active { font-size: 9pt; color: #000000; text-decoration: none}
+
+a.button:link { font-size: 9pt; color: #000000; text-decoration: none} 
+a.button:visited { font-size: 9pt; color: #000000; text-decoration: none} 
+a.button:hover { font-size: 9pt; color: #000000; text-decoration: none} 
+a.button:active { font-size: 9pt; color: #000000; text-decoration: none}

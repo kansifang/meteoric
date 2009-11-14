@@ -1,0 +1,82 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html"/>
+	<title>日历面板实例 -- JSR2+</title>
+	<script type="text/javascript" src="../../common/js/core.js?lib=webui,ui_calendar"></script>
+	<link rel="stylesheet" href="../resources/example.css" type="text/css" media="all"/>
+</head>
+
+<body>
+<div id="bodyPanel" style="display:none">
+	<b>日历面板实例</b><hr/><br/>
+	<!-- 面板 -->
+	<div id="panel"></div>
+	<!-- 面板内容 -->
+	<div id="contentPanel">
+		<!-- 控件实例 -->
+		<fieldset id="example"><div class="gbPanel">
+			<table class="font"><tr>
+				<td width="280px">&nbsp;日历面板1:</td><td width="280px">&nbsp;日历面板2:</td>
+			</tr><tr>
+				<td><div id="calendar1"></div></td>
+				<td><div id="calendar2"></div></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<!-- 相关方法 -->
+		<fieldset id="method"><div class="gbPanel">
+			<table class="method-area2"><tr>
+				<td><button id="b1"></button></td><td><button id="b2"></button></td>
+				<td><button id="b3"></button></td><td><button id="b4"></button></td>
+			</tr><tr>
+				<td><button id="b5"></button></td><td></td><td></td><td></td>
+			</tr></table>
+		</div></fieldset>
+		<br/>
+		<div class="font">注: 相关方法是针对 "日历面板1" 操作的。</div>
+	</div>
+	<!-- 面板内容结束 -->
+</div>
+</body>
+
+<script>
+var c1, c2, btn;
+new UI.Panel({id:"panel", caption:"应用实例 -> 日历面板", width:520, height:430, body:"contentPanel"});
+new UI.GroupBox({id:"example", caption:"控件实例"});
+new UI.GroupBox({id:"method", caption:"相关方法"});
+//创建日历面板
+c1 = new UI.Calendar({id:"calendar1", name:"datePanel1", width:200});
+c2 = new UI.Calendar({id:"calendar2", name:"datePanel2", width:200, date:"2006-05-18"});
+//相关方法按钮
+btn = new UI.Button({id:"b1", caption:"getValue", width:105});
+btn.bind(function() {
+	alert("'日历面板1' 的值: " + c1.getValue());
+});
+btn = new UI.Button({id:"b2", caption:"onChange", width:105});
+btn.bind(function() {
+	c1.onChange(function() {
+		alert("'日历面板1' 的 onChange 事件触发了!\n你选择的日期是: " + c1.getValue());
+	});
+	alert("请在 '日历面板1' 中选择任意一天。");
+});
+btn = new UI.Button({id:"b3", caption:"onMonthChange", width:105});
+btn.bind(function() {
+	c1.onMonthChange(function() {
+		alert("'日历面板1' 的 onMonthChange 事件触发了!\n你选择的日期是: " + c1.getValue());
+	});
+	alert("请在 '日历面板1' 中选择月份。");
+});
+btn = new UI.Button({id:"b4", caption:"setValue", width:105});
+btn.bind(function() {
+	c1.setValue('2009-04-25');
+});
+btn = new UI.Button({id:"b5", caption:"设置日期格式", width:105});
+btn.bind(function() {
+	c1.format = "M月D日Y年";
+	alert("设置了 '日历面板1' 返回日期的格式为: M月D日Y年, 点击 getValue 按钮看效果。");
+});
+
+onLoad.add(function(){ $("bodyPanel").style.display = "" });
+</script>
+
+</html>

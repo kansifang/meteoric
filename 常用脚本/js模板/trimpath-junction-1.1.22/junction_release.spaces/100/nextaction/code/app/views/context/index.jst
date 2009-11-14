@@ -1,0 +1,44 @@
+<div class="contexts">
+  <h2>${t('Contexts')}</h2>
+  
+  <p style="margin: 7px;">
+    {if contexts.length > 0}
+      <div style="float:right;">
+          &nbsp;&nbsp;&nbsp;
+          <a id="aboutOpen"
+             href="#"
+             onclick="$('#aboutOpen').hide();$('#aboutPop').show();return false;" class="text_link">
+             ${t('help')}</a>
+          &nbsp;&nbsp;&nbsp;
+      </div>
+    {/if}
+
+    ${%linkToLocal(t('Create a new Context'), 'context', 'newInstance', null, { 'class': 'button' })%}
+  </p>
+
+  ${render('context/about')}
+
+  {if contexts.length > 0}
+    <div style="margin-top: 5px;">
+      <table class="hoverable" cellspacing="0" cellpadding="0">
+      {for context in contexts}
+        <tr>
+          {if context.namePrefix == ''}
+            <td nowrap width="300" class="topLevel">
+               ${contextLink(res, context)}
+          {else}
+            <td nowrap width="300" class="subLevel">
+               ${context.namePrefix}
+               ${contextLink(res, context)}
+          {/if}
+            </td>
+            <td>&nbsp;&nbsp;</td>
+            <td>${linkToLocal(t('edit'), 'context', 'edit', context.id)}</td>
+            <td>&nbsp;&nbsp;</td>
+            <td>${%linkToLocal(t('delete'), 'context', 'destroy', context.id, { method: 'post', confirm: destroyConfirm(context) })%}</td>
+            </tr>
+      {/for}
+      </table>
+    </div>
+  {/if}
+</div>
