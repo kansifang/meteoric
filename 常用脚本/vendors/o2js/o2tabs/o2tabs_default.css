@@ -1,0 +1,85 @@
+/* 系统默认 */
+div.o2tabs{
+margin:0;
+padding:0;
+overflow:hidden;
+}
+ul.tabs_ul{
+list-style-type:none;
+margin:0;
+padding:0 0 0 4px;
+}
+div.o2tabs li.tabs_li{
+float:left;
+list-style:none;
+display:inline;
+margin:0pt 0pt 0pt 1px;
+min-width: 84px; /* be nice to Opera */
+}
+div.o2tabs div.tabs_div{
+position:relative;
+clear:both;
+margin:0;
+overflow:hidden;
+}
+/* 定义tab背景 */
+li.tabs_li a,li.tabs_li a span{
+display: block;
+background: url(default.png) no-repeat;
+cursor:pointer;
+}
+li.tabs_li a{
+text-decoration:none!important;
+padding: 0 10px;
+position: relative;
+top: 1px;
+z-index: 2;
+padding-left: 0;
+color: #27537a!important;
+font-weight:bold;
+font-size: 12px;
+line-height: 1.2;
+text-align: center;
+text-decoration: none;
+white-space: nowrap; /* required in IE 6 */   
+}
+li.tabs_li a span{
+padding: 0 10px;
+width: 64px; /* IE 6 treats width as min-width */
+min-width: 64px;
+height: 18px; /* IE 6 treats height as min-height */
+min-height: 18px;
+padding-top: 6px;
+padding-right: 0;
+}
+/* 默认tab背景 */
+li.tabs_li a:link,li.tabs_li a:visited,li.tabs_li a:hover,li.tabs_li a:active {
+text-decoration:none!important;
+background-position:100% -100px;
+ 
+} 
+/* 选中的tab背景 */
+li.tabs_select a:link,li.tabs_select a:visited,li.tabs_select a:hover,li.tabs_select a:active  {
+text-decoration:none!important;
+background-position:100% -150px;
+color:#000000!important;
+outline: 0; 
+}
+li.tabs_select a span  {
+background-position: 0 -50px;
+padding-top: 7px;
+}
+/* 补偿 IE6 的bug  */
+*>li.tabs_li a span { 
+width: auto;
+height: auto;
+}
+
+
+
+/* 在激活状态的内容块 */
+div.tabs_c{
+padding:1px;
+background:#fff;
+border-top:1px solid #97A5B0;
+}

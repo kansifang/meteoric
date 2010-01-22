@@ -1,0 +1,233 @@
+/************************** 
+			grid系统样式
+**************************/
+.o2grid{
+font-size:11px;
+}
+/* 表格 */
+table.o2table {
+table-layout:fixed; 
+border-collapse:separate;
+}
+/* 表格中的checkbox */
+table.o2table .cbox{
+height:13px;
+width:13px;
+cursor:pointer;
+}
+table.o2table thead tr{
+/* background-color:#F2F2F2; */
+}
+table.o2table tbody tr{
+/* background-color:#FFFFFF; */
+}
+table.o2table thead th,table.o2table tbody td{
+white-space:normal;
+/* white-space:nowrap; */
+overflow:hidden;
+padding:2px;
+text-align:left;
+vertical-align:middle;
+ /* 
+border-bottom:1px solid #D4D0C8;
+border-left:1px solid #D4D0C8;   */
+}
+table.o2table thead th {
+font-size:12px;
+}
+table.o2table tbody td {
+font-weight:normal;
+}
+table.o2table th span { 
+cursor:e-resize;
+display:block;
+float:right;
+height:18px;
+margin:-2px -1px -2px 0px;
+overflow:hidden;
+white-space:nowrap;
+width:10px;
+}
+/* 表格数据 */
+.GridRows{
+overflow-x: auto;
+overflow-y: auto;
+cursor:pointer;
+position:relative;
+/* background-color:#F9F9F9; */
+}
+.GridCols{
+overflow:hidden;
+position:relative;
+/* background-color:#F9F9F9; */
+}
+.GridNav{
+position:relative;
+/* background-color:#F9F9F9; */
+}
+ 
+/* 导航上的按钮 */ 
+.NavBtn{
+vertical-align:middle;
+height:auto !important;
+ 
+}
+
+/* 导航上的输入 */
+.inputpage{
+height:13px;
+width:30px;
+font-size:11px;
+margin:0px;
+padding:0px;
+border:1px solid #999999;
+}
+.rowlist{
+font-size:11px;
+height:16px;
+margin:0px;
+padding:0px;
+}
+/* 加载提示 */
+div.LoadMsg{
+background-color:#CC4444;
+color:#FFFFFF;
+position:absolute;
+display:none;
+right:0px;
+top:0px;
+padding:2px;
+}
+/* 模板1：默认模板 */
+.theme1{
+font-size:11px;
+}
+.theme1 table.o2table { 
+border-right:1px solid #D4D0C8;
+}
+.theme1 table.o2table thead th {
+border-left:1px solid #D4D0C8;  
+border-top:1px solid #D4D0C8;
+line-height:20px;
+text-align:center;
+border-bottom:1px solid #D4D0C8;
+}
+.theme1 table.o2table tbody td { 
+border-bottom:1px solid #D4D0C8;
+border-left:1px solid #D4D0C8; 
+line-height:18px;
+}
+.theme1 table.o2table tbody tr{
+background-color:#FFFFFF;
+}
+.theme1 table.o2table tbody tr.odd{
+background-color:#F9F9F9;
+}
+.theme1 table.o2table tbody tr.selected{
+background-color:#7199DB !important;
+}
+.theme1 table.o2table tbody tr.selected td{
+color:#FFFFFF;
+}
+.theme1 table.o2table tbody tr.mouseon{
+background-color:#D9EBF5;
+}
+.theme1 table.o2table thead tr{
+background:transparent url(theme1/theadbg.gif) bottom left repeat-x;
+}
+.theme1 .GridHead{
+height:30px;
+line-height:30px;
+}
+.theme1 .GridNav{
+clear:both;
+font-size:11px;
+position:relative;
+padding:5px;
+text-align:left;
+color:#000000;
+}
+/* 模板2：EXT样式模板 */
+.theme_ext{
+font-size:11px;
+}
+.theme_ext table.o2table { 
+border-right:1px solid #D4D0C8;
+}
+.theme_ext table.o2table thead th {
+border-left:1px solid #99BBE8;  
+border-top:0px solid #99BBE8;
+border-bottom:1px solid #99BBE8;
+line-height:20px;
+color:#555555;
+}
+.theme_ext table.o2table tbody td { 
+ 
+line-height:18px;
+}
+.theme_ext table.o2table tbody tr{
+background-color:#FFFFFF;
+}
+.theme_ext table.o2table tbody tr.odd{
+background-color:#F9F9F9;
+}
+.theme_ext table.o2table tbody tr.selected{
+background-color:#7199DB !important;
+}
+.theme_ext table.o2table tbody tr.selected td{
+color:#FFFFFF;
+}
+.theme_ext table.o2table tbody tr.mouseon{
+background-color:#D9EBF5;
+}
+.theme_ext table.o2table thead tr{
+background:transparent url(theme_ext/theadbg.gif) top left repeat-x;
+}
+.theme_ext .GridHead{
+height:30px;
+line-height:30px;
+}
+.theme_ext .GridNav{
+clear:both;
+font-size:11px;
+position:relative;
+padding:5px;
+text-align:left;
+color:#000000;
+}
+/* 模板3：simple样式模板 */
+.theme_simple{
+font-size:12px;
+}
+.theme_simple table.o2table thead th {
+line-height:20px;
+color:#333333;
+border-bottom:1px dotted #C6C6C6;
+}
+.theme_simple table.o2table tbody td { 
+line-height:18px;
+color:#666666;
+border-bottom:1px solid #F3F3F3;
+}
+.theme_simple table.o2table tbody tr.selected{
+background-color:#7199DB !important;
+}
+.theme_simple table.o2table tbody tr.selected td{
+color:#FFFFFF;
+}
+.theme_simple table.o2table tbody tr.mouseon{
+background-color:#D9EBF5;
+}
+.theme_simple .GridHead{
+height:30px;
+line-height:30px;
+}
+.theme_simple .GridNav{
+clear:both;
+font-size:11px;
+position:relative;
+padding:5px;
+text-align:left;
+color:#000000;
+}
+ 
