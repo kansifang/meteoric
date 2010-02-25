@@ -1,0 +1,21 @@
+淘宝的TBra  	http://iunicorn.googlecode.com/svn/trunk   lifesinger
+Ucren   		http://fireye-jinxiaocun.googlecode.com/svn    feiran.hu@gmail.com
+TBra			http://tbra.googlecode.com/svn/trunk		   zhaozexin(小马--赵泽欣)
+qzoneDebugger 	http://qzonedebugger.googlecode.com/svn/trunk/ qzonedebugger --username qzoneOther	  	http://lydemo.googlecode.com/svn		iliyi.com
+jsforest		http://jsforest.googlecode.com/svn		divsystem
+qqMail			http://awmc.googlecode.com/svn          http://rvlistview.googlecode.com/svn
+白社会			http://webgamethree.googlecode.com/svn	
+qq_isd			http://isd.googlecode.com/svn
+校内网			http://meteorafhd.googlecode.com/svn
+qq邮箱			http://coynn4er.googlecode.com/svn
+kissy			http://kissy.googlecode.com/svn/trunk
+qomo			https://qomo.svn.sourceforge.net/svnroot/qomo/qobean
+YUI中文			http://yui-doc-zh.googlecode.com/svn/trunk
+lightjso		http://lightjso.googlecode.com/svn
+meteoric		https://meteoric.googlecode.com/svn/trunk
+用户名：		
+gongshengnan@gmail.com 
+密码：bx8Eu9pv8cw6
+
+closure-library		http://closure-library.googlecode.com/svn/trunk
+chatty				http://chatty.googlecode.com/svn
