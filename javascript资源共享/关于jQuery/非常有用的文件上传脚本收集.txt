@@ -1,0 +1,42 @@
+在现代网站设计中，特别是相册、网盘和SNS网站中，我们常常见到文件上传功能，相信在我们的项目中也会经常遇到类似的任务。这里收集一些很有用的文件上传组件，这些组件都是很成熟的，而且是免费供你使用的。
+当然，如果你见到了某些比较好的，而我们这里没有列出的上传组件，欢迎通过评论与前端观察的其他读者共享。
+1. SWFUpload
+
+SWFUpload是一个客户端文件上传工具，最初由Vinterwebb.se开发，它通过整合Flash与JavaScript技术为WEB开发者提供了一个具有丰富功能继而超越传统<input type=”file” />标签的文件上传模式。
+SWFUpload的主要优点：
+
+可以同时上传多个文件；
+ 类似AJAX的无刷新上传；
+ 可以显示上传进度；
+ 良好的浏览器兼容性；
+ 兼容其他JavaScript库 (例如：jQuery, Prototype等)；
+ 支持Flash 8和Flash 9；
+2. YUI上传组件
+
+YUI Uploader 提供超越基本的基于浏览器的方法的文件上传功能。值得一提的是，YUI Uploader 允许通过一个单独的“打开文件”对话框进行多文件选择，通过文件扩展过滤器来减少用户的操作，跟踪文件上传进度，可以比较快速的上传文件。
+YUI是一个非常成熟的前端框架，其稳定的性能和漂亮的界面及用户体验设计，使得现在很多大型网站都是用YUI框架，包括Google和阿里巴巴等网站。
+3. jQuery.MultiFile
+
+多文件上传插件 (jQuery.MultiFile) 是一个出色的jQuery插件，可以用于让用户很容易的选择多个文件快速方便的上传，同时也提供一些基本的验证功能来帮助开发人员识别简单的错误，而不用提交表单。
+4. FancyUpload
+
+FancyUpload 是一个file-input替代方案，通过一个多文件选择菜单和带动态进度条的队列化上传，它很容易设置，无需配置服务器端，可以完全通过CSS和XHTML控制其样式，并使用Mootools，可以在所有的现代浏览器中使用。
+这个方案也使用了一个与SWPUpload类似的Flash上传方法。
+5. Steve Sanderson的jQuery Ajax 上传组件
+
+Steve Sanderson 发布这款简单而又用的jQuery 插件来实现Ajax文件上传功能。在上传的时候，它可以显示一个很棒的进度条。改组件的界面很容易根据你的爱好来定制。
+6. Mega Upload 进度条
+
+Mega Upload 是一款网站文件上传进度指示器，可用于PHP、perl和JSP。起初这个项目只是为了解决PHP文件上传所缺少的进度跟踪，进而发展到支持Perl和JSP。
+7. Free ASP Upload
+
+Free ASP Upload 是一款免费脚本，它可以让你在你的网站上很容易的创建表单。你将可以很容易的使用它，这个组件并不需要一个ASP.NET服务器。
+8. ColdFusion 文件上传组件
+
+Coldfusion文件上传组件 是一个非常简单而又用的上传文件脚本。它基于Coldfusion。
+9. 多文件上传
+
+MooMultiple FU 是另外一款基于MooTools的多文件上传工具，很容易实现并重用。
+后记：其实应该还有很多非常好的文件上传实现方案，但是对于前端技术来说，上面列出的这些方案应该是目前最流行的。神飞发现，目前使用SWFUpload的最多，因为它使用非常灵活，你可以完全定制其界面，但是本文的英文原文并没有包括SWFUpload，神飞将其加入并放在第一条的位置。其次YUI和基于jQuery的组件使用的也是非常多的。
+原文：http://www.qianduan.net/?p=6089
+译自：http://woork.blogspot.com/

@@ -1,0 +1,68 @@
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+ google.load("jquery","1.2.6");
+ 
+ function abc() {
+  //这里就可以使用jQuery的$符号了
+
+ }
+
+google.setOnLoadCallback(abc);
+  </script>
+ 
+同步加载jQuery
+
+http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js
+
+jQuery的下载地址：http://code.google.com/p/jqueryjs/downloads/list
+ 
+
+Google Ajax API代码管理： http://code.google.com/intl/zh-CN/apis/ajax/
+
+Google代码搜索： http://www.google.cn/codesearch
+
+YUI的加载方法: http://developer.yahoo.com/yui/articles/hosting/?yuiloader#configure
+
+
+<script type="text/javascript" src="http://yui.yahooapis.com/combo?2.7.0/build/yuiloader/yuiloader-min.js"></script> 
+
+<!--Include YUI Loader: -->  
+<script type="text/javascript" src="http://yui.yahooapis.com/2.7.0/build/yuiloader/yuiloader-min.js"></script>  
+  
+<!--Use YUI Loader to bring in your other dependencies: -->  
+<script type="text/javascript">   
+// Instantiate and configure YUI Loader:   
+(function() {   
+    var loader = new YAHOO.util.YUILoader({   
+        base: "",   
+        require: ["yuiloader"],   
+        loadOptional: false,   
+        combine: true,   
+        filter: "MIN",   
+        allowRollup: true,   
+        onSuccess: function() {   
+            //you can make use of all requested YUI modules   
+            //here.   
+        }   
+    });   
+  
+// Load the files using the insert() method.   
+loader.insert();   
+})();   
+</script>  
+
+
+ 
+
+mootools的加载方法：
+
+yui compress: http://mootools.net/download/get/mootools-1.2.2-core-yc.js
+
+mini http://mootools.net/download/get/mootools-1.2.2-core-jm.js
+
+resourser http://mootools.net/download/get/mootools-1.2.2-core-nc.js
+
+jquery查看的一些信息：http://view.jquery.com/trunk/
+
+另外一个好的学习网址： http://net.tutsplus.com/articles/web-roundups/20-more-excellent-ajax-effects-you-should-know/
+

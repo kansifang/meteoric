@@ -1,0 +1,135 @@
+帕兰映像里面已经发布过不少的jQuery插件和教程资源。本文里面，又为你收集一些优秀的中文jQuery教程和技巧资源，也许在你下次改善自己网站设计时有用。
+
+一，和WordPress相关的jQuery技巧和教程
+
+1. 简单利用JQuery为搜索栏增加tag关键词提示
+
+很简单的一个功能，就是当用户在搜索栏输入搜索字符时候，利用JQuery的功能把一些预设好的关键字…  More
+
+2. WordPress中利用jQuery处理沙发头像
+
+本文向你介绍如何利用jQuery把沙发用户单独提取出来放在显眼的位置，对沙发用户致于最尊贵和待遇  More
+
+3. DIY WordPress Contact Form with jQuery
+
+一个系列教程，将你如何使用jQuery打造一个WordPress联系表单，一个友好的WordPress联系表单… More
+
+4. jQuery 渐变下拉菜单
+
+如何利用jQuery实现渐变下拉菜单效果，并应用于你的RSS Feed订阅列表或其它你想用的地方… More
+
+5. 利用JQuery自动为文章内图片添加背景效果
+
+利用jQuery实现的文章插入图片的背景效果处理：图片居中，然后是图片背景是等宽的区域，无论图片大小… More
+
+6. 网站RSS订阅的JQuery弹出效果实现
+
+使用jQuery实现的悬浮弹出效果.. More
+
+7.  在WordPress中利用Jquery隐藏较旧留言
+
+如果你的博客留言很多，你可能想把较旧的留言隐藏起来或弄成分页，弄成分页的话WP2.7以后已经内置了，但是分页后又需要解决一些SEO问题，所以可以尝试一下隐藏较旧留言… More
+
+8.  使用jQuery实现WordPress的Ajax留言
+
+本文详细介绍了如何实现非插件式的WordPress的Ajax留言效果… More
+
+9. jQuery 页面载入进度条
+
+用jQury实现的动态载入进度条，能够更友好的显示载入的进度… More
+
+10. jQuery优化评论总结
+
+本文总结了一些利用jQuery来优化WordPress评论部份的各种技巧，比如点击滑动到锚链接，隐藏旧访客的输入表单，评论预览，非插件的Ajax评论等等… More
+
+11. 用 jQuery 实现灵活的 tab 切换效果
+
+想要实现tab效果，只需要简单的几行JS代码。不过jQuery实现的Tab能实现更多漂亮的特效，这篇文章就教你如何实现… More
+
+12. jQuery版ajax comment pager
+
+如何修改mg12的插件ajax comment pager为jQuery方式来实现Ajax… More
+
+二，jQuery中文使用技巧
+
+1. 使用jQuery实现局部刷新
+
+远程获取文件，然后插入到指定的节点中，默认为get方法，如果有其他的参数，则会使用post方法。jQuery1.2之后的版本可以指定选择器。而我们知道jQuery的选择器之强大是出了名的，所以我们可以获取当前页某一节点的内容，然后插入到该节点中，就实现了局部刷新的效果… More
+
+2. jQuery 技巧集锦
+
+本文介绍了一些很简单的jQuery技巧，但却实现一些本来可能很复杂的问题，包括: 自适应子元素高度，避免CSS Hack, 点击消失的提示框文字，给选择器指定一个容器，在图片载入完成后触发函数等… More
+
+3. 扩展jQuery -  $.fn.extend()和$.extend
+
+扩展jQuery很简单，核心就是两个方法$.fn.extend()和$.extend()… More
+
+4. jQuery技巧大集合
+
+介绍的jQuery技巧包括: 页面元素引用，和DOM对象的转换，同一函数实现set和get， 如何获取jQuery集合的某一项，集合处理功能等等… More
+
+5. 写给设计人的10个jQuery特效
+
+非常强的10个jQuery特效介绍，英文原文由著名的Nick La同志发布，Sofish重整介绍。More
+
+6. jQuery 之 没有 ‘target’ 属性照样打开新窗口
+
+XHTML 1.0 Strict的 W3C 标准是不支持 target=’_blank’属性的，推荐的是rel=”external” 属性，但rel=”external”属性只是表明这个链接指向外部，并不会产生新窗口中打开的动作，这篇文章就教你如何利用jQuery让rel属性为external的链接在新窗口中打开… More
+
+闲话: 我个人觉得这个东西有待考量，不是说这篇教程的技术性问题，而是我们应该怎样对待Web标准。
+
+W3C标准之所以不支持target=’_blank’属性，是因为他们认为是否在新窗口中打开链接应该由用户来决定，才是友好的。
+我们变相的让代码通过W3C验证了，却违背了最初的意图。
+我们是在为Web标准努力，还是在为通过W3C验证而努力呢?
+7. 如何使用jQuery实现仿Youtube的关灯效果
+
+大多数网站尤其是大网站尤其是国内的网站基本都使用白色或明色背景，而黑色和深色背景，个人色彩浓烈的网站使用的更多。但黑色背景其实是更有利于视觉浏览的，尤其对于视频网站和图片类网站来说。本文介绍了如何jQuery实现仿Youtube的关灯效果，其实就是个样式切换特效… More
+
+8. 有关jQuery动画的一些基本知识
+
+一些jQuery高手做的网站，如果不看源码和不点右键的话，会让你分不出来到底是JS做的还是Flash做的。在想实现这些超酷的特效之前，先学学jQuery动画基础吧… More
+
+9. JQuery.ajax传递中文参数的解决方法
+
+关于如何解决传递中文参数时的乱码问题… More
+
+10. 使用jQuery 和PHP 构建一个受Ajax 驱动的Web 页面
+
+Triple Dog Dare Media 的创始人Thomas Myer发布于IBM developerWorks 中国的一篇文章, 教你学习使用 jQuery 这个轻量的 JavaScript 框架来向 PHP 页面添加 Asynchronous JavaScript + XML (Ajax) 功能。… More
+
+11. 使用 jQuery 简化 Ajax 开发
+
+jQuery 能帮助您保证代码简洁易读。您再也不必编写大堆重复的循环代码和 DOM 脚本库调用了。使用 jQuery，您可以把握问题的要点，并使用尽可能最少的代码实现您想要的功能。
+
+毫无疑问，jQuery 的原理是独一无二的：它的目的就是保证代码简洁并可重用。当您理解并体会这一原理后，便可以开始学习本教程了，看看 jQuery 对我们的编程方式有多少改进吧.. More
+
+12. Ajax改造现有Web站点系列文章
+
+Ajax 改造，第 1 部分: 使用 Ajax 和 jQuery 改进现有站点
+Ajax 改造，第 2 部分: 使用 jQuery、Ajax、工具提示和 lightbox 改进现有站点
+Ajax 改造，第 3 部分: 用 jQuery、Ajax 选项卡和照片 carousel 改进现有的站点
+Ajax 改造，第4 部分: 用jQuery 和Ajax 表单改造现有站点
+使用 Ajax 改造现有 Web 站点系列文章，分别展示了如何使用简单的模式窗口（modal window）消除弹出窗口和导航死角，如何使用 Ajax 技术改进一个 Web 1.0 购物站点等。
+
+13.  《15天jQuery入门》教程
+
+国外的一个jQuery入门教程《15天jQuery入门教程》，很适合新手，循序渐进掌握jQuery开发。英文原站点是http://15daysofjquery.com/， 你可以在译言上找到这个系列教程的前5篇中文译文。
+
+14. jQuery中文入门教程
+
+此文以实例为基础一步步说明了jQuery的工作方式。这个指南是一个对jQuery库的说明，要求读者了解HTML(DOM)和CSS的一些常识。它包括了一个简单的Hello World的例子，选择器和事件基础，AJAX、FX的用法，以及如何制作jQuery的插件。 这个指南包括了很多代码，你可以copy它们，并试着修改它们，看看产生的效果… More
+
+三，学习更多海量的jQuery资源
+
+jQuery的爱好者和高手有很多，他们分享着许多让人着迷的jQuery插件、技巧和教程，尽管本文试图收集尽量多优秀的jQuery资源，但其实只是收集了九牛一毛。下面是一些能让你获取更多海量jQuery资源的博客和网站链接。
+
+CSSRainBow的jQuery专栏 - 含很多jQuery插件和技巧的介绍，只是一些介绍稍显简洁了
+JinWen Say的jQuery专栏 - 多是与WordPress相关的jQuery技巧，介绍的非常详细，非常傻瓜
+Shawn Blog的jQuery专栏 - 一些优秀的jQuery使用教程，多与WordPress相关。
+前端观察的jQuery专栏 - 含一些国外的jQuery技巧译文。
+必优博客的jQuery插件专栏 - 专门介绍各种jQuery插件和使用方法。
+Waterg’s BLOG的javaScript专栏 - 包含很多比较基础却也很棘手的jQuery问题解决方法
+jQuery中文社区 - 只要你有分辨垃圾与精华的能力，社区永远是个学习的好地方。
+其实帕兰个人对jQuery和JavaScript都并不太感冒，由于种种原因吧  能不用JS的地方打死也不用，但正如你所知道的那样，JS早已经成为了网页制作中必不可少的一部份，结构，表现和行为，不管在以后的Web几点零中，行为都将越来越重要。所以尽快学习还是有好处的，至于是否需要马上就用，又另当别论了。
+
+最后，还是要自我推荐一下帕兰映像的jQuery专栏，并没有什么原创性的jQuery技巧，但也包含很多jQuery插件和教程的翻译介绍，如果你要寻找jQuery资源，还是能为你提供一些东西的。

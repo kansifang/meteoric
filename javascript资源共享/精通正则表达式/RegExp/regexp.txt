@@ -1,0 +1,48 @@
+<h1>正则表达式分享</h1>
+
+常规语法
+
+深入话题
+
+
+资源(resource)
+    正则表达式 - 维基百科 <http://zh.wikipedia.org/wiki/正则表达式>
+    揭开正则表达式的神秘面纱 <http://www.regexlab.com/zh/regref.htm>
+    正则表达式话题 <http://www.regexlab.com/zh/regtopic.htm>
+    Regexp Syntax Summary <http://www.greenend.org.uk/rjk/2002/06/regexp.html>
+    正则表达式30分钟入门教程 <http://deerchao.net/tutorials/regex/regex.htm>
+    我爱正则表达式 <http://iregex.org/>
+    正则表达式论坛 <http://regex.me/>
+    <http://www.oreilly.com/catalog/regex2/chapter/ch09.pdf>
+
+    《理解正则表达式（程序员第3期文章）》
+    http://blog.csdn.net/myan/archive/2007/03/03/1520033.aspx
+    http://tech.idv2.com/2006/05/08/parse-regex-with-dfa/
+    《精通正则表达式》
+    http://book.51cto.com/art/200801/64630.htm
+    《Linux系统最佳实践工具：命令行技术》
+    http://book.51cto.com/art/200902/111541.htm
+    《Programming PHP 中文版》
+    http://book.csdn.net/bookfiles/253/10025311444.shtml
+
+
+
+书籍(books)
+    《Mastering Regular Expressions》Jeffrey E.F. Friedl
+        <http://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124/ref=dp_cp_ob_b_title_1>
+    《Regular Expressions Cookbook》
+        <http://www.amazon.com/Regular-Expressions-Cookbook-Jan-Goyvaerts/dp/0596520689/ref=dp_cp_ob_b_title_2>
+    《Regular Expression Pocket Reference》
+        <http://www.amazon.com/exec/obidos/ASIN/059600415X/aspalliancecom>
+    《C# Text Manipulation String Handling and Regular Expression Handbook》Francois Liger、Craig McQueen、Paul Wilton
+
+
+工具(tools)
+    Expresso (free, open-source)
+        <http://www.ultrapico.com/Expresso.htm>
+    RegExBuddy (try it 3-month)
+        <http://www.regexbuddy.com/>
+    Match Tracer
+        <http://www.regexlab.com/zh/mtracer/>
+    Regexpal (online)
+        <http://regexpal.com/>

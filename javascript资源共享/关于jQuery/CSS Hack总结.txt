@@ -1,0 +1,44 @@
+Paul Irish 总结了一些CSS的Hack，如下：
+ /***** 选择器 Hacks ******/
+ 
+/* IE 6 及以下 */
+* html #uno  { color: red }
+ 
+/* IE 7 及以下 */
+*:first-child+html #dos { color: red } 
+ 
+/* IE 7 和其它各大浏览器的最新版本*/
+html>body #tres { color: red }
+ 
+/* 现在各大浏览器的最新版本 (除了 IE 7) */
+html>/**/body #cuatro { color: red }
+ 
+/* Opera 9.27 及以下 */
+html:first-child #cinco { color: red }
+ 
+/* Safari */
+html[xmlns*=""] body:last-child #seis { color: red }
+ 
+/*safari 3+, chrome 1+, opera9+, ff 3.5+ */
+body:nth-of-type(1) #siete { color: red }
+ 
+/* safari 3+, chrome 1+, opera9+, ff 3.5+ */
+body:first-of-type #ocho {  color: red }
+ 
+/* saf3, chrome1+ */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+ #diez  { background: #FFDECE; border: 2px solid #ff0000  }
+}
+ 
+/***** 属性 Hacks ******/
+ 
+/* ie6 及以下 */
+#once { _color:blue }
+ 
+/* ie7 及以下 */
+#doce { *color: blue } /* or #color:blue */
+ 
+/* 这里所说的浏览器最新版本包含IE8 :) */
+原文：Browser-specific CSS hacks
+相关资料: http://ourjs.cn/show.php?id=792
+尊重他人劳动成果，转载请保留出处。

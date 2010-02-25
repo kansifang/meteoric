@@ -1,0 +1,17 @@
+Silverlight QQ 项目负责人甄焱鲲  http://hi.baidu.com/zhenyk/
+
+
+来自Opera公司的网络宣讲师[1]Zibin Cheah(谢子斌)
+Zibin团队博客：http://my.opera.com/odin
+Zibin个人站点：http://zibin.tehais.com
+ 
+Yahoo! 的资深 JavaScript 架构师、JSON、JSLint、JSMin 和ADSafe 之父 Douglas Crockford
+个人站点和 Blog 是http://www.crockford.com/ 和 http://blog.360.yahoo.com/douglascrockford。
+ 
+ 
+百度的金大为为第4届D2论坛带来《模板语言与大前端》
+个人站点：http://www.xidea.org
+ 
+张克军是中国雅虎资深前端工程师，也是中国雅虎最早的前端开拓者，张克军的博客：http://hikejun.com
+ 
+饭否网的资深前端工程师陈贤安  个人博客：http://realazy.org/blog/

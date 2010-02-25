@@ -1,0 +1,66 @@
+在推广Web标准的今天，那些崇尚Web标准的人经常说XHTML比HTML更加严格，当然从某种意义上说是的，比如它要求所有的标签关闭并且所有的属性都用引号。但其实XHTML 1.0还分两种（加上Frameset DOCTYPE的话算三种，本文不讨论），Transitional（过渡型）和Strict（严格）DOCTYPEs。并且HTML 4.01也有同样的文档声明。
+
+从字面上就可以看出来意思：Transitional DOCTYPEs只是为了实现从旧时代到新时代的过渡，而且Strict DOCTYPEs是默认的文档声明， 对构造HTML 4.01和XHTML 1.0都适用。
+
+使用Transitional DOCTYPE一般是由于代码中含有过多陈旧的写法，并且一下子很难完全转换到Strict DOCTYPE来。但是Strict DOCTYPE才应该是你的目标。它鼓励甚至有时是强迫你把结构与表现区分开来，把表现层的代码都写在CSS里。HTML 4 Document Type Definition：
+
+本HTML 4.01 Strict DTD不包括表现层属性和标签，W3C将逐渐淘汰这些属性和标签，您完全可以使用样式表来实现。您应该使用Strict DTD，如需获得表现层属性和标签的支持，请使用Transitional DTD。
+
+用Strict DOCTYPE还有一个好处，即可以让浏览器使用它们最严格、（一定程度上）最符合标准的模式来渲染页面。
+
+Tommy Olsson在Web Standards Group的Ten questions for Tommy Olsson一文中很好的阐述了使用Strict的好处：
+
+我觉得，使用Strict DTD，无论是HTML 4.01 Strict还是XHTML 1.0 Strict，远比讨论是用HTML还是XHTML重要的多。它代表了未来互联网的质量。它将结构和表现分开，使得维护一个站点非常容易。
+
+对于刚开始接触web standards和正确的、语义化的结构的人，认清Transitional和Strict DOCTYPEs的区别非常重要。更多详细列表请参考：XHTML: Differences between Strict & Transitional、Comparison of Strict and Transitional XHTML和XHTML1.0 Element Attributes by DTD。
+
+对于准备向Strict进发的人来说，两者的有些区别很可能会使开发者犯错误，接下来我将会谈到。
+
+在Strict DOCTYPEs下不支持的标签
+
+center
+font
+iframe
+srike
+u
+在Strict DOCTYPEs下不支持的属性
+
+align (表格相关的支持：col, colgroup, tbody, td, tfoot, th, thead, and tr)
+language
+background
+bgcolor
+border (table支持)
+height (img和object支持)
+hspace
+name (在HTML 4.01 Strict中支持，XHTML 1.0 Strict中的form和img不支持)
+noshade
+nowrap
+target
+text, link, vlink, 和alink
+vspace
+width (img, object, table, col, 和 colgroup都支持)
+内容模型的区别
+
+元素类型的内容模型描述了什么样的元素类型实例可以被包含。这一点上，两种文档声明的最大区别在于blockquote, body, 和form元素仅能够包含块级元素，如：
+
+文本和图像不允许直接包含在body中，必须被p或者div等块级元素包含
+input元素不能直接是form元素的下一层
+blockquote元素内的文本，必须被p或者div等块级元素包含
+将所有的表现都交给CSS，恪守Strict标准
+
+在向Strict DOCTYPEs过渡的过程中，了解每个元素是做什么的比知道每个元素长啥样有效的多。
+
+首先考虑结构和语义，然后再担心表现。
+
+留意更新
+
+订阅彬Go以查看前端开发/CSS框架最新教程及资源。
+
+英文原文:Transitional vs. Strict Markup
+转自互联网
+
+
+
+
+页面头部的简写：<!DOCTYPE HTML>
+<html>

@@ -1,0 +1,15 @@
+mootools : http://demos.mootools.net/
+
+http://www.hotajax.org/  
+
+http://www.ajaxrain.com/index.php 
+
+在线MSDN http://social.msdn.microsoft.com/Search/zh-CN/
+
+Dojo http://dojotoolkit.org/downloads
+
+http://tech.idv2.com/about/ 
+
+ jQuery 一些插件： http://parandroid.com/tag/jquery/
+
+

@@ -1,0 +1,32 @@
+本文收集了一些有趣并很有用的自动提示脚本，他们无论对于初学者还是专业前端开发人员都是适用的。这些脚本包括标准的自动提示效果、仿del.icio.us效果、仿Googel效果以及使用自动提示的高级数据表过滤效果。
+使用一个合适的自动提示脚本有效的提升你的网站的用户体验。
+1. Ajax Auto Suggest v.2
+
+AutoSuggest 类添加一个包含提示内容的下拉菜单到一个文本框中。用户可以直接点击相应的提示条目，也可以输入到文本框中，或者使用向上和向下的方向键来浏览列表，然后使用回车键选择某个条目。提示列表的条目由一个XML文件提供，或者使用JSON (通过一个PHP脚本，或类似脚本)。这个自动提示脚本非常容易定制并应用到你的网站中。查看演示。
+2. Woork PHP 组件: Autosuggest
+
+Woork Autosuggest 是一个简单的”PHP 组件” ，可用来用PHP和MySQL来实现自动提示功能。这个组件是轻量的(只有8Kb) ，而且可以使用某些定制的参数。
+3. Spry 自动完成组件
+
+Spry Auto Suggest Widget (Adobe 实验室提供)使用Adobe Spry 框架来在文本框中实现自动提示功能。这是一个使用了Spry地区列表和非破坏性过滤器来创建自动提示组件的实例。那些提示可以用HTML结构显示。Spry 使用标签的ID来制定提示列表的容器。在这个例子中，有分别基于table、div-span和ul-li的三个不同的HTML结构。
+4. 仿Facebook的自动提示效果
+
+Guillermo Rauch的 Facebook-like Auto Suggest 是另一款模仿了Facebook功能的自动提示脚本。它通过缓存JSON请求的全部结果并把它们提供到自动完成对象列表中。当一个条目添加为一个盒子，他就被从列表中移除。当这个盒子被关掉，该条目又被放回到列表中去。所以这个自动提示效果可以随用户的输入而动态改变。
+5. jSuggest 1.0
+
+jSuggest 是另一个自动提示脚本。它模仿Google的自动提示功能。jSuggest支持使用上下方向键和鼠标选择相关条目。
+6. Yahoo! UI 自动提示
+
+Yahoo! UI Autosuggest Control 使用AutoComplete 来通过标签寻找来自于Flickr网站的图片，通过XHR使用一个简单的PHP 代理来存取同步服务器。generateRequest() 方法已经被定制用于发送附加的请求参数到Flickr应用。formatResult() 方法也被定制用于显示结果容器中的图片，默认的CSS也被更改过，这样请求结果容器可以滚动显示。最后，一个itemSelectEvent 处理程序被用来收集选中的图片到独立的容器中。
+7. CAPXOUS.AutoComplete
+
+CAPXOUS.AutoComplete 是一个独立的、不依赖框架的、轻量(只有4 kb) 的自动完成脚本，它通过一个可滚动的下拉列表提供自动提示功能，它定制和实现起来起来很简单。
+8. jQuery 标签提示
+
+jQuery Tag Suggestion 插件模仿del.icio.us 标签提示(当你在del.icio.us上收藏一个书签的时候)。 标签提示帮助你创建一个你通常用于标注不同类型的链接的标签的子集。
+9. Google 风格的自动提示
+
+Matt Berseth’s AutoComplete 提供更智能的数据表过滤能力，它允许用户通过下列列表选择一个特定的列，看一下live demo。
+原文：http://www.qianduan.net/?p=6075
+译自：http://woork.blogspot.com/
+版权所有，转载请注明出处。谢谢

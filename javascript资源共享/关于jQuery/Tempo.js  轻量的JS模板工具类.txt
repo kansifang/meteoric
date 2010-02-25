@@ -1,0 +1,56 @@
+这是本站(OurJS.cn)发布的新项目: Tempo.js
+1. Tempo.js 是一个轻量的js模板工具类;
+2. 目的是实现HTML代码与JS代码的分离,使得在用JS输出HTML时更方便,代码更清晰;
+3. Tempo.js的原则是轻量(体积小,下载快,执行快),在不进行压缩的情况下也只有1k大小;
+4. Tempo.js履行MIT许可证,允许随意集成到你的JS库中;
+5. 目前Tempo.js的功能简单,但本着轻量和只解决特定问题的原则下,在以后的版本中,Tempo.js在功能上不会有太多的改动;
+6. Tempo.js在代码上也没有严格的过滤和错误处理,用意是用最简单的算法维持其轻量,只确保在最简单原始的使用下不出错;
+ 
+链接:  下载Tempo.js    DEMO    查看Tempo.js源码
+ 
+使用方法:
+1.首先, 引入tempo.css文件：
+<link href="tempo.css" rel="stylesheet" type="text/css" media="all" />
+目前tempo.css内只有一行: .tempo {display:none;} 目的是让模板隐藏。你可以根据需要把这一行写入到你的CSS文件中。
+ 
+2.引入tempo.js文件：
+ <script type="text/javascript" src="tempo.js"></script>
+ 
+3.建立模板和存放生成的HTML的容器：
+<div class="tempo" id="tempo_a">
+    <div class="{class}">{title}</div>
+</div>
+
+<div id="container">
+
+</div>
+ 
+4.编码js，调用Tempo
+JavaScript:
+var arr = [
+	{title:'this is title!','class':'cls'},
+	{title:'this is another title!','class':'cls'},     
+	{title:'this is another title too!','class':'cls'} 
+	];
+var tempo = new Tempo('tempo_a'); 
+document.getElementById('container').innerHTML = tempo.setArray(arr).join(''); 
+Tempo类提供了3个方法：
+1. new Tempo('id').set(object)  :  接受一个对象，返回一个由这个对象(数据)+模板生成的HTML字符串。
+    数据:{'title':'xxxxxx'}   +  模板:<div>{title}</div>  
+    ==>>  
+   '<div>xxxxx</div>'
+2. new Tempo('id').setArray(array)  :  接受一个对象数组，返回一个由这个数组内多个对象(多个数据)+模板生成的HTML字符串数组。
+     数据:[{'title':'xxxxxx'},{'title':'yyyyy'}]   +  模板:<div>{title}</div>  
+     ==>>  
+     ['<div>xxxxx</div>','<div>yyyyy</div>']
+2. new Tempo('id').setMap(array)  :  接受一个包含多个对象的对象(想象为Map对象)，返回由这个对象内多个对象(多个数据)+模板生成的对象。
+      数据:{'aaa':{'title':'xxxxxx'},'bbb':{'title':'yyyyy'}}   +  模板:<div>{title}</div>  
+      ==>>   
+     {'aaa':'<div>xxxxx</div>','bbb':'<div>yyyyy</div>'}
+ 
+5.生成的HTML代码:
+<div id="container">
+     <div class="cls">this is title!</div>
+     <div class="cls">this is another title!</div>
+     <div class="cls">this is another title too!</div>
+</div>

@@ -1,0 +1,22 @@
+1. Ajax Rain   http://www.ajaxrain.com/
+
+2  Ajax Daddy	http://www.ajaxdaddy.com/
+
+3. Mini Ajax    http://miniajax.com/
+
+4. Ajaxian         http://ajaxian.com/
+
+5. DHTML Goodies    http://www.dhtmlgoodies.com/
+
+6. Javascript Kit   http://www.javascriptkit.com/
+
+7. Dynamic Drive   http://www.dynamicdrive.com/
+
+8. DHTML Site      http://www.dhtmlsite.com/
+
+9. Solutoire       http://ajax.solutoire.com/
+
+10. DevSnippets    http://devsnippets.com/
+
+
+另外一个好的学习网址： http://net.tutsplus.com/articles/web-roundups/20-more-excellent-ajax-effects-you-should-know/

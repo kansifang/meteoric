@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<title>eacape functions</title>
+<style type="text/css">/*<![CDATA[*/
+html,body{font-family:"Courier New";}
+table{border:1px solid #ccc; border-collapse:collapse; margin:2px 0}
+    th,td{border:1px solid #ccc; padding:2px 5px;}
+    th{background:#eee;}
+    td.label{background:#eee none;}
+    td.empty{}
+    td.all{background:#55a255; color:#fff;}
+    td.someone{background:#fff7d2;}
+/*]]>*/</style>
+</head>
+<body>
+<script type="text/javascript">/*<![CDATA[*/
+
+function check(a, m){
+    var r=[];
+    for (var i=0,l=s.length; i<l; i++){
+        //if (s[i]==window[m](s[i])){
+            r.push(s[i]==window[m](s[i])?s[i]:"");
+        //}
+    }
+    return r;
+}
+
+var s="`~!@#$%^&*()-_=+\\|[]{};':\",./<>?".split(""),
+    f=["escape","encodeURI","encodeURIComponent"],
+    arr=[];
+
+document.write("<table id='tb'><thead><tr><th>Functions</th><th>");
+document.write(s.join("</th><th>"));
+document.write("</th></thead><tbody>");
+for (var i=0,l=f.length; i<l; i++){
+    document.write("<tr><td class='label'>"+f[i]+"</td><td>");
+    arr[i] = check(s,f[i]);
+    document.write(arr[i].join("</td><td>"));
+    document.write("</td></tr>");
+}
+document.write("</tbody></table>");
+
+!function color(){
+    var rows=document.getElementById("tb").getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+    var cells=[]
+    for (var i=0,l=rows.length; i<l; i++){
+        cells[i] = rows[i].getElementsByTagName("td");
+    }
+    for (var j=1,l=cells[0].length; j<l; j++){
+        var state=0;
+        for (var k=0,m=rows.length; k<m; k++){
+            if(arr[k][j-1]){state++;}
+        }
+        var type;
+        switch(state){
+        case 0:
+            type = "empty";
+            break;
+        case m:
+            type = "all";
+            break;
+        default:
+            type = "someone";
+            break;
+        }
+        for (var k=0,m=rows.length; k<m; k++){
+            cells[k][j].className = type;
+        }
+    }
+}();
+
+/*]]>*/</script>
+
+<table>
+<tbody><tr><td class="empty">All escapes</td>
+    <td class="someone">Some escapes</td>
+    <td class="all">Non-escape</td></tr></tbody></table>
+</body>
+</html>

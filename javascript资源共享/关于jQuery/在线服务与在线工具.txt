@@ -1,0 +1,60 @@
+在线正则测试 http://regexpal.com/
+
+CSS W3C标准验证 http://jigsaw.w3.org/css-validator/#validate_by_uri+with_options
+
+在线服务
+
+OpenSVN https://opensvn.csie.org/
+
+svnhost http://www.svnhost.cn/
+
+Windows Live SkyDrive http://skydrive.live.com/
+
+Windows Live 管理中心 https://domains.live.com/
+
+网易的开源镜像 http://mirrors.163.com/
+
+
+
+在线资料
+
+CHM帮助 http://www.chmhelp.cn/
+
+IBM中国 http://www.ibm.com/cn/
+
+MIME http://dev.csdn.net/article/18/18448.shtm
+
+Nginx 中文维基 http://wiki.codemongers.com/NginxChs
+
+PHP中文手册http://bbs.chinaunix.net/thread-999247-1-1.html
+
+PS联盟 http://www.68ps.com/
+
+SSL 说明http://httpd.apache.org/docs/2.0/ssl/ssl_faq.html
+
+w3pophttp://www.w3pop.com/
+
+回忆未来[张宴]http://blog.s135.com/
+
+当我酷站 http://www.d500.com.cn/
+
+深入PHP内核 http://www.yanbin.org/blog/category/php/page/5/
+
+素材中国 http://www.sccnn.com/
+
+ Apach的配置 http://www.svn8.com/Apache/index.html
+
+YUI的动画库  http://blog.davglass.com/files/yui/tools/
+
+YUI开发者官方的博客　http://developer.yahoo.com/yui/
+
+W3C学院　http://www.w3school.com.cn/example/xdom_examples.asp
+
+JSON官方说明　http://www.json.org/json-zh.html
+
+正则表达式库　http://regexlib.com/
+
+Google最新jQuery版本下载　http://code.google.com/p/jqueryjs/downloads/list
+
+SWFObject2.0的中文文档　http://zmans.cn/?p=33
+

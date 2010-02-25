@@ -1,0 +1,10 @@
+中文flex例子：　http://blog.minidx.com/
+
+Dreamer：http://www.zhuoqun.net/html/ytag/flex
+
+flex图表： http://www.barneyb.com/flexchart/
+
+FLEX中文实例： http://www.flexrain.cn/
+
+AS3帮助文档：http://doc.aswing.org/a3/
+

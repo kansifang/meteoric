@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <HEAD>
+  <TITLE> New Document </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="ZhangYi">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <script type="text/javascript">//<![CDATA[
+   window.onload = function() {
+	alert("window onload");
+  }
+
+  function $(id) {
+	return typeof id=='object'?id:document.getElementById(id);
+  }
+
+  var ready = function () {
+    alert('DOM content loaded----------------http://www.never-online.net/blog/');
+  }
+
+  $.ready = function(fn) {  
+	  if(typeof fn != "function") return;
+
+	  if (!!window.ActiveXObject) { 
+		var timer = null;
+		
+		timer = setInterval(function () {
+		  try {
+			document.body.doScroll('left');
+			fn;
+		  } catch(ex) {
+			
+		  };
+		});
+		
+	 }  else {	
+		document.addEventListener("DOMContentLoaded", fn, null);  
+	 }
+ }
+
+ $.ready(ready());
+//]]>
+</script>
+<iframe src="http://www.csdn.net"></iframe>
+<img src="http://img9.zol.com.cn/desk_pic/big_304/303619.jpg">
+</HTML>
