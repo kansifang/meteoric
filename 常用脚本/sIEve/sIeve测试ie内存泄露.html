@@ -1,0 +1,119 @@
+<html>  
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript">  
+
+function $(id) {   
+	return typeof(id)=='string'?document.getElementById(id):id;   
+}   
+
+
+function _removeNode(el){   
+	el=$(el); 
+	if (!el){
+		return;
+	}
+	if (el.removeNode) {   
+		el.removeNode(true);   
+	}else if (el.parentNode) {   
+		 el.parentNode.removeChild(el);   
+	}
+} 
+
+var myhost={
+	_for_cycle :{}
+};
+
+window.recycler=(function(){ var t=document.createElement('div');t.id="recycler";return t;})();
+
+function _removeElement(el){   
+	el=$(el); 
+	if (el && window.recycler){
+		window.recycler.appendChild(el);
+		window.recycler.innerHTML='';//先附加再清除
+	}
+	
+} 
+
+function _reload(){
+	document.location.replace(document.location);
+}
+
+
+function _createMemLeak(el){
+	el=$(el);
+	function  _addTestEvent(el)  {
+		if (el){
+		   el.onclick=function(){
+				alert(this.id);
+			}
+		}
+	}
+	_addTestEvent(el);
+	_removeNode(el);//移除节点的时候没有移除相应的事件
+	alert('页面将会自动刷新, 刷新后就可以发现产生了一个新的内存泄露节点');
+	_reload();
+
+}
+
+
+function _createCycle(){
+	var el1=$('div_3');//相互引用　将本身赋给一个引用
+	myhost._for_cycle=el1;
+	el1.setAttribute('ccc',myhost);
+}
+
+function init(){
+
+}
+</script>  
+
+<style >
+body {
+font-size:12px;
+line-height:120%;
+}
+
+.fortest {
+border:1px solid #ff9966;
+margin:10px;
+padding:5px;
+
+}
+
+</style>
+
+</head>  
+
+<body onload="init()">  
+小胖儿说:&#160;&#160;这个页面是用来演示 IE 内存问题的, 建议配合 sIEve 使用.
+<div id="div_1" class="fortest">I'm div_1,I have a div-child.
+<div style="color:#ff9966;" class="fortest">www.google.com</div>
+</div> 
+
+<div id="div_2" class="fortest" style="border-color:green">I'm div_2,I have 2 children.
+<div style="color:#ff9966;" class="fortest" style="border-color:green">www.baidu.com</div>
+<span>baidu google谁更好???</span>
+</div>  
+
+<div id="div_3" class="fortest" style="border-color:blue">I'm div_3.</div>  
+
+<br/><div id="div_4" class="fortest" style="border-color:black">I'm div_4.</div>  
+
+<br/>
+采用传统方式移除节点 div_1, 被删除的结点和内存无法回收
+<input type="button" value="_removeNode div_1" onclick="_removeNode('div_1')" /> <br/><br/>
+
+利用parentNode.innerHTML=''方式移除节点 div_2, 结点和内存可以回收
+<input type="button" value="removeElement div_2" onclick="_removeElement('div_2')" /> <br/><br/>
+
+产生一个循环依赖<input type="button" value="createCycle div_3" onclick="_createCycle()" /> <br/><br/>
+
+产生一个内存泄露
+<input type="button" value="createMemLeak div_4" onclick="_createMemLeak('div_4')" /> <br/><br/>
+<br/>
+
+刷新页面<input type="button" value="reload page" onclick="_reload()" /> <br/><br/>
+</body>  
+</html>  
