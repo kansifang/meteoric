@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+          "http://www.w3.org/TR/html4/strict.dtd"> 
+<html> 
+<head> 
+<title>JavaScript脚本在线压缩，JS在线混淆（汉化）Packer</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<meta name="description" content="web集结号在线工具-JavaScript脚本在线压缩，JS在线混淆（汉化）Packer" /> 
+<meta name="keywords" content="在线工具,javascript,js,脚本,压缩,混淆,在线压缩,在线混淆,反混淆,解压缩" /> 
+<style type="text/css"> 
+.result {
+  border: 1px blue dashed;
+  color: black;
+  background-color: #e5e5e5;
+  padding: 0.2em;
+}
+</style> 
+<script type="text/javascript"> 
+function decode() {
+  var packed = document.getElementById('packed');
+  eval("packed.value=String" + packed.value.slice(4));
+}
+</script> 
+</head> 
+<body> 
+  <form action="/wp-content/tools/jspacker/index.php" method="post"> 
+    <div> 
+      <h3>把你需要压缩的代码粘贴到这：</h3> 
+      <textarea name="src" id="src" rows="10" cols="80"></textarea> 
+    </div> 
+    <!-- <fieldset> --> 
+    <div> 
+      <label for="ascii-encoding">Encoding:</label> 
+      <select name="ascii_encoding" id="ascii-encoding"> 
+        <option value="0">None</option> 
+        <option value="10">Numeric</option> 
+        <option value="62"selected>Normal</option> 
+        <option value="95">High ASCII</option> 
+      </select> 
+      <label> 
+        Fast Decode:
+        <input type="checkbox" name="fast_decode" id="fast-decode" checked> 
+      </label> 
+      <label> 
+        Special Characters:
+        <input type="checkbox" name="special_char" id="special-char"> 
+      </label> 
+      <input type="submit" value="压缩"> 
+    </div> 
+    <!-- </fieldset> --> 
+  </form> 
+  
+  
+  <div id="result"> 
+    <h3>把你需要解码的粘贴到这：</h3> 
+	<p style="color:red;font-weight:500;">注意：解码时请去除不必要的空格和注释</p> 
+    <textarea id="packed" class="result" rows="10" cols="80"></textarea> 
+        <p><button type="button" onclick="decode()">解码</button></p> 
+  </div> 
+  <script type="text/javascript"> 
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script> 
+<div style="text-align:center;"><script src="http://s7.cnzz.com/stat.php?id=1168463&web_id=1168463&show=pic" language="JavaScript" charset="gb2312"></script></div> 
+<script type="text/javascript"> 
+var pageTracker = _gat._getTracker("UA-7874877-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script> 
+</body> 
+</html> 

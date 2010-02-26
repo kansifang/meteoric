@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Untitled Document</title>
+		<script type="text/javascript" src="http://x.9917.com/themes/js/jq/jquery-1.3.js"></script>
+		<script type="text/javascript" src="myJST.js"></script>
+	</head>
+	<body>
+		<div id="div1">稍等....</div>
+		http://www.cnblogs.com/SealedLove/archive/2008/12/17/1356979.html<br/>
+		<div id="test_2" style="display:none;">
+			{macro htmlList(list, optionalListType)}
+			  {var listType = optionalListType != null ? optionalListType : "ul"}
+			  <@{listType}>
+			    {for item in list}  
+			    	<li>@{item}</li>
+			    {/for}
+			  </${listType}>
+			{/macro}
+		</div>
+		
+		Using the macro…
+		${htmlList([ 1, 2, 3])}
+		${htmlList([ "Purple State", "Blue State", "Red State" ], “ol”)}
+		{var saved = htmlList([ 100, 200, 300 ])}
+		${saved} and ${saved}
+		
+		<div id="test_4">
+		{for x in customer.getRecentOrders()}
+			${x_index} : ${x.orderNumber} 
+			{forelse}
+			You have no recent orders.
+		{/for}
+		</div>
+		
+		<script type="text/javascript">
+			var div_1 = $("#div1");
+			var str = "hello @{a} world.".process({a:"brave new"});
+			str += " <br/> "+"hello @{a|capitalize} world.".process({a:"brave new"});
+			div_1.html(str);
+			
+			var div_4 = $("#test_4");
+			div_4.html(div_4.html().process());
+			
+			var div_2 = $("#test_2");
+			
+			var kk = TrimPath.parseDOMTemplate("test_2");
+			alert(kk);
+			var abc = ("@{htmlList([ 1, 2, 3])}",kk).process();
+			//debugger;
+		</script>
+	</body>
+</html>

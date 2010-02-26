@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Untitled Document</title>
+		<script type="text/javascript" src="my.js"></script>
+	</head>
+	<body>
+		<div id="test"></div>
+		<script type="text/javascript">
+			var W = {
+				template : $.String("<table cellspacing='10' cellpadding='0' border='0' width='@{width}' height='@{height}'>", "<tr>", "<td><div class='ucren-textellipsis' style='width: @{width}px; text-align: @{align};'>@{context}</div></td>", "</tr>", "<tr style='display:@{display};'>", "<td align='left'></td>", "</tr>", "<tr>", "<td>", "<table cellspacing='0' cellpadding='0'><tr></tr></table>", "</td>", "</tr>", "</table>")
+			}
+			
+			
+			var H = {
+                width: 300,
+                height: 120,
+                isDialog: true,
+                cloButton: true,
+                button_ok: true,
+                button_cancel: false,
+                resizeAble: false,
+                buttonAlign: "center",
+                textAlign: "center"
+            };
+            var J = W.template.replace({
+				width : H.width,
+				height : H.height,
+                context: "asfdasdfsadfafs",
+                display: true
+            });
+			$("test").innerHTML = J;
+			alert(J);
+		</script>
+	</body>
+</html>

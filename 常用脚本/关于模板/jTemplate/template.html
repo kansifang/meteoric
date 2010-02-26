@@ -1,0 +1,17 @@
+﻿<strong>{$T.name} : {$T.list_id}</strong>
+<table>
+    <tr>
+			<th>编号</th>
+			<th>姓名</th>
+            <th>年龄</th>
+			<th>邮箱</th>
+	</tr>
+	{#foreach $T.table as record}
+	<tr>
+			<td>{$T.record.id}</td>
+			<td>{$T.record.name}</td>
+            <td>{$T.record.age}</td>
+			<td>{$T.record.mail}</td>
+	</tr>
+	{#/for}
+</table>

@@ -1,0 +1,11 @@
+﻿{
+	name: "用户列表",
+	list_id: "编号89757",
+    table: [
+				{id: 1, name: 'Rain', age: 22, mail: 'cssrain@domain.com'},
+				{id: 2, name: '皮特', age: 24, mail: 'cssrain@domain.com'},
+				{id: 3, name: '卡卡', age: 20, mail: 'cssrain@domain.com'},
+				{id: 4, name: '戏戏', age: 26, mail: 'cssrain@domain.com'},
+				{id: 5, name: '一揪', age: 25, mail: 'cssrain@domain.com'}
+	]
+}

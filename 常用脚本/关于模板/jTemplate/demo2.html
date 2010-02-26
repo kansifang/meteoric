@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jTemplates</title>
+<style type="text/css">
+		#result1 table,#result2 table{
+  		    border-collapse: collapse;/* 边框合并属性  */
+   			width:200px;
+		}
+		#result1 td,#result2 td,#result1 th,#result2 th{
+			 border: 1px solid #666666;
+		}
+</style>
+<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.2.6.pack.js"></script>
+<script type="text/javascript" src="jquery-jtemplates.js"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			//初始化数据
+			var data = {
+				name: '用户列表',
+				list_id: '编号89757',
+				table: [
+					{id: 1, name: 'Rain', age: 22, mail: 'cssrain@domain.com'},
+					{id: 2, name: '皮特', age: 24, mail: 'cssrain@domain.com'},
+					{id: 3, name: '卡卡', age: 20, mail: 'cssrain@domain.com'},
+					{id: 4, name: '戏戏', age: 26, mail: 'cssrain@domain.com'},
+					{id: 5, name: '一揪', age: 25, mail: 'cssrain@domain.com'}
+				]
+			};
+			// 本地数据
+			var lang = {};
+			lang['en'] = {
+				'id': 'ID',
+				'name': 'Name',
+				'mail': 'E-Mail',
+				'age': 'Age',
+				'language': '英文'
+			};
+			lang['ch'] = {
+				'id': '编号',
+				'name': '姓名',
+				'mail': '邮箱',
+				'age': '年龄',
+				'language': '中文'
+			};
+			// 附上模板
+			$("#result1").setTemplateElement("template");
+			$("#result2").setTemplateElement("template");
+			
+			// 设置参数 'lang'
+			$("#result1").setParam('lang', lang['en']);
+			$("#result2").setParam('lang', lang['ch']);
+			
+			// 给模板加载数据
+			$("#result1").processTemplate(data);
+			$("#result2").processTemplate(data);
+		});	
+	</script>
+</head>
+
+<body>
+
+	<!-- 模板内容 -->
+	<textarea id="template" style="display:none">
+		<div>{$T.name}: {$T.list_id} --- 表头为：{$P.lang.language} </div>
+		<table>
+			<thead>
+				<tr>
+					<th>{$P.lang['id']}</th>
+					<th>{$P.lang['name']}</th>
+                    <th>{$P.lang['age']}</th>
+					<th>{$P.lang['mail']}</th>
+				</tr>
+			</thead>
+			<tbody>
+				{#foreach $T.table as record}
+				<tr>
+					<td>{$T.record.id}</td>
+					<td>{$T.record.name}</td>
+                    <td>{$T.record.age}</td>
+					<td>{$T.record.mail}</td>
+				</tr>
+				{#/for}
+			</tbody>
+		</table>
+	</textarea>
+
+	<!-- 输出元素 -->
+	<div id="result1" class="jTemplatesTest"></div>
+    <br/><br/>
+	<div id="result2" class="jTemplatesTest"></div>
+	
+</body>
+</html>
