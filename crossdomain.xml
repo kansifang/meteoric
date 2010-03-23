@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cross-domain-policy lastSeq="1">
+    <allow-access-from domain="*.9917.com"/>
+	<allow-access-from domain="*.home.9917.com"/>
+	<menu></menu>
+</cross-domain-policy>
