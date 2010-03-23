@@ -20,8 +20,7 @@ gongshengnan@gmail.com
 closure-library		http://closure-library.googlecode.com/svn/trunk
 chatty			http://chatty.googlecode.com/svn
 j-et                    http://j-et.googlecode.com/svn/trunk
-
-
+ecma                    http://ecma-262.googlecode.com/svn/trunk/
 
 
 
@@ -29,12 +28,13 @@ http://code.google.com/p/snailgame---js/source/checkout
 
 svn上的源码下载地址：
 https://snailgame---js.googlecode.com/svn/trunk/
-
 svn的帐号：gongshengnan@gmail.com
-
 密码：bx8Eu9pv8cw6 
 
 
 https://jsskep.googlecode.com/svn/trunk
 cssrain的svn: cssrain
 mr4HJ4nd5Ua7 
+
+
+代理上网：http://gappproxy.googlecode.com/svn/trunk
