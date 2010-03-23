@@ -1,0 +1,26 @@
+1、先下载：Python2.5.2（下载地址：http://www.python.org/ftp/python/2.5.2/python-2.5.2.msi）
+2、下载：setuptools-0.6c9.win32-py2.5.exe(为python提供了简单的包管理和发行功能，这里需要使用easy_install功能)
+扩展阅读：《可爱的 Python: 使用 setuptools 孵化 Python egg》地址：http://www.ibm.com/developerworks/cn/linux/l-cppeak3.html
+3、环境变量中配置python的路径：;D:\Program Files\python;D:\Program Files\python\Scripts
+4、运行：python -c "import pkg_resources"，无任何输入则说明setuptools安装成功
+5、下载三个扩展库：
+	easy_install Pygments
+        easy_install simplejson
+        easy_install Cheetah
+6、下载最新版本YUIDoc(地址：http://github.com/yui/yuidoc/zipball/yuidoc-49最新版本，查看所有版本：http://github.com/yui/yuidoc/downloads)
+7、配置路径：YUIDoc/bin/test.bat:
+
+SET yuidoc_home="D:\yui\yuidoc"
+REM YUI Doc的路径
+SET parser_in="D:\yui\src"
+REM 要生成文档的JS文件路径，比如为了测试就我临时建一个，里面就放着YUI 的 dom.js
+SET parser_out="D:\yui\src\parser"
+REM YUI Doc会把解析的JS文件提取出来所要存放的位置
+SET generator_out="D:\yui\src\generator"
+REM 生成文档存放的位置
+
+8、YUIDoc的官方文档：http://developer.yahoo.com/yui/yuidoc/#overview
+
+
+
+
