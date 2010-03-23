@@ -22,5 +22,58 @@ REM 生成文档存放的位置
 8、YUIDoc的官方文档：http://developer.yahoo.com/yui/yuidoc/#overview
 
 
+setuptools: distribution/packaging tool 包管理与发行工具
+Pygments: Python syntax highlighter  Python语法高亮
+SimpleJSON: JSON toolkit for Python  用于Python的工具包的JSON
+Cheetah: Python templating engine  Python的模板引擎
+
+
+主标记：
+module
+class
+method
+event
+property
+
+次要标记:
+submodule
+namespace
+extends
+config
+attribute
+constructor
+static
+final
+param
+return
+for
+type
+private
+protected
+requires
+default
+uses
+
+
+分析YUI的dom.js
+/**
+* @module dom
+*/
+
+
+/**
+* 定义了一些操作DOM元素的辅助方法
+* @namespze YAHOO.util
+* @class Dom
+* @requires yahoo, event
+*/
+
+/**
+* 返回一个 HTMLElement 的引用。
+* @method get
+* @param {String | HTMLElement |Array} el 可以是字符串形式的元素的 ID，也可以是实际的 DOM 引用，并且也支持 ID 或者 DOM 引用组成的数组。
+* @return {HTMLElement | Array} 一个 HTML 元素的 DOM 引用或者 HTMLElements 数组。
+*/
+
 
 
