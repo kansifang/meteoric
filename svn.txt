@@ -21,6 +21,10 @@ closure-library		http://closure-library.googlecode.com/svn/trunk
 chatty			http://chatty.googlecode.com/svn
 j-et                    http://j-et.googlecode.com/svn/trunk
 ecma                    http://ecma-262.googlecode.com/svn/trunk/
+blogsrc:flex/python/java/c http://blogsrc.googlecode.com/svn
+http://duanjianghu-mytech.googlecode.com/svn
+
+
 
 
 
