@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<colorizer xmlns="http://www.aptana.com/2007/colorizer/1.0" background="rgb(17,17,17)" caret-color="rgb(255,255,255)" folding-background="rgb(54,54,54)" folding-foreground="rgb(128,128,128)" language="text/html" line-highlight="rgb(0,36,72)" selection-background="rgb(16,60,175)" selection-foreground="rgb(255,255,255)">
+<category name="WHITESPACE" style="WHITESPACE"/>
+<style foreground="rgb(128,128,128)" id="WHITESPACE"/>
+<category name="LITERAL" style="LITERAL">
+<token style="LITERAL_STRING" type="STRING"/>
+<token style="LITERAL_TEXT" type="TEXT"/>
+</category>
+<style foreground="rgb(194,240,100)" id="LITERAL"/>
+<style foreground="rgb(237,247,185)" id="LITERAL_STRING"/>
+<style foreground="rgb(255,255,255)" id="LITERAL_TEXT"/>
+<category name="KEYWORD" style="KEYWORD"/>
+<style foreground="rgb(200,251,132)" id="KEYWORD"/>
+<category name="ERROR" style="ERROR"/>
+<style foreground="rgb(255,128,128)" id="ERROR"/>
+<category name="PUNCTUATOR" style="PUNCTUATOR">
+<token style="PUNCTUATOR_EQUAL" type="EQUAL"/>
+<token style="PUNCTUATOR_QUESTION_GREATER_THAN" type="QUESTION_GREATER_THAN"/>
+<token style="PUNCTUATOR_PI_OPEN" type="PI_OPEN"/>
+</category>
+<style foreground="rgb(121,155,217)" id="PUNCTUATOR"/>
+<style foreground="rgb(198,244,89)" id="PUNCTUATOR_EQUAL"/>
+<style font-weight="bold" foreground="rgb(128,128,192)" id="PUNCTUATOR_QUESTION_GREATER_THAN"/>
+<style font-weight="bold" foreground="rgb(128,128,192)" id="PUNCTUATOR_PI_OPEN"/>
+</colorizer>

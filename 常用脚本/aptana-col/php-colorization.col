@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<colorizer xmlns="http://www.aptana.com/2007/colorizer/1.0" background="rgb(17,36,53)" caret-color="rgb(255,255,255)" folding-background="rgb(17,36,53)" folding-foreground="rgb(128,128,128)" language="text/php" line-highlight="rgb(39,58,75)" selection-background="rgb(16,60,175)" selection-foreground="rgb(255,255,255)">
+<category name="WHITESPACE" style="WHITESPACE"/>
+<style foreground="rgb(58,139,218)" id="WHITESPACE"/>
+<category name="LITERAL" style="LITERAL">
+<token style="LITERAL_NUMBER" type="NUMBER"/>
+</category>
+<style foreground="rgb(207,159,112)" id="LITERAL"/>
+<style foreground="rgb(121,236,242)" id="LITERAL_NUMBER"/>
+<category name="KEYWORD" style="KEYWORD">
+<token style="KEYWORD_INCLUDE" type="INCLUDE"/>
+<token style="KEYWORD_REQUIRE_ONCE" type="REQUIRE_ONCE"/>
+<token style="KEYWORD_ECHO" type="ECHO"/>
+<token style="KEYWORD_INCLUDE_ONCE" type="INCLUDE_ONCE"/>
+<token style="KEYWORD_REQUIRE" type="REQUIRE"/>
+<token style="KEYWORD_GLOBAL" type="GLOBAL"/>
+</category>
+<style foreground="rgb(196,239,63)" id="KEYWORD"/>
+<style font-weight="bold" foreground="rgb(192,220,163)" id="KEYWORD_INCLUDE"/>
+<style font-weight="bold" foreground="rgb(210,238,128)" id="KEYWORD_REQUIRE_ONCE"/>
+<style foreground="rgb(218,242,132)" id="KEYWORD_ECHO" text-decoration="underline"/>
+<style font-weight="bold" foreground="rgb(203,230,166)" id="KEYWORD_INCLUDE_ONCE"/>
+<style font-weight="bold" foreground="rgb(185,231,122)" id="KEYWORD_REQUIRE"/>
+<style font-weight="bold" foreground="rgb(255,255,255)" id="KEYWORD_GLOBAL"/>
+<category name="ERROR" style="ERROR">
+<token style="ERROR_ERROR" type="ERROR"/>
+</category>
+<style foreground="rgb(128,128,128)" id="ERROR"/>
+<style foreground="rgb(255,0,0)" id="ERROR_ERROR"/>
+<category name="SUPERGLOBAL" style="SUPERGLOBAL"/>
+<style font-weight="bold" foreground="rgb(187,223,244)" id="SUPERGLOBAL"/>
+<category name="IDENTIFIER" style="IDENTIFIER">
+<token style="IDENTIFIER_IDENTIFIER" type="IDENTIFIER"/>
+<token style="IDENTIFIER_VARIABLE" type="VARIABLE">
+<region length="1" name="VARIABLE_dollar" offset="0" style="IDENTIFIER_VARIABLE_VARIABLE_dollar"/>
+</token>
+</category>
+<style foreground="rgb(249,241,189)" id="IDENTIFIER"/>
+<style font-style="italic" font-weight="bold" foreground="rgb(203,175,237)" id="IDENTIFIER_IDENTIFIER"/>
+<style foreground="rgb(245,228,105)" id="IDENTIFIER_VARIABLE_VARIABLE_dollar"/>
+<style foreground="rgb(251,242,204)" id="IDENTIFIER_VARIABLE"/>
+<category name="PUNCTUATOR" style="PUNCTUATOR">
+<token style="PUNCTUATOR_SQUARE_CLOSE" type="SQUARE_CLOSE"/>
+<token style="PUNCTUATOR_OBJECT_OPERATOR" type="OBJECT_OPERATOR"/>
+<token style="PUNCTUATOR_EQUAL" type="EQUAL"/>
+<token style="PUNCTUATOR_CURLY_CLOSE" type="CURLY_CLOSE"/>
+<token style="PUNCTUATOR_SQUARE_OPEN" type="SQUARE_OPEN"/>
+<token style="PUNCTUATOR_CURLY_OPEN" type="CURLY_OPEN"/>
+</category>
+<style foreground="rgb(179,217,255)" id="PUNCTUATOR"/>
+<style font-weight="bold" foreground="rgb(218,242,121)" id="PUNCTUATOR_SQUARE_CLOSE"/>
+<style foreground="rgb(190,249,36)" id="PUNCTUATOR_OBJECT_OPERATOR"/>
+<style foreground="rgb(128,255,255)" id="PUNCTUATOR_EQUAL"/>
+<style foreground="rgb(129,192,192)" id="PUNCTUATOR_CURLY_CLOSE"/>
+<style font-weight="bold" foreground="rgb(226,248,143)" id="PUNCTUATOR_SQUARE_OPEN"/>
+<style foreground="rgb(133,194,194)" id="PUNCTUATOR_CURLY_OPEN"/>
+</colorizer>
