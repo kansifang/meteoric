@@ -1,3 +1,5 @@
+//http://www.svendtofte.com/code/usefull_prototypes/
+
 Number.max = function (a,b) {
     return a<b?b:a;
 }
