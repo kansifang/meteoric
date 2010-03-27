@@ -1,0 +1,6 @@
+toString是用于输出的
+valueOf是用于运算的，在不强制指定valueOf时 它默认返回toString
+
+
+
+http://bbs.51js.com/viewthread.php?tid=67208  最后winter的说明
