@@ -1,0 +1,6 @@
+可参考这篇文章：http://www.imeetyou.net/article.asp?id=348
+
+FD3.0.0 B9
+	http://www.flashdevelop.org/downloads/releases/FlashDevelop-3.0.0-Beta9.exe
+下载FLEX SDK 4.0最新版
+	http://flexorg.wip3.adobe.com/flexsdk/4.0.0.4229/flex_sdk_4.0.0.4229.zip
