@@ -4,3 +4,14 @@ FD3.0.0 B9
 	http://www.flashdevelop.org/downloads/releases/FlashDevelop-3.0.0-Beta9.exe
 下载FLEX SDK 4.0最新版
 	http://flexorg.wip3.adobe.com/flexsdk/4.0.0.4229/flex_sdk_4.0.0.4229.zip
+
+
+当不能使用trace时：属性--》高级--》第一项：-static-link-runtime-shared-libraries=true
+
+
+菜单栏上面:工具--》属性：
+AS3Context-->Flex SDK Location:指定SDK的路径
+
+FlashViewer-->External Player path--》指定debug的flash player地址
+
+安装中文，只需要下载相应的包，然后复制、替换，重新打开便可，默认安装flashdevelop时请选择默认，不然会出问题
