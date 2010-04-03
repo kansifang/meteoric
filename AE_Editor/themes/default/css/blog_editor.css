@@ -1,0 +1,63 @@
+ .blog_music{
+	border:1px solid #ccc;
+	background:#fefefe url(Files-music.jpg) center center no-repeat;
+	width:362px;
+	height:97px;
+	display:inline;
+ }
+ 
+ .blog_music_multiple{
+	border:1px solid #ccc;
+	background:#fefefe url(Files-music-mul.jpg) center center no-repeat;
+	width:401px;
+	height:183px;
+	display:inline;
+ }
+
+ .blog_flasht{
+	border:1px solid #ccc;
+	background:#fefefe url(Files-Flash.gif) center center no-repeat;
+	width:100px;
+	height:100px;
+	position:absolute;
+	filter:alpha(enabled=true,opacity=50); 
+ }
+
+ .blog_flash{
+	border:1px solid #ccc;
+	background:#fefefe url(Files-Flash.gif) center center no-repeat;
+	width:100px;
+	height:100px;
+	display:inline;
+ }
+
+ .blog_video{
+	border:1px solid #ccc;
+	background:#fefefe url(Files-Video.gif) center center no-repeat;
+	width:100px;
+	height:100px;
+	display:inline;
+ }
+
+ .blog_audio{
+	border:1px solid #ccc;
+	background:#fefefe url(Files-Audio.gif) center center no-repeat;
+	width:300px;
+	height:70px;
+	display:inline;
+ }
+
+ .blog_qqVideo{
+	border:1px solid #ccc;
+	background:#fefefe url(Files-qqVideo.gif) center center no-repeat;
+	width:100px;
+	height:100px;
+	display:inline;
+ }
+
+ .blog_album{
+	width:480px;
+	height:360px;
+ }
+ 
+/*  |xGv00|58cbde1488ea64afe33b572bc2485c58 */

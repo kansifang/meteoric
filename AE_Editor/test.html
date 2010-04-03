@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+		<title>Editor Test</title>
+		<!--<link rel="stylesheet" rev="stylesheet" href="themes/default/css/blog_d_out.css" type="text/css" media="screen" />-->
+		<style type="text/css">
+			.editbox_resize{border:1px solid #CCCCCC; background-color:#FFFFFF; height:25px; width:110px; padding-left:5px;float:right; margin-top:-1px;} 
+			.editbox_resize button{ background:none; margin-top:3px; width:50px;}
+			.editbox_resize button img{ vertical-align:-1px;}
+			
+			.editor_addition, .editor_reduction {background-color:transparent;background-image:url(themes/default/images/blog_icon.png);background-repeat:no-repeat;}
+			.editor_addition{width:13px;height:14px;background-position:-240px -38px;_vertical-align:0px;}
+			.editor_reduction{width:13px;height:14px;background-position:-260px -38px;_vertical-align:0px;}
+		</style>
+		<script type="text/javascript" src="core/base.js"></script>
+		<script type="text/javascript" src="core/plugin.js"></script>
+		
+		<!-- 所有 core 文件加载独立（顺序无关） -->
+		<script type="text/javascript" src="core/core.js"></script>
+		<script type="text/javascript" src="core/config.js"></script>
+		<script type="text/javascript" src="core/editPanel.js"></script>
+		<script type="text/javascript" src="core/history.js"></script>
+		<script type="text/javascript" src="core/toolbar.js"></script>
+		<script type="text/javascript" src="core/selection.js"></script>
+		<script type="text/javascript" src="core/range.js"></script>
+		<script type="text/javascript" src="core/lang.js"></script>
+		<script type="text/javascript" src="core/menu.js"></script>
+		
+		<!-- 所有 plugin 文件加载独立（顺序无关） -->
+		<script type="text/javascript" src="plugins/color/plugin.js"></script>
+		<script type="text/javascript" src="plugins/emotion/plugin.js"></script>
+		<script type="text/javascript" src="plugins/font/plugin.js"></script>
+		<script type="text/javascript" src="plugins/history/plugin.js"></script>
+		<script type="text/javascript" src="plugins/indent/plugin.js"></script>
+		<script type="text/javascript" src="plugins/justify/plugin.js"></script>
+		<script type="text/javascript" src="plugins/letter/plugin.js"></script>
+		<script type="text/javascript" src="plugins/link/plugin.js"></script>
+		<script type="text/javascript" src="plugins/other/plugin.js"></script>
+		<script type="text/javascript" src="plugins/removeformat/plugin.js"></script>
+		
+	</head>
+	<body>
+		<div class="editor_box" style="width:800px;margin:10px auto;">
+			<div class="editbox">
+				<textarea id="blogEditorAnchor"></textarea>				
+			</div>
+			<div class="editbox_resize" style="position:static;float:right;">
+				<button onclick=""><img src="themes/default/images/b.gif" alt="增加编辑框高度" class="editor_addition" /> <span>放大</span></button> 
+				<button onclick=""><img src="themes/default/images/b.gif" alt="缩小编辑框高度" class="editor_reduction" />   <span> 缩小</span></button>
+			</div>
+			<div style="margin-top:30px;">
+				<input type="button" value="获取内容" id="getContent" />
+				<input type="button" value="清空内容" id="clearContent" />
+			</div>
+			
+			<div style="clear:both;margin-top:20px;">
+				<!--S编辑器-->
+				<div>
+					<div class="editor_box" style="width:100%;">
+						<!--S工具栏-->
+						<div class="editor_tools simple_mode super_mode">
+							<div class="font_tools">
+								<ul>
+									<li>
+										<div title="字体" class="sel_simulate">
+											<div unselectable="on">
+												<span unselectable="on">字体</span>
+												<button type="button">▼</button>
+											</div>											
+										</div>
+									</li>
+									<li>
+										<div title="字号" class="sel_simulate">
+											<div unselectable="on">
+												<span unselectable="on">字号</span>
+												<button type="button">▼</button>
+											</div>											
+										</div>										
+									</li>
+									<li>
+										<button title="加粗" class="font_btn font_bold" type="button"></button>
+									</li>
+									<li>
+										<button title="倾斜" class="font_btn font_italic" type="button"></button>
+									</li>
+									<li>
+										<button title="下划线" class="font_btn font_underline" type="button"></button>
+									</li>
+									<li>
+										<button title="字体颜色" class="font_btn font_color" type="button"></button>
+									</li>
+									<li>
+										<button title="设置发光字" class="font_btn font_light" type="button"></button>
+									</li>
+								</ul>
+							</div>
+							<div class="typeset_tools">
+								<ul>
+									<li>
+										<button title="居左" class="typeset_left" type="button"></button>
+									</li>
+									<li>
+										<button title="居中" class="typeset_center" type="button"></button>
+									</li>
+									<li>
+										<button title="居右" class="typeset_right" type="button"></button>
+									</li>
+								</ul>
+							</div>
+							<div class="expert_tools super_simple_tools">
+								<ul>
+									<li>
+										<button title="插入表情" class="expert_face_s"></button>
+									</li>
+									<li>
+										<button title="插入图片" class="expert_img_s"></button>
+									</li>
+									<li>
+										<button title="插入音乐" class="expert_music_s"></button>
+									</li>
+									<li>
+										<button title="插入视频" class="expert_video_s"></button>
+									</li>
+								</ul>
+							</div>
+							<div class="other_tools">
+								<ul>
+									<li>
+										<button title="切换到高级模式" class="btn_expertuse" type="button"></button>
+									</li>
+									<li>
+										<a href="javascript:;" hidefocus="true" class="link_qmark" title="帮助"></a>
+									</li>									
+								</ul>
+							</div>
+						</div>
+						<!--E工具栏-->
+					</div>
+					<!--S提示-->
+					<div class="editor_hint">这里是提示..</div>
+					<!--E提示-->
+					<!--S主编辑区域-->
+					<div class="editor_areas" style="height: 50px;">
+						<div class="editor_area" style="border: #cccccc 1px solid;margin: 0px;display: block;height: 100%; _height: auto;"></div>
+					</div>
+					<!--E主编辑区域-->
+					<!--S扩展-->
+					<div class="ex_editor">
+						<div class="btn_resize hover"><span>拉伸</span></div>
+					</div>
+					<!--E扩展-->
+				</div>
+				<!--E编辑器-->
+			</div>
+			
+			<div style="clear:both;margin-top:20px;">
+				<div>
+					<div class="editor_box" style="width:100%;">
+						<div class="editor_tools">
+							<div class="font_tools">
+								<ul>
+									<li>
+										<div title="字体" class="sel_simulate">
+											<div unselectable="on">
+												<span unselectable="on">字体</span>
+												<button type="button">▼</button>
+											</div>											
+										</div>
+									</li>
+									<li>
+										<div title="字号" class="sel_simulate font_size">
+											<div unselectable="on">
+												<span unselectable="on">字号</span>
+												<button type="button">▼</button>
+											</div>											
+										</div>										
+									</li>
+									<li>
+										<button title="加粗" class="font_btn font_bold" type="button"></button>
+									</li>
+									<li>
+										<button title="倾斜" class="font_btn font_italic" type="button"></button>
+									</li>
+									<li>
+										<button title="下划线" class="font_btn font_underline" type="button"></button>
+									</li>
+									<li>
+										<button title="字体颜色" class="font_btn font_color" type="button"></button>
+									</li>
+									<li>
+										<button title="设置发光字" class="font_btn font_light" type="button"></button>
+									</li>
+									<li>
+										<button title="插入超链接" class="font_btn font_link" type="button"></button>
+									</li>
+									<li>
+										<button title="清除样式" class="font_btn font_clean" type="button"></button>
+									</li>
+								</ul>
+							</div>
+							<div class="typeset_tools">
+								<ul>
+									<li>
+										<button title="居左" class="typeset_left" type="button"></button>
+									</li>
+									<li>
+										<button title="居中" class="typeset_center" type="button"></button>
+									</li>
+									<li>
+										<button title="居右" class="typeset_right" type="button"></button>
+									</li>
+									<li>
+										<button title="自动对齐" class="typeset_auto" type="button"></button>
+									</li>
+									<li>
+										<button title="插入/删除项目序号" class="typeset_ol" type="button"></button>
+									</li>
+									<li>
+										<button title="插入/删除编号列表" class="typeset_ul" type="button"></button>
+									</li>
+								</ul>
+							</div>
+							<div class="expert_tools">
+								<ul>
+									<li>
+										<button title="插入表情" class="expert_face"></button>
+									</li>
+									<li>
+										<button title="插入图片" class="expert_img"></button>
+									</li>
+									<li>
+										<button title="插入音乐" class="expert_music"></button>
+									</li>
+									<li>
+										<button title="插入视频" class="expert_video"></button>
+									</li>
+								</ul>
+							</div>
+							<div class="inout_tools">
+								<ul>
+									<li>
+										<button title="撤消" class="font_btn inout_backout" type="button"></button>
+									</li>
+									<li>
+										<button title="恢复" class="font_btn inout_resume" type="button"></button>
+									</li>
+								</ul>
+							</div>
+							<div class="other_tools">
+								<ul>
+									<li>
+										<button title="使用常用功能" class="btn_ofenuse" type="button"></button>
+									</li>
+									<li>
+										<button title="切换到html编辑模式" class="btn_html" type="button"></button>
+									</li>
+									<li>
+										<a href="javascript:;" hidefocus="true" class="link_qmark" title="帮助"><span>帮助</span></a>
+									</li>									
+								</ul>
+							</div>
+							<div class="secend_line">
+								<ul>
+									<li>
+										<button title="插入信纸" class="btn_opaper" type="button"><span>信纸</span></button>
+									</li>
+									<li>
+										<button title="切换全屏/普通模式" class="btn_fullscreen" type="button"><span>全屏</span></button>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="editor_hint">这里是提示..</div>
+					<div class="editor_areas" style="height: 50px;">
+						<div class="editor_area" style="border: #cccccc 1px solid;margin: 0px;display: block;height: 100%; _height: auto;"></div>
+					</div>
+					<div class="ex_editor">
+						<div class="btn_resize hover"><span>拉伸</span></div>
+					</div>
+				</div>
+			</div>
+			
+			<div style="clear:both;margin-top:20px;">
+				<div>
+					<div class="editor_box" style="width:100%;">
+						<div class="editor_tools simple_mode">
+							<div class="font_tools">
+								<ul>
+									<li>
+										<div title="字体" class="sel_simulate">
+											<div unselectable="on">
+												<span unselectable="on">字体</span>
+												<button type="button">▼</button>
+											</div>											
+										</div>
+									</li>
+									<li>
+										<div title="字号" class="sel_simulate font_size">
+											<div unselectable="on">
+												<span unselectable="on">字号</span>
+												<button type="button">▼</button>
+											</div>											
+										</div>										
+									</li>
+									<li>
+										<button title="加粗" class="font_btn font_bold" type="button"></button>
+									</li>
+									<li>
+										<button title="倾斜" class="font_btn font_italic" type="button"></button>
+									</li>
+									<li>
+										<button title="下划线" class="font_btn font_underline" type="button"></button>
+									</li>
+									<li>
+										<button title="字体颜色" class="font_btn font_color" type="button"></button>
+									</li>
+								</ul>
+							</div>
+							<div class="typeset_tools">
+								<ul>
+									<li>
+										<button title="居左" class="typeset_left" type="button"></button>
+									</li>
+									<li>
+										<button title="居中" class="typeset_center" type="button"></button>
+									</li>
+									<li>
+										<button title="居右" class="typeset_right" type="button"></button>
+									</li>
+								</ul>
+							</div>
+							<div class="expert_tools">
+								<ul>
+									<li>
+										<button title="插入表情" class="expert_face_s" type="button"><span>表情</span></button>
+									</li>
+									<li>
+										<button title="插入图片" class="expert_img_s" type="button"><span>图片</span></button>
+									</li>
+									<li>
+										<button title="截屏" class="expert_print_s" type="button"><span>截屏</span></button>
+									</li>
+								</ul>
+							</div>
+							<div class="other_tools">
+								<ul>
+									<li>
+										<button title="使用高级功能" class="btn_expertuse" type="button"></button>
+									</li>
+									<li>
+										<a href="javascript:;" hidefocus="true" class="link_qmark"><span>帮助</span></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="editor_hint">这里是提示..</div>
+					<div class="editor_areas" style="height: 50px;">
+						<div class="editor_area" style="border: #cccccc 1px solid;margin: 0px;display: block;height: 100%; _height: auto;"></div>
+					</div>
+					<div class="ex_editor">
+						<div class="btn_resize hover"><span>拉伸</span></div>
+					</div>
+				</div>
+			</div>			
+			
+			<div style="clear:both;margin-top:20px;">
+				<div>
+					<div class="editor_box" style="width:100%;">
+						<div class="editor_tools ubb_mode">
+							<div class="inout_tools">
+								<ul>
+									<li>
+										<button title="撤消" class="font_btn inout_backout" type="button"></button>
+									</li>
+									<li>
+										<button title="恢复" class="font_btn inout_resume" type="button"></button>
+									</li>
+									<li>
+										<button title="插入超链接" class="font_btn font_link" type="button"></button>
+									</li>
+									<li>
+										<button title="插入图片" class="expert_img_s" type="button"><span>插入图片</span></button>
+									</li>
+								</ul>
+							</div>
+							<div class="other_tools">
+								<ul>
+									<li>
+										<a title="返回所见即所得编辑模式" class="link_return" href="javascript:;" hidefocus="true"><span>返回</span></a>
+									</li>
+									<li>
+										<a title="帮助" href="javascript:;" hidefocus="true" class="link_qmark"><span>使用帮助</span></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="editor_hint">这里是提示..</div>
+					<div class="editor_areas" style="height: 50px;">
+						<div class="editor_area" style="border: #cccccc 1px solid;margin: 0px;display: block;height: 100%; _height: auto;"></div>
+					</div>
+					<div class="ex_editor">
+						<div class="btn_resize hover"><span>拉伸</span></div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+<script type="text/javascript">
+	window._defaultFontSize = 1;
+	
+	var editorObj = GD.Editor.create("blogEditorAnchor", {
+		height : "300px", 
+		width:"100%",
+		resizable : true,
+		editorList : ["html"],
+		toolbarList : ["html_mini"]
+	});			
+//	editorObj.onEditorReady = QZONE.event.bind(this, function() {});
+//	editorObj.onToolbarSwitch = function() {} //onToolbarSwitch内this指向this.editorObj
+	editorObj.build();
+	
+	GD.Editor.getElement("getContent").onclick = function() {
+		alert(GD.Editor.getElement("blogEditorAnchor").getValue());
+	};
+	GD.Editor.getElement("clearContent").onclick = function() {
+		
+	}
+</script>
+</html>
