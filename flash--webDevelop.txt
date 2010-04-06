@@ -1,4 +1,5 @@
 可参考这篇文章：http://www.imeetyou.net/article.asp?id=348
+http://www.qilei.org/200810/flashdevelop-build-up/
 
 FD3.0.0 B9
 	http://www.flashdevelop.org/downloads/releases/FlashDevelop-3.0.0-Beta9.exe
@@ -15,3 +16,6 @@ AS3Context-->Flex SDK Location:指定SDK的路径
 FlashViewer-->External Player path--》指定debug的flash player地址
 
 安装中文，只需要下载相应的包，然后复制、替换，重新打开便可，默认安装flashdevelop时请选择默认，不然会出问题
+
+汉化补丁下载地址：http://flash.9ria.com/thread-30123-1-1.html
+登录名：meteoric_cry 密码：xxxshei
