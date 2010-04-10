@@ -19,3 +19,22 @@ FlashViewer-->External Player path--》指定debug的flash player地址
 
 汉化补丁下载地址：http://flash.9ria.com/thread-30123-1-1.html
 登录名：meteoric_cry 密码：xxxshei
+
+Axure RP Pro 5的注册码：
+注册码：Name：yaolanwang
+Serial：ogj1xp3rOKIyiMCh0w9ZIlujXKeBOE0CeuEjX2yNfDnO1IsJd3xdd7jMSe/iO2Ly
+
+Name：3ddown
+Serial：FiCGEezgdGoYILo8U/2MFyCWj0jZoJc/sziRRj2/ENvtEq+7w1RH97k5MWctqVH
+
+另，为e文好的朋友附上自学Axure RP的几个途径：
+1、 打开软件，按F1调取帮助文档，对照文档学习。
+2、 登录http://www.axure.com/au-home.aspx 查看flash视频学习。
+3、 登录 Axure 博客 http://axure.com/cs/blogs/Default.aspx，了解软件最新信息。
+4、 登录讨论组http://axure.com/cs/forums/Default.aspx，参与讨论。
+
+
+
+Django Step by Step：
+SVN地址：http://cvs.woodpecker.org.cn/svn/woodpecker/zqlib/tangle/limodou/django-stepbystep/newtest
+
