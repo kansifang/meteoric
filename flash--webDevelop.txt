@@ -38,3 +38,7 @@ Serial£∫FiCGEezgdGoYILo8U/2MFyCWj0jZoJc/sziRRj2/ENvtEq+7w1RH97k5MWctqVH
 Django Step by Step£∫
 SVNµÿ÷∑£∫http://cvs.woodpecker.org.cn/svn/woodpecker/zqlib/tangle/limodou/django-stepbystep/newtest
 
+
+Õ¯“≥‘§¿¿µÿ÷∑£∫http://meteoric.googlecode.com/svn/trunk/
+
+
