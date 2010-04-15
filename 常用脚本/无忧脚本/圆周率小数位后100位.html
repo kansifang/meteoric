@@ -1,0 +1,280 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Untitled Document</title>
+    </head>
+    <body>
+        <SCRIPT LANGUAGE="JavaScript">
+            <!--
+            function BigNum(str, n, b){
+                /*
+                 BigNum -- 大数类
+                 私有成员：
+                 data -- 112 位数字，放在长度为 16 的数组里，每个数组元素存放 7 位数字。
+                 decimal_place -- 小数点的位置，从最左位开始算。
+                 positive -- 是否是正数。
+                 recalc() -- 为了尽可能存放最多的有效数位，去除前缀的 0，并重新计算小数点位置。
+                 公有成员：
+                 BigNum( String str, INT n , BOOL b) --
+                 构造函数。参数：str -- 字符串，各个有效数位；n -- 整数，小数点位置，从最左位开始算，比如 BigNum("123", 2) = 12.3; BigNum("123", 0) = 0.123; BigNum("123", -2) = 0.00123；b -- 布尔值，是否是正数。
+                 Add( BigNum num ) -- 加法。
+                 Subtract( BigNum num ) -- 减法。
+                 Multiply( BigNum num ) -- 乘法。
+                 Divide( BigNum num ) -- 除法。
+                 SquareRoot() -- 平方根。
+                 toString() -- 转换为字符串（包括小数点），以便以文本形式输出计算结果。
+                 */
+                this.recalc = function() /* 去除前缀的 0，并重新计算小数点位置 */{
+                    for (var i = 0; i < 16; i++) {
+                        if (this.data[0] != 0) 
+                            break;
+                        this.data.shift();
+                        this.data.push(0);
+                        this.decimal_place--;
+                    }
+                }
+                this.init = function(){
+                    this.decimal_place = Math.ceil(n / 7); //小数点位置
+                    this.data = new Array(16); //保存有效数位的数组
+                    if (n % 7 > 0) {
+                        var arr = new Array(8 - n % 7);
+                    }
+                    else {
+                        var arr = new Array(1 - n % 7);
+                    }
+                    str = arr.join("0") + str;
+                    if (str.length > 112) {
+                        str = str.substr(0, 112);
+                    }
+                    else 
+                        if (str.length < 112) {
+                            var arr = new Array(113 - str.length);
+                            str += arr.join("0");
+                        }
+                    for (var i = 0; i < 16; i++) {
+                        this.data[i] = parseInt(str.substr(i * 7, 7), 10);
+                    }
+                }
+                /* 初始化开始 */
+                this.positive = b;
+                if (!/^0*$/.test(str)) {
+                    this.init();
+                    this.recalc();
+                }
+                else {
+                    this.data = new Array(16);
+                    for (var i = 0; i < 16; i++) {
+                        this.data[i] = 0;
+                    }
+                    this.decimal_place = 0;
+                }
+                /* 初始化结束 */
+                this.Add = function(num) /* 加法 */{
+                    if (this.positive && !num.positive) {
+                        num.positive = true;
+                        var result = this.Subtract(num);
+                        num.positive = false;
+                        return result;
+                    }
+                    else 
+                        if (num.positive && !this.positive) {
+                            this.positive = true;
+                            var result = num.Subtract(this);
+                            this.positive = false;
+                            return result;
+                        }
+                    var result = new BigNum("", 0, this.positive);
+                    var num1, num2;
+                    if (this.decimal_place >= num.decimal_place) {
+                        num1 = this;
+                        num2 = num;
+                    }
+                    else {
+                        num1 = num;
+                        num2 = this;
+                    }
+                    result.decimal_place = num1.decimal_place;
+                    if (num1.decimal_place - num2.decimal_place >= 16) {
+                        for (var i = 0; i < 16; i++) {
+                            result.data[i] = num1.data[i];
+                        }
+                        
+                        return result;
+                    }
+                    var nOffDec = num1.decimal_place - num2.decimal_place;
+                    var nTmp = 0;
+                    for (var i = 15; i >= 0; i--) {
+                        var nTmp1 = i - nOffDec;
+                        var nTmp2 = 0;
+                        if (nTmp1 >= 0) {
+                            nTmp2 = num1.data[i] + num2.data[nTmp1];
+                        }
+                        else {
+                            nTmp2 = num1.data[i];
+                        }
+                        nTmp2 += nTmp;
+                        nTmp = Math.floor(nTmp2 / 10000000);
+                        result.data[i] = nTmp2 % 10000000;
+                    }
+                    if (nTmp > 0) {
+                        result.data.unshift(nTmp);
+                        result.decimal_place++;
+                    }
+                    return result;
+                }
+                this.Subtract = function(num) /* 减法 */{
+                    if (this.positive && !num.positive) {
+                        num.positive = true;
+                        var result = this.Add(num);
+                        num.positive = false;
+                        return result;
+                    }
+                    else 
+                        if (!this.positive && num.positive) {
+                            this.positive = true;
+                            var result = this.Add(num);
+                            result.positive = false;
+                            this.positive = false;
+                            return result;
+                        }
+                        else {
+                            var num1 = num2 = null;
+                            var bPositive;
+                            if (this.decimal_place > num.decimal_place) {
+                                num1 = this;
+                                num2 = num;
+                                bPositive = this.positive;
+                            }
+                            else 
+                                if (this.decimal_place < num.decimal_place) {
+                                    num1 = num;
+                                    num2 = this;
+                                    bPositive = !this.positive;
+                                }
+                                else {
+                                    for (var i = 0; i < 16; i++) {
+                                        if (this.data[i] > num.data[i]) {
+                                            num1 = this;
+                                            num2 = num;
+                                            bPositive = this.positive;
+                                            break;
+                                        }
+                                        else 
+                                            if (this.data[i] < num.data[i]) {
+                                                num1 = num;
+                                                num2 = this;
+                                                bPositive = !this.positive;
+                                                break;
+                                            }
+                                    }
+                                }
+                            if (num1 == null) {
+                                return new BigNum("", 0, true);
+                            }
+                            else {
+                                if (num1.decimal_place - num2.decimal_place >= 16) {
+                                    var result = new BigNum("", 0, bPositive);
+                                    for (var i = 0; i < 16; i++) {
+                                        result.data[i] = num1.data[i];
+                                    }
+                                    
+                                    result.decimal_place = num1.decimal_place;
+                                    return result;
+                                }
+                                var result = new BigNum("", 0, bPositive);
+                                result.decimal_place = num1.decimal_place;
+                                var nOffDec = num1.decimal_place - num2.decimal_place;
+                                var nTmp = 0;
+                                for (var i = 15; i >= 0; i--) {
+                                    var nTmp1 = i - nOffDec;
+                                    var nTmp2 = 0;
+                                    if (nTmp1 >= 0) {
+                                        nTmp2 = 10000000 + nTmp + num1.data[i] - num2.data[nTmp1];
+                                    }
+                                    else {
+                                        nTmp2 = num1.data[i] + nTmp;
+                                    }
+                                    if (nTmp2 >= 10000000) {
+                                        result.data[i] = nTmp2 - 10000000;
+                                        nTmp = 0;
+                                    }
+                                    else {
+                                        result.data[i] = nTmp2;
+                                        nTmp = -1;
+                                    }
+                                }
+                                result.recalc();
+                                return result;
+                            }
+                        }
+                }
+                this.Multiply = function(num) /* 乘法 */{
+                
+                }
+                this.Divide = function(num) /* 除法 */{
+                
+                }
+                this.SquareRoot = function(num) /* 平方根 */{
+                
+                }
+                this.toString = function() /* 转换为字符串（包括小数点），以便以文本形式输出计算结果 */{
+                    var szData = "";
+                    var szOutPut = "";
+                    this.recalc();
+                    for (var i = 0; i < 16; i++) {
+                        var szTmpData = this.data[i].toString()
+                        var arr = new Array(8 - szTmpData.length);
+                        szData += arr.join("0") + szTmpData;
+                    }
+                    var n = this.decimal_place * 7;
+                    for (var i = 0; i < 7; i++) {
+                        if (szData.substr(i, 1) != 0) 
+                            break;
+                        n--;
+                    }
+                    szData = szData.replace(/(^0+)|(0+$)/g, "");
+                    szData = szData.substr(0, 100);
+                    if (n < 1) {
+                        szOutPut = szData.substr(0, 1) +
+                        ((szData.length > 1) ? "." : "") +
+                        szData.substr(1) +
+                        "e" +
+                        (n - 1).toString();
+                    }
+                    else 
+                        if (n >= szData.length) {
+                            szOutPut = szData.substr(0, 1) +
+                            ((szData.length > 1) ? "." : "") +
+                            ((n > 1) ? (szData.substr(1) + "e+" + (n - 1).toString()) : "");
+                        }
+                        else {
+                            szOutPut = szData.substr(0, n) + "." + szData.substr(n);
+                        }
+                    return (this.positive ? "" : "-") + szOutPut;
+                }
+            }
+            
+            a = new BigNum("1340120132784358906589007070970724358904325784326896570428734874389484732094578023458740325903247043258704325840943274384357", 6, true);
+            b = new BigNum("932457432564378345784325943257643593284746753932834y3259743657326989234576392573259932569161991901010184691354913477914967143", 3, true);
+            t1 = new Date();
+            for (var i = 0; i < 3500; i++) {
+                a = a.Subtract(b);
+            }
+            t2 = new Date();
+            c = new BigNum("1340120132784358906589007070970724358904325784326896570428734874389484732094578023458740325903247043258704325840943274384357", 6, true);
+            d = new BigNum("0", 0, true);
+            t3 = new Date();
+            for (var i = 0; i < 3500; i++) {
+                d = d.Add(b);
+            }
+            t4 = new Date();
+            c = c.Subtract(d);
+            document.write(a);
+            document.write("<br>减法 共用时：" + (t2 - t1) + " 毫秒<br>");
+            document.write(c);
+            document.write("<br>加法 共用时：" + (t4 - t3) + " 毫秒");
+            //-->
+        </SCRIPT>
+    </body>
+</html>
