@@ -5,7 +5,7 @@ body {font:13px/1.4 arial,helvetica,sans-serif;text-align:center;}
 body,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,p,form,fieldset,legend,input,textarea,select,button,th,td {margin:0;padding:0;}
 h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:normal;}
 table {font-size:inherit;font:100%;}
-input,select {font:100% arial,helvetica,clean,sans-serif;;}
+input,select {font:100% arial,helvetica,clean,sans-serif;}
 button {overflow:visible}
 th,em,strong,b,address,cite {font-style:normal;font-weight:normal;}
 li{list-style:none;}
