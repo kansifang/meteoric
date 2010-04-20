@@ -42,3 +42,6 @@ mr4HJ4nd5Ua7
 
 
 代理上网：http://gappproxy.googlecode.com/svn/trunk
+
+
+Aptana下SVN插件安装：http://subclipse.tigris.org/update
