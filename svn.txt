@@ -45,3 +45,9 @@ mr4HJ4nd5Ua7
 
 
 Aptana下SVN插件安装：http://subclipse.tigris.org/update
+
+
+GAE代理上网：http://www.bokee.net/bloggermodule/blog_viewblog.do?id=4401843
+meteoric的GAE地址：http://9917-meteoric.appspot.com/fetch.py
+
+
