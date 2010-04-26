@@ -1,0 +1,29 @@
+<base href="http://digi.tech.qq.com/images/ld/2007/1022/images/">
+<style>
+#iCalendar{border:1px solid #55B0E1;width:254px;_width:240px;position:absolute; padding:0 5px; 
+	font-family:Arial;background:#DEF0F9 url(pcm2.gif) repeat-x 0 -2px ; 
+}
+#iCalendar a,#iCalendar b{display:block; float:left;zoom: 1;width:28px;height:28px;line-height:28px; padding:2px; 
+	background:#DEF0F9;font-size:12px;text-align:center;color:#1668B1;font-family:Arial; 
+	text-decoration:none; margin:0px 2px; 
+}
+#iCalendar b{background:none ;}
+#iCalendar a:hover{background:#66CC00;color:#006600;font-weight:bold;}
+#iCalendar .cur{background:#FF9900;color:#fff;font-weight:bold;}
+#iCalendar .btn{cursor:pointer;color:#fff; }
+#iCalendar #dateCap{	width:100px;_width:92px;color:#fff;}
+</style>
+<body><div id="iCalendar"> </div></body>
+<script>
+(CLD={init:function (){this.$=new Date;this.update()},update:function(y,m){
+		var uiList=[],week='日一二三四五六'.split(''),$=this.$,Y=$.getFullYear(),M=$.getMonth(),D=$.getDate(),
+		fn=function(a,b){return '<b class="btn" onclick="CLD.update('+a+')">'+b+'</b>'};
+		y&&$.setYear(Y+y),m&&$.setMonth(M+m),Y=$.getFullYear(),M=$.getMonth();
+		var fDay=new Date(Y,M,1).getDay(),dCount=new Date(Y,M+1,0).getDate();
+		for (var i=0;i<week.length;i++ )uiList.push('<b>'+week[i]+'</b>');
+		for (i=0;i<fDay;i++ )uiList.push('<b>&nbsp;</b>');
+		for (i=0;i<dCount;i++ )uiList.push('<a href="javascript:void 0" class="'+(i+1==D?'cur':'')+'">'+(i+1)+'</a>');
+		iCalendar.innerHTML=fn('-1,null','&lt;&lt;')+fn('null,-1','&lt;')+'<b id="dateCap">'+$.getFullYear()+'年'+($.getMonth()+1)+'月</b>'+	fn('null,1','&gt')+fn('1,null','&gt;&gt;')+uiList.join('');
+	}
+}).init()
+</script>
