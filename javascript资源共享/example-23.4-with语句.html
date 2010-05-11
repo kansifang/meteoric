@@ -1,0 +1,81 @@
+<html>
+<head>
+	<title>Example-23.4 with语句</title>
+</head>
+<body>
+<script>
+<!--
+	function dwn(s)
+	{
+		document.write(s + "<br/>");
+	}
+	//定义Point类型
+	function Point(x, y)
+	{
+		this.x = x;
+		this.y = y;
+	}
+	
+	//构造了一个Point类型的对象p
+	var p = new Point(10,20);
+	with(p)
+	{
+		dwn(x);	//得到p.x  10
+		dwn(y);	//得到p.y  20
+		x++;		//p.x++
+		y++;		//p.y++
+		var y = 0;	//这里的var不起作用？？相当于p.y = 0
+		y++;		//p.y++
+		dwn(y);	    //-----已经重置过p.y   1
+		var z = 10;	//这个z是p中不具有的属性，因此它不会被加到p上
+	}
+	
+	//而x则没有定义过.....ORZ 很绕.....
+	dwn(y + "----y也被“生产”出来了")
+	dwn(z + "-----z出现了");
+
+	dwn(p.x);//11
+	dwn(p.y);//1
+	dwn(p.z);//undefined
+
+	var a = {x:1, y:2}
+	a.b = {a:3, b:4, y:33}
+	with(a){
+		with(b){	//可以像这样连续地引入多个域
+			x++;		//a.x++ -->a.x==2
+			y++;		//根据就近原则，这里起作用的是a.b.y a.b.y == 34;a.y = 2
+			a++;		//a.b.a == 4
+			b++;	    //a.b.b == 5
+		}
+	}
+	dwn(a.x); //2
+	dwn(a.y); //2
+	dwn(a.b.a); //4
+	dwn(a.b.b); //5
+	dwn(a.b.y); //34
+-->
+</script>
+
+这里主要是要搞清楚with块的作用，with(obj)使用时只是将obj放置在作用域链的最前端，而并不会像函数那样形成一个完整的活动对象（包括局部变量、arguments、函数等），因此在with块中使用var声明变量时，而实际上还是在with块之外创建了局部变量，并不是with块的局部变量。同样，在with块中定义的函数实际上也是属于with块外层。另外，在with块中给变量赋值时则会先从obj对象中查找变量，如果找不到则依次按照作用域链查找。 因此，以上的with块的代码可以这样分解：
+
+view plaincopy to clipboardprint?
+({  
+  x: 10,  
+  foo: function () {  
+    function bar() {  
+      console.log(x);  
+      console.log(y);  
+      console.log(this.x);  
+    }  
+  
+    var x,y;  
+    with (this) {  
+      x = 20;  
+      y = 30;  
+      bar.call(this);  
+    }  
+  }  
+}).foo();  
+在代码解析的时候，会在foo函数中创建两个局部变量x,y(初始值都为undefined)。而在运行时的with块中，给x赋值时因为首先找到的变量是this(也就是最外层的那个对象)中的x属性，因此this.x=20；这也造成了作用域链中位于this上一级的foo的上下文(context)中的局部变量x没有被赋值。同理，with块中给y赋值时，按作用域链查找到得是foo中的局部变量，因此局部变量y=30。最后bar在执行的时候，x/y均是访问foo中的局部变量，因此一个为undefined，一个为30,而this.x为20。
+</body>
+</html>
