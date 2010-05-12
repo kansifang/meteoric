@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+ </head>
+
+ <body>
+<script type="text/javascript">
+	var a = "aa";
+	b = "bb";
+	window.c = "cc";
+
+	for(var i in window) {
+		if(i == 'a' || i == 'b' || i == 'c') {
+			document.write('<div style="color:red;">'+i+'</div>');
+		} else {
+			document.write('<div>'+i+'</div>');
+		}
+	}
+	alert(delete i);
+	//alert(b === window.b);
+
+	alert(delete b);//true
+	//alert(b);  IE下会出现内存泄露
+	
+	alert(delete a);//false
+	alert(delete c);//IE下为不支持此属性和方法，FF下是可以直接删除的
+
+
+</script>
+ </body>
+</html>
