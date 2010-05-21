@@ -53,3 +53,8 @@ meteoric的GAE地址：http://9917-meteoric.appspot.com/fetch.py
 ICON小图标：http://www.famfamfam.com/lab/icons/silk/
 
 
+
+Spyderlib   http://code.google.com/p/spyderlib/
+需要的文件下载地址：http://www.riverbankcomputing.co.uk/static/
+
+
