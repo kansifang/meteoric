@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>职能说明</title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+ </head>
+
+ <body>
+  <pre>
+closure_library帮助文档：
+http://closure-library.googlecode.com/svn/trunk/closure/goog/docs/closure_goog_useragent_adobereader.js.html
+http://code.google.com/intl/zh-CN/closure/compiler/
+http://code.google.com/intl/zh-CN/closure/templates/
+http://code.google.com/intl/zh-CN/closure/
+http://closure-library.googlecode.com/svn/trunk/closure/goog/docs/index.html
+http://closure-library.googlecode.com/svn/trunk/closure/goog/demos/
+
+http://closure-library.googlecode.com/svn/trunk
+
+
+
+
+作为合格的WEB页面开发者，必须要精通如下几条：
+1、去除字符串两端的全角与半角空格
+	function trim(str) {
+		return (str || "").replace(/(^[\s\t\xa0\u3000]+)|([\s\t\xa0\u3000]+$)/g, "");
+	}
+2、获取字符串的字节长度
+	function type(str) {
+		return (str || "").replace(/[^\x00-\xff]/g, "--").length;
+	}
+3、复制一个对象
+	function cloneObject(o) {
+		if(!o || typeof o !== "object") {
+			return o;
+		}
+		
+		var c = Object.prototype.toString.call(o) === "[object Array]" ? [] : {},
+			p,
+			v;
+		
+		for(p in o) {
+			if(o.hasOwnProperty(p)) {
+				v = o[p];
+				if(v && typeof v === "object") {
+					c[p] = arguments.callee(v);
+				} else {
+					c[p] = v;	
+				}				
+			}
+		}
+		
+		return c;	
+	}
+4、删除某一数组内重复的数据，请使用如下数据进行测试 //[0, 0, 1, 2, 3, 4, '', '', , 123, 321, 111, '', 0, 0, , , , , {}, 'undefined', function() {}, new RegExp("(^[\s\t]+)|([\s\t]+$)"), [1], 'null', null, 'null '];
+	function uniquerArray(arr) {
+		if(Object.prototype.toString.call(arr) !== "[object Array]") {
+			return arr;
+		}
+	
+		var cache = {},
+			index = 0;
+		
+		while(index < arr.length) {
+			if(cache[arr[index]] === typeof arr[index]) {
+				arr.splice(index, 1);
+				continue;
+			}
+			cache[arr[index] + ""] = typeof arr[index];
+			++index;
+		}
+		
+		return arr;
+	}
+6、获取url上指定的参数
+	function getParam(paramName, str) {
+		str = str || document.location.search;
+		var reg = new RegExp("[?& ]"+paramName+"=([^&]*)");
+		if(reg.test(str)) {
+			return RegExp['$1'];
+		} else {
+			return null;
+		}
+	}
+7、截取字符串
+String.prototype.uniLeft = function(len) {
+	var uniLen = GD.byteLength(this);
+	if(uniLen<=len) 
+		return this.substr(0);
+	for(var i=Math.floor((len=len-2)/2),l=uniLen; i<l; i++)
+		if(GD.byteLength(this.substr(0,i)) >= len)
+			return this.substr(0,i) +"\u2026";
+	return this.substr(0);
+}
+8、格式化时间，返回指定的格式
+Date.prototype.format = function(fmt) {
+    if (!fmt) fmt = "yyyy-MM-dd hh:mm:ss";
+    var o = {
+        "M+": this.getMonth() + 1,
+        "d+": this.getDate(),
+        "h+": this.getHours(),
+        "m+": this.getMinutes(),
+        "s+": this.getSeconds(),
+        "q+": Math.floor((this.getMonth() + 3) / 3),
+        "S": this.getMilliseconds()
+    };
+    if (/(y+)/.test(fmt)) {
+        fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    }
+    for (var k in o) {
+        if (new RegExp("(" + k + ")").test(fmt)) {
+            fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+        }
+    }
+    return fmt;
+}
+9、判断当前文档是什么模式：	document.compatMode === "CSS1Compat" ? "严格型" : "过渡型"
+10、IE6不缓存背景的处理方法：	document.execCommand("BackgroundImageCache", false, true);
+11、关于ajax开发，必须会写一个ajax吧
+var MyAjax = {
+	getXHR : function() {
+		var xhr = null;
+		
+		try {
+			return (xhr = new XMLHttpRequest());
+		} catch(ex) {}
+		
+		for(var i=0,a=['MSXML3', 'MSXML2', 'Microsoft']; i<a.length; i++)  {
+			try {
+				xhr = new ActiveXObject(a[i]+".XMLHTTP");
+				break;
+			} catch(ex) {}
+		}
+		
+		return xhr;		
+	},
+	request : function(url, json) {
+		var xhr = this.getXHR();
+		if(!xhr) {
+			throw new Error("can't initialize xhr instance!");
+		}
+		
+		json = json || {};
+		
+		var options = {
+			method : json.method || "get",
+			onSuccess : json.onSuccess || function() {},
+			onFailure : json.onFailure || function() {},
+			async : true,
+			postData : json.postData || null
+		}
+		
+		xhr.open(options.method, url, options.async);
+		
+		if("get" == options.method.toLowerCase()) {
+			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");//post方法需要设置头部信息
+		}
+		
+		xhr.onreadystatechange = function() {
+			if(xhr.readyState == 4) {
+				if(xhr.status == 200 || xhr.status == 0) {
+					alert("请求得到的数据为："+ xhr.responseText);
+				} else {
+					alert("请求数据失败...");
+				}
+			}
+		}
+		
+		xhr.send(options.postData);
+	}
+}
+
+MyAjax.request("http://www.parkerriver.com/s/sender", {
+	method : "post",
+	postData : "a=1&b=1&c=1"
+});
+12、判断一个DOM元素是否包含另一个元素：
+	function contains(a, b) {
+		return a.contains ? a != b && a.contains(b) : a.compareDocumentPosition(b) === 20;
+	}
+13、 说说事件流的类型，以及平时开发中用到的方法和作用：
+	事件流类型：捕获型事件(Capuring)
+	冒泡型事件：Bubbling
+	
+	取消默认行为：
+	ev.preventDefault() || ev.returnValue = false;
+	取消向上冒泡：
+	ev.stopPropagation || ev.cancelBubble = true;
+14、说出常见的块元素与内联元素
+
+	块元素：div、form、h1、h2、h3、h4、h5、h6、hr、noscript、noframes、p、ul、ol、li、frameset、table、tbody、tfoot、thead、tr、td
+	内联元素：span、a、img、input、label、q、select、textarea
+	不确定的元素：object、script、iframe、button
+15、IE中一般如何触发其hasLayout
+	1、float:left/right
+	2、display:inline-block
+	3、width:任何值(非auto)
+	4、height:任何值(非auto)
+	5、zoom:任何值
+	6、writing-mode:tb-rl
+	7、position:absolute|fixed
+	8、overflow: ie6中并不支持
+16、IE下默认就拥有布局的元素有哪些？
+	1、body
+	2、html
+	3、img
+	4、hr
+	5、hr
+	6、table、tr、th、td
+	7、input、button、file、select、textarea、fieldset
+17、更多hasLayout请参考：http://www.ks-pe.com/article/36.html
+18、说说ajax请求的几种状态：
+	5种状态
+	0---未初始化，没有调用open方法
+	1--载入状态，已经调用open但没有调用send方法
+	2--载入完成状态，已经send完成
+	3--交互，可接收部分响应数据
+	4--完成，已经接收到全部数据
+设置ajax头部信息
+setRequestHeader('Content-Type', "text/html");
+setRequestHeader('Charset', 'utf-8');
+按照HTTP规范，提交方式应该大写，否则，某些浏览(FF)器无法处理请求	
+
+
+
+  </pre>
+ </body>
+</html>

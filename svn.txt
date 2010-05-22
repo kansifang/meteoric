@@ -1,8 +1,8 @@
 淘宝的TBra  	http://iunicorn.googlecode.com/svn/trunk   lifesinger
 Ucren   		http://fireye-jinxiaocun.googlecode.com/svn    feiran.hu@gmail.com
 TBra			http://tbra.googlecode.com/svn/trunk		   zhaozexin(小马--赵泽欣)
-qzoneDebugger 	http://qzonedebugger.googlecode.com/svn/trunk/ qzonedebugger --username qzoneOther	  	http://lydemo.googlecode.com/svn		iliyi.com
-jsforest		http://jsforest.googlecode.com/svn		divsystem
+qzoneDebugger 	http://qzonedebugger.googlecode.com/svn/trunk/ qzonedebugger --username qzoneOther	  http://lydemo.googlecode.com/svn		iliyi.com
+jsforest		http://jsforest.googlecode.com/svn	divsystem
 qqMail			http://awmc.googlecode.com/svn          http://rvlistview.googlecode.com/svn
 白社会			http://webgamethree.googlecode.com/svn	
 qq_isd			http://isd.googlecode.com/svn
@@ -13,6 +13,8 @@ qomo			https://qomo.svn.sourceforge.net/svnroot/qomo/qobean
 YUI中文			http://yui-doc-zh.googlecode.com/svn/trunk
 lightjso		http://lightjso.googlecode.com/svn
 meteoric		https://meteoric.googlecode.com/svn/trunk
+
+
 用户名：		
 gongshengnan@gmail.com 
 密码：bx8Eu9pv8cw6
@@ -22,14 +24,10 @@ chatty			http://chatty.googlecode.com/svn
 j-et                    http://j-et.googlecode.com/svn/trunk
 ecma                    http://ecma-262.googlecode.com/svn/trunk/
 blogsrc:flex/python/java/c http://blogsrc.googlecode.com/svn
-http://duanjianghu-mytech.googlecode.com/svn
-
-
 
 
 
 http://code.google.com/p/snailgame---js/source/checkout
-
 svn上的源码下载地址：
 https://snailgame---js.googlecode.com/svn/trunk/
 svn的帐号：gongshengnan@gmail.com
@@ -56,5 +54,27 @@ ICON小图标：http://www.famfamfam.com/lab/icons/silk/
 
 Spyderlib   http://code.google.com/p/spyderlib/
 需要的文件下载地址：http://www.riverbankcomputing.co.uk/static/
+
+
+
+
+插入SWF：
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+			id="serverMoniter" width="1200" height="700"
+			codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab">
+			<param name="movie" value="serverMoniter.swf" />
+			<param name="quality" value="high" />
+			<param name="bgcolor" value="#ffffff" />
+			<param name="allowScriptAccess" value="sameDomain" />
+			<embed src="serverMoniter.swf" quality="high" bgcolor="#ffffff"
+				width="1200" height="700" name="serverMoniter" align="middle"
+				play="true"
+				loop="false"
+				quality="high"
+				allowScriptAccess="sameDomain"
+				type="application/x-shockwave-flash"
+				pluginspage="http://www.adobe.com/go/getflashplayer">
+			</embed>
+	</object>
 
 
