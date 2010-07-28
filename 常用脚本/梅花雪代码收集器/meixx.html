@@ -1,0 +1,199 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" href=".css"/>
+<title>Mxx代码收集器 ( code by meixx )</title>
+<style type="text/css">
+<!--
+div{border:1px solid #CC9900; font-size:12px;overflow:hidden}
+body{background-color:#FFFFDD}
+button{border:1px solid #33CCFF; background-color:#CCFFFF}
+input{border:1px solid #33CCFF; background-color:#E6FFFF;}
+textarea{font-size:12px; width:100%;height:225px; background-color:#E6FFFF; overflow:auto}
+#divVector{position:relative; width:800px; height:600px; overflow:hidden; padding:1px;}
+#divMenu  {position:absolute; width:198px; height:596px; overflow-x:hidden; overflow-y:auto; margin:0px; text-align:center}
+#divMain  {position:absolute; width:596px; height:596px; overflow-x:hidden; overflow-y:auto; margin-left:200px; margin-right:0px; }
+#divTitle {height:20px; font-weight:bold; text-align:center; color:red}
+#divFind  {height:20px; text-align:left;}
+#divFind button{ height:20px;width:40px; }
+#divList  {height:530px; border:0px;}
+#dltList  {width:100%; height:100%; border:0px; background-color:#FFFFDD; margin:0px;}
+#divMain div{width:100%;border:0px}
+#divCommondiv{border:0px}
+#divMother{height:250px; display:none;text-align:right}
+#divMother button{margin-right:20px;}
+#divMain input{width:95%}
+#chkCommon,#chkServer{border:0px; background-color:#FFFFFF;}
+-->
+</style>
+<script type="text/javascript">
+<!--
+//-->
+</script><script type="text/javascript">
+<!--
+var Browser={};
+Browser.isMozilla = (typeof document.implementation != 'undefined') && (typeof document.implementation.createDocument != 'undefined') && (typeof HTMLDocument!='undefined');
+Browser.isIE = window.ActiveXObject ? true : false;
+Browser.isFirefox = (navigator.userAgent.toLowerCase().indexOf("firefox")!=-1);
+function getXMLDOM(){
+	if(Browser.isIE){
+        var xmldomversions = ['MSXML2.DOMDocument.5.0', 'MSXML2.DOMDocument.4.0', 'MSXML2.DOMDocument.3.0', 'MSXML2.DOMDocument', 'Microsoft.XMLDOM'];
+        for(var i=0;i<xmldomversions.length;i++)
+            try{
+                return new ActiveXObject(xmldomversions[i]);
+            }catch(e){
+            }
+        return document.createElement("XML");
+    }else if (Browser.isMozilla)
+    {
+        return document.implementation.createDocument('', '', null);
+    }
+    return null;
+}
+if(Browser.isMozilla){
+    XMLDocument.prototype.__defineGetter__("xml",function()
+      {
+        return new XMLSerializer().serializeToString(this);
+      });
+    Element.prototype.__defineGetter__("xml",function()
+      {
+        return new XMLSerializer().serializeToString(this);
+      });
+}
+window.onload=function winload(){
+    window.path="favorate.xml";
+    window.txtKeyword = document.getElementById("txtKeyword");
+    window.dltList = document.getElementById("dltList");
+    window.divMain = document.getElementById("divMain");
+    window.divAdd = document.getElementById("divAdd");
+    window.taXML = document.getElementById("taXML");
+    window.ccom = document.getElementById("chkCommon");
+    window.cser = document.getElementById("chkServer");
+    divMain.innerHTML = "";
+    window.divMother = document.getElementById("divMother");
+    if(Browser.isIE)
+        cser.onclick= winload;
+    window.http_request = false;
+    window.xmlpath = "favorate.xml";
+    if(Browser.isIE && cser.checked)
+        send_request(xmlpath);
+    else{ http_request={readyState:4,status:404}; processRequest();}
+
+    function init(){
+        dltList.options.length =0;
+        window.root=doc.documentElement;
+        var nodes = root.childNodes;
+        var o = {};
+        for(var i=0;i<nodes.length;i++){
+            if(nodes[i].nodeName != "#text" && nodes[i].nodeName != "#comment")
+                o[nodes[i].nodeName] = true;
+        }
+        for(var p in o){
+            var opt = document.createElement("option");
+            dltList.options.add(opt);
+            opt.value=p;
+            opt.text = p;
+        }
+        dltList.selectedIndex = -1;
+        dltList.onchange = function(){ showDetail(this) };
+    }
+    function send_request(url) {//初始化、指定处理函数、发送请求的函数
+        http_request = false;
+        //开始初始化XMLHttpRequest对象
+        if(window.XMLHttpRequest) { //Mozilla 浏览器
+            http_request = new XMLHttpRequest();
+            if (http_request.overrideMimeType) {//设置MiME类别
+                http_request.overrideMimeType('text/xml');
+            }
+        }
+        else if (window.ActiveXObject) { // IE浏览器
+            try {
+                http_request = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+                try {
+                    http_request = new ActiveXObject("Microsoft.XMLHTTP");
+                } catch (e) {}
+            }
+        }
+        if (!http_request) { // 异常，创建对象实例失败
+            window.alert("不能创建XMLHttpRequest对象实例.");
+            return false;
+        }
+        http_request.onreadystatechange = processRequest;
+        // 确定发送请求的方式和URL以及是否同步执行下段代码
+        http_request.open("GET", url);
+        http_request.send(null);
+    }
+    // 处理返回信息的函数
+    function processRequest() {
+        if (http_request.readyState == 4) { // 判断对象状态
+            if (http_request.status == 200) { // 信息已经成功返回，开始处理信息
+                window.doc = http_request.responseXML;
+                init();
+            } else { //页面不正常
+                try{
+                    window.doc = getXMLDOM();
+                    var bSuccess = doc.load(path);
+                    if(!bSuccess){alert("加载本地favorate.xml文件失败.请检查文件路径.");return;}
+                }catch(ex){
+                    alert("加载本地favorate.xml文件失败.请检查文件路径.");
+                }
+                if(Browser.isIE)    init();
+                else                doc.onload = init;
+            }
+        }
+    }
+}
+function showDetail(dlt){
+    divMain.innerHTML = "";
+    var idx = dlt.selectedIndex;
+    var key = dlt.options[idx].value;
+    var nodes = root.getElementsByTagName(key);
+    for(var i=0,j=nodes.length;i<j;i++){
+        var n = nodes[i];
+        var d = divMother.cloneNode(true);
+        d.style.display = "block";
+        d.getElementsByTagName("textarea")[0].value = (ccom.checked?("/*\n *author : " + n.getAttribute("author") + "\n *  date : " + n.getAttribute("date") + "\n *common : " + n.getAttribute("common") + "\n*/\n"):"") + nodes[i].childNodes[0].nodeValue.trim();
+        divMain.appendChild(d);
+    }
+}
+function runCode(btn){
+    var code = btn.parentNode.parentNode.getElementsByTagName("textarea")[0].value;
+    var pwin = window.open();
+    pwin.document.write(code);
+    pwin.document.close();
+}
+function copyCode(btn){
+    var ta = btn.parentNode.parentNode.getElementsByTagName("textarea")[0];
+    ta.focus();
+    ta.select();
+    if(Browser.isIE)
+        window.clipboardData.setData("text",ta.value);
+    else{
+
+    }
+}
+function find(){
+    var key = txtKeyword.value;
+    var idx = dltList.selectedIndex;
+    for(var k = 0,j=dltList.options.length,i = ((idx+1)>=j)?0:(idx+1);;i++,k++){
+        if(i >= j) i=0;
+        if(k >= j) return;
+        var opt = dltList.options[i];
+        var reg = new RegExp(key);
+        if(reg.test(opt.value)){
+            dltList.selectedIndex = i;
+            showDetail(dltList)
+            return;
+        }
+    }
+}
+function keyPress(e){    if(e.keyCode == 13 || e.charCode == 13)        find(); }
+String.prototype.trim=function(){	return this.replace(/(^\s+)|(\s+$)/g,"");}
+//-->
+</script>
+<body>
+<div id="divVector"><div id="divMenu"><div id="divTitle">Mxx代码收集器</div><div id="divFind"><input type="text" id="txtKeyword" size="20" onkeypress="keyPress(event)"><button onclick="find()">Find</button></div><div id="divList"><select id="dltList" size="50"></select></div><div id="divCommon"><input type="checkbox" id="chkServer" checked="true">远程加载&nbsp;<input type="checkbox" id="chkCommon">显示注释</div></div><div id="divMain"></div></div>
+<div id="divMother"><textarea id="ta"></textarea><div id="divToolBar"><button onclick="runCode(this)">运行代码</button><button onclick="copyCode(this)">复制代码</button></div></div>
+</body>
+</html>
