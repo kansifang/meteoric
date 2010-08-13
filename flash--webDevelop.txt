@@ -35,6 +35,27 @@ Serial：FiCGEezgdGoYILo8U/2MFyCWj0jZoJc/sziRRj2/ENvtEq+7w1RH97k5MWctqVH
 
 
 
+
+
+
+
+flashdevelop 3.0.6 RTM汉化文件
+
+汉化方法：
+
+修改flashdevelo目录下的settings文件夹下的xml文件。
+
+MainMenu.xml
+
+ScintillaMenu.xml
+
+TabMenu.xml
+
+ToolBar.xml
+
+将里面的xml元素的Label属性的值修改为对应的中文，记得修改之前要备份哦！！！
+
+下面是本人修改后的文件,只要复制到settings目录下覆盖即可，英文不是很好，翻译的可能不够正确，欢迎读者提意见。
 Django Step by Step：
 SVN地址：http://cvs.woodpecker.org.cn/svn/woodpecker/zqlib/tangle/limodou/django-stepbystep/newtest
 
