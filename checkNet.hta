@@ -1,0 +1,848 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>检测当前网络状况</title>
+<style type='text/css'>	
+	h3 {border-left:3px solid 666; color:#666; text-indent:10px; margin:15px 0;}
+	textarea {border:2px solid #888; background-color:#222; font-family:'Courier New'; font-size:14px; color:#3c0;}
+	a {color:#657528;}
+	a:hover {background:#c8dc7b;}
+
+	.exec-btn {display:block; border:1px solid #666; background-color:#9c0; color:#360; padding:5px 5px 3px 5px; margin:5px 0; width:70px; height:30px; vertical-align:middle; cursor:pointer;}
+	
+	.func-list {width:180px;text-align:center;font-size:12px;}
+	.func-list a {
+		height:24px;
+		width:130px;
+		display:block;
+		margin:5px auto;
+		text-decoration:none;
+		color:#657528;
+		background:#d5dea7;
+		border:1px solid #c8dc7b;
+		line-height:24px;
+		font-size:14px;
+	}
+	.func-list a:hover {background:#c8dc7b;}
+
+
+	#serverList {text-align:center; margin-top:100px;}
+	#serverSelect {vertical-align:middle; display:block; margin:10px 0;}
+
+	#outputDIV {width:100%; height:100%; overflow-y:auto; display:none;}
+
+	#messageDiv {background-color:#68af02; position:absolute; padding:5px 24px 4px; color:#fff; font-size:14px; top:10px; right:30px; display:none;}
+
+	#basicinfo {text-align:left; height:22px; line-height:22px; padding:10px;}
+</style>
+</head>
+<body style='background-color:#eee; margin:0; padding:0; overflow:hidden;'>
+<script type='text/vbscript'>
+<!--
+GBEncode=False
+rem 支持编码
+GBSystem=False
+' 简体中文系统
+Function testchr()
+	GBSystem=(Asc("啊")=-20319)
+' 有一些vbscript版本不支持超过255的chr，会导致抛出异常
+	Chr(10000)
+	GBEncode=True
+End Function
+
+Function bytes2BSTR(vIn)
+    strReturn = ""
+	l=LenB(vIn)
+	maxReturnLength=2048
+	i=1
+	For i = i To l
+		' 去掉bom和开始的空白
+		ThisCharCode = AscB(MidB(vIn,i,1))
+		If 239<>ThisCharCode and 10<>ThisCharCode and 13<>ThisCharCode and 8<>ThisCharCode and 32<>ThisCharCode Then Exit For
+		If 239=ThisCharCode And 187=AscB(MidB(vIn,i+1,1))And 191=AscB(MidB(vIn,i+2,1)) Then i=i+2
+	Next
+
+    For i = i To l
+        ThisCharCode = AscB(MidB(vIn,i,1))
+        If ThisCharCode < 128 And ThisCharCode > 0 Then
+            strReturn = strReturn & Chr(ThisCharCode)
+        Else 
+			If (ThisCharCode> &H80) And (ThisCharCode<&Hff) And (GBEncode) And (i<l) Then
+				NextCharCode = AscB(MidB(vIn,i+1,1))
+				If(NextCharCode>0 And NextCharCode <&Hff) Then
+					strReturn = strReturn & Chr(CLng(ThisCharCode) * &H100 + CInt(NextCharCode))
+					i = i + 1
+				Else
+					strReturn = strReturn & "?"	
+				End If
+			Else
+				strReturn = strReturn & "?"	
+			End If
+		End If
+		If(l>maxReturnLength+4) And abs(maxReturnLength/2-i)<2 Then
+			i=l-i
+			strReturn = strReturn & "   ......("& (l-maxReturnLength) &" bytes)......   "	
+		End If
+		
+    Next
+    bytes2BSTR = strReturn
+End Function
+Function length(vIn)
+    length = 0 Or LenB(vIn)
+End Function
+//-->
+</script>
+
+<div id='serverList'>
+	<span>请选择您所在的游戏服务器：</span>
+	<select id='serverSelect'>
+		<option value=''>------请选择游戏服务器-----</option>
+		<option value='s10' selected='selected'>大唐盛世</option>
+		<option value='s11'>贞观长歌</option>
+		<option value='s1'>测试体验服务器</option>
+	</select>
+	<div class='func-list' style='display:none;'><a href="javascript:;" onclick="execMainTestCase()">执行测试</a></div>
+	<button class='exec-btn' onclick="execMainTestCase()">执行测试</button>
+</div>
+
+<div id='messageDiv'>正在加载资源...</div>
+
+<div id='outputDIV'>
+	<table width="100%" height="100%" style="text-align:left; background-color:#eee; color:#3c0; padding:5px;" cellspacing="1px">
+		<colgroup>
+			<col></col>
+			<col></col>
+			<col style="word-break:keep-all;white-space:nowrap"></col>
+			<col></col>
+		<colgroup>
+		<thead bgcolor="#eee" id="thead1">
+			<tr>
+				<td colspan="4" id="basicinfo"></td>
+			</tr>
+		</thead>
+		<thead bgcolor="#eee" id="thead2"></thead>
+		<tbody bgcolor="#eee" id="tbody1"  style='height:30px; padding-left:5px;'>
+			<tr>
+				<th style='width:60px;' align='center'>序号</th>
+				<th align='center'>资源下载地址</th>
+				<th style='width:80px;' align='center'>内容长度</th>
+				<th style='width:80px;' align='center'>下载时间</th>
+			</tr>
+		</tbody>
+		<tfoot bgcolor="#eee">
+			<tr>
+				<td colspan="4" id="networkStatus"></td>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+
+<textarea style='display:none;'>代码</textarea>
+
+
+
+
+<script type='text/javascript'>
+var timer,tmpdiv,errorCount = 0, timeout=50000, urlIndex=0,
+	commands=[],
+	docModifiedDate=new Date(new Date(document.lastModified+" UTC+0800")),
+	now=new Date();
+
+var fso,service,xmlhttp,fileName,tempFolder,desktopFolder,lengthHsmp={};
+
+var urls=[],ip="",loc="UnknownRegion",domains={};
+//var rCSS=/^@charset "((.|\n)*).cssEnd{display:none}(\/\*[^\*]+\*\/)?\s*$/;
+//var rHTML=/^\s*(<\?xml [^?]+\?>)?\s*(<\!DOCTYPE html[^>]*>)?\s*<html[^>]*>\s*<(head|body)>((.|\n)*)(<\/(head|body|script)>\s*<\/html>|(<\!--[^<]*<\!\[endif\]-->))\s*$/i;
+
+var rCSS=/^@charset\s+"utf-8"/;
+var rHTML=/\s*(<\!DOCTYPE html[^>]*>)?/;
+
+window.onerror=function(a,b,c){
+	reportError("检测脚本发生了以下异常："+a+"\n所在行："+c)
+}
+
+//执行测试
+function execMainTestCase() {
+	//取消浏览器的默认事件
+	window.event.returnValue = false;
+
+	var sId = $("serverSelect").value;
+
+	if (!sId) {
+		alert('请选择游戏服务器');
+		$("serverSelect").focus();
+		return false;
+	}
+
+	domains.Connect_Domain = sId + ".gtj.9917.com";
+	domains.GTJ_GW_Domain = "gtj.9917.com";
+	domains.PAY_PROXY_Domain = "pay.9917.com";
+	
+	//隐藏选择服务器，展开测试信息
+	$("serverList").style.display = "none";
+	$("outputDIV").style.display = $("messageDiv").style.display = "block";
+	
+	init();
+}
+
+function $(_id){return typeof _id === 'string' ? document.getElementById(_id) : _id};
+
+function setMessage(str) {
+
+	var msgDiv = $('messageDiv');
+	if (!str) {
+		msgDiv.style.display = 'none';
+	} else {
+		if (msgDiv.style.display == 'none') {
+			msgDiv.style.display = 'block';
+		}
+
+		msgDiv.innerHTML = str;
+	}
+}
+
+function reportError(a,b,c){
+	errorCount++
+	var errorCountSpan=$("errorCountSpan");
+	if(!errorCountSpan){
+		var r=$("thead1").insertRow();
+		var td=r.insertCell();
+		td.colSpan=4;
+		td.innerHTML="<b>检测到<font color=red id='errorCountSpan'>"+errorCount+"</font>个错误</b>";
+	}else{
+		errorCountSpan.innerHTML=errorCount;
+	}
+	var r=$("thead2").insertRow();
+	r.style.color="red";
+	if(arguments.length==1){
+		var td=r.insertCell();
+		td.colSpan=4;
+		td.innerHTML=a.toString().replace(/\t/g,"&nbsp;&nbsp;&nbsp;&nbsp;");
+	}else{
+		r.insertCell().innerHTML=++urlIndex;
+
+		with(r.insertCell()){
+			style.wordBreak="break-all";
+			innerHTML=a;
+		}
+		r.insertCell().innerHTML=b.replace(
+		/返回码12007/,"无法解析服务器的名称或地址，请检查您的DNS和防火墙配置(12007)").replace(
+		/返回码12031/,"连接被重置(12031)").replace(
+		/返回码(12\d\d\d)/,"<a href='http://support.microsoft.com/kb/193625' style='color:#657528;'>发生了WinInet错误(\1)</a>");
+
+		r.insertCell().innerHTML=c;
+	}
+}
+
+function reportOK(a,b,c){
+	var r=$("tbody1").insertRow();
+	r.insertCell().innerHTML=++urlIndex;
+	with(r.insertCell()){
+		style.wordBreak="break-all";
+		innerHTML=/^http:\/\//.test(a)?"<a target='_blank' href='"+a+"' style='color:#657528;'>"+a+"</a>":a;
+	}
+	r.insertCell().innerHTML=b;
+	r.insertCell().innerHTML=(isNaN(c))?("<font color=red>"+c+"</font>"):("<font color="+(c<10000?c<3000?c<1000?c<300?"#00FF00":"#40C000":"#808000":"#C04000":"#FF0000")+">"+c+"</font>")
+}
+
+function text2html(s){
+	if(!tmpdiv)tmpdiv=document.createElement("DIV");
+	tmpdiv.innerText=s;
+	return tmpdiv.innerHTML.replace(/(\.{6}\(\d+ bytes\)\.{6})/,"<font color=black><i>$1</i></font>")
+}
+
+function setCookie() {
+	var d=new Date();
+	d.setSeconds(d.getSeconds()+3);
+	document.cookie="checkNetWorkStartAt="+(new Date()).getTime()+";expires="+ d.toGMTString();
+}
+
+function getXMLHTTP() {
+	if(window.XMLHttpRequest) return new XMLHttpRequest();
+	var xmlhttpversions=["MSXML2.XMLHTTP.3.0", "MSXML2.XMLHTTP", "Microsoft.XMLHTTP"];
+	for (var i=0;i<xmlhttpversions.length;i++) {
+		try {
+			return new ActiveXObject(xmlhttpversions[i]);
+		} catch (e) {
+			if(i==xmlhttpversions.length-1){
+				reportError(xmlhttpversions[i]+": "+e.message);
+			}
+		}
+	}
+	reportError(" 创建http控件失败,无法进行后续的测试")
+	return null;
+}
+
+function loadUrl(url, callback, method, rule) {
+	var x=getXMLHTTP(),
+		data="",
+		r=/POST (\d+)k/i;
+	
+	if(!method) method="GET";
+	if(r.test(method)){
+		var i=method.match(r)[1];
+		method="POST";
+		data="a="+(new Array(i*1024)).join("0");
+	}
+	if(!/^http:\/\//.test(url)){url="http://"+url}
+	var f=function(x,start,u,r){
+		return function(){
+			if(x.readyState==4)callback(x,new Date()-start,u,r)
+		}
+	}(x,new Date(),url,rule);
+	
+	with(x){
+		onreadystatechange=f;
+		open(method,url,true);
+		//setRequestHeader('Accept', '*/*');
+		//setRequestHeader("Accept-Charset","x-user-defined");
+		setRequestHeader("Content-Type","text/plain"); 
+		setRequestHeader("If-Modified-Since","Thu, 1 Jan 1970 00:00:00 GMT"); 
+		setRequestHeader("Cache-Control","no-cache"); 
+		//setRequestHeader("Host", 'gtj.9917.com');
+		//setRequestHeader('Referer', 'http://gtj.9917.com');
+		//setRequestHeader('Accept-Encoding', 'gzip,deflate');
+		send(data);
+	}
+
+	timer=setTimeout(function(x){return function(){timer=-1;x.abort();}}(x),timeout);//超时放弃
+}
+
+function init() {
+	//try{testchr()}catch(e){}
+
+	if((now < docModifiedDate) || (now - docModifiedDate > 8640000000) ){//100天
+		$("basicinfo").innerHTML="<font color='red'>"+now.toLocaleString()+"<br/>系统时间可能不正确</font><br/>";
+		errorCount++;
+	}else{
+		$("basicinfo").innerHTML="监测脚本版本："+new Date(document.lastModified).toLocaleString()+"<br/>检测开始时间："+now.toLocaleString();
+	}
+	
+
+	try{
+		fso=new ActiveXObject("Scripting.FileSystemObject");
+	}catch(e){
+		reportError(e.message+" 创建文件系统对象失败。")
+	}
+	try{
+		var locator=new ActiveXObject ("WbemScripting.SWbemLocator");
+		service=locator.ConnectServer(".");
+	}catch(e){
+		reportError(e.message+" 创建SWbemLocator对象失败。")
+	}
+	try{
+		wsh=new ActiveXObject("WScript.Shell");
+	}catch(e){
+		reportError(e.message+" 创建脚本宿主对象失败。")
+	}
+
+	if (document.cookie.indexOf("checkNetWorkStartAt") == -1) {
+		setCookie();
+		addBaseTestCases();
+		addGTJBaseTestCases();
+	} else {
+		alert("请不要短时间内多次运行本脚本");
+		window.close();
+	}
+}
+
+function addBaseTestCases() {
+	setMessage('正在获取您当前所在的位置...');
+	loadUrl("www.ip.cn/getip.php?action=getip&ip_url=",checkIP);
+}
+
+function checkIP(x) {
+	if(
+		x.getResponseHeader("X-Cache") || 
+		x.getResponseHeader("Proxy-Connection") || 
+		x.getResponseHeader("Via") || 
+		x.getResponseHeader("Age") || 
+		x.getResponseHeader("X-Cache-Lookup")
+	){
+		$("basicinfo").innerHTML += "<br><FONT COLOR='red'>您可能使用了代理服务器,本报告中提供的IP地址等信息仅供参考！</FONT><br>";
+	}
+
+	if(x.status==12029){
+		if(/(\/temp\/)|(\.tmp\/)|(Rar\$)/i.test(location.href)){
+			$("basicinfo").innerHTML+="<br><FONT COLOR=red>检测脚本被限制了网络访问权限，这很可能是因为您直接在压缩包内执行脚本导致的。<br>请把先压缩包解压，再运行里面的检测脚本。</FONT><br>";
+		}else{
+			$("basicinfo").innerHTML+="<br><FONT COLOR=red>检测脚本被限制了网络访问权限，这可能是因为您在其他软件中运行本脚本，或者您当前没有管理员权限导致。</FONT><br>";
+		}
+	}
+
+	var s = x.responseText;
+	var r=/(\d+\.\d+\.\d+\.\d+).*：(.*)/
+	if(r.test(s)){
+		ip=s.match(r)[1];
+		loc=s.match(r)[2]
+		s="您的IP："+ip+"　　来自："+loc + "<br>";
+	}else{
+		s="";
+		reportError("获取外网IP失败！");
+	}
+	s+="浏览器说明："+navigator.userAgent+"<br>";	
+	
+	try{
+		var cpu=new Enumerator (service.ExecQuery("SELECT * FROM Win32_Processor")).item();  
+		var system=new Enumerator (service.ExecQuery("SELECT * FROM Win32_ComputerSystem")).item(); 
+
+		s+="CPU型号："+cpu.Name+"　　　　CPU数量：" + system.NumberOfProcessors+"个<br>";
+
+		var os=new Enumerator (service.ExecQuery("SELECT * FROM Win32_OperatingSystem")).item(); 
+
+		s+="操作系统："+os.Caption+"　　"+os.CSDVersion+"　　("+os.Version+")<br>";
+
+		var physicalMemory=Math.ceil(system.TotalPhysicalMemory/1024/1024);
+		var freePhysicalMemory=Math.ceil(os.FreePhysicalMemory/1024);
+
+		var lowMemory=(freePhysicalMemory<200) || (freePhysicalMemory/physicalMemory<0.2);
+
+		s+="<font "+(lowMemory?"color='red'":"")+">可用内存/全部内存："+freePhysicalMemory+"M/"+physicalMemory+"M("+Math.round(100*freePhysicalMemory/physicalMemory)+"%可用)</font>";
+	}catch(e){
+		reportError("获取主机信息失败："+e.message);
+	}
+	if(/beta|alpha/i.test(navigator.appMinorVersion)){
+		reportError("您使用的浏览器是一个测试版本("+navigator.appMinorVersion+")，这会导致您访问的时候出现不稳定情况，建议您马上升级到最新版本。");
+	}
+	$("basicinfo").innerHTML+="<br>"+s;
+
+	//检测版本
+	/*...*/
+
+	checkFlashPlayer();
+}
+
+function checkFlashPlayer() {
+	setMessage('正在获取当前Flash Player版本...');
+
+	var a=new ActiveXObject("ShockwaveFlash.ShockwaveFlash"),v;
+
+	try{
+		v=a.GetVariable("$version").match(/\d+/g);		
+	}catch(e){}
+
+	if(a){
+		if(v && v.length>1){
+			$("basicinfo").innerHTML+="<br>您的flash播放器版本是："+v.join(".");
+			if(v[0]<10){
+				reportError("您的flash播放器版本不是最新版本的。您可以到<a href='http://download.tech.qq.com/soft/1/2/249/index.shtml' style='color:#657528;'>这里下载</a>并重新安装flash播放器。");
+			}
+		}else{
+			reportError("无法正确获取您的flash播放器版本，这可能是由于您的flash播放器版本太旧或者没有正确安装导致的，这可能会影响您使用空间。您可以到<a href='http://download.tech.qq.com/soft/1/2/249/index.shtml' style='color:#657528;'>这里下载</a>并重新安装flash播放器。");
+		}
+
+	} else {
+		reportError("您的浏览器无法创建flash播放器控件，这可能会影响您进入游戏。您可以到<a href='http://download.tech.qq.com/soft/1/2/74329/index.shtml' style='color:#657528;'>这里下载</a>并安装flash播放器。")
+	}
+}
+
+function addGTJBaseTestCases() {
+	loadUrl(domains.GTJ_GW_Domain + "/gameList.html",checkFrame);
+}
+
+function checkFrame(x,timeDiff) {
+	var tmpString=["<br>",
+	"<a href='#sysinfo' style='color:#657528;'>sysinfo</a>",
+	"<a href='#IPconfiginfo' style='color:#657528;'>IPconfig</a>",
+	"<a href='#DNScacheinfo' style='color:#657528;'>DNScache</a>",
+	"<a href='#Serviceinfo' style='color:#657528;'>Service</a>",
+	"<a href='#hostsinfo' style='color:#657528;'>hosts</a>",
+	"<a href='#dnsinfo' style='color:#657528;'>ping DNS</a>",
+	"<br>domains:"];
+	var s="";
+	if(x.status!=200) {
+		reportError("游戏列表页发生了错误！<hr>"+text2html(bytes2BSTR(x.responseBody)),"内容长度"+length(x.responseBody)+"<br>返回码"+x.status,"请把错误报告提交给我们的技术人员分析");
+	}else{
+		s=x.responseText;
+		if(!rHTML.test(s)){
+			reportError("游戏列表页发生了错误！<hr>"+text2html(bytes2BSTR(x.responseBody)),"内容长度"+length(x.responseBody)+"<br>返回码"+x.status,"请把错误报告提交给我们的技术人员分析");
+		}else{
+			reportOK("<a target='_blank' href='http://gtj.9917.com/gameList.html' style='color:#657528;'>http://gtj.9917.com/gameList.html</a>",length(x.responseBody),timeDiff);			
+		}		
+	}
+	var tmpDomainsArray=[];
+	for(var i in domains){
+		if (domains.hasOwnProperty(i)) {
+			tmpDomainsArray.push([domains[i],i]);
+		}		
+	}
+	tmpDomainsArray.sort();
+	for(var i =0;i<tmpDomainsArray.length;i++){
+		tmpString.push("<a href='#ping"+tmpDomainsArray[i][1]+"' style='color:#657528;'>"+tmpDomainsArray[i][0]+"</a>")
+	}
+	$("basicinfo").innerHTML+=tmpString.join("　　");
+	
+	checkNetWork();
+	checkResources(s);
+}
+
+
+function checkNetWork() {
+	setMessage('正在检测网络环境...');
+
+	tempFolder=fso.GetSpecialFolder(2);
+	tempFolder=fso.CreateFolder(tempFolder.Path+"/"+fso.GetTempName());
+	desktopFolder=fso.GetFolder(wsh.SpecialFolders("Desktop"));
+
+	var f;
+	try{
+		f=tempFolder.CreateTextFile("check.bat",true);
+	}catch(e){
+		reportError("创建网络检测脚本的时候发生了错误："+e.message);
+		return;
+	}
+	var s=tempFolder.Path+"\\check.log";
+	f.WriteLine("@echo off");
+	f.WriteLine("echo ^<div id=sysinfo^>^<a href=#basicinfo style='color:#657528;'^>top↑^</a^> >"+s);
+	//操作系统
+	f.WriteLine("echo ^&#x64CD;^&#x4F5C;^&#x7CFB;^&#x7EDF;:%os%>>"+s);
+	//处理器芯片体系
+	f.WriteLine("echo ^&#x5904;^&#x7406;^&#x5668;^&#x82AF;^&#x7247;^&#x4F53;^&#x7CFB;:%processor_architecture%>>"+s);
+	//处理器说明
+	f.WriteLine("echo ^&#x5904;^&#x7406;^&#x5668;^&#x8BF4;^&#x660E;:%processor_identifier%>>"+s);
+	f.WriteLine("echo ^</div^>^<div id=IPconfiginfo^>^<a href=#basicinfo style='color:#657528;'^>top↑^</a^> >>"+s);
+	f.WriteLine("echo ------------------- ipconfig/all ------------------- >>"+s);
+	f.WriteLine("ipconfig/all >>"+s);
+	f.WriteLine("echo ^</div^>^<div id=DNScacheinfo^>^<a href=#basicinfo style='color:#657528;'^>top↑^</a^> >>"+s);
+	f.WriteLine("echo ------------------- ipconfig/displaydns ------------------- >>"+s);
+	f.WriteLine("ipconfig/displaydns >>"+s);
+	f.WriteLine("echo ^</div^>^<div id=Serviceinfo^>^<a href=#basicinfo style='color:#657528;'^>top↑^</a^> >>"+s);
+	//当前正在运行的windows服务
+	f.WriteLine("echo ------------------- ^&#x5F53;^&#x524D;^&#x6B63;^&#x5728;^&#x8FD0;^&#x884C;^&#x7684;windows^&#x670D;^&#x52A1; ------------------- >>"+s);
+	f.WriteLine("net start >>"+s);
+	f.WriteLine("echo ...>>"+s);
+	f.WriteLine("echo ^</div^>^<div id=hostsinfo^>^<a href=#basicinfo style='color:#657528;'^>top↑^</a^> >>"+s);
+	f.WriteLine("echo -------------------  host^type %systemroot%\\system32\\drivers\\etc\\hosts ------------------->>"+s);
+	f.WriteLine("type %systemroot%\\system32\\drivers\\etc\\hosts>>"+s);
+	f.WriteLine("echo ^</div^> >>"+s);
+	f.WriteLine("del "+tempFolder.Path+"\\check.bat");
+	f.WriteLine("exit");
+	f.Close();
+	wsh.Run(tempFolder.Path+"\\check.bat",0,true);
+	var f=fso.getFile(tempFolder.Path+"\\check.log");
+	stream=f.OpenAsTextStream(1,0);
+	var s=stream.ReadAll();
+	stream.Close()
+	$("networkStatus").innerHTML=s.replace(/\n/g,"<br>");
+	var a=s.match(/DNS Servers[\s\.\d:]*/ig);
+	if(a){
+		//检查连接dns是否畅通
+		for(var i=a.length-1;i>=0;i--){
+			if(a[i]){
+				a=a.concat(a.splice(i,1)[0].match(/\d+\.\d+\.\d+\.\d+/ig))
+			}
+		}
+		try{
+			f=tempFolder.CreateTextFile("pingdns.bat",true);
+		}catch(e){
+			reportError("创建dns检测脚本的时候发生了错误："+e.message);
+			return;
+		}
+		f.WriteLine("@echo off");
+		var s=tempFolder.Path+"\\pingdns.log";
+		f.WriteLine("echo ^<div id='dnsinfo'^>^<hr^>>"+s);
+		for(var i=0;i<a.length;i++){
+			f.WriteLine("echo ping DNS("+a[i]+") >>"+s);
+			f.WriteLine("ping "+a[i]+" >>"+s);
+			f.WriteLine("echo tracert -w 1"+a[i]+" >>"+s);
+			f.WriteLine("tracert -w 1 "+a[i]+" >>"+s);
+		}
+		f.WriteLine("echo ^</div^> >>"+s);
+		f.WriteLine("del "+tempFolder.Path+"\\pingdns.bat");
+		f.WriteLine("exit");
+		f.Close();
+		commands.push(tempFolder.Path+"\\pingdns.bat");
+	}
+
+	for(var i in domains){
+		try{
+			f=tempFolder.CreateTextFile("./"+i+".bat",true);
+		}catch(e){
+			reportError("---------- 创建网络检测脚本的时候发生了错误："+e.message);
+			return;
+		}
+		var s=tempFolder.Path+"\\"+i+".log";
+		f.WriteLine("@echo off");
+		f.WriteLine("echo ^<div style='background-color:#99CCFF' id='ping"+i+"'^>^<hr^> >"+s);
+		f.WriteLine("echo ^<a href=#basicinfo^>top^</a^> ^&nbsp; ^&nbsp; ^<a href=#nslookup"+i+"^>nslookup^</a^>  ^&nbsp; ^&nbsp; ^<a href=#tracert"+i+"^>tracert^</a^> >>"+s);		
+		f.WriteLine("echo ping "+domains[i]+". >>"+s);
+		f.WriteLine("echo ^</div^>^<div style='background-color:#FFFFCC'^> >>"+s);
+		f.WriteLine("ping "+domains[i]+". >>"+s);
+		f.WriteLine("echo ^</div^>^<div style='background-color:#99CCFF'^> >>"+s);
+		f.WriteLine("echo ping -l 1480 "+domains[i]+". >>"+s);
+		f.WriteLine("echo ^</div^>^<div style='background-color:#FFFFCC'^> >>"+s);
+		f.WriteLine("ping -l 1480 "+domains[i]+". >>"+s);
+		f.WriteLine("echo ^</div^>^<div style='background-color:#99CCFF' id='nslookup"+i+"'^> >>"+s);
+
+		f.WriteLine("echo ^<a href=#basicinfo^>top^</a^> ^&nbsp; ^&nbsp;^<a href=#ping"+i+"^>ping^</a^> ^&nbsp; ^&nbsp; ^<a href=#tracert"+i+"^>tracert^</a^> >>"+s);		
+		f.WriteLine("echo nslookup -d "+domains[i]+". >>"+s);
+		f.WriteLine("echo ^</div^>^<div style='background-color:#FFFFCC'^> >>"+s);
+		f.WriteLine("nslookup -d "+domains[i]+". >>"+s);
+		f.WriteLine("echo ^</div^>^<div style='background-color:#99CCFF' id='tracert"+i+"'^> >>"+s);
+		f.WriteLine("echo ^<a href=#basicinfo^>top^</a^> ^&nbsp; ^&nbsp;^<a href=#ping"+i+"^>ping^</a^> ^&nbsp; ^&nbsp; ^<a href=#nslookup"+i+"^>nslookup^</a^>  ^&nbsp; ^&nbsp; >>"+s);		
+		f.WriteLine("echo tracert -w 1 "+domains[i]+". >>"+s);
+		f.WriteLine("echo ^</div^>^<div style='background-color:#FFFFCC'^> >>"+s);
+		f.WriteLine("tracert -w 1 "+domains[i]+". >>"+s);
+		f.WriteLine("echo ^</div^> >>"+s);
+		f.WriteLine("del "+tempFolder.Path+"\\"+i+".bat");
+		f.WriteLine("exit");
+		f.Close();
+		commands.push(tempFolder.Path+"\\"+i+".bat");
+	}
+	setInterval(execBat,1000);
+	window.attachEvent("onbeforeunload",cleanUp);
+}
+
+function checkResources(s) {
+	setMessage('正在请求资源...');
+
+	var r=/import url\(http:\/\/([^\)]*)\)/ig;// 把css抽出来
+	var m=s.match(r);
+	if(m) {
+		for(var i=0;i<m.length;i++)
+			urls.push([s.match(r)[i].replace(r,"$1"),null]);
+	} else {
+		urls.push([domains.GTJ_GW_Domain + '/style/style.css',null]);
+	}
+	
+	urls.push([domains.GTJ_GW_Domain + '/lib/gtj.js',null]);
+	urls.push([domains.GTJ_GW_Domain + '/lib/jquery/jquery-1.3.js',null]);
+	urls.push([domains.GTJ_GW_Domain + '/lib/jquery/ajaxmanager.js',null]);
+	urls.push([domains.PAY_PROXY_Domain + '/assets/js/core.js',/FWK\.UA/]);
+	urls.push([domains.GTJ_GW_Domain+'/',rHTML]);
+	urls.push([domains.GTJ_GW_Domain+'/login.html',rHTML]);
+	urls.push([domains.GTJ_GW_Domain+'/style/images/logo.swf',null]);
+	urls.push([domains.GTJ_GW_Domain+'/hd/images/20100913/list.jpg', null]);
+
+	/*游戏服务器资源*/
+	urls.push([domains.Connect_Domain+'/js/swfobject.js', null]);
+	urls.push([domains.Connect_Domain+'/Palace_main.swf', null]);
+	urls.push([domains.Connect_Domain+'/theme/defaultTheme/assets/loading/loading.swf', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/theme/defaultTheme/assets/BGround.jpg', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/theme/defaultTheme/assets/login/LOGO.png', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/config/tip.xml', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/assets/eventTipHead.png', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/res/npc/11_b.swf', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/assets/confirmBack.png', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/assets/buycell.png', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/dynData/dynConfig/version.xml', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/assets/assets.swf', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/dynData/dynConfig/error.xml', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/theme/defaultTheme/defaultTheme.swf', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/dynData/dynConfig/gamePloyConfig.xml', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/dynData/user/date.xml', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/dynData/dynConfig/propsConfig.xml', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/config/word.txt', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/dynData/dynConfig/dressConfig.xml', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/dynData/dynConfig/suitDressConfig.xml', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/dynData/dynConfig/dressCompose.xml', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/assets/library.swf', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/assets/birds.swf', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/res/swf/battleIcon.swf', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/dynData/user/0/4/2005/_s.png', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/assets/face/library.swf', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/assets/icon/yindan.png', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/assets/botright.png', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/assets/icon/jindan.png', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/assets/leftTop.png', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/assets/npcNameBack.png', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/assets/list_back.png', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/assets/actionList.png', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/assets/taskList.png', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/assets/taskListTop.png', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/res/npc/11_b.swf', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/res/background/city.jpg', null]);
+	urls.push([domains.Connect_Domain+'http://s10.gtj.9917.com/com/palace/modules/chat/view/TextChatModule.swf', null]);
+	
+	loadNextUrl();
+}
+
+function loadNextUrl() {
+	var a=urls.shift();
+
+	loadUrl(a[0],checkNextResource,a[2],a[1]);
+}
+
+function checkNextResource(x,timeDiff,url,rule) {
+	clearTimeout(timer);
+	var len=length(x.responseBody);
+	var headerLen=x.getResponseHeader("Content-Length");
+	var contentEncoding=x.getResponseHeader("Content-Encoding");
+	var path=url.substr(url.lastIndexOf("/"));
+	if(timeDiff>=timeout){
+		reportError("<a target='_blank' href='"+url+"' style='color:#657528'>"+url+"</a>请求超时！<hr>"+text2html(bytes2BSTR(x.responseBody)),"***内容长度:"+len+"<br>***返回码:"+x.status,timeDiff);
+	}else if(x.status!=200) {
+		reportError("<a target='_blank' href='"+url+"' style='color:#657528'>"+url+"</a>发生了错误！<hr>"+text2html(bytes2BSTR(x.responseBody)),"内容长度:"+len+"<br>返回码:"+x.status,timeDiff);
+	}else if(!rule && headerLen!=len && !/gzip|deflate/.test(contentEncoding)) {
+		//没有任何校验条件的情况下，只能依赖http头中声明的内容长度来校验。对于gzip压缩的内容可能会误报。
+		reportError("<a target='_blank' href='"+url+"' style='color:#657528'>"+url+"</a>内容长度不符！期待长度:"+headerLen+" bytes<hr>"+text2html(bytes2BSTR(x.responseBody)),"内容长度"+len+"<br>返回码"+x.status+"",timeDiff);
+	}else if(rule=="checkVersions" && lengthHsmp[path] && lengthHsmp[path].len>0 && lengthHsmp[path].len!=len){
+		reportError("<a target='_blank' href='"+url+"' style='color:#657528'>"+url+"</a>文件一致性检查失败！期待文件长度:"+lengthHsmp[path].len+" bytes<hr>"+text2html(bytes2BSTR(x.responseBody)),"内容长度"+len+"<br>返回码"+x.status+"",timeDiff);
+	}else if(rule=="checkVersions" && lengthHsmp[path] && lengthHsmp[path].len==0 && lengthHsmp[path].headerLen>0 && lengthHsmp[path].headerLen!=headerLen){
+		reportError("<a target='_blank' href='"+url+"' style='color:#657528'>"+url+"</a>文件一致性检查失败！期待文件流长度:"+lengthHsmp[path].headerLen+" bytes<hr>"+text2html(bytes2BSTR(x.responseBody)),"内容流长度"+headerLen+"<br>返回码"+x.status+"",timeDiff);
+	}else if(/^\d+$/.test(rule) && rule!=len) {
+		reportError("<a target='_blank' href='"+url+"' style='color:#657528'>"+url+"</a>内容长度不符！期待长度:"+rule+" bytes<hr>"+text2html(bytes2BSTR(x.responseBody)),"内容长度"+len+"<br>返回码"+x.status+"",timeDiff);
+	}else if((rule instanceof RegExp ) && (!rule.test(bytes2BSTR(x.responseBody)))) {
+		reportError("<a target='_blank' href='"+url+"' style='color:#657528'>"+url+"</a>内容格式不符！期待格式:<br>"+text2html(rule.toString())+" <hr>"+text2html(bytes2BSTR(x.responseBody)),"内容长度"+len+"<br>返回码"+x.status+"",timeDiff);
+	}else if(/^\d+\-\d+$/.test(rule) && (rule.split("-")[0]>len||rule.split("-")[1]<len)) {
+		reportError("<a target='_blank' href='"+url+"' style='color:#657528'>"+url+"</a>内容长度不符！期待长度:"+rule+" bytes<hr>"+text2html(bytes2BSTR(x.responseBody)),"内容长度"+len+"<br>返回码"+x.status+"",timeDiff);
+	}else if(rule!="checkVersions"){//如果是文件一致性检查，一致的时候就不用出log了
+		if(!lengthHsmp[path])lengthHsmp[path]={len:0,headerLen:0};
+		if(!lengthHsmp[path].len)lengthHsmp[path].len=len
+		if(!lengthHsmp[path].headerLen)lengthHsmp[path].headerLen=headerLen
+		reportOK(url,len,timeDiff)
+	}
+	if(urls.length>0){
+		setMessage(errorCount + '个出错，剩'+urls.length+"个，正在检测："+urls[0][0]);
+		loadNextUrl();
+	}else{
+		checkReports();
+	}
+}
+
+function checkReports() {
+	var files=new Enumerator(tempFolder.files);
+	var logCount=0,s="",running=[];
+	for (; !files.atEnd(); files.moveNext()){
+		try{
+			s=files.item().name
+			if(s.indexOf(".bat")!=-1 && domains[s.replace(/\.bat/,"")]){
+				logCount++;
+				running.push(domains[s.substring(0,s.length-4)]);
+			}
+		}catch(e){}
+	}
+	if(logCount==0){
+		setMessage('正在生成报告(error：'+errorCount+')...');
+		createLogFile();
+		window.close();
+	} else {
+		setMessage('正在检测网络环境(total：'+logCount+'/error：'+errorCount+')：'+running[logCount-1]);
+		setTimeout(checkReports,1000)
+	}
+}
+
+
+function execBat(){
+	setCookie();
+	if (commands.length==0) return;
+	var cpu=new Enumerator (service.ExecQuery("SELECT * FROM Win32_Processor")).item();
+	if(cpu.LoadPercentage>70)return;//监控cpu状态，防止并发任务过多导致系统卡死
+	var s=commands.shift();
+	try{wsh.Run(s,0);}catch(e){reportError(s+"\n发生了异常："+e.message);}
+}
+
+function cleanUp() {
+	reportError("检测过程被用户终止");
+	createLogFile();
+}
+
+function createLogFile(){
+	window.detachEvent("onbeforeunload",cleanUp);
+
+	var outputArray=[],stream,f;
+	var logFiles=["check.log","pingdns.log"];
+	for(var i in domains){
+		logFiles.push(i+".log");
+	}
+	for(var i=0;i<logFiles.length;i++){
+		try{
+			var f=fso.getFile(tempFolder.Path+"\\"+logFiles[i]);
+			stream=f.OpenAsTextStream(1,0);
+			var s=stream.ReadAll();
+			if(i==0){
+				if(/DNS Servers(.|\n)*((8\.8\.4\.4)|(8\.8\.8\.8))/.test(s)){
+					reportError("<a href=\"#IPconfiginfo\" style='color:#657528;'>用户使用了google public DNS 服务，这可能会导致部分域名解析异常</a>")
+				}
+				if(/DNS Servers(.|\n)*((208\.67\.222\.222)|(208\.67\.220\.220))/.test(s)){
+					reportError("<a href=\"#IPconfiginfo\" style='color:#657528;'>用户使用了openDNS 服务，这可能会导致部分域名解析异常</a>")
+				}
+			}
+			if(/(siDomain)|(imgcacheDomain)|(imagecacheDomain)|(appimg1?Domain)/.test(logFiles[i])){
+				if(/(edgecastcdn)|(fastwebcdn)/.test(s)){
+					var d=logFiles[i].replace(/\.log/g,"")
+					reportError("<a href='#nslookup"+d+"' style='color:#657528;'>"+domains[d]+"</a>域名被指向了海外服务器，如果当前用户在国内，这可能是dns故障导致。")
+				}
+			}
+			if(/Unable to resolve target system name/.test(logFiles[i])){
+				var d=logFiles[i].replace(/\.log/g,"")
+				reportError("<a href='#nslookup"+d+"' style='color:#657528;'>"+domains[d]+"</a>域名无法正确解析，这可能是dns故障导致。")
+			}
+			s=s.replace(/((.*timed out.*)|(.*超.*)|(.*opendns\.com.*)|(.*google\-public\-dns.*)|(.*fastwebcdn.*)|(.*edgecastcdn.*))/g,"<font color=red>$1</font>").replace(/\n/g,"<br>")
+			outputArray.push(s);
+			stream.Close()
+			f.Delete()
+		}catch(e){
+			var s=logFiles[i].replace(".log","");
+			if(s=="check"){
+				outputArray.push("<font color=red>获取用户的网络和硬件配置分析结果失败:"+e.message+"</font>");
+			}else{
+				outputArray.push("<font color=red id="+s+">获取"+domains[s]+"的网络状况分析结果失败:"+e.message+"</font>");
+			}
+		}
+	}
+	$("networkStatus").innerHTML=outputArray.join("<br>");
+	$("basicinfo").innerHTML+="<br>监测耗时"+(new Date()-now)/1000+"秒";
+	var fileName;
+	/*
+	try{
+		var fileName=((errorCount>0?"("+errorCount+")":"")+"0"+(now.getMonth()+1)+"-0"+now.getDate()+"-0"+now.getHours()+"-0"+now.getMinutes()).replace(/0(\d\d)/g,"$1")+loc+ip;
+		f=desktopFolder.CreateTextFile(fileName+".html",true);
+	}catch(e){
+		//有时一些简体中文系统不能创建某些文件名
+		GBSystem=false;
+	}
+	*/
+	if(!GBSystem){
+		//非简体中文系统
+		fileName="9917_NetReport";
+		f=desktopFolder.CreateTextFile(fileName+".html",true);
+	}
+	var s="<!DOCTYPE html><html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/><style>th{white-space: nowrap;white-space: nowrap;text-align:center;cursor:pointer;word-break:keep-all} body {margin:0; padding:0;}</style></head><body><noscript>请开启脚本 </noscript>"+$("outputDIV").innerHTML.replace(/(href="file:\/\/)[^#]*(#\w+(Domain|info)")/g,"href=\"$2")+"<script src=\"http://checknetwork4qqfarm.googlecode.com/files/sort.0.1.js\"><\/script></body></html>";
+	if(!GBSystem){
+		s=s.replace(/[^\r\n\t\s\x20-\x7f]/g,
+			function(c){
+				return escape(c).replace(/(%u(....))|(%([^u].))/g,"&#x$2$4;")
+			}
+		)
+	}
+	var a=s.split("\n")
+	for(var i=0;i<a.length;i++){
+		f.WriteLine(a[i]);
+	}
+	
+	f.Close()
+	var msg="网络检查报告已经生成到您的桌面上，请把生成的“"+fileName+"”文件发送给女儿国技术人员进行进一步分析，谢谢！";
+	/*
+	var szPath=tempFolder.Drive+"\\Program Files\\7-Zip\\7z.exe",
+	rarPath=tempFolder.Drive+"\\Program Files\\WinRAR\\Rar.exe";
+	
+	try{
+		rarPath=wsh.RegRead ("HKEY_CLASSES_ROOT\\WinRAR\\shell\\open\\command\\").match(/"([^"]*)"/)[1];
+	}catch(e){
+	}
+	try{
+		szPath=wsh.RegRead ("HKEY_CURRENT_USER\\Software\\7-Zip\\Path")+"\\7z.exe";
+	}catch(e){
+	}
+
+	if(fso.FileExists(szPath)){
+		var s="\""+szPath+"\"  a -tzip \""+desktopFolder.Path+"\\"+fileName+".zip\" \""+desktopFolder.Path+"\\"+fileName+".html\" -mx=9";
+		if(0==wsh.Run(s,0,true)){
+			fso.getFile(desktopFolder.Path+"\\"+fileName+".html").Delete();
+		}else{
+			msg=msg.replace(".zip",".html")
+		}
+	}else if(fso.FileExists(rarPath)){
+		var s="\""+rarPath+"\"  a -ep -m5 -df -inul \""+desktopFolder.Path+"\\"+fileName+".zip\" \""+desktopFolder.Path+"\\"+fileName+".html\" ";
+		if(0!=wsh.Run(s,0,true)){
+			msg=msg.replace(".zip",".html")
+		}
+	}else{
+		msg=msg.replace(".zip",".html")
+	}*/
+	alert(msg)
+}
+</script>
+</body>
+</html>
