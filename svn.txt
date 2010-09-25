@@ -55,7 +55,7 @@ ICON小图标：http://www.famfamfam.com/lab/icons/silk/
 Spyderlib   http://code.google.com/p/spyderlib/
 需要的文件下载地址：http://www.riverbankcomputing.co.uk/static/
 
-
+检测用户当前的网络状况：http://code.google.com/p/checknetwork4qqfarm/
 
 
 插入SWF：
