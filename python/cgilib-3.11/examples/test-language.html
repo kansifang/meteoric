@@ -1,0 +1,23 @@
+<html>
+<head>
+<title></title>
+<script language="javascript">
+function validform()
+{
+	if (language.tobig5.value.length==0){
+		alert('to不能为空。');
+		return false;
+	}
+	return true;
+}
+</script>
+</head>
+<body>
+<form method="POST" action="/cgi-bin/test-language.cgi" name="language" onsubmit="return validform();">
+  <p><b><font size="7">简体 gb2312 转繁体 big5 程序</font></b></p>
+  <p>转换内容&nbsp; : <textarea rows="3" name="tobig5" cols="20"></textarea></p>
+  <p><input type="submit" value="提交" name="B1"><input type="reset" value="全部重写" name="B2"></p>
+	<p><img border="0" src="cgi-lib.gif" width="173" height="53"></p>
+</form>
+</body>
+</html>

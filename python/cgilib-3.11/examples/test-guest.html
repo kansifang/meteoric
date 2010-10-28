@@ -1,0 +1,28 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>最简易的留言板</title>
+</head>
+
+<body>
+
+<p>最简易的留言板</p>
+<p>--------------------------------------------------------</p>
+<pre>
+[%SHOW_GUEST%]
+</pre>
+<p>--------------------------------------------------------</p>
+<p>我要留言：</p>
+<form method="POST" action="/cgi-bin/test-guest.cgi">
+	<p><textarea rows="7" name="guest" cols="61"></textarea>
+	</p>
+	<p>
+	<input type="submit" value="提交" name="change"><input type="reset" value="重置" name="B2"></p>
+</form>
+<p>　</p>
+
+</body>
+
+</html>
