@@ -1,4 +1,4 @@
-
+ 
 php +  nginx在Windows下的配置文件： 
 #VHOST: meteoric.com
 server {
