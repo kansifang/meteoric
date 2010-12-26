@@ -1,22 +1,22 @@
-ÌÔ±¦µÄTBra  	http://iunicorn.googlecode.com/svn/trunk   lifesinger
+ï»¿æ·˜å®çš„TBra  	http://iunicorn.googlecode.com/svn/trunk   lifesinger
 Ucren   		http://fireye-jinxiaocun.googlecode.com/svn    feiran.hu@gmail.com
-TBra			http://tbra.googlecode.com/svn/trunk		   zhaozexin(Ğ¡Âí--ÕÔÔóĞÀ)
+TBra			http://tbra.googlecode.com/svn/trunk		   zhaozexin(å°é©¬--èµµæ³½æ¬£)
 qzoneDebugger 	http://qzonedebugger.googlecode.com/svn/trunk/ qzonedebugger --username qzoneOther	  http://lydemo.googlecode.com/svn		iliyi.com
 jsforest		http://jsforest.googlecode.com/svn	divsystem
 qqMail			http://awmc.googlecode.com/svn          http://rvlistview.googlecode.com/svn
-°×Éç»á			http://webgamethree.googlecode.com/svn	
+ç™½ç¤¾ä¼š			http://webgamethree.googlecode.com/svn	
 qq_isd			http://isd.googlecode.com/svn
-Ğ£ÄÚÍø			http://meteorafhd.googlecode.com/svn
-qqÓÊÏä			http://coynn4er.googlecode.com/svn
+æ ¡å†…ç½‘			http://meteorafhd.googlecode.com/svn
+qqé‚®ç®±			http://coynn4er.googlecode.com/svn
 kissy			http://kissy.googlecode.com/svn/trunk
 qomo			https://qomo.svn.sourceforge.net/svnroot/qomo/qobean
-YUIÖĞÎÄ			http://yui-doc-zh.googlecode.com/svn/trunk
+YUIä¸­æ–‡			http://yui-doc-zh.googlecode.com/svn/trunk
 lightjso		http://lightjso.googlecode.com/svn
 meteoric		https://meteoric.googlecode.com/svn/trunk
 
 
-ÓÃ»§Ãû£ºgongshengnan@gmail.com 
-ÃÜ  Âë£ºbx8Eu9pv8cw6
+ç”¨æˆ·åï¼šgongshengnan@gmail.com 
+å¯†  ç ï¼šbx8Eu9pv8cw6
 
 
 closure-library			http://closure-library.googlecode.com/svn/trunk
@@ -26,39 +26,39 @@ ecma                    http://ecma-262.googlecode.com/svn/trunk/
 blogsrc:flex/python/java/c http://blogsrc.googlecode.com/svn
 
 
-svnÉÏµÄÔ´ÂëÏÂÔØµØÖ·£º
+svnä¸Šçš„æºç ä¸‹è½½åœ°å€ï¼š
 http://code.google.com/p/snailgame---js/source/checkout
 https://snailgame---js.googlecode.com/svn/trunk/
-svnµÄÕÊºÅ£ºgongshengnan@gmail.com
-ÃÜÂë£ºbx8Eu9pv8cw6 
+svnçš„å¸å·ï¼šgongshengnan@gmail.com
+å¯†ç ï¼šbx8Eu9pv8cw6 
 
 
-cssrainÉÏµÄSVN
+cssrainä¸Šçš„SVN
 https://jsskep.googlecode.com/svn/trunk
-cssrainµÄsvn: cssrain
+cssrainçš„svn: cssrain
 mr4HJ4nd5Ua7 
 
 
-´úÀíÉÏÍø£ºhttp://gappproxy.googlecode.com/svn/trunk
+ä»£ç†ä¸Šç½‘ï¼šhttp://gappproxy.googlecode.com/svn/trunk
 
 
-AptanaÏÂSVN²å¼ş°²×°£ºhttp://subclipse.tigris.org/update
+Aptanaä¸‹SVNæ’ä»¶å®‰è£…ï¼šhttp://subclipse.tigris.org/update
 
 
-GAE´úÀíÉÏÍø£ºhttp://www.bokee.net/bloggermodule/blog_viewblog.do?id=4401843
-meteoricµÄGAEµØÖ·£ºhttp://9917-meteoric.appspot.com/fetch.py
+GAEä»£ç†ä¸Šç½‘ï¼šhttp://www.bokee.net/bloggermodule/blog_viewblog.do?id=4401843
+meteoricçš„GAEåœ°å€ï¼šhttp://9917-meteoric.appspot.com/fetch.py
 
-ICONĞ¡Í¼±ê£ºhttp://www.famfamfam.com/lab/icons/silk/
+ICONå°å›¾æ ‡ï¼šhttp://www.famfamfam.com/lab/icons/silk/
 
 
 
 Spyderlib   http://code.google.com/p/spyderlib/
-ĞèÒªµÄÎÄ¼şÏÂÔØµØÖ·£ºhttp://www.riverbankcomputing.co.uk/static/
+éœ€è¦çš„æ–‡ä»¶ä¸‹è½½åœ°å€ï¼šhttp://www.riverbankcomputing.co.uk/static/
 
-¼ì²âÓÃ»§µ±Ç°µÄÍøÂç×´¿ö<ÌÚÑ¶stone>£ºhttp://code.google.com/p/checknetwork4qqfarm/
+æ£€æµ‹ç”¨æˆ·å½“å‰çš„ç½‘ç»œçŠ¶å†µ<è…¾è®¯stone>ï¼šhttp://code.google.com/p/checknetwork4qqfarm/
 
 
-²åÈëSWF£º
+æ’å…¥SWFï¼š
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
 			id="serverMoniter" width="1200" height="700"
 			codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab">
