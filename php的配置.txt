@@ -1,5 +1,5 @@
- 
-php +  nginx��Windows�µ������ļ��� 
+﻿ 
+php +  nginx在Windows下的配置文件： 
 #VHOST: meteoric.com
 server {
 	listen		80;
@@ -37,16 +37,16 @@ php-cgi.exe -b 127.0.0.1:9000 -c php.ini
 
 
 #php.conf
-# ���ӵ����� 9000 �˿ڣ�����Ķ˿���ָ PHP FastCGI Server �����Ķ˿ڣ�
-# ���� php-cgi.exe �����Ķ˿ڱ���һ��
-# �� Nginx �յ� php �ļ�������ʱ�����Զ�ת���� PHP FastCGI Server
+# 连接到本机 9000 端口，这里的端口是指 PHP FastCGI Server 开启的端口，
+# 请与 php-cgi.exe 开启的端口保持一致
+# 当 Nginx 收到 php 文件的请求时，会自动转发到 PHP FastCGI Server
 fastcgi_pass    127.0.0.1:9000;
 fastcgi_index   index.php;
-# Nginx Ĭ���ǲ�֧�� CGI PATH_INFO��SCRIPT_NAME ��ֵҲ����׼���ۺ��� PATH_INFO��
-# ���������ָ����Դ� SCRIPT_NAME �а���� PATH_INFO
+# Nginx 默认是不支持 CGI PATH_INFO，SCRIPT_NAME 的值也不标准（糅合了 PATH_INFO）
+# 下面的两行指令，可以从 SCRIPT_NAME 中剥离出 PATH_INFO
 fastcgi_split_path_info     ^(.+\.php)(.*)$;
 fastcgi_param PATH_INFO     $fastcgi_path_info;
 include   fastcgi_params;
 
 
-������Ϻ�index.php������ <?php  echo phpinfo();?>
+启动完毕后，index.php内输入 <?php  echo phpinfo();?>
