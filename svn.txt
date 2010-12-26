@@ -15,25 +15,25 @@ lightjso		http://lightjso.googlecode.com/svn
 meteoric		https://meteoric.googlecode.com/svn/trunk
 
 
-用户名：		
-gongshengnan@gmail.com 
-密码：bx8Eu9pv8cw6
+用户名：gongshengnan@gmail.com 
+密  码：bx8Eu9pv8cw6
 
-closure-library		http://closure-library.googlecode.com/svn/trunk
-chatty			http://chatty.googlecode.com/svn
+
+closure-library			http://closure-library.googlecode.com/svn/trunk
+chatty					http://chatty.googlecode.com/svn
 j-et                    http://j-et.googlecode.com/svn/trunk
 ecma                    http://ecma-262.googlecode.com/svn/trunk/
 blogsrc:flex/python/java/c http://blogsrc.googlecode.com/svn
 
 
-
-http://code.google.com/p/snailgame---js/source/checkout
 svn上的源码下载地址：
+http://code.google.com/p/snailgame---js/source/checkout
 https://snailgame---js.googlecode.com/svn/trunk/
 svn的帐号：gongshengnan@gmail.com
 密码：bx8Eu9pv8cw6 
 
 
+cssrain上的SVN
 https://jsskep.googlecode.com/svn/trunk
 cssrain的svn: cssrain
 mr4HJ4nd5Ua7 
@@ -55,7 +55,7 @@ ICON小图标：http://www.famfamfam.com/lab/icons/silk/
 Spyderlib   http://code.google.com/p/spyderlib/
 需要的文件下载地址：http://www.riverbankcomputing.co.uk/static/
 
-检测用户当前的网络状况：http://code.google.com/p/checknetwork4qqfarm/
+检测用户当前的网络状况<腾讯stone>：http://code.google.com/p/checknetwork4qqfarm/
 
 
 插入SWF：
@@ -76,5 +76,8 @@ Spyderlib   http://code.google.com/p/spyderlib/
 				pluginspage="http://www.adobe.com/go/getflashplayer">
 			</embed>
 	</object>
+
+
+
 
 

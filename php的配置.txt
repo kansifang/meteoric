@@ -1,0 +1,52 @@
+
+php +  nginx在Windows下的配置文件： 
+#VHOST: meteoric.com
+server {
+	listen		80;
+	server_name	meteoric.com;
+	charset		utf-8;
+	access_log	off;
+
+	ssi		on;
+	ssi_silent_errors on;
+	ssi_types text/html;
+
+	location / {
+	    root D:\PhpApp\eyoo\wwwroot;
+	    index index.html index.php;
+	    
+	    #if ($host ~ "^meteoric\.com$"){
+		#rewrite ^\/?$ /index.php last;
+		#break ;
+	    #}
+	}
+
+	location ~ ^(.+\.php)(.*)$ {
+	    root D:\PhpApp\eyoo\wwwroot;
+	    fastcgi_param   SCRIPT_FILENAME     $document_root$fastcgi_script_name;
+	    include php.conf;	    
+	}
+}
+
+
+#start.bt
+@ECHO OFF
+echo php-CGI start OK....
+
+php-cgi.exe -b 127.0.0.1:9000 -c php.ini
+
+
+#php.conf
+# 连接到本机 9000 端口，这里的端口是指 PHP FastCGI Server 开启的端口，
+# 请与 php-cgi.exe 开启的端口保持一致
+# 当 Nginx 收到 php 文件的请求时，会自动转发到 PHP FastCGI Server
+fastcgi_pass    127.0.0.1:9000;
+fastcgi_index   index.php;
+# Nginx 默认是不支持 CGI PATH_INFO，SCRIPT_NAME 的值也不标准（糅合了 PATH_INFO）
+# 下面的两行指令，可以从 SCRIPT_NAME 中剥离出 PATH_INFO
+fastcgi_split_path_info     ^(.+\.php)(.*)$;
+fastcgi_param PATH_INFO     $fastcgi_path_info;
+include   fastcgi_params;
+
+
+启动完毕后，index.php内输入 <?php  echo phpinfo();?>
